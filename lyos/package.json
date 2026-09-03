@@ -1,0 +1,11 @@
+{
+  "name": "tinabelleza-lyos",
+  "version": "2.0.0",
+  "description": "Tina Belleza & LYOS Profesional Website & Ecommerce PWA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Tina Belleza / LYOS Profesional",
+  "license": "ISC"
+}

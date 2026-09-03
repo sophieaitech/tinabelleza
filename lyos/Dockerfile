@@ -2,17 +2,17 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copiar configuración y servidor
+# Copiar archivos de la aplicación
 COPY package.json ./
 COPY server.js ./
-COPY lyos ./lyos
+COPY . ./
 
 # Variables de entorno
 ENV NODE_ENV=production
 ENV PORT=80
 
-# Exponer puertos
+# Exponer puertos requeridos
 EXPOSE 80 8080 3000
 
-# Comando de arranque del servidor optimizado
+# Arrancar el servidor
 CMD ["node", "server.js"]
