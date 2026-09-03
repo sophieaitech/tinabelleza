@@ -253,6 +253,103 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   mix-blend-mode: multiply !important;
 }
 
+/* LUXURY PRODUCT SHOWCASE (MOBILE FIRST & ZERO CROPPING) */
+.prod-img-stage {
+  position: relative !important;
+  background: var(--plinth) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: clamp(340px, 38vw, 440px) !important;
+  padding: 28px 24px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+.prod-img-btn {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.prod-img-el {
+  display: block !important;
+  margin: 0 auto !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 86% !important;
+  max-height: 380px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,0.38)) !important;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1) !important;
+}
+.prod-img-stage:hover .prod-img-el {
+  transform: scale(1.05) !important;
+}
+.prod-gallery-stage {
+  position: relative !important;
+  background: var(--plinth) !important;
+  aspect-ratio: 1 / 1 !important;
+  min-height: 280px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px 20px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+.prod-gallery-stage .prod-img-el {
+  max-height: 250px !important;
+  max-width: 85% !important;
+}
+.qv-modal-img-stage {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px 16px !important;
+  min-height: 300px !important;
+  box-sizing: border-box !important;
+}
+.qv-modal-img-el {
+  display: block !important;
+  margin: 0 auto !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 86% !important;
+  max-height: 360px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,0.35)) !important;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1) !important;
+}
+
+/* Triptych Desktop vs Mobile Pillars */
+.triptych-desktop {
+  display: block !important;
+}
+.pilar-mobile-img {
+  display: none !important;
+}
+.pilares-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) !important;
+  gap: 20px !important;
+  margin-top: 26px !important;
+}
+.pilar-block {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+.pilar-card {
+  height: 100% !important;
+}
+
 /* ========================================================================= */
 /* ULTRA-MINIMALIST MOBILE FIRST RESPONSIVE STYLES (LYOS LUXURY PRO)         */
 /* ========================================================================= */
@@ -299,15 +396,84 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   .stories-strip > a {
     scroll-snap-align: start !important;
   }
-  /* Triptych Banner on Mobile: Responsive Grid */
+
+  /* PRODUCT CARD MOBILE PERFECTION: ZERO CLIPPING & ALWAYS ON TOP */
+  .prod-card-wrapper {
+    padding: 16px 10px !important;
+    border-radius: 24px !important;
+  }
+  .prod-img-stage {
+    order: -1 !important; /* Force image ALWAYS at top on mobile */
+    width: 100% !important;
+    height: 340px !important;
+    min-height: 340px !important;
+    max-height: 350px !important;
+    padding: 30px 18px 20px !important;
+    border-radius: 24px 24px 0 0 !important;
+    box-sizing: border-box !important;
+  }
+  .prod-img-stage .prod-img-el {
+    max-height: 275px !important;
+    max-width: 84% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    padding: 0 !important;
+  }
+  .prod-gallery-stage {
+    aspect-ratio: auto !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    padding: 24px 16px 16px !important;
+    box-sizing: border-box !important;
+  }
+  .prod-gallery-stage .prod-img-el {
+    max-height: 245px !important;
+    max-width: 84% !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+  .qv-modal-img-stage {
+    min-height: 280px !important;
+    height: 290px !important;
+    padding: 18px 12px !important;
+  }
+  .qv-modal-img-el {
+    max-height: 250px !important;
+    max-width: 84% !important;
+    padding: 0 !important;
+  }
+
+  /* TRES PILARES MOBILE PAIRING: PANEL IMAGE DIRECTLY ABOVE ITS COMBO CARD */
   .triptych-desktop {
     display: none !important;
   }
-  .triptych-mobile {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-    gap: 14px !important;
+  .pilar-mobile-img {
+    display: block !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--line2) !important;
+    box-shadow: var(--e1) !important;
+    background: #000 !important;
+    margin-bottom: 14px !important;
   }
+  .pilar-mobile-img img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+  .pilares-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    margin-top: 18px !important;
+  }
+  .pilar-block {
+    width: 100% !important;
+  }
+
   /* Mobile Testimonials Video Reels */
   .reel-card-mob {
     width: 220px !important;
@@ -324,7 +490,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 }
 
 @media (min-width: 769px) {
-  .triptych-mobile {
+  .pilar-mobile-img {
     display: none !important;
   }
   .triptych-desktop {
@@ -662,23 +828,23 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
         <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:0;border-radius:clamp(24px,2.8vw,34px);overflow:hidden;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e1);transition:box-shadow .4s,border-color .4s,transform .4s" style-hover="box-shadow:var(--e3);border-color:var(--gold);transform:translateY(-4px)">
           
           <!-- Image Column with Plinth & Floating Badges -->
-          <div style="order:{{ p.imgOrder }};position:relative;background:var(--plinth);min-height:clamp(300px,36vw,440px);display:grid;place-items:center;overflow:hidden">
-            <button onClick="{{ p.open }}" style="width:100%;height:100%;border:0;padding:0;background:transparent;cursor:pointer;display:grid;place-items:center">
-              <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%;height:100%;max-height:440px;object-fit:contain;padding:clamp(24px,3.4vw,44px);mix-blend-mode:multiply;transition:transform .6s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.06)" />
+          <div class="prod-img-stage" style="order:{{ p.imgOrder }}">
+            <button class="prod-img-btn" onClick="{{ p.open }}">
+              <img class="prod-img-el" src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="mix-blend-mode:multiply" />
             </button>
             
             <!-- Top Badge (Más vendido / Premium) -->
-            <span style="position:absolute;top:18px;left:18px;padding:7px 15px;border-radius:999px;background:rgba(14,11,7,.88);backdrop-filter:blur(10px);border:1px solid rgba(241,222,184,.3);color:#F1DEB8;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 6px 16px rgba(0,0,0,.4)">
+            <span style="position:absolute;top:18px;left:18px;padding:7px 15px;border-radius:999px;background:rgba(14,11,7,.88);backdrop-filter:blur(10px);border:1px solid rgba(241,222,184,.3);color:#F1DEB8;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 6px 16px rgba(0,0,0,.4);z-index:2">
               {{ p.badge }}
             </span>
 
             <!-- Top Right Heart Button -->
-            <button onClick="{{ p.fav }}" aria-label="Favorito" style="position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);backdrop-filter:blur(10px);display:grid;place-items:center;cursor:pointer;color:{{ p.favColor }};box-shadow:var(--e1);transition:all .25s" style-hover="transform:scale(1.15)">
+            <button onClick="{{ p.fav }}" aria-label="Favorito" style="position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);backdrop-filter:blur(10px);display:grid;place-items:center;cursor:pointer;color:{{ p.favColor }};box-shadow:var(--e1);transition:all .25s;z-index:2" style-hover="transform:scale(1.15)">
               <span class="mi" style="font-size:22px">{{ p.favIcon }}</span>
             </button>
 
             <!-- Bottom Floating Quick-View Tag -->
-            <button onClick="{{ p.open }}" style="position:absolute;bottom:18px;right:18px;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:var(--surf);backdrop-filter:blur(12px);color:var(--txt);font-size:12px;font-weight:800;box-shadow:var(--e2);border:1px solid var(--line2);cursor:pointer;transition:all .2s" style-hover="transform:scale(1.05);border-color:var(--gold)">
+            <button onClick="{{ p.open }}" style="position:absolute;bottom:18px;right:18px;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:var(--surf);backdrop-filter:blur(12px);color:var(--txt);font-size:12px;font-weight:800;box-shadow:var(--e2);border:1px solid var(--line2);cursor:pointer;transition:all .2s;z-index:2" style-hover="transform:scale(1.05);border-color:var(--gold)">
               <span class="mi mio" style="font-size:17px;color:var(--gold)">zoom_in</span>
               <span>Ver Ficha Técnica</span>
             </button>
@@ -749,12 +915,12 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
         <article style="display:flex;flex-direction:column;border-radius:24px;overflow:hidden;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e1);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s" style-hover="transform:translateY(-5px);box-shadow:var(--e3);border-color:var(--gold)">
           
           <!-- Image Box -->
-          <div style="position:relative;background:var(--plinth);aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden">
-            <button onClick="{{ p.open }}" style="width:100%;height:100%;border:0;padding:0;cursor:pointer;background:transparent;display:grid;place-items:center">
-              <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:clamp(20px,2.6vw,34px);mix-blend-mode:multiply;transition:transform .6s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.06)" />
+          <div class="prod-gallery-stage">
+            <button class="prod-img-btn" onClick="{{ p.open }}">
+              <img class="prod-img-el" src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="mix-blend-mode:multiply" />
             </button>
-            <span style="position:absolute;top:14px;left:14px;padding:6px 13px;border-radius:999px;background:rgba(14,11,7,.86);color:#F1DEB8;font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap">{{ p.badge }}</span>
-            <button onClick="{{ p.fav }}" aria-label="Favorito" style="position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);backdrop-filter:blur(10px);display:grid;place-items:center;cursor:pointer;color:{{ p.favColor }};box-shadow:var(--e1);transition:all .25s" style-hover="transform:scale(1.15)">
+            <span style="position:absolute;top:14px;left:14px;padding:6px 13px;border-radius:999px;background:rgba(14,11,7,.86);color:#F1DEB8;font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;z-index:2">{{ p.badge }}</span>
+            <button onClick="{{ p.fav }}" aria-label="Favorito" style="position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);backdrop-filter:blur(10px);display:grid;place-items:center;cursor:pointer;color:{{ p.favColor }};box-shadow:var(--e1);transition:all .25s;z-index:2" style-hover="transform:scale(1.15)">
               <span class="mi" style="font-size:20px">{{ p.favIcon }}</span>
             </button>
           </div>
@@ -856,196 +1022,198 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
       <img src="assets/lyos-lineas-premium.jpg" alt="Líneas LYOS Profesional" style="width:100%;height:auto;display:block;aspect-ratio:1024/662;object-fit:cover" loading="lazy" decoding="async" />
     </div>
 
-    <!-- Mobile-First Swipeable / Stacked Panel Cards -->
-    <div class="triptych-mobile" style="display:none;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
-      <div style="border-radius:20px;overflow:hidden;border:1px solid var(--line2);box-shadow:var(--e1);background:#000">
-        <img src="assets/lyos-panel-postcuidado.jpg" alt="Post Cuidado Diario" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" />
-      </div>
-      <div style="border-radius:20px;overflow:hidden;border:1px solid var(--line2);box-shadow:var(--e1);background:#000">
-        <img src="assets/lyos-panel-alisado.jpg" alt="Alisado Tecnológico Brasileño" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" />
-      </div>
-      <div style="border-radius:20px;overflow:hidden;border:1px solid var(--line2);box-shadow:var(--e1);background:#000">
-        <img src="assets/lyos-panel-biointense.jpg" alt="Bio Intense y Liso Hialurónico" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" />
-      </div>
-    </div>
-
-    <!-- 3 Interactive Luxury Product & Combo Purchase Cards below the banner -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px;margin-top:26px">
+    <!-- 3 Interactive Luxury Product & Combo Purchase Cards (Mobile Paired with each Banner) -->
+    <div class="pilares-grid">
       
-      <!-- Card 1: Post Cuidado Diario (Dúo / Trío) -->
-      <div style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
-        <div>
-          <!-- Top Badges -->
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-            <div style="display:inline-flex;align-items:center;gap:6px">
-              <span style="padding:4px 10px;border-radius:999px;background:var(--surf2);border:1px solid var(--gold);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 01</span>
-              <span style="font-size:11px;color:var(--mut);font-weight:700">Rutina en Casa</span>
-            </div>
-            <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:10.5px;font-weight:800;border:1px solid rgba(37,211,102,.25)">Ahorras $10.000 COP</span>
-          </div>
-
-          <!-- Product Thumbnail & Title -->
-          <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
-            <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line);box-shadow:var(--e1)">
-              <img src="assets/kit-post-cuidado.jpg" alt="Kit Post Cuidado" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
-            </span>
-            <div style="display:flex;flex-direction:column;min-width:0">
-              <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Dúo Cuidado Diario &amp; Anti-Frizz</h3>
-              <p style="font-size:12px;color:var(--mut);margin:4px 0 0;line-height:1.4">Shampoo sin sal (500ml) + Tratamiento reparador lipídico (500ml).</p>
-            </div>
-          </div>
-
-          <!-- Formulas Included Checklist -->
-          <div style="display:grid;gap:6px;margin-top:14px;padding:10px 12px;border-radius:14px;background:var(--surf);border:1px solid var(--line)">
-            <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
-              <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
-              <span>Shampoo Limpieza Profunda (500 ml)</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
-              <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
-              <span>Tratamiento Reparador con Murumuru (500 ml)</span>
-            </div>
-          </div>
+      <!-- Pilar 01 Block: Post Cuidado Diario -->
+      <div class="pilar-block">
+        <div class="pilar-mobile-img">
+          <img src="assets/lyos-panel-postcuidado.jpg" alt="Post Cuidado Diario" loading="lazy" decoding="async" />
         </div>
-
-        <!-- Pricing & Action Row -->
-        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:baseline;justify-content:space-between">
-            <div style="display:flex;align-items:baseline;gap:8px">
-              <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--txt)">$55.000</span>
-              <span style="font-size:13px;color:var(--dim);text-decoration:line-through;font-weight:600">$65.000</span>
+        <div class="pilar-card" style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+          <div>
+            <!-- Top Badges -->
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+              <div style="display:inline-flex;align-items:center;gap:6px">
+                <span style="padding:4px 10px;border-radius:999px;background:var(--surf2);border:1px solid var(--gold);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 01</span>
+                <span style="font-size:11px;color:var(--mut);font-weight:700">Rutina en Casa</span>
+              </div>
+              <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:10.5px;font-weight:800;border:1px solid rgba(37,211,102,.25)">Ahorras $10.000 COP</span>
             </div>
-            <span style="font-size:10.5px;font-weight:700;color:var(--gold)">Pack Ahorro</span>
-          </div>
 
-          <div style="display:flex;gap:8px">
-            <button onClick="{{ addPilar1 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
-              <span class="mi" style="font-size:18px">shopping_bag</span>
-              <span>Comprar Kit</span>
-            </button>
-            <a href="{{ waPilar1 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
-              <span class="mi" style="font-size:20px">chat</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: Alisado Bio Intense Brasileño -->
-      <div style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
-        <div>
-          <!-- Top Badges -->
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-            <div style="display:inline-flex;align-items:center;gap:6px">
-              <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366;font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 02 🇧🇷</span>
-              <span style="font-size:11px;color:var(--mut);font-weight:700">Origen Brasileño</span>
+            <!-- Product Thumbnail & Title -->
+            <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
+              <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line);box-shadow:var(--e1)">
+                <img src="assets/kit-post-cuidado.jpg" alt="Kit Post Cuidado" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+              </span>
+              <div style="display:flex;flex-direction:column;min-width:0">
+                <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Dúo Cuidado Diario &amp; Anti-Frizz</h3>
+                <p style="font-size:12px;color:var(--mut);margin:4px 0 0;line-height:1.4">Shampoo sin sal (500ml) + Tratamiento reparador lipídico (500ml).</p>
+              </div>
             </div>
-            <span style="padding:4px 10px;border-radius:999px;background:var(--surf3);color:var(--gold);font-size:10.5px;font-weight:800;border:1px solid rgba(212,175,55,.25)">0% Formol</span>
-          </div>
 
-          <!-- Product Thumbnail & Title -->
-          <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
-            <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line);box-shadow:var(--e1)">
-              <img src="assets/story-2.jpg" alt="Bio Intense Brasileño" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
-            </span>
-            <div style="display:flex;flex-direction:column;min-width:0">
-              <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Alisado Bio Intense + Lavado</h3>
-              <p style="font-size:12px;color:var(--mut);margin:4px 0 0;line-height:1.4">Sellado térmico molecular con biotina y proteínas vegetales.</p>
+            <!-- Formulas Included Checklist -->
+            <div style="display:grid;gap:6px;margin-top:14px;padding:10px 12px;border-radius:14px;background:var(--surf);border:1px solid var(--line)">
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
+                <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
+                <span>Shampoo Limpieza Profunda (500 ml)</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
+                <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
+                <span>Tratamiento Reparador con Murumuru (500 ml)</span>
+              </div>
             </div>
           </div>
 
-          <!-- Formulas Included Checklist -->
-          <div style="display:grid;gap:6px;margin-top:14px;padding:10px 12px;border-radius:14px;background:var(--surf);border:1px solid var(--line)">
-            <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
-              <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
-              <span>Alisado Bio Intense Profesional (1000 ml)</span>
+          <!-- Pricing & Action Row -->
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between">
+              <div style="display:flex;align-items:baseline;gap:8px">
+                <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--txt)">$55.000</span>
+                <span style="font-size:13px;color:var(--dim);text-decoration:line-through;font-weight:600">$65.000</span>
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:var(--gold)">Pack Ahorro</span>
             </div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
-              <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
-              <span>Shampoo Antiresiduos Pre-Tratamiento</span>
-            </div>
-          </div>
-        </div>
 
-        <!-- Pricing & Action Row -->
-        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:baseline;justify-content:space-between">
-            <div style="display:flex;align-items:baseline;gap:8px">
-              <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--txt)">$349.000</span>
-              <span style="font-size:13px;color:var(--dim);text-decoration:line-through;font-weight:600">$390.000</span>
+            <div style="display:flex;gap:8px">
+              <button onClick="{{ addPilar1 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+                <span class="mi" style="font-size:18px">shopping_bag</span>
+                <span>Comprar Kit</span>
+              </button>
+              <a href="{{ waPilar1 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+                <span class="mi" style="font-size:20px">chat</span>
+              </a>
             </div>
-            <span style="font-size:10.5px;font-weight:700;color:var(--gold)">1 Litro Salón</span>
-          </div>
-
-          <div style="display:flex;gap:8px">
-            <button onClick="{{ addPilar2 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
-              <span class="mi" style="font-size:18px">shopping_bag</span>
-              <span>Comprar Litro</span>
-            </button>
-            <a href="{{ waPilar2 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
-              <span class="mi" style="font-size:20px">chat</span>
-            </a>
           </div>
         </div>
       </div>
 
-      <!-- Card 3: Liso Hialurónico + Bio (Kit Maestro) -->
-      <div style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:2px solid var(--gold);box-shadow:0 14px 36px -8px rgba(168,124,47,.3),var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
-        <div>
-          <!-- Top Badges -->
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-            <div style="display:inline-flex;align-items:center;gap:6px">
-              <span style="padding:4px 10px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 03 ★</span>
-              <span style="font-size:11px;color:var(--gold);font-weight:700">Doble Tecnología</span>
+      <!-- Pilar 02 Block: Alisado Bio Intense Brasileño -->
+      <div class="pilar-block">
+        <div class="pilar-mobile-img">
+          <img src="assets/lyos-panel-alisado.jpg" alt="Alisado Tecnológico Brasileño" loading="lazy" decoding="async" />
+        </div>
+        <div class="pilar-card" style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+          <div>
+            <!-- Top Badges -->
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+              <div style="display:inline-flex;align-items:center;gap:6px">
+                <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366;font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 02 🇧🇷</span>
+                <span style="font-size:11px;color:var(--mut);font-weight:700">Origen Brasileño</span>
+              </div>
+              <span style="padding:4px 10px;border-radius:999px;background:var(--surf3);color:var(--gold);font-size:10.5px;font-weight:800;border:1px solid rgba(212,175,55,.25)">0% Formol</span>
             </div>
-            <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:10.5px;font-weight:800;border:1px solid rgba(37,211,102,.25)">Ahorras $41.000 COP</span>
+
+            <!-- Product Thumbnail & Title -->
+            <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
+              <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line);box-shadow:var(--e1)">
+                <img src="assets/story-2.jpg" alt="Bio Intense Brasileño" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+              </span>
+              <div style="display:flex;flex-direction:column;min-width:0">
+                <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Alisado Bio Intense + Lavado</h3>
+                <p style="font-size:12px;color:var(--mut);margin:4px 0 0;line-height:1.4">Sellado térmico molecular con biotina y proteínas vegetales.</p>
+              </div>
+            </div>
+
+            <!-- Formulas Included Checklist -->
+            <div style="display:grid;gap:6px;margin-top:14px;padding:10px 12px;border-radius:14px;background:var(--surf);border:1px solid var(--line)">
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
+                <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
+                <span>Alisado Bio Intense Profesional (1000 ml)</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
+                <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
+                <span>Shampoo Antiresiduos Pre-Tratamiento</span>
+              </div>
+            </div>
           </div>
 
-          <!-- Product Thumbnail & Title -->
-          <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
-            <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1.5px solid var(--gold);box-shadow:var(--e1)">
-              <img src="assets/liso-familia.jpg" alt="Kit Maestro Liso Espejo" style="width:100%;height:100%;object-fit:contain;padding:3px;mix-blend-mode:multiply" loading="lazy" decoding="async" />
-            </span>
-            <div style="display:flex;flex-direction:column;min-width:0">
-              <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Kit Maestro Liso Espejo Total</h3>
-              <p style="font-size:12px;color:var(--mut);margin:4px 0 0;line-height:1.4">Rutina completa de 3 pasos: Liso Hialurónico + Shampoo + Protector.</p>
+          <!-- Pricing & Action Row -->
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between">
+              <div style="display:flex;align-items:baseline;gap:8px">
+                <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--txt)">$349.000</span>
+                <span style="font-size:13px;color:var(--dim);text-decoration:line-through;font-weight:600">$390.000</span>
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:var(--gold)">1 Litro Salón</span>
             </div>
-          </div>
 
-          <!-- Formulas Included Checklist -->
-          <div style="display:grid;gap:6px;margin-top:14px;padding:10px 12px;border-radius:14px;background:var(--surf);border:1px solid var(--line)">
-            <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
-              <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
-              <span>Liso Hialurónico Clásico (1000 ml)</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
-              <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
-              <span>Shampoo Limpieza Profunda (500 ml)</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
-              <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
-              <span>Protector Térmico Instantáneo (250 ml)</span>
+            <div style="display:flex;gap:8px">
+              <button onClick="{{ addPilar2 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+                <span class="mi" style="font-size:18px">shopping_bag</span>
+                <span>Comprar Litro</span>
+              </button>
+              <a href="{{ waPilar2 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+                <span class="mi" style="font-size:20px">chat</span>
+              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Pricing & Action Row -->
-        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:baseline;justify-content:space-between">
-            <div style="display:flex;align-items:baseline;gap:8px">
-              <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--txt)">$349.000</span>
-              <span style="font-size:13px;color:var(--dim);text-decoration:line-through;font-weight:600">$390.000</span>
+      <!-- Pilar 03 Block: Liso Clásico Hialurónico -->
+      <div class="pilar-block">
+        <div class="pilar-mobile-img">
+          <img src="assets/lyos-panel-biointense.jpg" alt="Bio Intense y Liso Hialurónico" loading="lazy" decoding="async" />
+        </div>
+        <div class="pilar-card" style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:2px solid var(--gold);box-shadow:0 14px 36px -8px rgba(168,124,47,.3),var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
+          <div>
+            <!-- Top Badges -->
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+              <div style="display:inline-flex;align-items:center;gap:6px">
+                <span style="padding:4px 10px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 03 ★</span>
+                <span style="font-size:11px;color:var(--gold);font-weight:700">Doble Tecnología</span>
+              </div>
+              <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:10.5px;font-weight:800;border:1px solid rgba(37,211,102,.25)">Ahorras $41.000 COP</span>
             </div>
-            <span style="font-size:10.5px;font-weight:700;color:var(--gold)">Pack #1 Salón</span>
+
+            <!-- Product Thumbnail & Title -->
+            <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
+              <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1.5px solid var(--gold);box-shadow:var(--e1)">
+                <img src="assets/liso-familia.jpg" alt="Kit Maestro Liso Espejo" style="width:100%;height:100%;object-fit:contain;padding:3px;mix-blend-mode:multiply" loading="lazy" decoding="async" />
+              </span>
+              <div style="display:flex;flex-direction:column;min-width:0">
+                <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Kit Maestro Liso Espejo Total</h3>
+                <p style="font-size:12px;color:var(--mut);margin:4px 0 0;line-height:1.4">Rutina completa de 3 pasos: Liso Hialurónico + Shampoo + Protector.</p>
+              </div>
+            </div>
+
+            <!-- Formulas Included Checklist -->
+            <div style="display:grid;gap:6px;margin-top:14px;padding:10px 12px;border-radius:14px;background:var(--surf);border:1px solid var(--line)">
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
+                <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
+                <span>Liso Hialurónico Clásico (1000 ml)</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
+                <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
+                <span>Shampoo Limpieza Profunda (500 ml)</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--txt)">
+                <span class="mi" style="font-size:14px;color:var(--gold)">check_circle</span>
+                <span>Protector Térmico Instantáneo (250 ml)</span>
+              </div>
+            </div>
           </div>
 
-          <div style="display:flex;gap:8px">
-            <button onClick="{{ addPilar3 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.7);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
-              <span class="mi" style="font-size:18px">shopping_bag</span>
-              <span>Comprar Combo</span>
-            </button>
-            <a href="{{ waPilar3 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
-              <span class="mi" style="font-size:20px">chat</span>
-            </a>
+          <!-- Pricing & Action Row -->
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between">
+              <div style="display:flex;align-items:baseline;gap:8px">
+                <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--txt)">$349.000</span>
+                <span style="font-size:13px;color:var(--dim);text-decoration:line-through;font-weight:600">$390.000</span>
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:var(--gold)">Pack #1 Salón</span>
+            </div>
+
+            <div style="display:flex;gap:8px">
+              <button onClick="{{ addPilar3 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.7);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+                <span class="mi" style="font-size:18px">shopping_bag</span>
+                <span>Comprar Combo</span>
+              </button>
+              <a href="{{ waPilar3 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+                <span class="mi" style="font-size:20px">chat</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -3273,8 +3441,8 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
       </div>
 
       <!-- Main Product Display -->
-      <div style="flex:1;display:grid;place-items:center;padding:18px 0;min-height:260px">
-        <img src="{{ qvImgSrc }}" alt="{{ qvP.name }}" loading="lazy" style="max-width:100%;max-height:380px;object-fit:contain;mix-blend-mode:multiply;transition:transform .5s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.06)" />
+      <div class="qv-modal-img-stage" style="flex:1">
+        <img class="qv-modal-img-el" src="{{ qvImgSrc }}" alt="{{ qvP.name }}" loading="lazy" style="mix-blend-mode:multiply" />
       </div>
 
       <!-- Gallery Thumbnails -->
