@@ -12,7 +12,7 @@ ENV NODE_ENV=production
 ENV PORT=8080
 
 # Exponer puertos
-EXPOSE 8080 3000
+EXPOSE 80 8080 3000
 
 # Comando de arranque del servidor optimizado
 CMD ["node", "server.js"]
