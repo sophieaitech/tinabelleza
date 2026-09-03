@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const pwaDir = path.join(__dirname, 'LYOS Profesional ecommerce PWA v2');
+const pwaDir = fs.existsSync(path.join(__dirname, 'lyos')) ? path.join(__dirname, 'lyos') : path.join(__dirname, 'LYOS Profesional ecommerce PWA v2');
 const indexPath = path.join(pwaDir, 'index.html');
 const tiendaPath = path.join(pwaDir, 'tienda.html');
 

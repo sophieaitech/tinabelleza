@@ -1,7 +1,10 @@
 const fs = require('fs');
 
-const index = fs.readFileSync('LYOS Profesional ecommerce PWA v2/index.html', 'utf8');
-const tienda = fs.readFileSync('LYOS Profesional ecommerce PWA v2/tienda.html', 'utf8');
+const indexPath = fs.existsSync('lyos/index.html') ? 'lyos/index.html' : 'LYOS Profesional ecommerce PWA v2/index.html';
+const tiendaPath = fs.existsSync('lyos/tienda.html') ? 'lyos/tienda.html' : 'LYOS Profesional ecommerce PWA v2/tienda.html';
+
+const index = fs.readFileSync(indexPath, 'utf8');
+const tienda = fs.readFileSync(tiendaPath, 'utf8');
 
 console.log('--- INDEX.HTML (PORTADA) ---');
 console.log('1. Título Fórmulas Más Vendidas:', index.includes('Fórmulas Más Vendidas'));

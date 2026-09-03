@@ -1,7 +1,8 @@
 const fs = require('fs');
 const vm = require('vm');
 
-const html = fs.readFileSync('LYOS Profesional ecommerce PWA v2/tienda.html', 'utf8');
+const tiendaPath = fs.existsSync('lyos/tienda.html') ? 'lyos/tienda.html' : 'LYOS Profesional ecommerce PWA v2/tienda.html';
+const html = fs.readFileSync(tiendaPath, 'utf8');
 const match = html.match(/<script type="text\/x-dc"[\s\S]*?>([\s\S]*?)<\/script>/);
 
 if (!match) {

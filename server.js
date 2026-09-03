@@ -4,7 +4,7 @@ const path = require('path');
 const zlib = require('zlib');
 
 const ROOT = __dirname;
-const PWA_DIR = path.join(ROOT, 'LYOS Profesional ecommerce PWA v2');
+const PWA_DIR = fs.existsSync(path.join(ROOT, 'lyos')) ? path.join(ROOT, 'lyos') : path.join(ROOT, 'LYOS Profesional ecommerce PWA v2');
 
 const MIMES = {
   '.html': 'text/html; charset=utf-8',

@@ -1,6 +1,7 @@
 const fs = require('fs');
 
-const html = fs.readFileSync('LYOS Profesional ecommerce PWA v2/index.html', 'utf8');
+const indexPath = fs.existsSync('lyos/index.html') ? 'lyos/index.html' : 'LYOS Profesional ecommerce PWA v2/index.html';
+const html = fs.readFileSync(indexPath, 'utf8');
 
 // Check unclosed tags or invalid expressions {{ ... }}
 const exprs = html.match(/\{\{([\s\S]*?)\}\}/g) || [];
