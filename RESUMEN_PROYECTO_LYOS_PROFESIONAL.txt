@@ -1,0 +1,184 @@
+================================================================================
+                    LYOS PROFESIONAL - ECOMMERCE & LANDING PWA v2
+                   DOCUMENTO DE CONTROL, RESUMEN TÉCNICO Y ROADMAP
+================================================================================
+Fecha de actualización : 2026-08-29
+Estado actual          : 100% Funcional, Servidor activo, UI Ultra-PRO optimizada.
+Entorno de ejecución   : Node.js v22 / Python 3.14 / HTML5 / CSS3 / PWA Service Worker
+Puertos del servidor   : http://localhost:8080  |  http://localhost:3000
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. RESUMEN EJECUTIVO DEL PROYECTO
+--------------------------------------------------------------------------------
+LYOS Profesional es una plataforma web híbrida (Landing Page + E-commerce PWA)
+de alta conversión para una marca premium de cuidado y alisado capilar sin formol,
+ubicada en Cali, Colombia, con proyección internacional.
+
+Combina una experiencia visual de lujo (colores dorado, blanco marfil y modo oscuro
+profundo, tipografías 'Outfit' y 'DM Sans', micro-animaciones, estética glassmorphism
+y skeuomorfismo 3D) con una arquitectura orientada a la venta rápida, aprobación
+social masiva y cierre de pedidos directo por WhatsApp o seguimiento guiado.
+
+
+--------------------------------------------------------------------------------
+2. ESTRUCTURA Y ARCHIVOS PRINCIPALES
+--------------------------------------------------------------------------------
+Ruta raíz del proyecto:
+c:\Users\sophi\Downloads\Tina Belleza\LYOS Profesional\Website - Ecommerce\
+
+Archivos y carpetas clave:
+├── LYOS Profesional ecommerce PWA v2/
+│   ├── index.html          -> Archivo principal (UI, Estado reactivo, i18n, Checkout)
+│   ├── support.js          -> Motor de runtime reactivo y enlace de componentes
+│   ├── sw.js               -> Service Worker PWA (Caché offline v4, auto-claim)
+│   ├── manifest.json       -> Manifiesto PWA para instalación en Android / iOS / PC
+│   └── assets/             -> Recursos multimedia, fotos de producto, video MP4 y 3D
+│       ├── cat-all-3d.png         -> Mockup 3D: Todos los productos (cubo dorado)
+│       ├── cat-shampoo-3d.png     -> Mockup 3D: Shampoo (botella cosmética y espuma)
+│       ├── cat-alisador-3d.png    -> Mockup 3D: Alisador (ondas a liso espejo)
+│       ├── cat-tratamiento-3d.png -> Mockup 3D: Tratamiento (folículo y sérum)
+│       ├── cat-protector-3d.png   -> Mockup 3D: Termoprotector (sol y escudo dorado)
+│       ├── cat-mascarilla-3d.png  -> Mockup 3D: Mascarilla (turbante spa y estrellas)
+│       ├── video-protector.mp4    -> Video publicitario de marca
+│       ├── liso-hialuronico.jpg   -> Producto Liso Clásico
+│       ├── shampoo.jpg            -> Producto Shampoo Limpieza Profunda
+│       ├── tratamiento.jpg        -> Producto Tratamiento Reparador
+│       ├── protector.jpg          -> Producto Protector Térmico
+│       ├── korea-1l.png           -> Producto Korea Liss (Alisado Coreano)
+│       └── bio-duo.png            -> Producto Bio Intense (Alisado Brasileño)
+├── server.js               -> Servidor Node.js nativo (Dual-port 8080/3000 + Range MP4)
+└── check.js & test-mount.js-> Scripts de validación de sintaxis y expresiones
+
+
+--------------------------------------------------------------------------------
+3. TRABAJO REALIZADO & MEJORAS IMPLEMENTADAS
+--------------------------------------------------------------------------------
+
+[A] ESCALA VISUAL Y BALANCE (Zoom 85%)
+- Se calibró la escala global (`body { zoom: 0.86; }`), permitiendo apreciar todos
+  los elementos con mayor amplitud de pantalla, aire y elegancia visual sin saturación.
+
+[B] CABECERA Y SELECTOR GLOBAL MULTI-IDIOMA & MULTI-DIVISA (4 BANDERAS)
+- Selector de idiomas interactivo con banderas en píldora y menú glassmorphism:
+  * 🇪🇸 Español (COP - Pesos Colombianos) -> Base: $ 320.000 / $ 35.000
+  * 🇺🇸 English (USD - Dólares Estadounidenses) -> Conversión: $ 80 USD / $ 9 USD
+  * 🇧🇷 Português / Brasil (BRL - Reais) -> Conversión: R$ 444 BRL / R$ 49 BRL
+  * 🇰🇷 한국어 / Coreano (KRW - Won) -> Conversión: ₩ 106,667 / ₩ 11,667
+- Función `money(amount, lang)` que recalcula reactivamente los precios de los
+  productos, variantes, miniaturas, envío, cupones y checkout.
+- Sistema de traducción automática `data-i18n` conectado a diccionario `DICT`
+  para títulos de navegación, secciones, botones y fichas.
+
+[C] SELECTOR DE CATEGORÍAS EN 3D MOCKUP ULTRA-FINO
+- Recreación e integración de 6 iconos 3D de alta gama con estética de estudio:
+  1. Todos los productos: Cubo metálico cepillado con logotipo LYOS en relieve.
+  2. Shampoo: Botella cosmética con espuma suave y toques dorados.
+  3. Alisador: Transformación de fibra capilar de crespo a liso espejo 3D.
+  4. Tratamiento: Folículo capilar con gotero de alta precisión y sérum dorado.
+  5. Termo protector: Sol radiante con escudo holográfico y halo luminoso.
+  6. Mascarilla: Turbante de spa con destellos y estrellas doradas.
+- Tarjetas squircle 3D con micro-animación en hover (`translateY(-5px)` + escala),
+  halo dorado VIP en estado activo e indicador inferior.
+- Desplazamiento horizontal táctil optimizado (`scroll-snap`) para teléfonos y tablets.
+
+[D] EXPERIENCIA DE PRODUCTO, QUICK VIEW Y QUICK BUY
+- Ficha técnica rápida modal (`Quick View` / `qvP`): Galería con selector de miniaturas,
+  acordeón de beneficios, ingredientes botánicos, selector de tamaño en ml y
+  selector interactivo de cantidad.
+- Modal de Compra Rápida (`Quick Buy` / `buyP`): Diseñado centrado, adaptable a
+  móviles, con botón directo a WhatsApp con el mensaje del pedido pre-redactado.
+- Sistema de Favoritos (Wishlist): Botón de corazón interactivo en todas las tarjetas
+  con alertas flotantes (*"¡Guardado en Favoritos! ❤️"*).
+
+[E] PRUEBA SOCIAL MASIVA & CARROUSEL DE RESEÑAS DE PROFESIONALES
+- Aprobación social en catálogo con estrellas doradas ★★★★★ (4.9 / 5.0), avatares reales
+  de clientes y estilistas, y distintivos de *"Avalado por +4.200 estilistas"*.
+- Carrusel de reseñas fluido en una sola fila con pistas táctiles (`@keyframes swipeHint`),
+  sellos de verificación de Google Reviews y testimonios reales de salones de belleza.
+
+[F] NOTIFICACIONES FLOTANTES ULTRA-PRO (EMERALD TOASTS)
+- Notificaciones de estilo cristal con borde verde esmeralda brillante (`#25D366`),
+  sello de stock reservado y acceso directo: *"Ver mi carrito & pagar →"*.
+- Feed de compras en vivo simulado para aumentar el FOMO y la confianza de compra.
+
+[G] CARRITO VIP LATERAL & CHECKOUT DE ALTA CONVERSIÓN (HOT SALES)
+- Banner persuasivo de alta demanda con reserva temporal de stock.
+- Barra de envío gratis dinámica en tiempo real (umbral $150.000 COP / proporcional en USD, BRL, KRW).
+- Checkout en 2 Pasos:
+  * Paso 1: Datos de entrega, cálculo de transportadoras (Interrapidísimo, Coordinadora,
+    Servientrega, Mensajería Local Cali, Recogida en Tienda), cupón `LYOS10` (-10%)
+    y botón de confirmación directa a WhatsApp con datos formateados.
+  * Paso 2: Simulador interactivo de guía de despacho y tracking GPS en 5 estados
+    con botón de copiar resumen de compra y notificaciones push simuladas.
+
+[H] SECCIONES EDITORIALES, CERTIFICACIONES Y CONTACTO
+- Sección de Video de Marca con streaming fluido MP4.
+- Certificaciones & Aval INVIMA / Internacional con sellos de garantía legal.
+- Edición Editorial / Magazine de cuidado capilar con estética de revista de lujo.
+- Concierge VIP con selector de intenciones para WhatsApp y agendamiento con Cal.com.
+
+[I] SERVIDOR WEB NODE.JS DUAL-PORT & RESILIENTE
+- Creación de `server.js` nativo que escucha en **puerto 8080 y puerto 3000**
+  simultáneamente, soporta streaming por Range para videos MP4, incluye CORS y
+  envía encabezados `no-cache` para evitar que el navegador congele código viejo.
+
+
+--------------------------------------------------------------------------------
+4. PENDIENTES & PRÓXIMOS PASOS RECOMENDADOS (ROADMAP)
+--------------------------------------------------------------------------------
+
+Cuando retomes el proyecto, los siguientes pasos son ideales para llevar la plataforma
+a nivel enterprise:
+
+1. [ ] INTEGRACIÓN DE PASARELA DE PAGO DIRECTA (GATEWAY)
+       - Integrar Wompi (Bancolombia/Nequi/PSE/Tarjetas), Mercado Pago, PayU o Stripe.
+       - Crear un webhook en backend para confirmación automática de pagos sin salir de la web.
+
+2. [ ] BASE DE DATOS Y GESTIÓN DE INVENTARIO (BACKEND)
+       - Conectar con Supabase o Firebase para persistir el stock real de productos y variantes.
+       - Registro y autenticación de usuarios para ver historial de pedidos y direcciones guardadas.
+
+3. [ ] PANEL DE ADMINISTRACIÓN / DASHBOARD INTERNO
+       - Vista privada para que el equipo de bodega vea pedidos entrantes, genere guías
+         y cambie el estado del tracking de despacho.
+
+4. [ ] TRACKING CONECTADO A APIS DE TRANSPORTADORAS
+       - Conexión vía API con Interrapidísimo / Coordinadora / Servientrega para consultar
+         el estado real de la guía con el número de rastreo.
+
+5. [ ] ANALÍTICA & PÍXELES DE CONVERSIÓN
+       - Instalar Meta Pixel (Facebook/Instagram Ads) con eventos:
+         `PageView`, `ViewContent`, `AddToCart`, `InitiateCheckout`, `Purchase`.
+       - Integrar Google Analytics 4 (GA4) y TikTok Pixel.
+
+6. [ ] GALERÍA DE VIDEOS UGC (USER GENERATED CONTENT)
+       - Agregar carrusel de videos verticales estilo Reels/TikTok con testimonios de
+         clientas mostrando el cabello antes y después de aplicar Liso Hialurónico.
+
+7. [ ] DESPLIEGUE EN PRODUCCIÓN (HOSTING Y DOMINIO)
+       - Subir el repositorio a GitHub.
+       - Conectar con Vercel o Netlify para despliegue global CDN con certificado SSL HTTPS.
+       - Asignar el dominio personalizado de la marca (ej: `lyosprofesional.com`).
+
+
+--------------------------------------------------------------------------------
+5. COMANDOS RÁPIDOS PARA INICIAR EL PROYECTO
+--------------------------------------------------------------------------------
+
+Para levantar el servidor en cualquier momento desde la terminal:
+1. Abrir terminal en la carpeta raíz del proyecto:
+   cd "c:\Users\sophi\Downloads\Tina Belleza\LYOS Profesional\Website - Ecommerce"
+
+2. Ejecutar el servidor nativo:
+   node server.js
+
+3. Abrir en el navegador:
+   http://localhost:8080/
+   ó
+   http://localhost:3000/
+
+--------------------------------------------------------------------------------
+Fin del reporte. Proyecto preparado para escalabilidad continua.
+================================================================================

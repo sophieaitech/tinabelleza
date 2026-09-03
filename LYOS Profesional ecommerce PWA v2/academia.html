@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LYOS Academia | Especialización Capilar & Alisados 0% Formol</title>
+<meta name="description" content="Seminario de Alta Especialización Capilar con Cristina Gutiérrez. Tricología, Alisado Hialurónico y Negocio de Salón. Sede Cali & Virtual.">
+<meta name="theme-color" content="#0B0A08">
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
+
+<!-- Cal.com Embed Engine -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "lyospro", {origin:"https://app.cal.com"});
+  Cal.config = Cal.config || {};
+  Cal.config.forwardQueryParams = true;
+</script>
+
+<style>
+:root{
+  --bg:#0B0A08;--bg2:#12100C;--surf:#171410;--surf2:#201B14;--surf3:#2C251C;
+  --line:rgba(232,214,180,.12);--line2:rgba(232,214,180,.24);
+  --txt:#FDFBF7;--mut:#B5AC9F;--dim:#7A7265;
+  --gold:#D9B679;--goldi:#F1DEB8;--gold2:#E8C988;--onGold:#140F06;
+  --goldGrad:linear-gradient(135deg,#F5E2BE 0%,#D9B679 48%,#966F28 100%);
+  --goldGrad2:linear-gradient(135deg,rgba(245,226,190,.15) 0%,rgba(217,182,121,.05) 100%);
+  --glass:rgba(14,11,8,.82);
+  --e1:0 4px 12px rgba(0,0,0,.5);--e2:0 14px 38px -10px rgba(0,0,0,.75);--e3:0 30px 80px -20px rgba(0,0,0,.9);
+}
+[data-theme="light"]{
+  --bg:#FBF8F2;--bg2:#F5EEE2;--surf:#FFFFFF;--surf2:#FAF5EC;--surf3:#F0E5D4;
+  --line:rgba(28,22,12,.10);--line2:rgba(28,22,12,.20);
+  --txt:#16120D;--mut:#6A6154;--dim:#9A9184;
+  --gold:#A87C2F;--goldi:#C9A45C;--gold2:#8A6425;--onGold:#FFFDF7;
+  --goldGrad:linear-gradient(135deg,#E2C88E 0%,#C39D51 48%,#8A6425 100%);
+  --goldGrad2:linear-gradient(135deg,rgba(226,200,142,.2) 0%,rgba(195,157,81,.08) 100%);
+  --glass:rgba(251,248,242,.88);
+  --e1:0 2px 8px rgba(60,45,20,.08);--e2:0 12px 32px -10px rgba(60,45,20,.18);--e3:0 28px 70px -20px rgba(60,45,20,.26);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden;zoom:0.86;transition:background-color .3s ease,color .3s ease}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:transparent}
+.mi{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none}
+
+.desk{display:none!important}
+.mob-btn{display:grid!important}
+@media(min-width:980px){
+  .desk{display:flex!important}
+  .mob-btn{display:none!important}
+}
+
+/* Mobile Drawer */
+#mobileDrawer{
+  position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;
+  background:var(--surf);border-left:1.5px solid var(--line2);box-shadow:var(--e3);
+  z-index:100;padding:24px 20px;display:flex;flex-direction:column;justify-content:space-between;
+  transition:right .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#mobileDrawer.open{right:0}
+#drawerOverlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);
+  z-index:95;opacity:0;pointer-events:none;transition:opacity .3s;
+}
+#drawerOverlay.open{opacity:1;pointer-events:auto}
+
+/* Animations */
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.12)}}
+@keyframes pulseGlow{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:.9;transform:scale(1.04)}}
+
+/* UI Elements */
+.badge-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:999px;background:rgba(217,182,121,.12);border:1px solid rgba(217,182,121,.3);color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;backdrop-filter:blur(10px)}
+.btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 30px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:14.5px;letter-spacing:.02em;box-shadow:0 10px 30px -8px rgba(217,182,121,.5);transition:all .25s}
+.btn-gold:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 14px 38px -6px rgba(217,182,121,.7)}
+.btn-glass{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:52px;padding:0 26px;border-radius:999px;background:rgba(255,253,248,.08);backdrop-filter:blur(16px);border:1.5px solid var(--line2);color:var(--txt);font-weight:700;font-size:14px;transition:all .25s}
+.btn-glass:hover{background:rgba(255,253,248,.16);border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+.card-luxury{border-radius:28px;background:var(--surf);border:1.5px solid var(--line);box-shadow:var(--e1);transition:all .3s;overflow:hidden;position:relative}
+.card-luxury:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:var(--e3)}
+
+.faq-card{border-radius:20px;background:var(--surf);border:1.5px solid var(--line);padding:18px 22px;cursor:pointer;transition:all .25s}
+.faq-card:hover{border-color:var(--gold)}
+.faq-card.active .faq-desc{display:block}
+.faq-card.active .faq-arrow{transform:rotate(180deg)}
+.faq-desc{display:none;padding-top:12px;margin-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--mut);line-height:1.65}
+
+.floating-wa{position:fixed;right:22px;bottom:22px;z-index:90;width:58px;height:58px;border-radius:999px;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -6px rgba(37,211,102,.6);transition:all .25s}
+.floating-wa:hover{transform:scale(1.08);filter:brightness(1.08)}
+
+/* ========================================================================= */
+/* ULTRA-MINIMALIST MOBILE FIRST RESPONSIVE STYLES (ACADEMIA LYOS)           */
+/* ========================================================================= */
+@media (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  .hide-mob {
+    display: none !important;
+  }
+  section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  .btn-gold, .btn-glass {
+    width: 100% !important;
+    height: 44px !important;
+    font-size: 13.5px !important;
+    padding: 0 16px !important;
+  }
+  button, a[style*="height:"] {
+    max-height: 46px !important;
+  }
+  .card-luxury {
+    border-radius: 20px !important;
+  }
+}
+
+</style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://app.cal.com">
+</head>
+<body>
+
+<!-- ====================================================================== -->
+<!-- HEADER DE NAVEGACIÓN MINIMALISTA                                       -->
+<!-- ====================================================================== -->
+<!-- Drawer Overlay -->
+<div id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+<!-- Slide-Out Mobile Drawer -->
+<div id="mobileDrawer">
+  <div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line2);margin-bottom:20px">
+      <a href="index.html" style="display:flex;flex-direction:column;line-height:1">
+        <span style="font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;color:var(--txt)">LY<span style="background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">O</span>S</span>
+        <span style="font-size:8px;letter-spacing:.4em;color:var(--gold);font-weight:800;margin-top:2px">ACADEMIA</span>
+      </a>
+      <button onclick="toggleDrawer()" aria-label="Cerrar menú" style="width:36px;height:36px;border-radius:999px;border:1px solid var(--line2);display:grid;place-items:center;color:var(--txt)">
+        <span class="mi" style="font-size:20px">close</span>
+      </button>
+    </div>
+
+    <div style="display:grid;gap:12px;font-size:14px;font-weight:700">
+      <a href="index.html" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;background:var(--surf2);color:var(--txt);display:flex;align-items:center;gap:8px">
+        <span class="mi" style="font-size:18px;color:var(--gold)">storefront</span>
+        <span>← Volver a LYOS Profesional</span>
+      </a>
+      <a href="#modulos" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;color:var(--txt);display:flex;align-items:center;gap:8px">
+        <span class="mi" style="font-size:18px;color:var(--gold)">menu_book</span>
+        <span>4 Módulos Técnicos</span>
+      </a>
+      <a href="#modalidades" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;color:var(--txt);display:flex;align-items:center;gap:8px">
+        <span class="mi" style="font-size:18px;color:var(--gold)">tune</span>
+        <span>Modalidades (Cali / Virtual)</span>
+      </a>
+      <a href="#roi" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;color:var(--txt);display:flex;align-items:center;gap:8px">
+        <span class="mi" style="font-size:18px;color:var(--gold)">calculate</span>
+        <span>Calculadora de Rentabilidad</span>
+      </a>
+      <a href="#agendar" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;color:var(--txt);display:flex;align-items:center;gap:8px">
+        <span class="mi" style="font-size:18px;color:var(--gold)">event_available</span>
+        <span>Agendar Asesoría 1 a 1</span>
+      </a>
+      <a href="#faq" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;color:var(--txt);display:flex;align-items:center;gap:8px">
+        <span class="mi" style="font-size:18px;color:var(--gold)">help</span>
+        <span>Preguntas Frecuentes</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="padding-top:16px;border-top:1px solid var(--line2)">
+    <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20inscribirme%20en%20la%20Academia%20Capilar%20LYOS." target="_blank" class="btn-gold" style="width:100%;height:44px;font-size:13.5px">
+      <span>Inscribirme</span>
+    </a>
+  </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- HEADER DE NAVEGACIÓN PRINCIPAL (PERFECTAMENTE ALINEADO Y CENTRADO)     -->
+<!-- ====================================================================== -->
+<header style="position:sticky;top:0;z-index:80;backdrop-filter:blur(28px) saturate(1.8);-webkit-backdrop-filter:blur(28px) saturate(1.8);background:var(--glass);border-bottom:1px solid var(--line);transition:background-color .3s, border-color .3s">
+  <div style="max-width:1320px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+    
+    <!-- Left: Brand Logo -->
+    <a href="index.html" aria-label="LYOS Academia Inicio" style="display:flex;flex-direction:column;line-height:1;padding:4px 0;flex:none;text-decoration:none">
+      <span style="font-family:'Outfit',sans-serif;font-weight:900;font-size:26px;letter-spacing:-.04em;color:var(--txt)">LY<span style="background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">O</span>S</span>
+      <span style="font-size:8px;letter-spacing:.42em;color:var(--gold);font-weight:800;margin-top:2px">ACADEMIA</span>
+    </a>
+
+    <!-- Center: Desktop Navigation Pills -->
+    <nav class="desk" style="display:flex;align-items:center;gap:3px;padding:4px 6px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);flex:none">
+      <a href="index.html" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">← LYOS Profesional</a>
+      <a href="#modulos" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">4 Módulos</a>
+      <a href="#modalidades" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">Modalidades</a>
+      <a href="#roi" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">Calculadora ROI</a>
+      <a href="#agendar" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">Agendar</a>
+      <a href="#faq" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">FAQ</a>
+    </nav>
+
+    <!-- Right: Utility Controls & Primary CTA -->
+    <div style="display:flex;align-items:center;gap:8px;flex:none">
+      
+      <!-- Theme Switcher -->
+      <button id="themeBtn" aria-label="Cambiar tema claro / oscuro" title="Cambiar tema" style="width:39px;height:39px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);display:grid;place-items:center;cursor:pointer;color:var(--txt);transition:all .2s">
+        <span class="mi" id="themeIcon" style="font-size:19px;color:var(--gold)">light_mode</span>
+      </button>
+
+      <!-- Primary Action (Desktop) -->
+      <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20inscribirme%20en%20la%20Academia%20Capilar%20LYOS." target="_blank" class="desk btn-gold" style="height:39px;padding:0 18px;font-size:12.5px;white-space:nowrap">
+        <span>Inscribirme</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button onclick="toggleDrawer()" class="mob-btn" aria-label="Abrir menú" style="width:39px;height:39px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);place-items:center;cursor:pointer;color:var(--txt)">
+        <span class="mi" style="font-size:22px">menu</span>
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+<!-- ====================================================================== -->
+<!-- HERO BANNER FULL-BLEED (IGUAL DE IMPACTANTE QUE LA PÁGINA DE INICIO)   -->
+<!-- ====================================================================== -->
+<section style="position:relative;min-height:clamp(620px,94vh,880px);display:flex;align-items:flex-end;padding:clamp(120px,16vw,160px) 0 clamp(48px,6vw,72px);overflow:hidden;background:var(--bg)">
+  
+  <!-- Cinematic Background with Ken Burns Zoom -->
+  <div class="hero-bg-fallback" style="position:absolute;inset:0;background:url('assets/equipo-profesionales-navy.jpg') center 32% / cover no-repeat;background-color:#0B0A08"></div>
+  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;transition:opacity 0.6s ease" preload="metadata">
+    <source src="assets/brand-feature.mp4" type="video/mp4">
+  </video>
+  
+  <!-- Luxury Dark Overlay Gradients -->
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,8,.65) 0%,rgba(11,10,8,.35) 40%,rgba(11,10,8,.82) 78%,var(--bg) 100%)"></div>
+
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px;position:relative;z-index:2;width:100%">
+    
+    <div style="max-width:880px;margin:0 auto;text-align:center">
+      
+      <!-- Badge -->
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:999px;border:1px solid rgba(241,222,184,.35);background:rgba(11,10,8,.55);backdrop-filter:blur(16px);margin-bottom:18px">
+        <span class="mi" style="font-size:16px;color:var(--gold)">school</span>
+        <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:#F1DEB8">ACADEMIA CAPILAR DE ALTA GAMA · CALI &amp; VIRTUAL</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(38px,6.8vw,82px);line-height:.92;letter-spacing:-.045em;margin:0;color:#FFFDF8;text-shadow:0 14px 40px rgba(0,0,0,.6)">
+        DOMINA EL LISO ESPEJO<br>
+        <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.92em;letter-spacing:0;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">0% Formol &amp; Alta Rentabilidad</span>
+      </h1>
+
+      <!-- Short Punchy Subtitle -->
+      <p style="max-width:58ch;margin:18px auto 0;font-size:clamp(15px,1.6vw,19px);line-height:1.6;color:rgba(255,253,248,.86);font-weight:400">
+        Especialización técnica con <strong>Cristina Gutiérrez</strong> (CEO Tina Belleza). Diagnóstico con microcámara, formulación hialurónica y el método para facturar <strong>+$3.200.000 COP netos</strong> por litro en salón.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:28px">
+        <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20las%20pr%C3%B3ximas%20fechas%20y%20precios%20de%20la%20Academia%20LYOS." target="_blank" class="btn-gold" style="height:48px;padding:0 28px;font-size:14.5px">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>
+          <span>Apartar Cupo</span>
+        </a>
+        <a href="#modulos" class="btn-glass" style="height:48px;padding:0 24px;font-size:14.5px">
+          <span class="mi" style="font-size:19px;color:var(--gold)">menu_book</span>
+          <span>Módulos</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- 4 High-Impact Stat Pills (Sleek Minimalist Strip) -->
+    <div style="margin-top:clamp(40px,5vw,60px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px">
+      
+      <div style="padding:16px 20px;border-radius:20px;background:rgba(23,20,16,.7);backdrop-filter:blur(16px);border:1px solid var(--line2);display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;border-radius:12px;background:var(--goldGrad);color:var(--onGold);display:grid;place-items:center;flex:none;font-weight:900">01</div>
+        <div>
+          <strong style="font-size:14px;color:#FFF;display:block">Tricología 200x</strong>
+          <span style="font-size:11.5px;color:var(--mut)">Microcámara digital</span>
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;border-radius:20px;background:rgba(23,20,16,.7);backdrop-filter:blur(16px);border:1px solid var(--line2);display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;border-radius:12px;background:var(--goldGrad);color:var(--onGold);display:grid;place-items:center;flex:none;font-weight:900">02</div>
+        <div>
+          <strong style="font-size:14px;color:#FFF;display:block">0% Formol</strong>
+          <span style="font-size:11.5px;color:var(--mut)">Ácido Hialurónico puro</span>
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;border-radius:20px;background:rgba(23,20,16,.7);backdrop-filter:blur(16px);border:1px solid var(--line2);display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;border-radius:12px;background:var(--goldGrad);color:var(--onGold);display:grid;place-items:center;flex:none;font-weight:900">03</div>
+        <div>
+          <strong style="font-size:14px;color:#FFF;display:block">Fototerapia</strong>
+          <span style="font-size:11.5px;color:var(--mut)">Luz LED de salón</span>
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;border-radius:20px;background:rgba(23,20,16,.7);backdrop-filter:blur(16px);border:1px solid var(--line2);display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;border-radius:12px;background:var(--goldGrad);color:var(--onGold);display:grid;place-items:center;flex:none;font-weight:900">04</div>
+        <div>
+          <strong style="font-size:14px;color:#FFF;display:block">+$3.2M COP/L</strong>
+          <span style="font-size:11.5px;color:var(--mut)">Rentabilidad neta</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- CRISTINA GUTIÉRREZ SPOTLIGHT (EDITORIAL LUXURY BANNER)                -->
+<!-- ====================================================================== -->
+<section style="padding:clamp(48px,6vw,80px) 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px">
+    
+    <div style="padding:clamp(28px,4vw,48px);border-radius:32px;background:linear-gradient(135deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--gold);box-shadow:var(--e3);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,4vw,48px);align-items:center">
+      
+      <!-- Photo -->
+      <div style="position:relative;border-radius:24px;overflow:hidden;border:2px solid var(--line2);box-shadow:var(--e2);max-height:360px">
+        <img src="assets/cristina-gutierrez-ceo.jpg" alt="Cristina Gutiérrez CEO LYOS" style="width:100%;height:100%;object-fit:cover;display:block" / loading="lazy" decoding="async">
+        <div style="position:absolute;bottom:0;inset-x:0;padding:14px 18px;background:linear-gradient(0deg,rgba(11,10,8,.94) 0%,transparent 100%);display:flex;justify-content:space-between;align-items:flex-end;gap:10px">
+          <div>
+            <span style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:800;color:#FFF;display:block">Cristina Gutiérrez</span>
+            <span style="font-size:12px;color:var(--gold);font-weight:700">CEO Tina Belleza &amp; Master Trainer LYOS</span>
+          </div>
+          <a href="https://www.instagram.com/tinabelleza/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:rgba(0,149,246,.2);border:1px solid rgba(0,149,246,.45);color:#FFF;font-size:11px;font-weight:800;text-decoration:none;backdrop-filter:blur(8px)">
+            <span>@tinabelleza</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="#0095F6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quote -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span class="badge-pill">VISIÓN DE LA FUNDADORA</span>
+        
+        <blockquote style="margin:0;font-family:'Outfit',sans-serif;font-size:clamp(17px,2vw,22px);font-weight:600;line-height:1.5;color:var(--txt);font-style:italic">
+          “No enseñamos recetas al azar: enseñamos la ciencia detrás del cabello sano. He perfeccionado estas técnicas transformando miles de cabellos en Tina Belleza para que lleves tu salón a un nivel de élite.”
+        </blockquote>
+
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:14px;border-top:1px solid var(--line2);font-size:13px;font-weight:700">
+          <span style="color:var(--gold)">✓ +10 Años de Trayectoria</span>
+          <span style="color:var(--gold)">✓ +4.200 Estilistas Formados</span>
+          <span style="color:var(--gold)">✓ Sede en Cali, Colombia</span>
+          <a href="https://www.instagram.com/tinabelleza/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:#F1DEB8;text-decoration:none;font-size:12px;padding:3px 10px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3)">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>@tinabelleza (33.6K)</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- COMUNIDAD & EQUIPO ACADEMIA LYOS (PROFESIONALES CERTIFICADOS)          -->
+<!-- ====================================================================== -->
+<section style="padding:clamp(36px,5vw,56px) 0;background:var(--bg)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px">
+    <div style="border-radius:32px;background:linear-gradient(135deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--gold);box-shadow:var(--e3);padding:clamp(26px,4vw,42px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px;align-items:center;position:relative;overflow:hidden">
+      
+      <div style="display:flex;flex-direction:column;gap:14px;z-index:2">
+        <div style="display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800">
+          <span class="mi" style="font-size:16px">school</span>
+          <span>FORMACIÓN PROFESIONAL CAPILAR</span>
+        </div>
+        
+        <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(24px,3.4vw,38px);font-weight:900;margin:0;color:var(--txt);line-height:1.15;letter-spacing:-.02em">
+          Academia LYOS de Cuidado Capilar
+        </h2>
+        
+        <p style="font-size:14.5px;color:var(--mut);line-height:1.65;margin:0;max-width:52ch">
+          Especialízate con <strong>Cristina Gutiérrez</strong> en Tricología con Microcámara, Alisados 0% Formol y Rentabilidad de Salón. Modalidades Presencial (Cali) y Virtual en Directo.
+        </p>
+        
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+          <a href="#modulos" class="btn-gold" style="height:44px;padding:0 22px;font-size:13px">
+            <span class="mi" style="font-size:18px">menu_book</span>
+            <span>Ver Programa</span>
+          </a>
+          <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20las%20pr%C3%B3ximas%20fechas%20y%20precios%20de%20la%20Academia%20LYOS." target="_blank" class="btn-glass" style="height:44px;padding:0 20px;font-size:13px">
+            <span class="mi" style="font-size:18px;color:#25D366">chat</span>
+            <span>Próximas Fechas</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="position:relative;border-radius:24px;overflow:hidden;border:1.5px solid var(--line2);box-shadow:var(--e2);height:100%;min-height:220px;max-height:280px">
+        <img src="assets/equipo-profesionales-navy.jpg" alt="Equipo y Alumnas Academia LYOS" style="width:100%;height:100%;object-fit:cover;object-position:center 20%" loading="lazy" decoding="async">
+        <div style="position:absolute;bottom:12px;left:14px;right:14px;padding:6px 14px;border-radius:999px;background:rgba(14,11,7,.82);backdrop-filter:blur(10px);border:1px solid rgba(241,222,184,.3);color:#F1DEB8;font-size:11px;font-weight:700;display:inline-flex;align-items:center;gap:6px;width:fit-content">
+          <span style="width:6px;height:6px;border-radius:999px;background:var(--gold);display:inline-block"></span>
+          <span>Equipo Docente &amp; Salones Certificados</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 4 MÓDULOS DE ALTA ESPECIALIZACIÓN (VISUAL FIRST & MINIMALIST)          -->
+<!-- ====================================================================== -->
+<section id="modulos" style="padding:clamp(68px,9vw,110px) 0;background:var(--bg);position:relative">
+  
+  <!-- Subtle ambient golden glow in background -->
+  <div style="position:absolute;top:10%;left:50%;transform:translateX(-50%);width:min(1100px,95vw);height:350px;background:radial-gradient(ellipse,rgba(217,182,121,.09) 0%,rgba(169,124,63,.02) 55%,transparent 70%);filter:blur(60px);pointer-events:none"></div>
+
+  <div style="max-width:1360px;margin:0 auto;padding:0 20px;position:relative;z-index:2">
+    
+    <!-- Editorial Header with Persuasive Pitch -->
+    <div style="text-align:center;max-width:840px;margin:0 auto clamp(36px,5vw,56px)">
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:999px;background:rgba(217,182,121,.12);border:1.5px solid rgba(217,182,121,.38);margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,.25)">
+        <span class="mi" style="font-size:16px;color:var(--gold)">local_fire_department</span>
+        <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--gold)">CONVOCATORIA ABIERTA · PREVENTA VIP</span>
+      </div>
+
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-.035em;margin:0;color:var(--txt);line-height:1.02">
+        4 Módulos de Alta Especialización<br>
+        <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.9em;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">De Estilista a Especialista de Élite</span>
+      </h2>
+
+      <p style="font-size:clamp(14.5px,1.6vw,17.5px);color:var(--mut);line-height:1.68;margin:16px auto 0;max-width:62ch">
+        Aprende el método científico que te permite cobrar tarifas premium ($220.000 – $450.000 COP), diagnosticar con microcámara computarizada y fidelizar clientas exigentes con 0% formol.
+      </p>
+    </div>
+
+    <!-- 4 High-Impact Tall Modules Grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:24px">
+      
+      <!-- MÓDULO 01 -->
+      <div class="card-luxury" style="display:flex;flex-direction:column;justify-content:space-between;border-radius:28px;background:linear-gradient(165deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);transition:all .35s ease" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-6px)';this.style.boxShadow='0 22px 50px -14px rgba(217,182,121,.25)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none';this.style.boxShadow='var(--e2)'">
+        
+        <!-- Tall Photo Container -->
+        <div style="position:relative;height:clamp(280px,26vw,340px);overflow:hidden;background:#0D0B08">
+          <img src="assets/academia-capilografo.jpg" alt="Diagnóstico Tricológico con Capilógrafo 200x" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" />
+          
+          <!-- Top Badges -->
+          <div style="position:absolute;top:14px;left:14px;right:14px;display:flex;align-items:center;justify-content:space-between;z-index:3">
+            <span style="padding:5px 13px;border-radius:999px;background:rgba(14,11,7,.88);backdrop-filter:blur(10px);border:1px solid var(--gold);color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:.12em">MÓDULO 01</span>
+            <span style="padding:4px 10px;border-radius:999px;background:rgba(217,182,121,.18);backdrop-filter:blur(8px);border:1px solid rgba(217,182,121,.5);color:#F1DEB8;font-size:10px;font-weight:800">★ ALTA DEMANDA</span>
+          </div>
+
+          <!-- Bottom Image Gradient Vignette -->
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(22,19,15,.98) 0%,rgba(22,19,15,.25) 45%,transparent 100%)"></div>
+
+          <!-- Floating Skill Tag on bottom of photo -->
+          <div style="position:absolute;bottom:14px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;color:#F1DEB8;font-size:12px;font-weight:700">
+            <span class="mi" style="font-size:16px;color:var(--gold)">biotech</span>
+            <span>Microcámara Digital 200x</span>
+          </div>
+        </div>
+
+        <!-- Card Content Body -->
+        <div style="padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:18px">
+          <div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:21px;font-weight:900;margin:0 0 10px;color:var(--txt);letter-spacing:-.02em">
+              Tricología &amp; Capilógrafo 200x
+            </h3>
+            <p style="font-size:13.5px;line-height:1.65;color:var(--mut);margin:0">
+              Analiza en vivo frente a tu clienta el estado de la cutícula, el bulbo y la porosidad folicular. Convierte un diagnóstico en un servicio cobrable y justifica presupuestos premium.
+            </p>
+
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Cámara 200x</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Test Elasticidad</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:#25D366;font-weight:700;border:1px solid rgba(37,211,102,.3)">+ Rentabilidad</span>
+            </div>
+          </div>
+
+          <!-- Subtle Action Link -->
+          <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20los%20detalles%20del%20Modulo%201%20(Tricologia%20y%20Capilografo)." target="_blank" style="display:inline-flex;align-items:center;justify-content:space-between;height:42px;padding:0 18px;border-radius:999px;background:var(--surf3);border:1px solid var(--line2);color:var(--txt);font-size:12.5px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--line2)';this.style.color='var(--txt)'">
+            <span>Ver Temario</span>
+            <span class="mi" style="font-size:17px;color:var(--gold)">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- MÓDULO 02 -->
+      <div class="card-luxury" style="display:flex;flex-direction:column;justify-content:space-between;border-radius:28px;background:linear-gradient(165deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--gold);box-shadow:var(--e2);transition:all .35s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 22px 50px -14px rgba(217,182,121,.3)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--e2)'">
+        
+        <!-- Tall Photo Container -->
+        <div style="position:relative;height:clamp(280px,26vw,340px);overflow:hidden;background:#0D0B08">
+          <img src="assets/academia-alisado.jpg" alt="Técnicas de Alisado Tecnológico 0% Formol" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" />
+          
+          <!-- Top Badges -->
+          <div style="position:absolute;top:14px;left:14px;right:14px;display:flex;align-items:center;justify-content:space-between;z-index:3">
+            <span style="padding:5px 13px;border-radius:999px;background:rgba(14,11,7,.88);backdrop-filter:blur(10px);border:1px solid var(--gold);color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:.12em">MÓDULO 02</span>
+            <span style="padding:4px 10px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-size:10px;font-weight:900">🔥 PILAR ESTRELLA</span>
+          </div>
+
+          <!-- Bottom Image Gradient Vignette -->
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(22,19,15,.98) 0%,rgba(22,19,15,.25) 45%,transparent 100%)"></div>
+
+          <!-- Floating Skill Tag on bottom of photo -->
+          <div style="position:absolute;bottom:14px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;color:#F1DEB8;font-size:12px;font-weight:700">
+            <span class="mi" style="font-size:16px;color:var(--gold)">bolt</span>
+            <span>Curva Térmica &amp; Cero Humo</span>
+          </div>
+        </div>
+
+        <!-- Card Content Body -->
+        <div style="padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:18px">
+          <div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:21px;font-weight:900;margin:0 0 10px;color:var(--txt);letter-spacing:-.02em">
+              Alisados 0% Formol &amp; Curva Térmica
+            </h3>
+            <p style="font-size:13.5px;line-height:1.65;color:var(--mut);margin:0">
+              Protocolos de sellado espejo para cabellos afro rebeldes y rubias decoloradas sin quemar la fibra. Cero picazón en ojos, sin humo tóxico y con brillo diamantado superior a 3 meses.
+            </p>
+
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Liso Hialurónico</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Bio Intense 🇧🇷</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:#25D366;font-weight:700;border:1px solid rgba(37,211,102,.3)">Rubias VIP</span>
+            </div>
+          </div>
+
+          <!-- Subtle Action Link -->
+          <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20los%20detalles%20del%20Modulo%202%20(Alisados%200%20Formol)." target="_blank" style="display:inline-flex;align-items:center;justify-content:space-between;height:42px;padding:0 18px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-size:12.5px;font-weight:800;text-decoration:none;box-shadow:0 8px 18px -4px rgba(217,182,121,.5);transition:all .2s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+            <span>Ver Técnicas</span>
+            <span class="mi" style="font-size:17px">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- MÓDULO 03 -->
+      <div class="card-luxury" style="display:flex;flex-direction:column;justify-content:space-between;border-radius:28px;background:linear-gradient(165deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);transition:all .35s ease" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-6px)';this.style.boxShadow='0 22px 50px -14px rgba(217,182,121,.25)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none';this.style.boxShadow='var(--e2)'">
+        
+        <!-- Tall Photo Container -->
+        <div style="position:relative;height:clamp(280px,26vw,340px);overflow:hidden;background:#0D0B08">
+          <img src="assets/academia-terapia.jpg" alt="Terapia Anticaída y Salud Folicular" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" />
+          
+          <!-- Top Badges -->
+          <div style="position:absolute;top:14px;left:14px;right:14px;display:flex;align-items:center;justify-content:space-between;z-index:3">
+            <span style="padding:5px 13px;border-radius:999px;background:rgba(14,11,7,.88);backdrop-filter:blur(10px);border:1px solid var(--gold);color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:.12em">MÓDULO 03</span>
+            <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.14);backdrop-filter:blur(8px);border:1px solid rgba(37,211,102,.4);color:#25D366;font-size:10px;font-weight:800">SPA CAPILAR</span>
+          </div>
+
+          <!-- Bottom Image Gradient Vignette -->
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(22,19,15,.98) 0%,rgba(22,19,15,.25) 45%,transparent 100%)"></div>
+
+          <!-- Floating Skill Tag on bottom of photo -->
+          <div style="position:absolute;bottom:14px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;color:#F1DEB8;font-size:12px;font-weight:700">
+            <span class="mi" style="font-size:16px;color:var(--gold)">spa</span>
+            <span>Fototerapia &amp; Rescate Lipídico</span>
+          </div>
+        </div>
+
+        <!-- Card Content Body -->
+        <div style="padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:18px">
+          <div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:21px;font-weight:900;margin:0 0 10px;color:var(--txt);letter-spacing:-.02em">
+              Terapia Anticaída &amp; Rescate
+            </h3>
+            <p style="font-size:13.5px;line-height:1.65;color:var(--mut);margin:0">
+              Protocolos de rescate para cabellos quebradizos o con daño químico extremo. Oxigenación folicular, fototerapia LED y recarga lipídica que transforman cabellos desahuciados.
+            </p>
+
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Fototerapia LED</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Densificación</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">High-Ticket</span>
+            </div>
+          </div>
+
+          <!-- Subtle Action Link -->
+          <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20los%20detalles%20del%20Modulo%203%20(Terapia%20Anticaida)." target="_blank" style="display:inline-flex;align-items:center;justify-content:space-between;height:42px;padding:0 18px;border-radius:999px;background:var(--surf3);border:1px solid var(--line2);color:var(--txt);font-size:12.5px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--line2)';this.style.color='var(--txt)'">
+            <span>Ver Protocolos</span>
+            <span class="mi" style="font-size:17px;color:var(--gold)">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- MÓDULO 04 -->
+      <div class="card-luxury" style="display:flex;flex-direction:column;justify-content:space-between;border-radius:28px;background:linear-gradient(165deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);transition:all .35s ease" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-6px)';this.style.boxShadow='0 22px 50px -14px rgba(217,182,121,.25)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none';this.style.boxShadow='var(--e2)'">
+        
+        <!-- Tall Photo Container -->
+        <div style="position:relative;height:clamp(280px,26vw,340px);overflow:hidden;background:#0D0B08">
+          <img src="assets/academia-aula.jpg" alt="Práctica en Vivo en Aula y Negocio de Salón" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" />
+          
+          <!-- Top Badges -->
+          <div style="position:absolute;top:14px;left:14px;right:14px;display:flex;align-items:center;justify-content:space-between;z-index:3">
+            <span style="padding:5px 13px;border-radius:999px;background:rgba(14,11,7,.88);backdrop-filter:blur(10px);border:1px solid var(--gold);color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:.12em">MÓDULO 04</span>
+            <span style="padding:4px 10px;border-radius:999px;background:rgba(217,182,121,.18);backdrop-filter:blur(8px);border:1px solid rgba(217,182,121,.5);color:#F1DEB8;font-size:10px;font-weight:800">DIPLOMA OFICIAL</span>
+          </div>
+
+          <!-- Bottom Image Gradient Vignette -->
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(22,19,15,.98) 0%,rgba(22,19,15,.25) 45%,transparent 100%)"></div>
+
+          <!-- Floating Skill Tag on bottom of photo -->
+          <div style="position:absolute;bottom:14px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;color:#F1DEB8;font-size:12px;font-weight:700">
+            <span class="mi" style="font-size:16px;color:var(--gold)">workspace_premium</span>
+            <span>Modelos Reales en Salón</span>
+          </div>
+        </div>
+
+        <!-- Card Content Body -->
+        <div style="padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:18px">
+          <div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:21px;font-weight:900;margin:0 0 10px;color:var(--txt);letter-spacing:-.02em">
+              Práctica en Vivo &amp; Negocio VIP
+            </h3>
+            <p style="font-size:13.5px;line-height:1.65;color:var(--mut);margin:0">
+              Práctica asistida con modelos reales de inicio a fin. Aprende a estructurar tus tarifas, cross-selling de kits de postcuidado y genera más de <strong>+$3.2M COP netos</strong> por cada litro de producto.
+            </p>
+
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Modelos Reales</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:var(--gold);font-weight:700;border:1px solid var(--line)">Tarifas Élite</span>
+              <span style="font-size:11px;padding:3.5px 9px;border-radius:7px;background:var(--surf3);color:#25D366;font-weight:700;border:1px solid rgba(37,211,102,.3)">+300% ROI</span>
+            </div>
+          </div>
+
+          <!-- Subtle Action Link -->
+          <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20los%20detalles%20del%20Modulo%204%20(Practica%20y%20Negocio)." target="_blank" style="display:inline-flex;align-items:center;justify-content:space-between;height:42px;padding:0 18px;border-radius:999px;background:var(--surf3);border:1px solid var(--line2);color:var(--txt);font-size:12.5px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--line2)';this.style.color='var(--txt)'">
+            <span>Ver Práctica</span>
+            <span class="mi" style="font-size:17px;color:var(--gold)">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HOT SALE / PREVENTA VIP OPPORTUNITY STRIP -->
+    <div style="margin-top:clamp(36px,5vw,52px);padding:clamp(20px,3.5vw,30px) clamp(20px,4vw,36px);border-radius:28px;background:linear-gradient(135deg,rgba(217,182,121,.16) 0%,rgba(18,15,12,.92) 50%,rgba(14,11,7,.98) 100%);border:1.5px solid var(--gold);box-shadow:0 18px 45px -12px rgba(0,0,0,.65);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
+      
+      <div style="display:flex;align-items:center;gap:18px">
+        <div style="width:52px;height:52px;border-radius:999px;background:var(--goldGrad);color:#140F06;display:grid;place-items:center;font-size:26px;flex:none;box-shadow:0 8px 24px -4px rgba(217,182,121,.6)">
+          <span class="mi" style="font-size:28px">local_fire_department</span>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <span style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">PREVENTA EXCLUSIVA ESTILISTAS</span>
+            <span style="padding:3px 9px;border-radius:999px;background:#FF3B30;color:#FFF;font-size:10px;font-weight:900;letter-spacing:.05em">SOLO 12 CUPOS POR GRUPO</span>
+          </div>
+          <strong style="font-size:clamp(16px,2vw,20px);color:#FFFDF8;display:block;margin-top:4px;letter-spacing:-.02em">
+            Matricúlate con beneficio de preventa e incluye Kit Profesional de Inicio
+          </strong>
+          <span style="font-size:12.5px;color:rgba(255,253,248,.72);display:block;margin-top:2px">
+            Incluye certificación oficial, acceso al grupo VIP de soporte técnico y precio mayorista de por vida.
+          </span>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20aprovechar%20la%20preventa%20y%20apartar%20mi%20cupo%20en%20la%20Academia%20LYOS." target="_blank" class="btn-gold" style="height:46px;padding:0 24px;font-size:13.5px;box-shadow:0 10px 24px -8px rgba(217,182,121,.6)">
+          <span class="mi" style="font-size:18px">bolt</span>
+          <span>Apartar Cupo</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCxF-E6x55JFG5V35Lt6OSIzDfZ0ygRQhQnNLas1TOWfovmg/viewform" target="_blank" class="btn-glass" style="height:46px;padding:0 20px;font-size:13px">
+          <span class="mi" style="font-size:18px;color:var(--gold)">assignment</span>
+          <span>Admisión</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- AVAL CIENTÍFICO: SIMPOSIO LATINOAMERICANO DE TRICOLOGÍA ESTÉTICA          -->
+<!-- ========================================================================= -->
+<section style="padding:clamp(54px,7vw,88px) 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px">
+    
+    <div style="text-align:center;max-width:820px;margin:0 auto 40px">
+      <span class="badge-pill">CONEXIÓN INTERNACIONAL</span>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4.5vw,46px);font-weight:900;letter-spacing:-.03em;margin:12px 0 0;color:var(--txt)">
+        Simposio Latinoamericano de Tricología
+      </h2>
+      <p style="font-size:15px;color:var(--mut);line-height:1.65;margin:12px 0 0">
+        Nuestra fundadora Cristina Gutiérrez se capacita continuamente con los mayores referentes de la salud capilar en <strong>Puerto Rico, República Dominicana, Brasil y Colombia</strong>.
+      </p>
+    </div>
+
+    <!-- Simposio Photos Gallery -->
+    <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))">
+      
+      <div style="border-radius:22px;overflow:hidden;border:1.5px solid var(--line2);box-shadow:var(--e2);position:relative">
+        <img src="assets/simposio-1.jpg" alt="Simposio Latinoamericano de Tricología" style="width:100%;height:240px;object-fit:cover;display:block" / loading="lazy" decoding="async">
+        <div style="position:absolute;bottom:0;inset-x:0;padding:10px 14px;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 100%);color:#F1DEB8;font-size:11.5px;font-weight:700">
+          Certificación de Tricología Estética
+        </div>
+      </div>
+
+      <div style="border-radius:22px;overflow:hidden;border:1.5px solid var(--line2);box-shadow:var(--e2);position:relative">
+        <img src="assets/simposio-2.jpg" alt="Diálogo con Expertos Internacionales" style="width:100%;height:240px;object-fit:cover;display:block" / loading="lazy" decoding="async">
+        <div style="position:absolute;bottom:0;inset-x:0;padding:10px 14px;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 100%);color:#F1DEB8;font-size:11.5px;font-weight:700">
+          Técnicas de Alisado Seguro
+        </div>
+      </div>
+
+      <div style="border-radius:22px;overflow:hidden;border:1.5px solid var(--line2);box-shadow:var(--e2);position:relative">
+        <img src="assets/simposio-3.jpg" alt="Conferencia de Salud Folicular" style="width:100%;height:240px;object-fit:cover;display:block" / loading="lazy" decoding="async">
+        <div style="position:absolute;bottom:0;inset-x:0;padding:10px 14px;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 100%);color:#F1DEB8;font-size:11.5px;font-weight:700">
+          Intercambio Científico LatAm
+        </div>
+      </div>
+
+      <div style="border-radius:22px;overflow:hidden;border:1.5px solid var(--line2);box-shadow:var(--e2);position:relative">
+        <img src="assets/simposio-5.jpg" alt="Evaluación Clínica de Fibras" style="width:100%;height:240px;object-fit:cover;display:block" / loading="lazy" decoding="async">
+        <div style="position:absolute;bottom:0;inset-x:0;padding:10px 14px;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 100%);color:#F1DEB8;font-size:11.5px;font-weight:700">
+          Diagnóstico Folicular Computarizado
+        </div>
+      </div>
+
+    </div>
+
+    <!-- International Experts Badges -->
+    <div style="margin-top:28px;padding:20px 24px;border-radius:22px;background:var(--surf);border:1px solid var(--line2);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="mi" style="font-size:24px;color:var(--gold)">verified_user</span>
+        <span style="font-size:13.5px;font-weight:800;color:var(--txt)">
+          Alianzas académicas &amp; Formaciones internacionales:
+        </span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="padding:6px 12px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);font-size:11.5px;font-weight:700;color:var(--txt)">🇵🇷 @sergiocardona.trichologist (Puerto Rico)</span>
+        <span style="padding:6px 12px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);font-size:11.5px;font-weight:700;color:var(--txt)">🇩🇴 @adriantricologo (Rep. Dominicana)</span>
+        <span style="padding:6px 12px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);font-size:11.5px;font-weight:700;color:var(--txt)">🇧🇷 @drafabiaazambuja (Brasil)</span>
+        <span style="padding:6px 12px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);font-size:11.5px;font-weight:700;color:var(--txt)">🇨🇴 Cursos Cartagena &amp; Cali</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- COMPARADOR DE MODALIDADES (CALI VS VIRTUAL)                            -->
+<!-- ====================================================================== -->
+<section id="modalidades" style="padding:clamp(54px,7vw,84px) 0;background:var(--bg2);border-top:1px solid var(--line)">
+  <div style="max-width:1100px;margin:0 auto;padding:0 20px">
+    
+    <div style="text-align:center;margin-bottom:38px">
+      <span class="badge-pill">ELIGE TU FORMATO</span>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.03em;margin:12px 0 0;color:var(--txt)">
+        Presencial en Cali o Virtual en Vivo
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">
+      
+      <!-- Cali Card -->
+      <div style="padding:28px;border-radius:28px;background:var(--surf);border:2px solid var(--gold);box-shadow:var(--e2);display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <span style="font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.1em">SEDE CALI</span>
+            <span style="padding:3px 10px;border-radius:999px;background:rgba(217,182,121,.15);color:var(--gold);font-size:11px;font-weight:800">Cupos Reducidos</span>
+          </div>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;margin:0 0 12px;color:var(--txt)">Presencial Intensivo</h3>
+          <p style="font-size:13.5px;color:var(--mut);line-height:1.6;margin:0 0 16px">
+            Práctica directa con modelos reales en la sede de <strong>Tina Belleza (Cl. 14 #65-64, Cali)</strong>.
+          </p>
+          <div style="display:grid;gap:8px;font-size:13px;color:var(--txt)">
+            <div style="display:flex;align-items:center;gap:8px"><span class="mi" style="font-size:17px;color:var(--gold)">check</span><span>Estación individual equipada.</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="mi" style="font-size:17px;color:var(--gold)">check</span><span>Kit de producto profesional incluido.</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="mi" style="font-size:17px;color:var(--gold)">check</span><span>Diploma oficial físico y coffee break.</span></div>
+          </div>
+        </div>
+        <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20fechas%20de%20la%20modalidad%20Presencial%20en%20Cali." target="_blank" class="btn-gold" style="width:100%;margin-top:22px;height:44px;font-size:13px">
+          <span>Sede Cali</span>
+        </a>
+      </div>
+
+      <!-- Virtual Card -->
+      <div style="padding:28px;border-radius:28px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e2);display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <span style="font-size:12px;font-weight:800;color:var(--mut);letter-spacing:.1em">ONLINE EN VIVO</span>
+            <span style="padding:3px 10px;border-radius:999px;background:var(--surf2);color:var(--txt);font-size:11px;font-weight:800">Internacional</span>
+          </div>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;margin:0 0 12px;color:var(--txt)">Virtual en Directo 4K</h3>
+          <p style="font-size:13.5px;color:var(--mut);line-height:1.6;margin:0 0 16px">
+            Transmisión interactiva en tiempo real con envío del kit a tu domicilio (Colombia y exterior).
+          </p>
+          <div style="display:grid;gap:8px;font-size:13px;color:var(--txt)">
+            <div style="display:flex;align-items:center;gap:8px"><span class="mi" style="font-size:17px;color:var(--gold)">check</span><span>Sesiones en vivo con preguntas y respuestas.</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="mi" style="font-size:17px;color:var(--gold)">check</span><span>Envío del Kit de Producto a tu salón.</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="mi" style="font-size:17px;color:var(--gold)">check</span><span>Grabaciones de por vida y Diploma digital QR.</span></div>
+          </div>
+        </div>
+        <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20informaci%C3%B3n%20de%20la%20modalidad%20Virtual%20en%20Vivo." target="_blank" class="btn-glass" style="width:100%;margin-top:22px;height:44px;font-size:13px">
+          <span>Modalidad Virtual</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- SPEAKERS & PONENTES INTERNACIONALES DE LA ACADEMIA LYOS                    -->
+<!-- ========================================================================= -->
+<section id="speakers-capacitaciones" style="padding:clamp(64px,8.5vw,104px) 0;background:linear-gradient(180deg,var(--bg) 0%,var(--surf2) 48%,var(--bg) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden">
+  
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px">
+    
+    <!-- Section Header -->
+    <div style="text-align:center;max-width:840px;margin:0 auto 46px">
+      <span class="badge-pill">PONENTES &amp; SPEAKERS INTERNACIONALES</span>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(30px,4.8vw,52px);font-weight:900;letter-spacing:-.03em;margin:12px 0 0;color:var(--txt);line-height:1.15">
+        Capacitaciones de Élite con<br>
+        <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.92em;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">los Maestros del Cuidado Capilar</span>
+      </h2>
+      <p style="font-size:15.5px;color:var(--mut);line-height:1.68;margin:14px 0 0">
+        Nuestra academia reúne a médicos capilares, tricólogos clínicos y master educators de <strong>Brasil 🇧🇷, Puerto Rico 🇵🇷, República Dominicana 🇩🇴 y Colombia 🇨🇴</strong>. Capacitaciones presenciales y virtuales donde la ciencia, la aparatología y la técnica se fusionan.
+      </p>
+    </div>
+
+    <!-- FEATURED HERO: Capacitación Head Spa Sensorial & Tecnológica (Video Top) -->
+    <div style="border-radius:32px;background:linear-gradient(145deg,var(--surf) 0%,var(--surf2) 100%);border:2px solid var(--gold);box-shadow:var(--e3);overflow:hidden;margin-bottom:clamp(36px,5vw,54px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:0;align-items:stretch">
+      
+      <!-- Video Player Column -->
+      <div style="position:relative;background:#0A0806;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+        <video id="videoHeadSpa" src="assets/capacitacion-head-spa.mp4" playsinline webkit-playsinline controls preload="metadata" style="width:100%;height:100%;max-height:560px;object-fit:cover;display:block"></video>
+        
+        <!-- Luxury Floating Live Badge -->
+        <div style="position:absolute;top:16px;left:16px;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(241,222,184,.4);font-size:10.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#F1DEB8">
+          <span style="width:7px;height:7px;border-radius:999px;background:#25D366;box-shadow:0 0 8px #25D366"></span>
+          <span>Capacitación en Vivo · Head Spa</span>
+        </div>
+      </div>
+
+      <!-- Text & Highlights Column -->
+      <div style="padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:18px">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <span style="padding:4px 12px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">
+            ★ Capacitación Estrella
+          </span>
+          <span style="padding:4px 12px;border-radius:999px;background:var(--surf3);border:1px solid var(--line2);color:var(--gold);font-size:11px;font-weight:800">
+            Aparatología &amp; Sensorial
+          </span>
+        </div>
+
+        <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(24px,3.2vw,34px);font-weight:900;letter-spacing:-.03em;margin:0;color:var(--txt);line-height:1.2">
+          Capacitación de Head Spa Sensorial &amp; Tecnológica
+        </h3>
+
+        <p style="font-size:14.5px;color:var(--mut);line-height:1.68;margin:0">
+          Nuestras capacitaciones de Head Spa sensorial y tecnológica son las más top del país. Enseñamos protocolos holísticos importados de Corea y Brasil, integrando vapor ozono, masaje de relajación craneal, terapia celular de exosomas y aparatología de última generación.
+        </p>
+
+        <!-- Checklist -->
+        <div style="display:grid;gap:10px;font-size:13.5px;font-weight:700;color:var(--txt)">
+          <div style="display:flex;align-items:center;gap:9px">
+            <span class="mi" style="font-size:19px;color:var(--gold)">check_circle</span>
+            <span>Aparatología de microcámara y diagnóstico por capilógrafo</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:9px">
+            <span class="mi" style="font-size:19px;color:var(--gold)">check_circle</span>
+            <span>Ritual de desintoxicación con vapor ozono y aromaterapia</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:9px">
+            <span class="mi" style="font-size:19px;color:var(--gold)">check_circle</span>
+            <span>Práctica directa en vivo con modelos en la sede Cali</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:9px">
+            <span class="mi" style="font-size:19px;color:var(--gold)">check_circle</span>
+            <span>Multiplica el ticket promedio de tu salón hasta un 300%</span>
+          </div>
+        </div>
+
+        <!-- Founder Quote -->
+        <blockquote style="margin:8px 0 0;padding:14px 18px;border-left:3px solid var(--gold);background:var(--surf3);border-radius:0 18px 18px 0;font-size:13px;line-height:1.55;font-style:italic;color:var(--txt)">
+          “No solo enseñamos a lavar el cabello: enseñamos una experiencia multisensorial que enamora a la clienta y posiciona tu salón en la categoría de élite.”
+          <footer style="margin-top:6px;font-style:normal;font-weight:800;color:var(--gold);font-size:11.5px">— Cristina Gutiérrez, CEO Tina Belleza</footer>
+        </blockquote>
+
+        <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+          <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20informaci%C3%B3n%20para%20la%20Capacitaci%C3%B3n%20TOP%20de%20Head%20Spa%20Sensorial." target="_blank" class="btn-gold" style="height:44px;padding:0 22px;font-size:13px">
+            <span class="mi" style="font-size:18px">spa</span>
+            <span>Cupos Head Spa</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SPEAKERS & SEMINARS GRID (Videos de YouTube Listos para Incrustar) -->
+    <div style="margin-bottom:20px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:24px">
+        <div>
+          <span style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)">CONFERENCIAS &amp; CLASES MAGISTRALES</span>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.025em;margin:4px 0 0;color:var(--txt)">
+            Speakers que han Formado a Nuestra Comunidad
+          </h3>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.3);color:#FF0000;font-size:11.5px;font-weight:800">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>Espacios listos para videos de YouTube</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:22px">
+        
+        <!-- Speaker 1: Dra. Fabia Azambuja -->
+        <div class="speaker-card" style="border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);overflow:hidden;display:flex;flex-direction:column">
+          <!-- PEGA AQUÍ TU ID DE YOUTUBE: reemplaza data-yt-id="" por tu código de video -->
+          <div class="yt-video-container" data-yt-id="" data-fallback-video="assets/speaker-dra-fabia.mp4" style="position:relative;height:200px;background:#0C0906;overflow:hidden;display:grid;place-items:center">
+            <img src="assets/simposio-1.jpg" alt="Dra. Fabia Azambuja en Academia LYOS" style="width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s" style-hover="transform:scale(1.05)" loading="lazy" decoding="async">
+            <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.65) 100%)"></span>
+            
+            <button type="button" onclick="handleSpeakerPlay(this)" aria-label="Reproducir video" style="position:absolute;z-index:3;width:54px;height:54px;border-radius:999px;background:#FF0000;border:0;color:#FFF;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(255,0,0,.6);transition:transform .2s" style-hover="transform:scale(1.1)">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="#FFF"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+            <span style="position:absolute;bottom:10px;left:12px;z-index:3;font-size:10.5px;font-weight:800;color:#FFF;background:rgba(0,0,0,.7);padding:3px 9px;border-radius:999px;backdrop-filter:blur(8px)">
+              ▶ Video de Capacitación
+            </span>
+          </div>
+
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;justify-content:space-between;gap:14px">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px">
+                <span style="padding:3px 9px;border-radius:999px;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-size:10px;font-weight:800;text-transform:uppercase">
+                  Médica Capilar · Brasil 🇧🇷
+                </span>
+                <span class="mi" style="font-size:16px;color:#0095F6" title="Speaker Verificado">verified</span>
+              </div>
+
+              <h4 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0">
+                Dra. Fabia Azambuja
+              </h4>
+              <p style="font-size:12.5px;font-weight:700;color:var(--gold);margin:2px 0 8px">
+                Seminario: Exosomas &amp; Medicina Folicular
+              </p>
+
+              <p style="font-size:13px;line-height:1.6;color:var(--mut);margin:0;font-style:italic">
+                “La integración de exosomas y activos botánicos de alta pureza en los protocolos de LYOS marca un estándar médico en la recuperación de la fibra.”
+              </p>
+            </div>
+
+            <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--mut)">
+              <span>Capacitación Internacional</span>
+              <span style="color:var(--gold)">★ Testimonio Speaker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker 2: Mario A. Sánchez -->
+        <div class="speaker-card" style="border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);overflow:hidden;display:flex;flex-direction:column">
+          <!-- PEGA AQUÍ TU ID DE YOUTUBE: data-yt-id="" -->
+          <div class="yt-video-container" data-yt-id="" data-poster="assets/simposio-2.jpg" style="position:relative;height:200px;background:#0C0906;overflow:hidden;display:grid;place-items:center">
+            <img src="assets/simposio-2.jpg" alt="Mario Sánchez en Academia LYOS" style="width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s" style-hover="transform:scale(1.05)" loading="lazy" decoding="async">
+            <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.65) 100%)"></span>
+            
+            <button type="button" onclick="handleSpeakerPlay(this)" aria-label="Reproducir video de YouTube" style="position:absolute;z-index:3;width:54px;height:54px;border-radius:999px;background:#FF0000;border:0;color:#FFF;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(255,0,0,.6);transition:transform .2s" style-hover="transform:scale(1.1)">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="#FFF"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+            <span style="position:absolute;bottom:10px;left:12px;z-index:3;font-size:10.5px;font-weight:800;color:#FFF;background:rgba(0,0,0,.7);padding:3px 9px;border-radius:999px;backdrop-filter:blur(8px)">
+              ▶ Video YouTube Listo
+            </span>
+          </div>
+
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;justify-content:space-between;gap:14px">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px">
+                <span style="padding:3px 9px;border-radius:999px;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-size:10px;font-weight:800;text-transform:uppercase">
+                  Master Educator · Internacional
+                </span>
+                <span class="mi" style="font-size:16px;color:#0095F6" title="Speaker Verificado">verified</span>
+              </div>
+
+              <h4 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0">
+                Mario A. Sánchez
+              </h4>
+              <p style="font-size:12.5px;font-weight:700;color:var(--gold);margin:2px 0 8px">
+                Seminario: Termosellado &amp; pH en Alisados
+              </p>
+
+              <p style="font-size:13px;line-height:1.6;color:var(--mut);margin:0;font-style:italic">
+                “Enseñar a dominar la plancha y la química de los alisados orgánicos con las fórmulas de LYOS asegura resultados espejo duraderos sin maltratar jamás el cabello.”
+              </p>
+            </div>
+
+            <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--mut)">
+              <span>@marioa.sanchezformacion</span>
+              <span style="color:var(--gold)">★ Testimonio Speaker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker 3: Sergio Cardona -->
+        <div class="speaker-card" style="border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);overflow:hidden;display:flex;flex-direction:column">
+          <!-- PEGA AQUÍ TU ID DE YOUTUBE: data-yt-id="" -->
+          <div class="yt-video-container" data-yt-id="" data-poster="assets/simposio-3.jpg" style="position:relative;height:200px;background:#0C0906;overflow:hidden;display:grid;place-items:center">
+            <img src="assets/simposio-3.jpg" alt="Sergio Cardona en Academia LYOS" style="width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s" style-hover="transform:scale(1.05)" loading="lazy" decoding="async">
+            <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.65) 100%)"></span>
+            
+            <button type="button" onclick="handleSpeakerPlay(this)" aria-label="Reproducir video de YouTube" style="position:absolute;z-index:3;width:54px;height:54px;border-radius:999px;background:#FF0000;border:0;color:#FFF;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(255,0,0,.6);transition:transform .2s" style-hover="transform:scale(1.1)">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="#FFF"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+            <span style="position:absolute;bottom:10px;left:12px;z-index:3;font-size:10.5px;font-weight:800;color:#FFF;background:rgba(0,0,0,.7);padding:3px 9px;border-radius:999px;backdrop-filter:blur(8px)">
+              ▶ Video YouTube Listo
+            </span>
+          </div>
+
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;justify-content:space-between;gap:14px">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px">
+                <span style="padding:3px 9px;border-radius:999px;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-size:10px;font-weight:800;text-transform:uppercase">
+                  Tricólogo Clínico · Puerto Rico 🇵🇷
+                </span>
+                <span class="mi" style="font-size:16px;color:#0095F6" title="Speaker Verificado">verified</span>
+              </div>
+
+              <h4 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0">
+                Sergio Cardona
+              </h4>
+              <p style="font-size:12.5px;font-weight:700;color:var(--gold);margin:2px 0 8px">
+                Seminario: Diagnóstico &amp; Pérdida Capilar
+              </p>
+
+              <p style="font-size:13px;line-height:1.6;color:var(--mut);margin:0;font-style:italic">
+                “El estilista que aprende a evaluar el cuero cabelludo con capilógrafo antes de hacer un procedimiento cambia por completo su posición profesional.”
+              </p>
+            </div>
+
+            <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--mut)">
+              <span>@sergiocardona.trichologist</span>
+              <span style="color:var(--gold)">★ Testimonio Speaker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker 4: Adrián Tricólogo -->
+        <div class="speaker-card" style="border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);overflow:hidden;display:flex;flex-direction:column">
+          <!-- PEGA AQUÍ TU ID DE YOUTUBE: data-yt-id="" -->
+          <div class="yt-video-container" data-yt-id="" data-poster="assets/simposio-5.jpg" style="position:relative;height:200px;background:#0C0906;overflow:hidden;display:grid;place-items:center">
+            <img src="assets/simposio-5.jpg" alt="Adrián Tricólogo en Academia LYOS" style="width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s" style-hover="transform:scale(1.05)" loading="lazy" decoding="async">
+            <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.65) 100%)"></span>
+            
+            <button type="button" onclick="handleSpeakerPlay(this)" aria-label="Reproducir video de YouTube" style="position:absolute;z-index:3;width:54px;height:54px;border-radius:999px;background:#FF0000;border:0;color:#FFF;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(255,0,0,.6);transition:transform .2s" style-hover="transform:scale(1.1)">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="#FFF"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+            <span style="position:absolute;bottom:10px;left:12px;z-index:3;font-size:10.5px;font-weight:800;color:#FFF;background:rgba(0,0,0,.7);padding:3px 9px;border-radius:999px;backdrop-filter:blur(8px)">
+              ▶ Video YouTube Listo
+            </span>
+          </div>
+
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;justify-content:space-between;gap:14px">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px">
+                <span style="padding:3px 9px;border-radius:999px;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-size:10px;font-weight:800;text-transform:uppercase">
+                  Simposio Latinoamericano · Rep. Dom. 🇩🇴
+                </span>
+                <span class="mi" style="font-size:16px;color:#0095F6" title="Speaker Verificado">verified</span>
+              </div>
+
+              <h4 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0">
+                Adrián Tricólogo
+              </h4>
+              <p style="font-size:12.5px;font-weight:700;color:var(--gold);margin:2px 0 8px">
+                Seminario: Desintoxicación &amp; Tricología Estética
+              </p>
+
+              <p style="font-size:13px;line-height:1.6;color:var(--mut);margin:0;font-style:italic">
+                “El crecimiento de la academia LYOS y su enfoque científico demuestran que en Colombia y Latinoamérica se está haciendo tricología de clase mundial.”
+              </p>
+            </div>
+
+            <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--mut)">
+              <span>@adriantricologo</span>
+              <span style="color:var(--gold)">★ Testimonio Speaker</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Banner de instrucciones para agregar enlaces de YouTube -->
+    <div style="padding:16px 20px;border-radius:20px;background:var(--surf);border:1.5px dashed var(--gold);display:flex;align-items:center;gap:14px;margin-top:28px;box-shadow:var(--e1)">
+      <div style="width:42px;height:42px;border-radius:12px;background:rgba(255,0,0,.1);display:grid;place-items:center;color:#FF0000;flex:none">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </div>
+      <div style="font-size:13px;color:var(--mut);line-height:1.5;flex:1">
+        <strong style="color:var(--txt)">¿Vas a agregar nuevos videos desde YouTube?</strong> Cada tarjeta de ponente tiene su espacio listo: simplemente añade tu ID o enlace de video en el atributo <code style="padding:2px 6px;border-radius:6px;background:var(--surf3);color:var(--gold);font-weight:700">data-yt-id="TU_ID_AQUI"</code> o contáctanos para incrustarlo al instante.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- REVIEWS & TESTIMONIOS DE ESTILISTAS EGRESADAS DE LA ACADEMIA LYOS         -->
+<!-- ========================================================================= -->
+<section id="testimonios-alumnas" style="padding:clamp(60px,8vw,96px) 0;background:var(--bg)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px">
+    
+    <!-- Section Header -->
+    <div style="text-align:center;max-width:800px;margin:0 auto 40px">
+      <span class="badge-pill">TESTIMONIOS &amp; RESULTADOS REALES</span>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(30px,4.8vw,52px);font-weight:900;letter-spacing:-.03em;margin:12px 0 0;color:var(--txt)">
+        Lo que dicen nuestras<br>
+        <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.92em;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">alumnas y salones certificados</span>
+      </h2>
+      <p style="font-size:15.5px;color:var(--mut);line-height:1.65;margin:12px 0 0">
+        Estilistas independientes, dueñas de peluquerías y profesionales que multiplicaron su facturación y aprendieron el arte del liso espejo sin humo.
+      </p>
+    </div>
+
+    <!-- 4 High Impact Student Reviews Grid -->
+    <div style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))">
+      
+      <!-- Review 1 -->
+      <div style="padding:26px;border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);display:flex;flex-direction:column;justify-content:space-between;gap:14px">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <div style="color:var(--gold);letter-spacing:2px;font-size:14px">★★★★★</div>
+            <span style="padding:3px 9px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366;font-size:10px;font-weight:800">Alumna Certificada</span>
+          </div>
+          <p style="font-size:14px;line-height:1.65;color:var(--txt);margin:0;font-weight:500">
+            "Aprendí a usar el capilógrafo y ahora cobro por diagnóstico capilar antes de cada servicio. <strong>Recuperé la inversión del curso en solo 8 días</strong>."
+          </p>
+        </div>
+        <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px">
+          <div style="width:38px;height:38px;border-radius:999px;background:var(--goldGrad);display:grid;place-items:center;color:#140F06;font-weight:800;font-size:13px">MR</div>
+          <div>
+            <strong style="font-size:13.5px;color:var(--txt);display:block">Marcela Restrepo</strong>
+            <span style="font-size:11px;color:var(--mut)">Studio Capilar · Cali</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div style="padding:26px;border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);display:flex;flex-direction:column;justify-content:space-between;gap:14px">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <div style="color:var(--gold);letter-spacing:2px;font-size:14px">★★★★★</div>
+            <span style="padding:3px 9px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366;font-size:10px;font-weight:800">Curso Presencial</span>
+          </div>
+          <p style="font-size:14px;line-height:1.65;color:var(--txt);margin:0;font-weight:500">
+            "El módulo de cabellos rubios y decolorados con <strong>Bio Intense</strong> me quitó el miedo a alisar rubias. Mis clientas no cambian mi salón por nada."
+          </p>
+        </div>
+        <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px">
+          <div style="width:38px;height:38px;border-radius:999px;background:var(--goldGrad);display:grid;place-items:center;color:#140F06;font-weight:800;font-size:13px">JP</div>
+          <div>
+            <strong style="font-size:13.5px;color:var(--txt);display:block">Juliana Posada</strong>
+            <span style="font-size:11px;color:var(--mut)">Color &amp; Liso · Medellín</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div style="padding:26px;border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);display:flex;flex-direction:column;justify-content:space-between;gap:14px">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <div style="color:var(--gold);letter-spacing:2px;font-size:14px">★★★★★</div>
+            <span style="padding:3px 9px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366;font-size:10px;font-weight:800">Curso Cartagena</span>
+          </div>
+          <p style="font-size:14px;line-height:1.65;color:var(--txt);margin:0;font-weight:500">
+            "Cristina enseña la química real detrás de cada activo y el sellado exacto. Es la formación más completa que he tomado en 12 años como estilista."
+          </p>
+        </div>
+        <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px">
+          <div style="width:38px;height:38px;border-radius:999px;background:var(--goldGrad);display:grid;place-items:center;color:#140F06;font-weight:800;font-size:13px">AC</div>
+          <div>
+            <strong style="font-size:13.5px;color:var(--txt);display:block">Andrea Castillo</strong>
+            <span style="font-size:11px;color:var(--mut)">Salón Belleza Total · Cartagena</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div style="padding:26px;border-radius:26px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e1);display:flex;flex-direction:column;justify-content:space-between;gap:14px">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <div style="color:var(--gold);letter-spacing:2px;font-size:14px">★★★★★</div>
+            <span style="padding:3px 9px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366;font-size:10px;font-weight:800">Modalidad Virtual</span>
+          </div>
+          <p style="font-size:14px;line-height:1.65;color:var(--txt);margin:0;font-weight:500">
+            "Tomé el curso virtual desde Bogotá y el soporte técnico por WhatsApp fue impecable. Ahora compro el Liso Hialurónico a precio mayorista directo."
+          </p>
+        </div>
+        <div style="padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px">
+          <div style="width:38px;height:38px;border-radius:999px;background:var(--goldGrad);display:grid;place-items:center;color:#140F06;font-weight:800;font-size:13px">CM</div>
+          <div>
+            <strong style="font-size:13.5px;color:var(--txt);display:block">Carolina Morales</strong>
+            <span style="font-size:11px;color:var(--mut)">Peluquería Glamour · Bogotá</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Video Reels Slots de Alumnas & Cursos -->
+    <div style="margin-top:40px;padding:28px;border-radius:28px;background:var(--surf2);border:1.5px solid var(--line2)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px">
+        <div>
+          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800">Clases Presenciales &amp; En Vivo</span>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;margin:4px 0 0;color:var(--txt)">Experiencias de Aula y Capacitación</h3>
+        </div>
+        <span style="font-size:12px;color:var(--mut);font-weight:600">Formaciones en Cali &amp; Cartagena</span>
+      </div>
+
+      <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))">
+        
+        <!-- Video Card 1 -->
+        <div style="border-radius:20px;overflow:hidden;background:var(--surf);border:1px solid var(--line);box-shadow:var(--e1)">
+          <div style="position:relative;aspect-ratio:16/9;overflow:hidden">
+            <img src="assets/academia-aula.jpg" alt="Masterclass Cartagena" style="width:100%;height:100%;object-fit:cover" / loading="lazy" decoding="async">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,.4);display:grid;place-items:center">
+              <div style="width:44px;height:44px;border-radius:999px;background:var(--goldGrad);color:#140F06;display:grid;place-items:center">
+                <span class="mi" style="font-size:24px">play_arrow</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:14px">
+            <strong style="font-size:13.5px;color:var(--txt);display:block">Curso Intensivo Cartagena</strong>
+            <span style="font-size:11.5px;color:var(--mut)">Técnicas avanzadas en alisados tecnológicos</span>
+          </div>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div style="border-radius:20px;overflow:hidden;background:var(--surf);border:1px solid var(--line);box-shadow:var(--e1)">
+          <div style="position:relative;aspect-ratio:16/9;overflow:hidden">
+            <img src="assets/academia-simposio.jpg" alt="Simposio Tricología" style="width:100%;height:100%;object-fit:cover" / loading="lazy" decoding="async">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,.4);display:grid;place-items:center">
+              <div style="width:44px;height:44px;border-radius:999px;background:var(--goldGrad);color:#140F06;display:grid;place-items:center">
+                <span class="mi" style="font-size:24px">play_arrow</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:14px">
+            <strong style="font-size:13.5px;color:var(--txt);display:block">Simposio Internacional de Tricología</strong>
+            <span style="font-size:11.5px;color:var(--mut)">Salud folicular y diagnóstico científico</span>
+          </div>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div style="border-radius:20px;overflow:hidden;background:var(--surf);border:1px solid var(--line);box-shadow:var(--e1)">
+          <div style="position:relative;aspect-ratio:16/9;overflow:hidden">
+            <img src="assets/academia-alisado.jpg" alt="Práctica en Modelos Reales" style="width:100%;height:100%;object-fit:cover" / loading="lazy" decoding="async">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,.4);display:grid;place-items:center">
+              <div style="width:44px;height:44px;border-radius:999px;background:var(--goldGrad);color:#140F06;display:grid;place-items:center">
+                <span class="mi" style="font-size:24px">play_arrow</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:14px">
+            <strong style="font-size:13.5px;color:var(--txt);display:block">Práctica en Modelos Reales</strong>
+            <span style="font-size:11.5px;color:var(--mut)">Sellado térmico paso a paso en sede Cali</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="roi" style="padding:clamp(54px,7vw,84px) 0;background:var(--bg)">
+  <div style="max-width:960px;margin:0 auto;padding:0 20px">
+    
+    <div style="text-align:center;margin-bottom:32px">
+      <span class="badge-pill">PROYECCIÓN FINANCIERA</span>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.03em;margin:12px 0 0;color:var(--txt)">
+        Calcula la Ganancia Neta de tu Salón
+      </h2>
+    </div>
+
+    <div style="padding:clamp(24px,4vw,36px);border-radius:30px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e3)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:28px;align-items:center">
+        
+        <div style="display:grid;gap:20px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:13.5px;font-weight:700;color:var(--txt)">Clientas al Mes:</span>
+              <span id="roiClientsVal" style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:800;color:var(--gold)">12 clientas</span>
+            </div>
+            <input type="range" id="roiClientsRange" min="2" max="40" value="12" step="1" style="width:100%;accent-color:var(--gold);height:6px;cursor:pointer">
+          </div>
+
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:13.5px;font-weight:700;color:var(--txt)">Precio por Alisado:</span>
+              <span id="roiPriceVal" style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:800;color:var(--gold)">$ 220.000 COP</span>
+            </div>
+            <input type="range" id="roiPriceRange" min="150000" max="450000" value="220000" step="10000" style="width:100%;accent-color:var(--gold);height:6px;cursor:pointer">
+          </div>
+        </div>
+
+        <div style="padding:24px;border-radius:22px;background:var(--surf2);border:1.5px solid var(--gold);text-align:center;display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)">UTILIDAD NETA MENSUAL</span>
+          <span id="roiNetVal" style="font-family:'Outfit',sans-serif;font-size:clamp(28px,3.8vw,38px);font-weight:900;color:var(--txt);letter-spacing:-.04em">$ 2.365.716 COP</span>
+          <span style="font-size:12px;font-weight:800;color:#25D366;margin-top:4px">✨ ¡Recuperas el curso en solo 2 servicios!</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- AGENDAMIENTO & CAL.COM INTEGRADO                                       -->
+<!-- ====================================================================== -->
+<section id="agendar" style="padding:clamp(54px,7vw,84px) 0;background:var(--bg2);border-top:1px solid var(--line)">
+  <div style="max-width:1080px;margin:0 auto;padding:0 20px">
+    
+    <div style="text-align:center;margin-bottom:32px">
+      <span class="badge-pill">AGENDA O RESERVA</span>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.03em;margin:12px 0 0;color:var(--txt)">
+        Separa tu Asesoría o Cupo
+      </h2>
+    </div>
+
+    <!-- Cal.com Embed -->
+    <div style="border-radius:28px;background:var(--surf);border:1.5px solid var(--gold);box-shadow:var(--e3);overflow:hidden;padding:16px">
+      <div style="width:100%;min-height:540px" id="my-cal-inline-lyospro"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- FAQ MINIMALISTA                                                        -->
+<!-- ====================================================================== -->
+<section id="faq" style="padding:clamp(54px,7vw,84px) 0;background:var(--bg)">
+  <div style="max-width:800px;margin:0 auto;padding:0 20px">
+    
+    <div style="text-align:center;margin-bottom:32px">
+      <span class="badge-pill">DUDAS FRECUENTES</span>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(24px,3.8vw,36px);font-weight:900;letter-spacing:-.03em;margin:12px 0 0;color:var(--txt)">
+        Preguntas sobre el Seminario
+      </h2>
+    </div>
+
+    <div style="display:grid;gap:12px">
+      
+      <div class="faq-card" onclick="this.classList.toggle('active')">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <strong style="font-size:15px;color:var(--txt)">¿Necesito experiencia previa en alisados?</strong>
+          <span class="mi faq-arrow" style="font-size:20px;color:var(--gold);transition:transform .2s">expand_more</span>
+        </div>
+        <div class="faq-desc">
+          No. El programa inicia desde las bases de tricología capilar hasta la técnica avanzada de planchado y sellado.
+        </div>
+      </div>
+
+      <div class="faq-card" onclick="this.classList.toggle('active')">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <strong style="font-size:15px;color:var(--txt)">¿El diploma tiene validez profesional?</strong>
+          <span class="mi faq-arrow" style="font-size:20px;color:var(--gold);transition:transform .2s">expand_more</span>
+        </div>
+        <div class="faq-desc">
+          Sí. Recibirás un Certificado Oficial avalado por <strong>LYOS Profesional</strong> y <strong>Tina Belleza</strong>.
+        </div>
+      </div>
+
+      <div class="faq-card" onclick="this.classList.toggle('active')">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <strong style="font-size:15px;color:var(--txt)">¿Qué métodos de pago reciben para la matrícula?</strong>
+          <span class="mi faq-arrow" style="font-size:20px;color:var(--gold);transition:transform .2s">expand_more</span>
+        </div>
+        <div class="faq-desc">
+          Aceptamos Wompi (Tarjetas y PSE), transferencias Nequi/Bancolombia y separación de cupo con anticipo.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- FOOTER MINIMALISTA                                                     -->
+<!-- ====================================================================== -->
+
+<!-- ========================================================================= -->
+<!-- SIMPOSIO DE TRICOLOGÍA & PREVENTA EXCLUSIVA ESTILISTAS EN ACADEMIA        -->
+<!-- ========================================================================= -->
+<section style="max-width:1320px;margin:clamp(48px,6vw,84px) auto 0;padding:0 20px">
+  <div style="border-radius:32px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:clamp(26px,4vw,48px)">
+    
+    <div style="display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:center">
+      
+      <!-- Photos of Simposio -->
+      <div style="display:grid;gap:12px;grid-template-columns:repeat(2,1fr)">
+        <img src="assets/academia-simposio.jpg" alt="Simposio Latinoamericano de Tricología Estética" style="width:100%;border-radius:18px;border:1px solid var(--line);box-shadow:var(--e1)" / loading="lazy" decoding="async">
+        <img src="assets/academia-simposio-2.jpg" alt="Certificación Internacional Tricología" style="width:100%;border-radius:18px;border:1px solid var(--line);box-shadow:var(--e1)" / loading="lazy" decoding="async">
+      </div>
+
+      <!-- Text Content -->
+      <div>
+        <div class="badge-pill" style="margin-bottom:14px">
+          <span class="mi" style="font-size:15px">workspace_premium</span>Respaldo Internacional
+        </div>
+        <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:900;letter-spacing:-.03em;margin:0;color:var(--txt)">
+          Formación con Aval Científico
+        </h2>
+        <p style="font-size:14.5px;color:var(--mut);line-height:1.68;margin:14px 0 0">
+          Nuestra fundadora Cristina Gutiérrez participa en simposios internacionales de tricología estética junto a referentes de Latinoamérica. Este rigor científico es el que transmitimos en cada masterclass presencial y virtual.
+        </p>
+
+        <!-- Google Form Button -->
+        <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCxF-E6x55JFG5V35Lt6OSIzDfZ0ygRQhQnNLas1TOWfovmg/viewform" target="_blank" rel="noopener noreferrer" class="btn-gold" style="height:44px;padding:0 22px;font-size:13px">
+            <span class="mi" style="font-size:18px">assignment</span>
+            <span>Preventa VIP</span>
+          </a>
+          <a href="https://www.instagram.com/lyos_profesional/" target="_blank" class="btn-glass" style="height:44px;padding:0 18px;font-size:13px">
+            <span>Historias</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer style="background:var(--surf);border-top:1px solid var(--line2);padding:40px 0 24px">
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px;text-align:center">
+    
+    <a href="index.html" style="display:inline-flex;flex-direction:column;align-items:center;line-height:1;margin-bottom:14px">
+      <span style="font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;color:var(--txt)">LY<span style="color:var(--gold)">O</span>S</span>
+      <span style="font-size:8px;letter-spacing:.4em;color:var(--gold);font-weight:800;margin-top:2px">ACADEMIA</span>
+    </a>
+
+    <div style="display:flex;justify-content:center;gap:20px;font-size:13px;color:var(--mut);margin-bottom:18px">
+      <a href="index.html" style="color:var(--txt);font-weight:700">← Volver a LYOS Profesional</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#agendar">Agendar</a>
+    </div>
+
+    <p style="font-size:12px;color:var(--dim);margin:0">
+      © 2026 LYOS Profesional &amp; Tina Belleza · Cl. 14 #65-64, Cali, Colombia · WhatsApp: +57 313 595 9808
+    </p>
+
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Action -->
+<a href="https://wa.me/573135959808?text=Hola%20Cristina,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Academia%20Capilar%20LYOS." target="_blank" class="floating-wa" title="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>
+</a>
+
+<!-- Interactive Scripts -->
+<script>
+
+function toggleDrawer() {
+  const d = document.getElementById('mobileDrawer');
+  const o = document.getElementById('drawerOverlay');
+  if (d && o) {
+    d.classList.toggle('open');
+    o.classList.toggle('open');
+  }
+}
+
+// Theme Logic (Default Dark for High-End Luxury)
+const themeBtn = document.getElementById('themeBtn');
+const themeIcon = document.getElementById('themeIcon');
+let currentTheme = localStorage.getItem('lyos.academy.theme') || 'dark';
+
+function applyTheme(t) {
+  if (t === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeIcon.textContent = 'dark_mode';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeIcon.textContent = 'light_mode';
+  }
+  localStorage.setItem('lyos.academy.theme', t);
+}
+applyTheme(currentTheme);
+
+themeBtn.addEventListener('click', () => {
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(currentTheme);
+});
+
+// ROI Interactive Slider
+const roiClients = document.getElementById('roiClientsRange');
+const roiPrice = document.getElementById('roiPriceRange');
+const roiClientsVal = document.getElementById('roiClientsVal');
+const roiPriceVal = document.getElementById('roiPriceVal');
+const roiNetVal = document.getElementById('roiNetVal');
+
+function updateRoi() {
+  const clients = parseInt(roiClients.value, 10);
+  const price = parseInt(roiPrice.value, 10);
+  roiClientsVal.textContent = clients + ' clientas';
+  roiPriceVal.textContent = '$ ' + new Intl.NumberFormat('es-CO').format(price) + ' COP';
+  
+  const gross = clients * price;
+  const cost = clients * 22857;
+  const net = Math.max(0, gross - cost);
+  roiNetVal.textContent = '$ ' + new Intl.NumberFormat('es-CO').format(net) + ' COP';
+}
+roiClients.addEventListener('input', updateRoi);
+roiPrice.addEventListener('input', updateRoi);
+updateRoi();
+
+// Cal.com Integration
+function initCal() {
+  if (typeof window.Cal === 'function') {
+    window.Cal("init", "lyospro", {origin:"https://app.cal.com"});
+    if (window.Cal.ns && window.Cal.ns.lyospro) {
+      window.Cal.ns.lyospro("inline", {
+        elementOrSelector:"#my-cal-inline-lyospro",
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+        calLink: "tinabelleza/lyospro",
+      });
+      window.Cal.ns.lyospro("ui", {
+        "theme": "dark",
+        "cssVarsPerTheme":{
+          "dark":{"cal-brand":"#d5ad34","cal-text":"#f7f2e9","cal-text-muted":"#a79e90","cal-bg":"#12100c","cal-bg-emphasis":"#1a150e","cal-border":"rgba(217,182,121,0.25)"}
+        },
+        "hideEventTypeDetails":false,
+        "layout":"month_view"
+      });
+    }
+  }
+}
+setTimeout(initCal, 200);
+setTimeout(initCal, 1000);
+</script>
+
+
+<script>
+(function() {
+  const vid = document.querySelector('section video');
+
+  // Mobile Resilient Video Auto-play & Poster Fallback
+  const acadVid = document.getElementById('acadHeroVideo') || document.querySelector('section video');
+  if (acadVid) {
+    acadVid.setAttribute('playsinline', '');
+    acadVid.setAttribute('webkit-playsinline', '');
+    acadVid.muted = true;
+    const p = acadVid.play();
+    if (p !== undefined) {
+      p.then(function() {
+        acadVid.style.opacity = '1';
+      }).catch(function() {
+        console.log('Mobile video autoplay blocked. Poster fallback visible.');
+        acadVid.style.opacity = '0';
+      });
+    }
+    acadVid.addEventListener('error', function() {
+      acadVid.style.display = 'none';
+    });
+    function resumeAcad() {
+      if (acadVid.paused) {
+        acadVid.play().then(function() { acadVid.style.opacity = '1'; }).catch(function() {});
+      }
+    }
+    document.addEventListener('touchstart', resumeAcad, { once: true, passive: true });
+    document.addEventListener('click', resumeAcad, { once: true, passive: true });
+  }
+
+  if (!vid) return;
+
+  let isFading = false;
+  let hasPlayedWithSound = false;
+  vid.removeAttribute('loop');
+
+  vid.addEventListener('timeupdate', function() {
+    if (!vid.duration || isNaN(vid.duration)) return;
+    const loopPoint = Math.max(0, vid.duration - 2.5);
+    const fadeStart = Math.max(0, loopPoint - 0.7);
+
+    if (vid.currentTime >= fadeStart && !isFading) {
+      isFading = true;
+      vid.style.transition = 'opacity 0.6s ease';
+      vid.style.opacity = '0';
+
+      setTimeout(function() {
+        vid.currentTime = 0;
+        if (!vid.muted) {
+          vid.muted = true;
+          hasPlayedWithSound = true;
+        }
+        vid.play().catch(function() {});
+        setTimeout(function() {
+          vid.style.opacity = '1';
+          isFading = false;
+        }, 120);
+      }, 620);
+    }
+  });
+})();
+
+function handleSpeakerPlay(btn) {
+  var container = btn.closest('.yt-video-container');
+  if (!container) return;
+  var ytId = container.getAttribute('data-yt-id');
+  var fallbackVideo = container.getAttribute('data-fallback-video');
+
+  if (ytId && ytId.trim() !== '') {
+    var cleanId = ytId.trim();
+    if (cleanId.includes('v=')) cleanId = cleanId.split('v=')[1].split('&')[0];
+    else if (cleanId.includes('youtu.be/')) cleanId = cleanId.split('youtu.be/')[1].split('?')[0];
+    
+    container.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + encodeURIComponent(cleanId) + '?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>';
+  } else if (fallbackVideo) {
+    container.innerHTML = '<video src="' + fallbackVideo + '" controls autoplay playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>';
+  } else {
+    var userUrl = prompt('Pega el enlace o ID del video de YouTube que deseas incrustar:');
+    if (userUrl && userUrl.trim()) {
+      var id = userUrl.trim();
+      if (id.includes('v=')) id = id.split('v=')[1].split('&')[0];
+      else if (id.includes('youtu.be/')) id = id.split('youtu.be/')[1].split('?')[0];
+      container.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>';
+    }
+  }
+}
+</script>
+
+</body>
+</html>

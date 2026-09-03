@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="ext-resource-dependency" content="assets/liso-hialuronico.jpg" data-resource-id="lisoHialuronico" />
+<meta name="ext-resource-dependency" content="assets/liso-250.jpg" data-resource-id="liso250" />
+<meta name="ext-resource-dependency" content="assets/liso-familia.jpg" data-resource-id="lisoFamilia" />
+<meta name="ext-resource-dependency" content="assets/shampoo.jpg" data-resource-id="shampooImg" />
+<meta name="ext-resource-dependency" content="assets/tratamiento.jpg" data-resource-id="tratamientoImg" />
+<meta name="ext-resource-dependency" content="assets/protector.jpg" data-resource-id="protectorImg" />
+<meta name="ext-resource-dependency" content="assets/korea-1l.png" data-resource-id="korea1l" />
+<meta name="ext-resource-dependency" content="assets/korea-duo.png" data-resource-id="koreaDuo" />
+<meta name="ext-resource-dependency" content="assets/bio-duo.png" data-resource-id="bioDuo" />
+<meta name="ext-resource-dependency" content="assets/bio-brasil.png" data-resource-id="bioBrasil" />
+<meta name="ext-resource-dependency" content="assets/bio-model.png" data-resource-id="bioModel" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#FBF8F2">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FBF8F2"/>
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E2C88E"/><stop offset="0.44" stop-color="#C39D51"/><stop offset="1" stop-color="#8A6425"/></linearGradient></defs>
+    <text x="600" y="404" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="188" font-weight="800" letter-spacing="-8" fill="#16120D">LY<tspan fill="url(#g)">O</tspan>S</text>
+    <text x="600" y="470" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="600" letter-spacing="24" fill="#6A6154">PROFESIONAL</text>
+    <rect x="470" y="516" width="260" height="3" rx="1.5" fill="url(#g)"/>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FBF8F2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="LYOS">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#FBF8F2;--bg2:#F5EEE2;--surf:#FFFFFF;--surf2:#FAF5EC;--surf3:#F1E7D6;
+--line:rgba(28,22,12,.10);--line2:rgba(28,22,12,.19);
+--txt:#16120D;--mut:#6A6154;--dim:#9A9184;
+--gold:#A87C2F;--goldi:#C9A45C;--gold2:#8A6425;--onGold:#FFFDF7;
+--goldGrad:linear-gradient(120deg,#E2C88E,#C39D51 44%,#8A6425);
+--goldLine:linear-gradient(90deg,transparent,#C9A45C,transparent);
+--plinth:linear-gradient(165deg,#FFFEFB 0%,#F5EDDF 55%,#E8DCC5 100%);
+--glass:rgba(251,248,242,.8);
+--e1:0 1px 2px rgba(60,45,20,.07);--e2:0 10px 30px -12px rgba(60,45,20,.2);--e3:0 26px 70px -22px rgba(60,45,20,.3);
+}
+[data-theme="dark"]{
+--bg:#0B0A08;--bg2:#100E0B;--surf:#16130F;--surf2:#1E1A14;--surf3:#272118;
+--line:rgba(232,214,180,.13);--line2:rgba(232,214,180,.26);
+--txt:#F7F2E9;--mut:#A79E90;--dim:#726A5E;
+--gold:#D9B679;--goldi:#F1DEB8;--gold2:#F1DEB8;--onGold:#1A1409;
+--goldGrad:linear-gradient(120deg,#F1DEB8,#D9B679 46%,#A97C3F);
+--glass:rgba(18,15,12,.76);
+--e1:0 1px 2px rgba(0,0,0,.5);--e2:0 10px 30px -12px rgba(0,0,0,.7);--e3:0 26px 70px -22px rgba(0,0,0,.85);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBF8F2;color:#16120D;font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold2)}
+input,button,select,textarea{font:inherit;color:inherit}
+.mi{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none}
+.mio{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+.hs{scrollbar-width:none;-ms-overflow-style:none}
+.hs::-webkit-scrollbar{display:none}
+.desk{display:none!important}
+.fab{position:fixed;right:14px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:70;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.hero{position:relative;overflow:hidden;min-height:clamp(520px,88vh,860px)}
+:root{--navPad:84px}
+@media(min-width:940px){:root{--navPad:0px}}
+@media(min-width:940px){.desk{display:flex!important}.mob{display:none!important}.fab{bottom:28px;right:28px}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes ping{0%{opacity:.6;transform:scale(.6)}70%,100%{opacity:0;transform:scale(2.4)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes slidein{from{opacity:0;transform:translateY(26px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes kb{from{transform:scale(1.06)}to{transform:scale(1.14)}}
+</style>
+</helmet>
+<div id="app" ref="{{ rootRef }}" data-theme="{{ theme }}" style="min-height:100dvh;background:var(--bg);color:var(--txt);padding-bottom:calc(76px + env(safe-area-inset-bottom));position:relative;overflow:hidden">
+
+<header style="position:sticky;top:0;z-index:60;backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);background:var(--glass);border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px">
+    <a href="#inicio" style="display:flex;flex-direction:column;line-height:1;margin-right:auto;padding:4px 2px">
+      <span style="font-family:'Outfit',sans-serif;font-weight:800;font-size:27px;letter-spacing:-.045em;color:var(--txt)">LY<span style="color:var(--gold)">O</span>S</span>
+      <span style="font-size:8.5px;letter-spacing:.46em;color:var(--mut);font-weight:600;margin-top:2px">PROFESIONAL</span>
+    </a>
+    <nav class="desk" style="gap:1px;align-items:center;margin-right:6px">
+      <a href="#inicio" data-en="Home" style="padding:9px 12px;border-radius:999px;font-size:13.5px;font-weight:500;white-space:nowrap;color:var(--txt)" style-hover="background:var(--surf2);color:var(--gold)">Inicio</a>
+      <a href="#productos" data-en="Products" style="padding:9px 12px;border-radius:999px;font-size:13.5px;font-weight:500;white-space:nowrap;color:var(--txt)" style-hover="background:var(--surf2);color:var(--gold)">Productos</a>
+      <a href="#resenas" data-en="Reviews" style="padding:9px 12px;border-radius:999px;font-size:13.5px;font-weight:500;white-space:nowrap;color:var(--txt)" style-hover="background:var(--surf2);color:var(--gold)">Reseñas</a>
+      <a href="#certificaciones" data-en="Certifications" style="padding:9px 12px;border-radius:999px;font-size:13.5px;font-weight:500;white-space:nowrap;color:var(--txt)" style-hover="background:var(--surf2);color:var(--gold)">Certificaciones</a>
+      <a href="#blog" data-en="Blog" style="padding:9px 12px;border-radius:999px;font-size:13.5px;font-weight:500;white-space:nowrap;color:var(--txt)" style-hover="background:var(--surf2);color:var(--gold)">Blog</a>
+      <a href="#contacto" data-en="Contact" style="padding:9px 12px;border-radius:999px;font-size:13.5px;font-weight:500;white-space:nowrap;color:var(--txt)" style-hover="background:var(--surf2);color:var(--gold)">Contacto</a>
+    </nav>
+    <button onClick="{{ openSearch }}" aria-label="Buscar" style="width:41px;height:41px;border:1px solid var(--line);background:transparent;border-radius:999px;display:grid;place-items:center;cursor:pointer;color:var(--txt)" style-hover="background:var(--surf2);border-color:var(--line2)"><span class="mi mio" style="font-size:21px">search</span></button>
+    <button onClick="{{ toggleTheme }}" aria-label="Tema" style="width:41px;height:41px;border:1px solid var(--line);background:transparent;border-radius:999px;display:grid;place-items:center;cursor:pointer;color:var(--txt)" style-hover="background:var(--surf2);border-color:var(--line2)"><span class="mi mio" style="font-size:20px">{{ themeIcon }}</span></button>
+    <button onClick="{{ toggleLang }}" aria-label="Idioma" style="height:41px;padding:0 12px;border:1px solid var(--line);background:transparent;border-radius:999px;display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--txt)" style-hover="background:var(--surf2);border-color:var(--line2)"><span class="mi mio" style="font-size:17px">language</span>{{ langLabel }}</button>
+    <a href="#productos" class="desk" data-en="Shop" style="height:41px;padding:0 19px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:700;font-size:13.5px;align-items:center;gap:7px;box-shadow:0 8px 22px -10px rgba(168,124,47,.6);white-space:nowrap" style-hover="filter:brightness(1.07);transform:translateY(-1px)"><span class="mi" style="font-size:18px">storefront</span>Tienda LYOS</a>
+    <button onClick="{{ openCart }}" aria-label="Carrito" style="position:relative;width:41px;height:41px;border:1px solid var(--line2);background:var(--surf2);border-radius:999px;display:grid;place-items:center;cursor:pointer;color:var(--txt)" style-hover="background:var(--surf3)">
+      <span class="mi mio" style="font-size:21px">shopping_bag</span>
+      <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-3px;right:-3px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:var(--gold);color:var(--onGold);font-size:11px;font-weight:700;display:grid;place-items:center;border:2px solid var(--bg)">{{ cartCount }}</span></sc-if>
+    </button>
+  </div>
+</header>
+
+<section id="inicio">
+  <sc-if value="{{ heroA }}" hint-placeholder-val="{{ true }}">
+    <div class="hero">
+      <img src="assets/equipo-gold.jpg" alt="Equipo LYOS Profesional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;animation:kb 22s ease-in-out infinite alternate" />
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.34) 0%,rgba(14,11,7,.06) 34%,rgba(14,11,7,.5) 74%,rgba(14,11,7,.9) 100%)"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(30px,5vw,72px) clamp(20px,4vw,56px) calc(clamp(30px,5vw,72px) + var(--navPad) + env(safe-area-inset-bottom))">
+        <div style="max-width:1320px;margin:0 auto;text-align:center">
+          <span style="display:inline-flex;align-items:center;gap:9px;padding:8px 17px;border-radius:999px;border:1px solid rgba(241,222,184,.4);background:rgba(14,11,7,.42);backdrop-filter:blur(12px);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:#F1DEB8"><span class="mi" style="font-size:15px">verified</span>Línea capilar premium · Cali</span>
+          <h1 data-en="WE ARE LYOS" style="font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(46px,11vw,148px);line-height:.86;letter-spacing:-.055em;margin:16px 0 0;color:#FFFDF8;text-shadow:0 18px 50px rgba(0,0,0,.4)">SOMOS LYOS</h1>
+          <p data-en="Hair care specialists and a professional training academy, with a portfolio of high-quality products." style="max-width:60ch;margin:16px auto 0;font-size:clamp(14px,1.6vw,18px);line-height:1.6;color:rgba(255,253,248,.86)">Especialistas en cuidado capilar y academia de formación profesional, con un portafolio de productos de alta calidad.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:28px">
+            <a href="#productos" data-en="See the portfolio" style="display:inline-flex;align-items:center;gap:9px;height:56px;padding:0 30px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:700;font-size:15px;box-shadow:0 16px 40px -14px rgba(0,0,0,.6)" style-hover="filter:brightness(1.08);transform:translateY(-2px)"><span class="mi" style="font-size:20px">grid_view</span>Ver portafolio de productos</a>
+            <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:9px;height:56px;padding:0 26px;border-radius:999px;border:1px solid rgba(255,253,248,.42);background:rgba(255,253,248,.1);backdrop-filter:blur(14px);color:#FFFDF8;font-weight:600;font-size:15px" style-hover="background:rgba(255,253,248,.2)"><span class="mi" style="font-size:20px">chat</span>Asesoría por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ heroB }}" hint-placeholder-val="{{ false }}">
+    <div style="position:relative;background:var(--bg);overflow:hidden">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));align-items:stretch;min-height:clamp(500px,80vh,780px)">
+        <div style="padding:clamp(34px,5vw,72px) clamp(20px,4vw,50px) calc(clamp(34px,5vw,72px) + var(--navPad) + env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:center">
+          <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--gold)">El nuevo estándar</span>
+          <h1 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(40px,6.4vw,84px);line-height:.94;letter-spacing:-.05em;margin:20px 0 0">Cuidado capilar<br><span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.82em;letter-spacing:0;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">de uso profesional</span></h1>
+          <p style="max-width:44ch;font-size:clamp(15px,1.5vw,17.5px);line-height:1.65;color:var(--mut);margin:22px 0 0">Fórmulas avanzadas creadas para resaltar la esencia única de cada cabello. Desde el más liso hasta el rizo más rebelde.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:11px;margin-top:30px">
+            <a href="#productos" style="display:inline-flex;align-items:center;gap:9px;height:56px;padding:0 28px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:700;font-size:15px;box-shadow:0 14px 34px -14px rgba(168,124,47,.7)" style-hover="filter:brightness(1.08);transform:translateY(-2px)"><span class="mi" style="font-size:20px">shopping_bag</span>Comprar la línea</a>
+            <a href="#resenas" style="display:inline-flex;align-items:center;gap:9px;height:56px;padding:0 24px;border-radius:999px;border:1px solid var(--line2);color:var(--txt);font-weight:600;font-size:15px" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi mio" style="font-size:20px">reviews</span>Ver reseñas</a>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:26px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)">
+            <div style="display:grid;gap:2px"><span style="font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--gold);letter-spacing:-.03em">4.9 ★</span><span style="font-size:11.5px;color:var(--mut)">670 reseñas</span></div>
+            <div style="display:grid;gap:2px"><span style="font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--gold);letter-spacing:-.03em">+4.200</span><span style="font-size:11.5px;color:var(--mut)">profesionales</span></div>
+            <div style="display:grid;gap:2px"><span style="font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--gold);letter-spacing:-.03em">24 h</span><span style="font-size:11.5px;color:var(--mut)">despacho</span></div>
+          </div>
+        </div>
+        <div style="position:relative;min-height:340px;overflow:hidden">
+          <img src="assets/cristina-wide.jpg" alt="Cristina Gutiérrez, CEO LYOS" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:66% 24%" />
+          <div style="position:absolute;inset:0;background:linear-gradient(96deg,var(--bg) 0%,rgba(251,248,242,.28) 26%,transparent 52%)"></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ heroC }}" hint-placeholder-val="{{ false }}">
+    <div class="hero" style="background:#0C0A07;display:grid;place-items:center">
+      <img src="assets/equipo-dark.jpg" alt="Equipo LYOS Profesional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;opacity:.7" />
+      <div style="position:absolute;inset:0;background:radial-gradient(78% 62% at 50% 34%,rgba(201,164,92,.24),transparent 64%),linear-gradient(180deg,rgba(12,10,7,.7),rgba(12,10,7,.42) 40%,rgba(12,10,7,.95))"></div>
+      <div style="position:relative;text-align:center;padding:clamp(30px,5vw,60px) 22px calc(clamp(30px,5vw,60px) + var(--navPad) + env(safe-area-inset-bottom));max-width:1000px">
+        <span style="display:block;height:1px;width:120px;margin:0 auto;background:var(--goldLine)"></span>
+        <span style="display:block;margin-top:22px;font-size:10.5px;letter-spacing:.42em;text-transform:uppercase;font-weight:700;color:#C9A45C">Cali · Colombia · Desde 2024</span>
+        <h1 style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(38px,7.4vw,96px);line-height:1;letter-spacing:-.045em;margin:20px 0 0;color:#FFFDF8">La excelencia<br><em style="font-style:normal;font-weight:700;background:linear-gradient(100deg,#F1DEB8,#C9A45C 46%,#8A6425);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">no es casualidad</em></h1>
+        <p style="max-width:56ch;margin:22px auto 0;font-size:clamp(14px,1.5vw,17px);line-height:1.7;color:rgba(255,253,248,.78)">Es el resultado de la preparación constante. Cada fórmula, cada certificación y cada entrenamiento elevan el estándar de calidad, servicio e innovación.</p>
+        <span style="display:block;height:1px;width:120px;margin:26px auto 0;background:var(--goldLine)"></span>
+        <div style="display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:26px">
+          <a href="#productos" style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 30px;border-radius:999px;background:linear-gradient(120deg,#F1DEB8,#C9A45C 46%,#8A6425);color:#1A1409;font-weight:700;font-size:15px" style-hover="filter:brightness(1.08);transform:translateY(-2px)"><span class="mi" style="font-size:19px">auto_awesome</span>Descubrir la línea</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ heroD }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:clamp(16px,2.4vw,30px);background:var(--bg2)">
+      <div class="hero" style="max-width:1320px;margin:0 auto;border-radius:clamp(26px,3.4vw,44px);box-shadow:var(--e3)">
+        <img src="assets/equipo-blanco.jpg" alt="Equipo LYOS Profesional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%" />
+        <div style="position:absolute;inset:0;background:linear-gradient(112deg,rgba(12,10,7,.82) 0%,rgba(12,10,7,.44) 44%,rgba(12,10,7,.12) 72%)"></div>
+        <div style="position:absolute;left:0;top:0;bottom:0;display:flex;align-items:center;padding:clamp(24px,4vw,64px) clamp(24px,4vw,64px) calc(clamp(24px,4vw,64px) + var(--navPad) + env(safe-area-inset-bottom));max-width:min(100%,660px)">
+          <div style="padding:clamp(24px,3vw,38px);border-radius:30px;background:rgba(20,16,11,.42);backdrop-filter:blur(26px) saturate(1.3);border:1px solid rgba(241,222,184,.24);box-shadow:0 30px 70px -24px rgba(0,0,0,.7)">
+            <span style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(241,222,184,.34);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#F1DEB8">Portafolio profesional</span>
+            <h1 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(34px,5.2vw,64px);line-height:.98;letter-spacing:-.045em;margin:18px 0 0;color:#FFFDF8">Somos LYOS<br>Profesional</h1>
+            <p style="font-size:clamp(14px,1.4vw,16.5px);line-height:1.65;color:rgba(255,253,248,.82);margin:14px 0 0;max-width:42ch">Alisados, shampoo, tratamiento y termoprotección de uso profesional. Compra directo y te atendemos por WhatsApp en minutos.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+              <a href="#productos" style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 26px;border-radius:999px;background:linear-gradient(120deg,#F1DEB8,#C9A45C 46%,#8A6425);color:#1A1409;font-weight:700;font-size:14.5px" style-hover="filter:brightness(1.08)"><span class="mi" style="font-size:19px">shopping_bag</span>Comprar ahora</a>
+              <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,253,248,.4);background:rgba(255,253,248,.1);color:#FFFDF8;font-weight:600;font-size:14.5px" style-hover="background:rgba(255,253,248,.2)"><span class="mi" style="font-size:19px">support_agent</span>Hablar con LYOS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="max-width:1320px;margin:0 auto;padding:16px 18px 0;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center">
+    <span style="display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--dim)"><span class="mi mio" style="font-size:16px">palette</span>Elige tu portada</span>
+    <div style="display:flex;gap:5px;padding:5px;border-radius:999px;background:var(--surf);border:1px solid var(--line)">
+      <sc-for list="{{ heroOpts }}" as="h" hint-placeholder-count="4">
+        <button onClick="{{ h.pick }}" style="{{ h.style }}">{{ h.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,72px) 18px 0">
+  <div style="display:grid;gap:clamp(20px,3vw,40px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:center">
+    <div style="order:2">
+      <span style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700">Video de marca</span>
+      <h2 data-en="Excellence you can see in every detail" style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4.4vw,46px);font-weight:700;letter-spacing:-.04em;line-height:1.04;margin:12px 0 0">La preparación<br>se nota en cada detalle</h2>
+      <p style="font-size:15px;line-height:1.7;color:var(--mut);margin:16px 0 0;max-width:48ch">Cada entrenamiento, cada certificación y cada experiencia han sido parte de un proceso consciente: elevar el estándar de calidad, servicio e innovación para nuestros clientes y estudiantes.</p>
+      <p style="font-size:15px;line-height:1.7;color:var(--mut);margin:12px 0 0;max-width:48ch">Porque cuando el conocimiento se une con la pasión, el resultado se nota. Más que un producto, es una experiencia profesional respaldada por formación global.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:22px">
+        <span style="display:inline-flex;align-items:center;gap:7px;padding:10px 15px;border-radius:999px;background:var(--surf);border:1px solid var(--line);font-size:12.5px;font-weight:600"><span class="mi" style="font-size:17px;color:var(--gold)">verified</span>Formación internacional</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;padding:10px 15px;border-radius:999px;background:var(--surf);border:1px solid var(--line);font-size:12.5px;font-weight:600"><span class="mi" style="font-size:17px;color:var(--gold)">biotech</span>Tecnología capilar</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;padding:10px 15px;border-radius:999px;background:var(--surf);border:1px solid var(--line);font-size:12.5px;font-weight:600"><span class="mi" style="font-size:17px;color:var(--gold)">workspace_premium</span>Calidad profesional</span>
+      </div>
+    </div>
+    <div style="order:1;position:relative;justify-self:center;width:100%;max-width:380px">
+      <div style="position:relative;border-radius:32px;overflow:hidden;border:1px solid var(--line2);background:#000;aspect-ratio:9/16;box-shadow:var(--e3)">
+        <video src="assets/video-excelencia.mp4" controls playsinline preload="metadata" poster="assets/cristina-wide.jpg" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+      </div>
+      <span style="position:absolute;left:-10px;top:-10px;padding:8px 14px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-size:10.5px;font-weight:700;letter-spacing:.14em;box-shadow:var(--e2)">LYOS PROFESIONAL</span>
+    </div>
+  </div>
+</section>
+
+<div style="overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:14px 0;margin-top:clamp(40px,6vw,68px)">
+  <div style="display:flex;width:max-content;animation:mq 36s linear infinite">
+    <div style="display:flex;gap:34px;padding-right:34px;align-items:center">
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--gold);font-weight:700">LIBRE DE FORMOL</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--mut);font-weight:600">ÁCIDO HIALURÓNICO</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--gold);font-weight:700">SIN SAL NI PARABENOS</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--mut);font-weight:600">MANTEQUILLA DE MURUMURU</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--gold);font-weight:700">USO PROFESIONAL</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--mut);font-weight:600">TECNOLOGÍA BRASILEÑA Y COREANA</span><span style="color:var(--dim)">◆</span>
+    </div>
+    <div style="display:flex;gap:34px;padding-right:34px;align-items:center">
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--gold);font-weight:700">LIBRE DE FORMOL</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--mut);font-weight:600">ÁCIDO HIALURÓNICO</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--gold);font-weight:700">SIN SAL NI PARABENOS</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--mut);font-weight:600">MANTEQUILLA DE MURUMURU</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--gold);font-weight:700">USO PROFESIONAL</span><span style="color:var(--dim)">◆</span>
+      <span style="font-size:11.5px;letter-spacing:.26em;color:var(--mut);font-weight:600">TECNOLOGÍA BRASILEÑA Y COREANA</span><span style="color:var(--dim)">◆</span>
+    </div>
+  </div>
+</div>
+
+<section id="productos" style="max-width:1320px;margin:0 auto;padding:clamp(44px,6vw,76px) 18px 0">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px;justify-content:space-between">
+    <div>
+      <span data-en="Product portfolio" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700">Portafolio</span>
+      <h2 data-en="The LYOS line" style="font-family:'Outfit',sans-serif;font-size:clamp(32px,5.4vw,58px);font-weight:700;letter-spacing:-.045em;line-height:1;margin:10px 0 0">La línea LYOS</h2>
+      <p data-en="Two clicks to buy. We confirm and finish the order on WhatsApp." style="max-width:46ch;font-size:14.5px;color:var(--mut);margin:12px 0 0;line-height:1.6">Dos clics para comprar. Confirmamos y cerramos el pedido por WhatsApp.</p>
+    </div>
+    <div style="display:flex;gap:5px;padding:5px;border-radius:999px;background:var(--surf);border:1px solid var(--line)">
+      <button onClick="{{ setEditorial }}" style="{{ edStyle }}"><span class="mi mio" style="font-size:18px">view_agenda</span>Editorial</button>
+      <button onClick="{{ setGallery }}" style="{{ glStyle }}"><span class="mi mio" style="font-size:18px">grid_view</span>Galería</button>
+    </div>
+  </div>
+
+  <div class="hs" style="display:flex;gap:8px;overflow-x:auto;padding:22px 0 20px;scroll-snap-type:x proximity">
+    <sc-for list="{{ cats }}" as="c" hint-placeholder-count="5">
+      <button onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.label }}</button>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ isEditorial }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;gap:clamp(16px,2.4vw,26px)">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="4">
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:0;border-radius:clamp(24px,2.6vw,34px);overflow:hidden;background:var(--surf);border:1px solid var(--line);box-shadow:var(--e1);transition:box-shadow .4s,border-color .4s" style-hover="box-shadow:var(--e3);border-color:var(--line2)">
+          <button onClick="{{ p.open }}" style="order:{{ p.imgOrder }};position:relative;border:0;padding:0;cursor:pointer;background:var(--plinth);min-height:clamp(280px,34vw,420px);display:grid;place-items:center;overflow:hidden">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%;height:100%;max-height:440px;object-fit:contain;padding:clamp(20px,3vw,42px);mix-blend-mode:multiply;transition:transform .6s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.05)" />
+            <span style="position:absolute;top:16px;left:16px;padding:7px 13px;border-radius:999px;background:rgba(14,11,7,.86);color:#F1DEB8;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap">{{ p.badge }}</span>
+            <span style="position:absolute;bottom:16px;right:16px;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:rgba(255,254,250,.86);backdrop-filter:blur(10px);color:#16120D;font-size:11.5px;font-weight:700"><span class="mi mio" style="font-size:16px">zoom_in</span>Ver ficha</span>
+          </button>
+          <div style="padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:center">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="color:var(--gold);letter-spacing:1.5px;font-size:14px">★★★★★</span>
+              <span style="font-size:12.5px;font-weight:700">{{ p.rating }}</span>
+              <span style="font-size:12px;color:var(--mut)">· {{ p.reviews }} reseñas</span>
+            </div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(24px,3.2vw,38px);font-weight:700;letter-spacing:-.035em;line-height:1.04;margin:12px 0 0">{{ p.name }}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:var(--mut);margin:12px 0 0;max-width:50ch">{{ p.desc }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:16px">
+              <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="0">
+                <span style="padding:7px 13px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);font-size:11.5px;font-weight:600;color:var(--gold)">{{ t }}</span>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;justify-content:space-between;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)">
+              <div style="display:grid;gap:3px">
+                <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);font-weight:600">{{ p.sizeLabel }}</span>
+                <span style="font-family:'Outfit',sans-serif;font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-.03em;line-height:1">{{ p.priceLabel }}</span>
+              </div>
+              <div style="display:flex;gap:9px">
+                <button onClick="{{ p.buy }}" style="height:54px;padding:0 24px;border:0;border-radius:999px;background:{{ p.ctaBg }};color:{{ p.ctaFg }};font-weight:700;font-size:14.5px;cursor:pointer;display:flex;align-items:center;gap:9px;box-shadow:{{ p.ctaShadow }};white-space:nowrap" style-hover="filter:brightness(1.08);transform:translateY(-2px)"><span class="mi" style="font-size:19px">{{ p.ctaIcon }}</span>{{ p.ctaLabel }}</button>
+                <button onClick="{{ p.add }}" aria-label="Añadir al carrito" style="width:54px;height:54px;flex:none;border:1px solid var(--line2);background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold)"><span class="mi mio" style="font-size:21px">add_shopping_cart</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isGallery }}" hint-placeholder-val="{{ false }}">
+    <div style="display:grid;gap:clamp(14px,1.8vw,22px);grid-template-columns:repeat(auto-fill,minmax(clamp(240px,30%,380px),1fr))">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="3">
+        <article style="display:flex;flex-direction:column;border-radius:clamp(22px,2.2vw,30px);overflow:hidden;background:var(--surf);border:1px solid var(--line);box-shadow:var(--e1);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s" style-hover="transform:translateY(-7px);box-shadow:var(--e3);border-color:var(--line2)">
+          <button onClick="{{ p.open }}" style="position:relative;border:0;padding:0;cursor:pointer;background:var(--plinth);aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:clamp(18px,2.4vw,32px);mix-blend-mode:multiply;transition:transform .6s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.06)" />
+            <span style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:rgba(14,11,7,.86);color:#F1DEB8;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap">{{ p.badge }}</span>
+          </button>
+          <button onClick="{{ p.fav }}" aria-label="Favorito" style="position:absolute;margin:14px 0 0 0;align-self:flex-end;transform:translate(-14px,-100%);width:38px;height:38px;border-radius:999px;border:0;background:rgba(255,254,250,.88);backdrop-filter:blur(10px);display:grid;place-items:center;cursor:pointer;color:{{ p.favColor }};box-shadow:var(--e1)"><span class="mi" style="font-size:19px">favorite</span></button>
+          <div style="padding:20px 20px 22px;display:flex;flex-direction:column;flex:1">
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="color:var(--gold);letter-spacing:1px">★★★★★</span><span style="color:var(--mut)">{{ p.rating }} · {{ p.reviews }}</span></div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:19px;font-weight:600;line-height:1.2;letter-spacing:-.025em;margin:9px 0 0">{{ p.name }}</h3>
+            <p style="font-size:12.5px;color:var(--dim);margin:6px 0 0;letter-spacing:.04em">{{ p.sizeLabel }}</p>
+            <p style="font-size:13.5px;line-height:1.55;color:var(--mut);margin:11px 0 0">{{ p.short }}</p>
+            <div style="display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:18px">
+              <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.03em">{{ p.priceLabel }}</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:14px">
+              <button onClick="{{ p.buy }}" style="flex:1;height:50px;border:0;border-radius:999px;background:{{ p.ctaBg }};color:{{ p.ctaFg }};font-weight:700;font-size:13.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px" style-hover="filter:brightness(1.08)"><span class="mi" style="font-size:18px">{{ p.ctaIcon }}</span>{{ p.ctaLabel }}</button>
+              <button onClick="{{ p.add }}" aria-label="Añadir al carrito" style="width:50px;height:50px;flex:none;border:1px solid var(--line2);background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold)"><span class="mi mio" style="font-size:20px">add_shopping_cart</span></button>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));margin-top:clamp(24px,3vw,34px)">
+    <div style="display:flex;gap:12px;align-items:flex-start;padding:17px;border-radius:22px;background:var(--surf);border:1px solid var(--line)">
+      <span class="mi" style="font-size:24px;color:var(--gold)">bolt</span>
+      <div style="display:grid;gap:2px"><span data-en="Two-click checkout" style="font-weight:700;font-size:14px">Compra en 2 clics</span><span data-en="Confirmed on WhatsApp" style="font-size:12.5px;color:var(--mut)">Se confirma por WhatsApp</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;padding:17px;border-radius:22px;background:var(--surf);border:1px solid var(--line)">
+      <span class="mi" style="font-size:24px;color:var(--gold)">local_shipping</span>
+      <div style="display:grid;gap:2px"><span data-en="Nationwide shipping" style="font-weight:700;font-size:14px">Envíos nacionales</span><span data-en="Free over $150.000" style="font-size:12.5px;color:var(--mut)">Gratis desde $150.000</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;padding:17px;border-radius:22px;background:var(--surf);border:1px solid var(--line)">
+      <span class="mi" style="font-size:24px;color:var(--gold)">verified_user</span>
+      <div style="display:grid;gap:2px"><span data-en="Original product" style="font-weight:700;font-size:14px">Producto original</span><span data-en="Direct from the brand" style="font-size:12.5px;color:var(--mut)">Directo de la marca</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;padding:17px;border-radius:22px;background:var(--surf);border:1px solid var(--line)">
+      <span class="mi" style="font-size:24px;color:var(--gold)">support_agent</span>
+      <div style="display:grid;gap:2px"><span data-en="Real advice" style="font-weight:700;font-size:14px">Asesoría real</span><span data-en="WhatsApp 8am – 5pm" style="font-size:12.5px;color:var(--mut)">WhatsApp 8am – 5pm</span></div>
+    </div>
+  </div>
+</section>
+<section id="resenas" style="margin-top:clamp(48px,7vw,84px);padding:clamp(44px,6vw,76px) 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 18px">
+    <div style="text-align:center;max-width:720px;margin:0 auto">
+      <span style="display:block;height:1px;width:100px;margin:0 auto 20px;background:var(--goldLine)"></span>
+      <span data-en="Verified reviews" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700">Reseñas verificadas</span>
+      <h2 data-en="What professionals say" style="font-family:'Outfit',sans-serif;font-size:clamp(30px,5.2vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1.02;margin:12px 0 0">Lo que dicen<br>las profesionales</h2>
+    </div>
+
+    <div style="display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));margin-top:clamp(28px,4vw,44px);align-items:stretch">
+      <div style="grid-column:1/-1;display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))">
+        <div style="padding:clamp(26px,3.4vw,44px);border-radius:clamp(24px,2.6vw,34px);background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e2);display:flex;flex-direction:column;justify-content:center">
+          <span class="mi" style="font-size:44px;color:var(--goldi);line-height:.6">format_quote</span>
+          <p style="font-family:'Outfit',sans-serif;font-size:clamp(19px,2.2vw,27px);font-weight:500;line-height:1.36;letter-spacing:-.025em;margin:16px 0 0">El Liso Hialurónico me cambió el servicio. Salgo con un liso espejo sin olor a formol y mis clientas repiten cada tres meses. El rendimiento del litro es real.</p>
+          <div style="display:flex;align-items:center;gap:13px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)">
+            <span style="width:46px;height:46px;border-radius:999px;background:var(--goldGrad);display:grid;place-items:center;color:var(--onGold);font-family:'Outfit',sans-serif;font-weight:700;font-size:17px">M</span>
+            <div style="display:grid;gap:2px;flex:1"><span style="font-size:14.5px;font-weight:700">Marcela Rivera</span><span style="font-size:12.5px;color:var(--mut)">Salón propio · Cali</span></div>
+            <span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--gold);padding:6px 11px;border-radius:999px;background:var(--surf3);white-space:nowrap"><span class="mi" style="font-size:14px">verified</span>VERIFICADA</span>
+          </div>
+        </div>
+        <div style="display:grid;gap:clamp(14px,2vw,20px);align-content:stretch">
+          <div style="padding:clamp(22px,2.6vw,32px);border-radius:clamp(22px,2.4vw,30px);background:var(--surf);border:1px solid var(--line);display:flex;align-items:center;gap:clamp(16px,2.4vw,26px);flex-wrap:wrap">
+            <span style="font-family:'Outfit',sans-serif;font-size:clamp(46px,6vw,74px);font-weight:700;color:var(--gold);line-height:.9;letter-spacing:-.04em">4.9</span>
+            <div style="display:grid;gap:5px;flex:1;min-width:150px">
+              <span style="color:var(--gold);font-size:18px;letter-spacing:2px">★★★★★</span>
+              <span data-en="670 verified reviews" style="font-size:13px;color:var(--mut)">670 reseñas verificadas</span>
+              <span data-en="98% would recommend LYOS" style="font-size:13px;color:var(--mut)">98% recomienda LYOS</span>
+            </div>
+          </div>
+          <div style="position:relative;border-radius:clamp(22px,2.4vw,30px);overflow:hidden;border:1px solid var(--line2);background:#000;min-height:190px;flex:1">
+            <video src="assets/video-protector.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;min-height:190px;object-fit:cover;display:block"></video>
+            <span style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:rgba(14,11,7,.72);backdrop-filter:blur(10px);color:#F1DEB8;font-size:9.5px;font-weight:700;letter-spacing:.16em;pointer-events:none">EN VIVO · PROTECTOR TÉRMICO</span>
+          </div>
+        </div>
+      </div>
+
+      <article style="position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:300px;display:flex;align-items:flex-end" style-hover="transform:translateY(-5px);box-shadow:var(--e3)">
+        <img src="assets/equipo-salon.png" alt="Equipo LYOS en salón" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 26%" />
+        <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.12) 0%,rgba(14,11,7,.62) 46%,rgba(14,11,7,.94) 100%)"></span>
+        <div style="position:relative;padding:24px">
+          <span style="color:#E2C88E;letter-spacing:1.5px;font-size:14px">★★★★★</span>
+          <p style="font-size:14.5px;line-height:1.6;margin:11px 0 0;color:#FFFDF8">Hice el módulo de tricología y volví al salón cobrando diagnóstico. Aprendí a leer el capilógrafo y a armar la ficha técnica de cada clienta.</p>
+          <div style="display:flex;align-items:center;gap:11px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(241,222,184,.24)">
+            <span style="width:36px;height:36px;border-radius:999px;background:linear-gradient(120deg,#F1DEB8,#C9A45C 46%,#8A6425);display:grid;place-items:center;color:#1A1409;font-weight:700;font-size:14px">D</span>
+            <div style="display:grid;gap:2px"><span style="font-size:13.5px;font-weight:700;color:#FFFDF8">Daniela Peña</span><span style="font-size:12px;color:rgba(255,253,248,.68)">Estudiante Academia · Palmira</span></div>
+          </div>
+        </div>
+      </article>
+      <article style="position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:300px;display:flex;align-items:flex-end" style-hover="transform:translateY(-5px);box-shadow:var(--e3)">
+        <img src="assets/equipo-blanco.jpg" alt="Equipo LYOS Profesional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%" />
+        <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.12) 0%,rgba(14,11,7,.62) 46%,rgba(14,11,7,.94) 100%)"></span>
+        <div style="position:relative;padding:24px">
+          <span style="color:#E2C88E;letter-spacing:1.5px;font-size:14px">★★★★★</span>
+          <p style="font-size:14.5px;line-height:1.6;margin:11px 0 0;color:#FFFDF8">El shampoo de limpieza profunda es mi favorito para preparar la fibra antes del alisado. La sensación mentolada y el aroma venden solos.</p>
+          <div style="display:flex;align-items:center;gap:11px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(241,222,184,.24)">
+            <span style="width:36px;height:36px;border-radius:999px;background:linear-gradient(120deg,#F1DEB8,#C9A45C 46%,#8A6425);display:grid;place-items:center;color:#1A1409;font-weight:700;font-size:14px">L</span>
+            <div style="display:grid;gap:2px"><span style="font-size:13.5px;font-weight:700;color:#FFFDF8">Laura Muñoz</span><span style="font-size:12px;color:rgba(255,253,248,.68)">Estilista · Medellín</span></div>
+          </div>
+        </div>
+      </article>
+      <article style="position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:300px;display:flex;align-items:flex-end" style-hover="transform:translateY(-5px);box-shadow:var(--e3)">
+        <img src="assets/equipo-dark.jpg" alt="Equipo LYOS" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%" />
+        <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.12) 0%,rgba(14,11,7,.62) 46%,rgba(14,11,7,.94) 100%)"></span>
+        <div style="position:relative;padding:24px">
+          <span style="color:#E2C88E;letter-spacing:1.5px;font-size:14px">★★★★★</span>
+          <p style="font-size:14.5px;line-height:1.6;margin:11px 0 0;color:#FFFDF8">Pedí a Bogotá un miércoles y llegó el viernes. El protector térmico se volvió obligatorio en mi rutina antes de la plancha.</p>
+          <div style="display:flex;align-items:center;gap:11px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(241,222,184,.24)">
+            <span style="width:36px;height:36px;border-radius:999px;background:linear-gradient(120deg,#F1DEB8,#C9A45C 46%,#8A6425);display:grid;place-items:center;color:#1A1409;font-weight:700;font-size:14px">V</span>
+            <div style="display:grid;gap:2px"><span style="font-size:13.5px;font-weight:700;color:#FFFDF8">Valeria Cardona</span><span style="font-size:12px;color:rgba(255,253,248,.68)">Cliente · Bogotá</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p style="margin:16px 0 0;text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--dim)">reseñas de muestra — reemplazar con las reales de Google / WhatsApp</p>
+  </div>
+</section>
+
+<section id="certificaciones" style="max-width:1320px;margin:0 auto;padding:clamp(44px,6vw,80px) 18px 0">
+  <div style="display:grid;gap:clamp(22px,3.4vw,44px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:center">
+    <div>
+      <span data-en="Certifications" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700">Certificaciones</span>
+      <h2 data-en="Excellence is not chance" style="font-family:'Outfit',sans-serif;font-size:clamp(30px,4.8vw,52px);font-weight:700;letter-spacing:-.045em;line-height:1.02;margin:12px 0 0">Respaldo real,<br>formación global</h2>
+      <p style="font-size:15px;line-height:1.7;color:var(--mut);margin:16px 0 0;max-width:48ch">Cada entrenamiento y cada certificación han sido parte de un proceso consciente: elevar el estándar de calidad, servicio e innovación para nuestros clientes y estudiantes.</p>
+      <div style="display:grid;gap:10px;margin-top:24px">
+        <div style="display:flex;gap:12px;align-items:center;padding:15px 17px;border-radius:20px;background:var(--surf);border:1px solid var(--line)">
+          <span class="mi" style="font-size:22px;color:var(--gold)">workspace_premium</span>
+          <div style="display:grid;gap:2px;flex:1"><span style="font-size:14px;font-weight:700">Formación internacional</span><span style="font-size:12.5px;color:var(--mut)">Técnicas brasileñas y coreanas certificadas</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;padding:15px 17px;border-radius:20px;background:var(--surf);border:1px solid var(--line)">
+          <span class="mi" style="font-size:22px;color:var(--gold)">science</span>
+          <div style="display:grid;gap:2px;flex:1"><span style="font-size:14px;font-weight:700">Producto registrado</span><span style="font-size:12.5px;color:var(--mut)">Fórmulas con respaldo sanitario</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;padding:15px 17px;border-radius:20px;background:var(--surf);border:1px solid var(--line)">
+          <span class="mi" style="font-size:22px;color:var(--gold)">school</span>
+          <div style="display:grid;gap:2px;flex:1"><span style="font-size:14px;font-weight:700">Academia certificadora</span><span style="font-size:12.5px;color:var(--mut)">+4.200 profesionales formadas</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;gap:12px;grid-template-columns:repeat(2,1fr)">
+      <div style="position:relative;aspect-ratio:3/4;border-radius:26px;overflow:hidden;border:1px solid var(--line2);box-shadow:var(--e2)">
+        <img src="assets/cristina-wide.jpg" alt="Cristina Gutiérrez" style="width:100%;height:100%;object-fit:cover;object-position:64% 22%" />
+        <span style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(14,11,7,.9))"></span>
+        <span style="position:absolute;left:16px;right:16px;bottom:16px;display:flex;flex-direction:column"><span style="font-family:'Kaushan Script',cursive;font-size:19px;color:#F1DEB8">Cristina Gutiérrez</span><span style="font-size:11px;color:rgba(255,253,248,.72);margin-top:3px">CEO · Formación internacional</span></span>
+      </div>
+      <div style="display:grid;gap:12px;align-content:stretch">
+        <div style="position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);flex:1;min-height:110px">
+          <img src="assets/equipo-salon.png" alt="Equipo LYOS certificado" style="width:100%;height:100%;object-fit:cover;object-position:center 26%" />
+          <span style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,11,7,.84))"></span>
+          <span style="position:absolute;left:14px;bottom:12px;font-size:11.5px;font-weight:700;color:#FFFDF8">Equipo certificado</span>
+        </div>
+        <div style="aspect-ratio:1;border-radius:26px;border:1px dashed var(--line2);background:var(--surf2);display:grid;place-items:center;padding:14px;text-align:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:10px;line-height:1.6;color:var(--dim)">diploma o<br>sello real<br>1:1</span></div>
+      </div>
+    </div>
+  </div>
+  <p style="margin:16px 0 0;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--dim)">2 espacios libres — envíame los diplomas y sellos reales y los monto aquí</p>
+</section>
+
+<section id="mas" style="max-width:1320px;margin:0 auto;padding:clamp(44px,6vw,76px) 18px 0">
+  <div style="display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))">
+    <a href="{{ waAcademia }}" target="_blank" style="position:relative;border-radius:clamp(24px,2.6vw,34px);overflow:hidden;min-height:clamp(240px,28vw,320px);display:flex;align-items:flex-end;border:1px solid var(--line);color:var(--txt)" style-hover="transform:translateY(-5px)">
+      <img src="assets/equipo-gold.jpg" alt="LYOS Academia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 36%" />
+      <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.2),rgba(14,11,7,.86))"></span>
+      <span style="position:relative;padding:clamp(22px,3vw,32px);width:100%">
+        <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;border:1px solid rgba(241,222,184,.36);background:rgba(14,11,7,.4);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#F1DEB8">Próximamente</span>
+        <span data-en="LYOS Academy" style="display:block;margin-top:12px;font-family:'Outfit',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.035em;color:#FFFDF8">Academia LYOS</span>
+        <span data-en="Tricology, hair therapies and straightening techniques. Own page coming soon." style="display:block;margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(255,253,248,.78);max-width:40ch">Tricología, terapias capilares y técnicas de alisado. Tendrá su propia página; escríbenos y te contamos fechas.</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;height:44px;padding:0 20px;border-radius:999px;background:linear-gradient(120deg,#F1DEB8,#C9A45C 46%,#8A6425);color:#1A1409;font-weight:700;font-size:13.5px"><span class="mi" style="font-size:18px">chat</span>Info por WhatsApp</span>
+      </span>
+    </a>
+    <a href="{{ waLink }}" target="_blank" style="position:relative;border-radius:clamp(24px,2.6vw,34px);overflow:hidden;min-height:clamp(240px,28vw,320px);display:flex;align-items:flex-end;border:1px solid var(--line);color:var(--txt)" style-hover="transform:translateY(-5px)">
+      <img src="assets/cristina-cutout.png" alt="Cristina Gutiérrez, CEO LYOS" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%;background:linear-gradient(160deg,#2A2318,#0D0B08)" />
+      <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.14),rgba(14,11,7,.84))"></span>
+      <span style="position:relative;padding:clamp(22px,3vw,32px);width:100%">
+        <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;border:1px solid rgba(241,222,184,.36);background:rgba(14,11,7,.4);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#F1DEB8">Próximamente</span>
+        <span style="display:block;margin-top:10px;font-family:'Kaushan Script',cursive;font-size:clamp(26px,3.4vw,40px);color:#F1DEB8;line-height:1.05">Cristina Gutiérrez</span>
+        <span data-en="CEO LYOS Profesional. Her story gets its own page." style="display:block;margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(255,253,248,.78);max-width:40ch">CEO LYOS Profesional. Su historia tendrá su propia página dentro del sitio.</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,253,248,.4);background:rgba(255,253,248,.12);backdrop-filter:blur(10px);color:#FFFDF8;font-weight:700;font-size:13.5px"><span class="mi mio" style="font-size:18px">arrow_outward</span>Conocer más</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section id="blog" style="max-width:1320px;margin:0 auto;padding:clamp(44px,6vw,80px) 18px 0">
+  <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between">
+    <div>
+      <span data-en="LYOS Journal" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700">Blog LYOS</span>
+      <h2 data-en="Information that raises your standard" style="font-family:'Outfit',sans-serif;font-size:clamp(30px,5.2vw,54px);font-weight:700;letter-spacing:-.045em;line-height:1.02;margin:12px 0 0">Información de valor</h2>
+    </div>
+    <a href="{{ waBlog }}" target="_blank" data-en="Suggest a topic" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--line2);font-size:13.5px;font-weight:600;color:var(--txt)" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi mio" style="font-size:18px">lightbulb</span>Sugerir un tema</a>
+  </div>
+
+  <div style="display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:clamp(24px,3.4vw,36px)">
+    <article style="position:relative;grid-column:span 1;border-radius:clamp(24px,2.6vw,32px);overflow:hidden;border:1px solid var(--line);min-height:clamp(320px,38vw,420px);display:flex;align-items:flex-end;cursor:pointer" style-hover="transform:translateY(-6px);box-shadow:var(--e3)">
+      <img src="assets/equipo-salon.png" alt="Equipo LYOS Profesional" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%" />
+      <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.1) 0%,rgba(14,11,7,.56) 44%,rgba(14,11,7,.95) 100%)"></span>
+      <div style="position:relative;padding:clamp(22px,3vw,32px)">
+        <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;border:1px solid rgba(241,222,184,.36);background:rgba(14,11,7,.4);backdrop-filter:blur(10px);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#F1DEB8">Destacado · Tricología</span>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(21px,2.6vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.14;margin:14px 0 0;color:#FFFDF8">Cómo leer un cuero cabelludo antes de cualquier alisado</h3>
+        <p style="font-size:13.5px;line-height:1.6;color:rgba(255,253,248,.78);margin:10px 0 0;max-width:44ch">Los cuatro signos que definen si la fibra aguanta calor, y qué hacer cuando la respuesta es no.</p>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:16px;font-size:12px;color:rgba(255,253,248,.7)">
+          <span style="display:inline-flex;align-items:center;gap:6px"><span class="mi mio" style="font-size:15px">schedule</span>6 min</span>
+          <span style="display:inline-flex;align-items:center;gap:6px"><span class="mi mio" style="font-size:15px">person</span>Cristina Gutiérrez</span>
+        </div>
+      </div>
+    </article>
+
+    <div style="display:grid;gap:clamp(14px,2vw,20px);align-content:start">
+      <article style="display:flex;gap:15px;padding:15px;border-radius:24px;background:var(--surf);border:1px solid var(--line);cursor:pointer" style-hover="border-color:var(--line2);transform:translateY(-4px);box-shadow:var(--e2)">
+        <span style="width:96px;height:96px;flex:none;border-radius:18px;overflow:hidden;background:var(--surf3)"><img src="assets/protector.jpg" alt="" style="width:100%;height:100%;object-fit:contain;padding:8px;mix-blend-mode:multiply" /></span>
+        <div style="display:flex;flex-direction:column;flex:1;min-width:0;justify-content:center">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--gold)">TÉCNICA</span>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:16.5px;font-weight:700;line-height:1.24;letter-spacing:-.025em;margin:7px 0 0">Manejo de temperaturas: la curva de calor por tipo de fibra</h3>
+          <span style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;font-size:12px;color:var(--mut)"><span class="mi mio" style="font-size:15px">schedule</span>8 min de lectura</span>
+        </div>
+      </article>
+      <article style="display:flex;gap:15px;padding:15px;border-radius:24px;background:var(--surf);border:1px solid var(--line);cursor:pointer" style-hover="border-color:var(--line2);transform:translateY(-4px);box-shadow:var(--e2)">
+        <span style="width:96px;height:96px;flex:none;border-radius:18px;overflow:hidden;background:var(--surf3)"><img src="assets/equipo-gold.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 34%" /></span>
+        <div style="display:flex;flex-direction:column;flex:1;min-width:0;justify-content:center">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--gold)">NEGOCIO</span>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:16.5px;font-weight:700;line-height:1.24;letter-spacing:-.025em;margin:7px 0 0">Cómo cobrar el diagnóstico capilar sin perder clientas</h3>
+          <span style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;font-size:12px;color:var(--mut)"><span class="mi mio" style="font-size:15px">schedule</span>5 min de lectura</span>
+        </div>
+      </article>
+      <article style="display:flex;gap:15px;padding:15px;border-radius:24px;background:var(--surf);border:1px solid var(--line);cursor:pointer" style-hover="border-color:var(--line2);transform:translateY(-4px);box-shadow:var(--e2)">
+        <span style="width:96px;height:96px;flex:none;border-radius:18px;overflow:hidden;background:var(--surf3)"><img src="assets/liso-familia.jpg" alt="" style="width:100%;height:100%;object-fit:contain;padding:6px;mix-blend-mode:multiply" /></span>
+        <div style="display:flex;flex-direction:column;flex:1;min-width:0;justify-content:center">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--gold)">PRODUCTO</span>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:16.5px;font-weight:700;line-height:1.24;letter-spacing:-.025em;margin:7px 0 0">Ácido hialurónico en alisados: qué hace y qué no</h3>
+          <span style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;font-size:12px;color:var(--mut)"><span class="mi mio" style="font-size:15px">schedule</span>4 min de lectura</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" style="margin-top:clamp(48px,7vw,84px);padding:clamp(44px,6vw,76px) 0;background:var(--bg2);border-top:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 18px">
+    <div style="text-align:center;max-width:680px;margin:0 auto">
+      <span data-en="Contact" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700">Contacto</span>
+      <h2 data-en="What brings you here?" style="font-family:'Outfit',sans-serif;font-size:clamp(30px,5vw,52px);font-weight:700;letter-spacing:-.045em;line-height:1.02;margin:12px 0 0">¿Qué te trae por aquí?</h2>
+      <p data-en="Buying is instant. Anything else gets a real call with our team." style="font-size:15px;color:var(--mut);margin:14px 0 0;line-height:1.6">Comprar es inmediato. Todo lo demás se resuelve en una llamada con el equipo.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:28px">
+      <sc-for list="{{ intents }}" as="i" hint-placeholder-count="4">
+        <button onClick="{{ i.pick }}" style="{{ i.style }}"><span class="mi" style="font-size:18px">{{ i.icon }}</span>{{ i.label }}</button>
+      </sc-for>
+    </div>
+    <div style="max-width:960px;margin:24px auto 0;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))">
+      <sc-if value="{{ isBuyIntent }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:28px;border-radius:30px;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e2)">
+          <span class="mi" style="font-size:32px;color:var(--gold)">bolt</span>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:23px;font-weight:700;letter-spacing:-.03em;margin:14px 0 0">Compra en 2 clics</h3>
+          <p style="font-size:14px;line-height:1.62;color:var(--mut);margin:10px 0 0">Eliges el producto, confirmas la presentación y el pedido llega a nuestro WhatsApp con todo el detalle. Te respondemos con los datos de transferencia.</p>
+          <a href="#productos" style="display:flex;align-items:center;justify-content:center;gap:9px;height:54px;margin-top:22px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:700;font-size:14.5px" style-hover="filter:brightness(1.08)"><span class="mi" style="font-size:19px">storefront</span>Ir a los productos</a>
+          <a href="{{ waLink }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:9px;height:52px;margin-top:9px;border-radius:999px;border:1px solid var(--line2);color:var(--txt);font-weight:600;font-size:14px" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:19px">chat</span>Preguntar por WhatsApp</a>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isBookIntent }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:28px;border-radius:30px;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e2)">
+          <span class="mi" style="font-size:32px;color:var(--gold)">event_available</span>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:23px;font-weight:700;letter-spacing:-.03em;margin:14px 0 0">{{ bookTitle }}</h3>
+          <p style="font-size:14px;line-height:1.62;color:var(--mut);margin:10px 0 0">{{ bookText }}</p>
+          <a href="{{ calIntent }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:9px;height:54px;margin-top:22px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:700;font-size:14.5px" style-hover="filter:brightness(1.08)"><span class="mi" style="font-size:19px">calendar_month</span>Agendar en cal.com</a>
+          <a href="{{ waIntent }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:9px;height:52px;margin-top:9px;border-radius:999px;border:1px solid var(--line2);color:var(--txt);font-weight:600;font-size:14px" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:19px">chat</span>Escribir por WhatsApp</a>
+        </div>
+      </sc-if>
+      <div style="border-radius:30px;overflow:hidden;background:var(--surf);border:1px solid var(--line);display:flex;flex-direction:column">
+        <div style="position:relative;height:clamp(150px,18vw,190px);overflow:hidden">
+          <img src="assets/equipo-blanco.jpg" alt="Equipo LYOS Profesional" style="width:100%;height:100%;object-fit:cover;object-position:center 44%" />
+          <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,7,.24),rgba(14,11,7,.86))"></span>
+          <div style="position:absolute;left:20px;right:20px;bottom:16px">
+            <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid rgba(241,222,184,.34);background:rgba(14,11,7,.4);backdrop-filter:blur(10px);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#F1DEB8">Estamos aquí</span>
+            <p style="margin:9px 0 0;font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.025em;color:#FFFDF8">El equipo LYOS te responde</p>
+          </div>
+        </div>
+        <div style="padding:24px;display:grid;gap:17px;align-content:start;flex:1">
+          <div style="display:flex;gap:13px;align-items:flex-start"><span class="mi" style="font-size:22px;color:var(--gold)">call</span><div style="display:grid;gap:2px"><span style="font-size:11.5px;color:var(--mut);letter-spacing:.12em">ESCRÍBENOS</span><a href="{{ waLink }}" target="_blank" style="font-family:'Outfit',sans-serif;font-size:21px;font-weight:700;letter-spacing:-.02em">313 5959808</a></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start"><span class="mi" style="font-size:22px;color:var(--gold)">mail</span><div style="display:grid;gap:2px"><span style="font-size:11.5px;color:var(--mut);letter-spacing:.12em">EMAIL</span><a href="mailto:Lyosprofesional@gmail.com" style="font-size:14px;color:var(--txt)">Lyosprofesional@gmail.com</a></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start"><span class="mi" style="font-size:22px;color:var(--gold)">schedule</span><div style="display:grid;gap:2px"><span style="font-size:11.5px;color:var(--mut);letter-spacing:.12em">HORARIOS</span><span style="font-size:14px">Lun – Vier 8am–5pm · Sáb y Dom 8am–2pm</span></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start"><span class="mi" style="font-size:22px;color:var(--gold)">location_on</span><div style="display:grid;gap:2px"><span style="font-size:11.5px;color:var(--mut);letter-spacing:.12em">UBICACIÓN</span><span style="font-size:14px">Cl. 14 #65-64, Comuna 17, Cali</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--bg);border-top:1px solid var(--line);padding:clamp(40px,5vw,56px) 0 26px">
+  <div style="max-width:1320px;margin:0 auto;padding:0 18px;display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">
+    <div>
+      <span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Outfit',sans-serif;font-weight:800;font-size:31px;letter-spacing:-.045em">LY<span style="color:var(--gold)">O</span>S</span><span style="font-size:9px;letter-spacing:.46em;color:var(--mut);margin-top:3px">PROFESIONAL</span></span>
+      <p data-en="Hair care specialists." style="font-size:13.5px;color:var(--mut);margin:16px 0 0;max-width:26ch">Somos especialistas en el cuidado capilar.</p>
+      <div style="display:flex;gap:8px;margin-top:18px">
+        <a href="https://www.instagram.com/lyos_profesional/" target="_blank" aria-label="Instagram" style="width:40px;height:40px;border-radius:999px;border:1px solid var(--line2);display:grid;place-items:center;color:var(--txt)" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:19px">photo_camera</span></a>
+        <a href="https://www.tiktok.com/@tina_belleza" target="_blank" aria-label="TikTok" style="width:40px;height:40px;border-radius:999px;border:1px solid var(--line2);display:grid;place-items:center;color:var(--txt)" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:19px">music_note</span></a>
+        <a href="https://www.facebook.com/people/Tina-belleza/100063535453442/" target="_blank" aria-label="Facebook" style="width:40px;height:40px;border-radius:999px;border:1px solid var(--line2);display:grid;place-items:center;color:var(--txt)" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:19px">thumb_up</span></a>
+        <a href="{{ waLink }}" target="_blank" aria-label="WhatsApp" style="width:40px;height:40px;border-radius:999px;border:1px solid var(--line2);display:grid;place-items:center;color:var(--txt)" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:19px">chat</span></a>
+      </div>
+    </div>
+    <div>
+      <span data-en="Products" style="display:block;font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:700">PRODUCTOS</span>
+      <div style="display:grid;gap:9px;margin-top:14px;font-size:13.5px">
+        <a href="#productos" style="color:var(--txt)" style-hover="color:var(--gold)">Alisadores</a>
+        <a href="#productos" style="color:var(--txt)" style-hover="color:var(--gold)">Shampoo</a>
+        <a href="#productos" style="color:var(--txt)" style-hover="color:var(--gold)">Tratamientos</a>
+        <a href="#productos" style="color:var(--txt)" style-hover="color:var(--gold)">Termoprotección</a>
+      </div>
+    </div>
+    <div>
+      <span data-en="Company" style="display:block;font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:700">LYOS</span>
+      <div style="display:grid;gap:9px;margin-top:14px;font-size:13.5px">
+        <a href="#resenas" style="color:var(--txt)" style-hover="color:var(--gold)">Reseñas</a>
+        <a href="#certificaciones" style="color:var(--txt)" style-hover="color:var(--gold)">Certificaciones</a>
+        <a href="#blog" style="color:var(--txt)" style-hover="color:var(--gold)">Blog</a>
+        <a href="#mas" style="color:var(--txt)" style-hover="color:var(--gold)">Academia</a>
+        <a href="#contacto" style="color:var(--txt)" style-hover="color:var(--gold)">Contacto</a>
+      </div>
+    </div>
+    <div>
+      <span data-en="Join our community" style="display:block;font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:700">ÚNETE A LA COMUNIDAD</span>
+      <p data-en="Launches, techniques and news." style="font-size:13px;color:var(--mut);margin:12px 0 0">Lanzamientos, técnicas y novedades.</p>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <input placeholder="Tu email" aria-label="Email" style="flex:1;min-width:0;height:46px;padding:0 16px;border-radius:999px;border:1px solid var(--line2);background:var(--surf);outline:none;font-size:14px" style-focus="border-color:var(--gold)" />
+        <button onClick="{{ subscribe }}" aria-label="Suscribirme" style="width:46px;height:46px;flex:none;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);cursor:pointer;display:grid;place-items:center" style-hover="filter:brightness(1.08)"><span class="mi" style="font-size:20px">arrow_forward</span></button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+        <span style="padding:6px 11px;border-radius:8px;background:var(--surf2);border:1px solid var(--line);font-size:10.5px;font-weight:600;color:var(--mut)">Nequi</span>
+        <span style="padding:6px 11px;border-radius:8px;background:var(--surf2);border:1px solid var(--line);font-size:10.5px;font-weight:600;color:var(--mut)">Bancolombia</span>
+        <span style="padding:6px 11px;border-radius:8px;background:var(--surf2);border:1px solid var(--line);font-size:10.5px;font-weight:600;color:var(--mut)">Transferencia</span>
+        <span style="padding:6px 11px;border-radius:8px;background:var(--surf2);border:1px solid var(--line);font-size:10.5px;font-weight:600;color:var(--mut)">Contraentrega</span>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1320px;margin:30px auto 0;padding:20px 18px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;color:var(--dim)">
+    <span>© 2026 LYOS Profesional. Todos los derechos reservados.</span>
+    <span style="display:flex;gap:16px"><a href="#contacto" style="color:var(--dim)" style-hover="color:var(--gold)">Políticas y garantías</a><a href="#contacto" style="color:var(--dim)" style-hover="color:var(--gold)">Privacidad</a></span>
+  </div>
+</footer>
+
+<nav class="mob" style="position:fixed;left:0;right:0;bottom:0;z-index:65;background:var(--glass);backdrop-filter:blur(24px);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom));display:flex;justify-content:space-around">
+  <a href="#inicio" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;border-radius:16px;color:var(--txt);font-size:10.5px;font-weight:600"><span class="mi" style="font-size:23px">home</span>Inicio</a>
+  <a href="#productos" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;border-radius:16px;color:var(--txt);font-size:10.5px;font-weight:600"><span class="mi" style="font-size:23px">storefront</span>Tienda</a>
+  <a href="#resenas" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;border-radius:16px;color:var(--txt);font-size:10.5px;font-weight:600"><span class="mi" style="font-size:23px">reviews</span>Reseñas</a>
+  <a href="#blog" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;border-radius:16px;color:var(--txt);font-size:10.5px;font-weight:600"><span class="mi" style="font-size:23px">article</span>Blog</a>
+  <a href="#contacto" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;border-radius:16px;color:var(--txt);font-size:10.5px;font-weight:600"><span class="mi" style="font-size:23px">chat_bubble</span>Contacto</a>
+</nav>
+
+<div class="fab">
+  <sc-if value="{{ installReady }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ install }}" style="display:flex;align-items:center;gap:8px;height:46px;padding:0 18px;border:1px solid var(--line2);border-radius:999px;background:var(--glass);backdrop-filter:blur(18px);color:var(--txt);font-weight:600;font-size:13px;cursor:pointer;box-shadow:var(--e2)"><span class="mi" style="font-size:19px;color:var(--gold)">install_mobile</span>Instalar app</button>
+  </sc-if>
+  <a href="{{ waLink }}" target="_blank" aria-label="WhatsApp" style="position:relative;width:60px;height:60px;border-radius:999px;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 32px -8px rgba(37,211,102,.66)" style-hover="transform:scale(1.06)">
+    <span style="position:absolute;inset:0;border-radius:999px;border:2px solid #25D366;animation:ping 2.4s ease-out infinite"></span>
+    <svg viewBox="0 0 24 24" width="31" height="31" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>
+  </a>
+</div>
+
+<div style="position:fixed;left:14px;bottom:calc(94px + env(safe-area-inset-bottom));z-index:94;display:flex;flex-direction:column;gap:9px;max-width:min(92vw,340px);pointer-events:none">
+  <sc-for list="{{ toasts }}" as="t" hint-placeholder-count="0">
+    <div style="pointer-events:auto;display:flex;gap:12px;align-items:center;padding:13px 15px;border-radius:20px;background:var(--glass);backdrop-filter:blur(22px);border:1px solid var(--line2);box-shadow:var(--e3);animation:slidein .3s cubic-bezier(.2,.8,.2,1)">
+      <span style="width:36px;height:36px;flex:none;border-radius:999px;background:var(--surf3);display:grid;place-items:center;color:var(--gold)"><span class="mi" style="font-size:20px">{{ t.icon }}</span></span>
+      <span style="display:flex;flex-direction:column;flex:1;min-width:0"><span style="font-size:13px;font-weight:700;line-height:1.25">{{ t.t }}</span><span style="font-size:12px;color:var(--mut);line-height:1.3;margin-top:2px">{{ t.b }}</span></span>
+      <button onClick="{{ t.close }}" aria-label="Cerrar" style="width:28px;height:28px;flex:none;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--dim)" style-hover="background:var(--surf3)"><span class="mi" style="font-size:16px">close</span></button>
+    </div>
+  </sc-for>
+</div>
+<sc-if value="{{ buyP }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeBuy }}" style="position:fixed;inset:0;z-index:98;background:rgba(10,8,5,.56);backdrop-filter:blur(10px);display:flex;align-items:flex-end;justify-content:center;padding:0">
+  <div onClick="{{ stop }}" style="width:min(100%,520px);background:var(--surf);border:1px solid var(--line2);border-radius:34px 34px 0 0;box-shadow:var(--e3);animation:slidein .32s cubic-bezier(.2,.8,.2,1);max-height:92dvh;overflow-y:auto">
+    <div style="display:flex;justify-content:center;padding:10px 0 0"><span style="width:44px;height:5px;border-radius:999px;background:var(--line2)"></span></div>
+    <div style="padding:14px 22px 0;display:flex;align-items:center;gap:10px">
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;background:var(--surf3);font-size:10px;letter-spacing:.16em;font-weight:700;color:var(--gold)"><span class="mi" style="font-size:14px">bolt</span>COMPRA RÁPIDA</span>
+      <button onClick="{{ closeBuy }}" aria-label="Cerrar" style="margin-left:auto;width:36px;height:36px;border:0;border-radius:999px;background:var(--surf2);cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf3)"><span class="mi" style="font-size:19px">close</span></button>
+    </div>
+    <div style="padding:16px 22px 0;display:flex;gap:16px;align-items:center">
+      <span style="width:88px;height:88px;flex:none;border-radius:22px;background:var(--plinth);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)"><img src="{{ buyImg }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;mix-blend-mode:multiply" /></span>
+      <div style="display:flex;flex-direction:column;flex:1;min-width:0">
+        <span style="color:var(--gold);letter-spacing:1.2px;font-size:12.5px">★★★★★ <span style="color:var(--mut);letter-spacing:0">{{ buyP.rating }}</span></span>
+        <span style="font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.025em;line-height:1.16;margin-top:5px">{{ buyP.name }}</span>
+        <span style="font-size:12.5px;color:var(--mut);margin-top:4px">{{ buyV.ml }}</span>
+      </div>
+    </div>
+    <div style="padding:20px 22px 0">
+      <span style="display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:700">Presentación</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+        <sc-for list="{{ buyVariants }}" as="v" hint-placeholder-count="0">
+          <button onClick="{{ v.pick }}" style="{{ v.style }}"><span style="display:block;font-size:13px;font-weight:700">{{ v.label }}</span><span style="display:block;font-size:12px;color:var(--mut);margin-top:2px">{{ v.price }}</span></button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="padding:20px 22px 0;display:flex;align-items:center;justify-content:space-between;gap:14px">
+      <span style="display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:700">Cantidad</span>
+      <div style="display:flex;align-items:center;gap:2px;border:1px solid var(--line2);border-radius:999px;padding:3px">
+        <button onClick="{{ buyDec }}" aria-label="Menos" style="width:38px;height:38px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2)"><span class="mi" style="font-size:20px">remove</span></button>
+        <span style="min-width:30px;text-align:center;font-size:16px;font-weight:700">{{ buyQty }}</span>
+        <button onClick="{{ buyInc }}" aria-label="Más" style="width:38px;height:38px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2)"><span class="mi" style="font-size:20px">add</span></button>
+      </div>
+    </div>
+    <div style="margin:20px 22px 0;padding:16px 18px;border-radius:22px;background:var(--surf2);border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <span style="display:flex;flex-direction:column"><span style="font-size:11.5px;color:var(--mut);letter-spacing:.1em">TOTAL A PAGAR</span><span style="font-family:'Outfit',sans-serif;font-size:27px;font-weight:700;letter-spacing:-.03em;line-height:1.1">{{ buyTotal }}</span></span>
+      <span style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--mut);text-align:right"><span class="mi" style="font-size:16px;color:var(--gold)">local_shipping</span>Envío se calcula al confirmar</span>
+    </div>
+    <div style="margin:16px 22px 0;padding:15px 17px;border-radius:20px;border:1px dashed var(--line2);display:flex;gap:11px;align-items:flex-start">
+      <span class="mi" style="font-size:20px;color:#25D366;flex:none">chat</span>
+      <span style="display:flex;flex-direction:column;flex:1"><span style="font-size:12.5px;font-weight:700">Esto es lo que recibe LYOS</span><span style="font-size:12px;color:var(--mut);line-height:1.5;margin-top:3px">Producto, presentación, cantidad y total, con tu número de pedido. Te responden con los datos de transferencia.</span></span>
+    </div>
+    <div style="padding:18px 22px calc(22px + env(safe-area-inset-bottom));display:grid;gap:9px">
+      <a href="{{ buyWa }}" target="_blank" onClick="{{ buyConfirm }}" style="display:flex;align-items:center;justify-content:center;gap:10px;height:58px;border-radius:999px;background:#25D366;color:#fff;font-weight:700;font-size:15.5px;box-shadow:0 14px 32px -12px rgba(37,211,102,.7)" style-hover="filter:brightness(1.05)"><svg viewBox="0 0 24 24" width="24" height="24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>Confirmar por WhatsApp</a>
+      <button onClick="{{ buyAddCart }}" style="height:52px;border:1px solid var(--line2);background:transparent;border-radius:999px;cursor:pointer;font-weight:600;font-size:14.5px;color:var(--txt);display:flex;align-items:center;justify-content:center;gap:8px" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold)"><span class="mi mio" style="font-size:19px">add_shopping_cart</span>Seguir comprando y añadir al carrito</button>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ qvP }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeQv }}" style="position:fixed;inset:0;z-index:95;background:rgba(10,8,5,.62);backdrop-filter:blur(10px);overflow-y:auto;padding:16px">
+  <div onClick="{{ stop }}" style="max-width:1000px;margin:3vh auto 40px;background:var(--surf);border:1px solid var(--line2);border-radius:clamp(26px,3vw,36px);overflow:hidden;box-shadow:var(--e3);animation:slidein .34s cubic-bezier(.2,.8,.2,1)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))">
+      <div style="position:relative;background:var(--plinth);padding:24px;display:flex;flex-direction:column;gap:16px">
+        <div style="flex:1;display:grid;place-items:center;min-height:320px"><img src="{{ qvImgSrc }}" alt="{{ qvP.name }}" loading="lazy" style="max-width:100%;max-height:440px;object-fit:contain;mix-blend-mode:multiply" /></div>
+        <div style="display:flex;gap:9px;justify-content:center">
+          <sc-for list="{{ qvGallery }}" as="g" hint-placeholder-count="0">
+            <button onClick="{{ g.pick }}" style="{{ g.style }}"><img src="{{ g.src }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:4px;mix-blend-mode:multiply" /></button>
+          </sc-for>
+        </div>
+        <button onClick="{{ closeQv }}" aria-label="Cerrar" style="position:absolute;top:16px;right:16px;width:42px;height:42px;border:0;border-radius:999px;background:rgba(22,18,13,.12);backdrop-filter:blur(10px);cursor:pointer;display:grid;place-items:center;color:#16120D" style-hover="background:rgba(22,18,13,.24)"><span class="mi" style="font-size:21px">close</span></button>
+      </div>
+      <div style="padding:clamp(24px,3vw,34px);display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">
+          <span style="color:var(--gold);letter-spacing:1.5px;font-size:15px">★★★★★</span>
+          <span style="font-size:13px;font-weight:700">{{ qvP.rating }}</span>
+          <span style="font-size:12.5px;color:var(--mut)">· {{ qvP.reviews }} reseñas</span>
+          <span style="margin-left:auto;padding:6px 12px;border-radius:999px;background:var(--surf3);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--gold);white-space:nowrap">{{ qvP.badge }}</span>
+        </div>
+        <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(25px,3.4vw,36px);font-weight:700;letter-spacing:-.035em;line-height:1.06;margin:14px 0 0">{{ qvP.name }}</h2>
+        <p style="font-size:14.5px;line-height:1.65;color:var(--mut);margin:12px 0 0">{{ qvP.desc }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:16px">
+          <sc-for list="{{ qvP.tags }}" as="t" hint-placeholder-count="0">
+            <span style="padding:7px 13px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);font-size:11.5px;font-weight:600;color:var(--gold)">{{ t }}</span>
+          </sc-for>
+        </div>
+        <div style="display:grid;gap:8px;margin-top:20px">
+          <sc-for list="{{ qvBullets }}" as="b" hint-placeholder-count="0">
+            <div style="display:flex;gap:9px;align-items:flex-start"><span class="mi" style="font-size:18px;color:var(--gold);flex:none;margin-top:1px">check_circle</span><span style="font-size:13.5px;line-height:1.5">{{ b }}</span></div>
+          </sc-for>
+        </div>
+        <details style="margin-top:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><summary style="display:flex;align-items:center;gap:9px;padding:14px 2px;cursor:pointer;font-size:13.5px;font-weight:700;list-style:none"><span class="mi" style="font-size:19px;color:var(--gold)">science</span>Modo de uso</summary><p style="margin:0 0 14px;padding-left:28px;font-size:13px;line-height:1.65;color:var(--mut)">{{ qvP.uso }}</p></details>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px">
+          <sc-for list="{{ qvVariants }}" as="v" hint-placeholder-count="0">
+            <button onClick="{{ v.pick }}" style="{{ v.style }}"><span style="display:block;font-size:13px;font-weight:700">{{ v.label }}</span><span style="display:block;font-size:12px;color:var(--mut);margin-top:2px">{{ v.price }}</span></button>
+          </sc-for>
+        </div>
+        <div style="margin-top:auto;padding-top:22px">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+            <span style="display:flex;flex-direction:column"><span style="font-size:11.5px;color:var(--mut);letter-spacing:.1em">TOTAL</span><span style="font-family:'Outfit',sans-serif;font-size:29px;font-weight:700;letter-spacing:-.03em">{{ qvTotal }}</span></span>
+            <div style="display:flex;align-items:center;gap:2px;border:1px solid var(--line2);border-radius:999px;padding:3px">
+              <button onClick="{{ qvDec }}" aria-label="Menos" style="width:36px;height:36px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2)"><span class="mi" style="font-size:19px">remove</span></button>
+              <span style="min-width:28px;text-align:center;font-size:15px;font-weight:700">{{ qvQty }}</span>
+              <button onClick="{{ qvInc }}" aria-label="Más" style="width:36px;height:36px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2)"><span class="mi" style="font-size:19px">add</span></button>
+            </div>
+          </div>
+          <div style="display:flex;gap:9px;margin-top:16px">
+            <button onClick="{{ qvBuy }}" style="flex:1;height:56px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:700;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 14px 32px -14px rgba(168,124,47,.7)" style-hover="filter:brightness(1.08)"><span class="mi" style="font-size:20px">bolt</span>{{ qvCta }}</button>
+            <button onClick="{{ qvAdd }}" aria-label="Añadir al carrito" style="width:56px;height:56px;flex:none;border:1px solid var(--line2);background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold)"><span class="mi mio" style="font-size:22px">add_shopping_cart</span></button>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;font-size:12px;color:var(--mut)">
+            <span style="display:inline-flex;align-items:center;gap:6px"><span class="mi" style="font-size:16px;color:var(--gold)">local_shipping</span>Envío 1–4 días</span>
+            <span style="display:inline-flex;align-items:center;gap:6px"><span class="mi" style="font-size:16px;color:var(--gold)">verified_user</span>Producto original</span>
+            <span style="display:inline-flex;align-items:center;gap:6px"><span class="mi" style="font-size:16px;color:var(--gold)">support_agent</span>Asesoría incluida</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeSearch }}" style="position:fixed;inset:0;z-index:99;background:rgba(10,8,5,.5);backdrop-filter:blur(10px);padding:16px">
+  <div onClick="{{ stop }}" style="max-width:680px;margin:8vh auto 0;background:var(--surf);border:1px solid var(--line2);border-radius:30px;box-shadow:var(--e3);overflow:hidden;animation:slidein .3s cubic-bezier(.2,.8,.2,1)">
+    <div style="display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)">
+      <span class="mi mio" style="font-size:23px;color:var(--gold)">search</span>
+      <input autofocus placeholder="Buscar producto o tratamiento…" onInput="{{ onSearch }}" style="flex:1;border:0;background:transparent;outline:none;font-size:16px" />
+      <button onClick="{{ closeSearch }}" aria-label="Cerrar" style="border:0;background:var(--surf2);width:34px;height:34px;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)"><span class="mi" style="font-size:19px">close</span></button>
+    </div>
+    <div style="max-height:56vh;overflow:auto;padding:8px">
+      <sc-for list="{{ searchResults }}" as="r" hint-placeholder-count="3">
+        <button onClick="{{ r.open }}" style="width:100%;display:flex;align-items:center;gap:14px;padding:10px;border:0;background:transparent;border-radius:20px;cursor:pointer;text-align:left" style-hover="background:var(--surf2)">
+          <span style="width:54px;height:54px;border-radius:16px;background:var(--plinth);display:grid;place-items:center;overflow:hidden;flex:none;border:1px solid var(--line)"><img src="{{ r.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:5px;mix-blend-mode:multiply" /></span>
+          <span style="display:flex;flex-direction:column;flex:1;min-width:0">
+            <span style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.name }}</span>
+            <span style="font-size:12px;color:var(--mut);margin-top:2px">{{ r.cat }} · {{ r.priceLabel }}</span>
+          </span>
+          <span class="mi mio" style="font-size:20px;color:var(--gold)">arrow_outward</span>
+        </button>
+      </sc-for>
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}"><p style="padding:26px 16px;text-align:center;color:var(--mut);font-size:14px">Sin resultados. Escríbenos por WhatsApp y te ayudamos.</p></sc-if>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeCart }}" style="position:fixed;inset:0;z-index:90;background:rgba(10,8,5,.56);backdrop-filter:blur(8px)">
+  <aside onClick="{{ stop }}" style="position:absolute;top:0;right:0;bottom:0;width:min(100%,440px);background:var(--surf);border-left:1px solid var(--line);display:flex;flex-direction:column;animation:slidein .32s cubic-bezier(.2,.8,.2,1);box-shadow:var(--e3)">
+    <div style="display:flex;align-items:center;gap:12px;padding:20px;border-bottom:1px solid var(--line)">
+      <span class="mi" style="font-size:24px;color:var(--gold)">shopping_bag</span>
+      <h3 data-en="Your bag" style="font-family:'Outfit',sans-serif;font-size:21px;font-weight:700;margin:0;flex:1;letter-spacing:-.03em">Tu carrito</h3>
+      <button onClick="{{ closeCart }}" aria-label="Cerrar" style="width:38px;height:38px;border:0;border-radius:999px;background:var(--surf2);cursor:pointer;display:grid;place-items:center;color:var(--txt)"><span class="mi" style="font-size:20px">close</span></button>
+    </div>
+    <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;display:grid;place-items:center;padding:40px;text-align:center">
+        <div><span class="mi mio" style="font-size:54px;color:var(--dim)">shopping_bag</span><p data-en="Your bag is empty" style="font-size:15px;color:var(--mut);margin:14px 0 0">Tu carrito está vacío</p><a href="#productos" onClick="{{ closeCart }}" style="display:inline-flex;margin-top:16px;padding:13px 24px;border-radius:999px;background:var(--surf3);font-size:13.5px;font-weight:700;color:var(--gold)">Ver productos</a></div>
+      </div>
+    </sc-if>
+    <div style="flex:1;overflow-y:auto;padding:14px">
+      <sc-for list="{{ cartLines }}" as="l" hint-placeholder-count="0">
+        <div style="display:flex;gap:13px;padding:12px;border-radius:22px;background:var(--surf2);margin-bottom:10px">
+          <span style="width:68px;height:68px;flex:none;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;border:1px solid var(--line)"><img src="{{ l.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:5px;mix-blend-mode:multiply" /></span>
+          <div style="flex:1;min-width:0">
+            <p style="margin:0;font-size:13.5px;font-weight:700;line-height:1.3">{{ l.name }}</p>
+            <p style="margin:3px 0 0;font-size:12px;color:var(--mut)">{{ l.ml }} · {{ l.unitLabel }}</p>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+              <div style="display:flex;align-items:center;gap:2px;border:1px solid var(--line2);border-radius:999px;padding:2px">
+                <button onClick="{{ l.dec }}" aria-label="Menos" style="width:28px;height:28px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf3)"><span class="mi" style="font-size:17px">remove</span></button>
+                <span style="min-width:22px;text-align:center;font-size:13.5px;font-weight:700">{{ l.qty }}</span>
+                <button onClick="{{ l.inc }}" aria-label="Más" style="width:28px;height:28px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf3)"><span class="mi" style="font-size:17px">add</span></button>
+              </div>
+              <span style="margin-left:auto;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700">{{ l.totalLabel }}</span>
+              <button onClick="{{ l.del }}" aria-label="Quitar" style="width:30px;height:30px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--dim)" style-hover="color:#C4392E;background:var(--surf3)"><span class="mi mio" style="font-size:18px">delete</span></button>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+      <sc-if value="{{ hasFreeShipBar }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:15px 17px;border-radius:20px;background:var(--surf2);border:1px dashed var(--line2)">
+          <p style="margin:0;font-size:12.5px;color:var(--mut)">Te faltan <strong style="color:var(--gold)">{{ freeShipLeft }}</strong> para envío gratis</p>
+          <div style="height:6px;border-radius:999px;background:var(--surf3);margin-top:9px;overflow:hidden"><div style="height:100%;width:{{ freeShipPct }};background:var(--goldGrad);border-radius:999px;transition:width .4s"></div></div>
+        </div>
+      </sc-if>
+    </div>
+    <div style="padding:18px 20px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--surf)">
+      <div style="display:flex;justify-content:space-between;font-size:13.5px;color:var(--mut)"><span data-en="Subtotal">Subtotal</span><span style="color:var(--txt);font-weight:700">{{ subLabel }}</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:13.5px;color:var(--mut);margin-top:7px"><span data-en="Shipping">Envío estimado</span><span style="color:var(--txt);font-weight:700">{{ shipLabel }}</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:13px;padding-top:13px;border-top:1px solid var(--line)"><span style="font-size:14px;font-weight:700">Total</span><span style="font-family:'Outfit',sans-serif;font-size:25px;font-weight:700;letter-spacing:-.03em">{{ grandLabel }}</span></div>
+      <button onClick="{{ openCo }}" style="width:100%;height:56px;margin-top:14px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:700;font-size:15.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 14px 32px -14px rgba(168,124,47,.7)" style-hover="filter:brightness(1.08)"><span class="mi" style="font-size:20px">arrow_forward</span>Continuar el pedido</button>
+      <p style="margin:10px 0 0;text-align:center;font-size:11.5px;color:var(--dim)">Se confirma por WhatsApp · pasarela de pagos en camino</p>
+    </div>
+  </aside>
+</div>
+</sc-if>
+
+<sc-if value="{{ coOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:100;background:var(--bg);overflow-y:auto">
+  <div style="position:sticky;top:0;z-index:2;background:var(--glass);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)">
+    <div style="max-width:960px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:12px">
+      <button onClick="{{ closeCo }}" aria-label="Cerrar" style="width:40px;height:40px;border:1px solid var(--line);background:transparent;border-radius:999px;cursor:pointer;display:grid;place-items:center;color:var(--txt)" style-hover="background:var(--surf2)"><span class="mi" style="font-size:21px">close</span></button>
+      <div style="display:flex;flex-direction:column;flex:1">
+        <span style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.025em">{{ coTitle }}</span>
+        <span style="font-size:12px;color:var(--mut);margin-top:1px">{{ coStep }}</span>
+      </div>
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);font-size:11.5px;font-weight:700;color:#25D366;white-space:nowrap"><span class="mi" style="font-size:15px">chat</span>Cierre por WhatsApp</span>
+    </div>
+  </div>
+
+  <div style="max-width:960px;margin:0 auto;padding:24px 18px 48px">
+    <sc-if value="{{ isCo1 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start">
+        <div style="display:grid;gap:16px">
+          <div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:23px;font-weight:700;letter-spacing:-.03em;margin:0">Datos de entrega</h3>
+            <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));margin-top:14px">
+              <label style="display:grid;gap:7px"><span style="font-size:12.5px;color:var(--mut);font-weight:600">Nombre completo *</span><input name="name" onInput="{{ onField }}" placeholder="Tu nombre" style="height:52px;padding:0 16px;border-radius:18px;border:1px solid var(--line2);background:var(--surf);outline:none;font-size:15px" style-focus="border-color:var(--gold)" /></label>
+              <label style="display:grid;gap:7px"><span style="font-size:12.5px;color:var(--mut);font-weight:600">WhatsApp *</span><input name="phone" onInput="{{ onField }}" inputmode="tel" placeholder="313 5959808" style="height:52px;padding:0 16px;border-radius:18px;border:1px solid var(--line2);background:var(--surf);outline:none;font-size:15px" style-focus="border-color:var(--gold)" /></label>
+              <label style="display:grid;gap:7px"><span style="font-size:12.5px;color:var(--mut);font-weight:600">Ciudad</span><input name="city" onInput="{{ onField }}" placeholder="Cali, Valle del Cauca" style="height:52px;padding:0 16px;border-radius:18px;border:1px solid var(--line2);background:var(--surf);outline:none;font-size:15px" style-focus="border-color:var(--gold)" /></label>
+              <label style="display:grid;gap:7px"><span style="font-size:12.5px;color:var(--mut);font-weight:600">Dirección</span><input name="addr" onInput="{{ onField }}" placeholder="Cl. 14 #65-64, apto 302" style="height:52px;padding:0 16px;border-radius:18px;border:1px solid var(--line2);background:var(--surf);outline:none;font-size:15px" style-focus="border-color:var(--gold)" /></label>
+            </div>
+            <label style="display:grid;gap:7px;margin-top:12px"><span style="font-size:12.5px;color:var(--mut);font-weight:600">Notas para el mensajero</span><textarea name="notes" onInput="{{ onField }}" rows="2" placeholder="Punto de referencia, horario preferido…" style="padding:14px 16px;border-radius:18px;border:1px solid var(--line2);background:var(--surf);outline:none;font-size:15px;resize:vertical" style-focus="border-color:var(--gold)"></textarea></label>
+          </div>
+          <div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:23px;font-weight:700;letter-spacing:-.03em;margin:0">Transportadora</h3>
+            <div style="display:grid;gap:10px;margin-top:14px">
+              <sc-for list="{{ carriers }}" as="c" hint-placeholder-count="5">
+                <button onClick="{{ c.pick }}" style="{{ c.style }}">
+                  <span class="mi" style="font-size:22px;color:{{ c.dotColor }};flex:none">{{ c.dot }}</span>
+                  <span style="display:flex;flex-direction:column;flex:1;min-width:0">
+                    <span style="font-size:14.5px;font-weight:700">{{ c.name }}</span>
+                    <span style="font-size:12.5px;color:var(--mut);margin-top:2px">{{ c.eta }} · {{ c.note }}</span>
+                  </span>
+                  <span style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--gold);flex:none">{{ c.priceLabel }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="padding:24px;border-radius:28px;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e2);position:sticky;top:110px">
+          <p style="margin:0;font-size:11.5px;letter-spacing:.16em;color:var(--gold);font-weight:700">RESUMEN DEL PEDIDO</p>
+          <div style="display:grid;gap:10px;margin-top:16px">
+            <sc-for list="{{ cartLines }}" as="l" hint-placeholder-count="2">
+              <div style="display:flex;gap:10px;font-size:13px"><span style="flex:1;color:var(--mut)">{{ l.qty }} × {{ l.name }} <span style="color:var(--dim)">({{ l.ml }})</span></span><span style="font-weight:700;white-space:nowrap">{{ l.totalLabel }}</span></div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)">
+            <input onInput="{{ onCoupon }}" placeholder="CÓDIGO DE CUPÓN" style="flex:1;min-width:0;height:46px;padding:0 15px;border-radius:16px;border:1px solid var(--line2);background:var(--surf2);outline:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase" style-focus="border-color:var(--gold)" />
+            <button onClick="{{ applyCoupon }}" style="height:46px;padding:0 18px;border:1px solid var(--line2);background:transparent;border-radius:16px;cursor:pointer;font-weight:700;font-size:13px;color:var(--txt);white-space:nowrap" style-hover="border-color:var(--gold);color:var(--gold)">Aplicar</button>
+          </div>
+          <sc-if value="{{ couponOk }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:10px 0 0;display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--gold);font-weight:600"><span class="mi" style="font-size:16px">check_circle</span>LYOS10 aplicado · 10% de descuento</p>
+          </sc-if>
+          <div style="margin-top:16px">
+            <span style="display:block;font-size:11px;letter-spacing:.14em;color:var(--mut);font-weight:700">MÉTODO DE PAGO</span>
+            <div style="display:grid;gap:8px;margin-top:10px">
+              <sc-for list="{{ pays }}" as="p" hint-placeholder-count="3">
+                <button onClick="{{ p.pick }}" style="{{ p.style }}">
+                  <span class="mi" style="font-size:20px;color:{{ p.dotColor }};flex:none">{{ p.dot }}</span>
+                  <span style="display:flex;flex-direction:column;flex:1;min-width:0"><span style="font-size:13.5px;font-weight:700">{{ p.name }}</span><span style="font-size:12px;color:var(--mut);margin-top:1px">{{ p.note }}</span></span>
+                  <span class="mi mio" style="font-size:20px;color:var(--gold);flex:none">{{ p.icon }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:9px;font-size:13.5px">
+            <div style="display:flex;justify-content:space-between"><span style="color:var(--mut)">Subtotal</span><span style="font-weight:600">{{ subLabel }}</span></div>
+            <div style="display:flex;justify-content:space-between"><span style="color:var(--mut)">Envío</span><span style="font-weight:600">{{ shipLabel }}</span></div>
+            <sc-if value="{{ hasFee }}" hint-placeholder-val="{{ false }}"><div style="display:flex;justify-content:space-between"><span style="color:var(--mut)">Recargo contraentrega</span><span style="font-weight:600">{{ feeLabel }}</span></div></sc-if>
+            <sc-if value="{{ hasDisc }}" hint-placeholder-val="{{ false }}"><div style="display:flex;justify-content:space-between"><span style="color:var(--gold)">Descuento LYOS10</span><span style="font-weight:700;color:var(--gold)">{{ discLabel }}</span></div></sc-if>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)"><span style="font-size:14px;font-weight:700">Total</span><span style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.03em">{{ grandLabel }}</span></div>
+          <sc-if value="{{ hasErr }}" hint-placeholder-val="{{ false }}"><p style="margin:14px 0 0;display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#C4392E;line-height:1.45"><span class="mi" style="font-size:18px;flex:none">error</span>{{ err }}</p></sc-if>
+          <button onClick="{{ sendOrder }}" style="width:100%;height:58px;margin-top:18px;border:0;border-radius:999px;background:#25D366;color:#fff;font-weight:700;font-size:15.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 14px 32px -12px rgba(37,211,102,.7)" style-hover="filter:brightness(1.05)"><svg viewBox="0 0 24 24" width="23" height="23" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>Enviar pedido por WhatsApp</button>
+          <p style="margin:12px 0 0;font-size:11.5px;color:var(--dim);line-height:1.55">Recibimos el detalle completo y te respondemos con los datos de transferencia. Sin pagos en la web por ahora.</p>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isCo2 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));align-items:start">
+        <div style="display:grid;gap:16px">
+          <div style="position:relative;border-radius:30px;overflow:hidden;border:1px solid var(--line2);box-shadow:var(--e2);background:var(--surf2)">
+            <div style="position:relative;height:clamp(260px,32vw,330px);background:radial-gradient(circle at 22% 30%,rgba(201,164,92,.22),transparent 46%),repeating-linear-gradient(0deg,var(--line) 0 1px,transparent 1px 42px),repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 42px),var(--surf)">
+              <span style="position:absolute;left:0;right:0;top:0;height:34%;background:linear-gradient(180deg,rgba(201,164,92,.07),transparent)"></span>
+              <span style="position:absolute;left:-4%;right:-4%;top:38%;height:26px;transform:rotate(-4deg);background:var(--surf3);opacity:.75"></span>
+              <span style="position:absolute;left:18%;top:-6%;bottom:-6%;width:22px;transform:rotate(7deg);background:var(--surf3);opacity:.6"></span>
+              <svg viewBox="0 0 400 200" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M52 146 C 130 128, 168 74, 250 62 S 330 52, 352 46" fill="none" stroke="var(--gold)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="9 8" opacity=".9"></path></svg>
+              <span style="position:absolute;left:13%;top:73%;transform:translate(-50%,-50%);display:grid;place-items:center;width:38px;height:38px;border-radius:999px;background:var(--surf);border:2px solid var(--gold);color:var(--gold);box-shadow:var(--e1)"><span class="mi" style="font-size:19px">store</span></span>
+              <span style="position:absolute;left:88%;top:23%;transform:translate(-50%,-50%);display:grid;place-items:center;width:38px;height:38px;border-radius:999px;background:var(--surf3);border:2px solid var(--line2);color:var(--mut)"><span class="mi" style="font-size:19px">home</span></span>
+              <span style="position:absolute;left:calc(13% + {{ trackPct }} * 0.75);top:calc(73% - {{ trackPct }} * 0.5);transform:translate(-50%,-50%);transition:left 1s cubic-bezier(.4,0,.2,1),top 1s cubic-bezier(.4,0,.2,1)">
+                <span style="position:absolute;inset:-16px;border-radius:999px;border:2px solid var(--gold);animation:ping 2.2s ease-out infinite"></span>
+                <span style="position:relative;display:grid;place-items:center;width:46px;height:46px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);box-shadow:var(--e2)"><span class="mi" style="font-size:24px">local_shipping</span></span>
+              </span>
+              <span style="position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--line2);font-size:11px;font-weight:700;letter-spacing:.1em"><span style="width:7px;height:7px;border-radius:999px;background:#2FBF6B"></span>GPS {{ orderCity }} · EN VIVO</span>
+              <button onClick="{{ trackAdvance }}" style="position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 15px;border-radius:999px;border:1px solid var(--line2);background:var(--glass);backdrop-filter:blur(14px);cursor:pointer;font-size:12.5px;font-weight:700;color:var(--txt)" style-hover="border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:17px">play_arrow</span>Simular</button>
+            </div>
+            <div style="padding:18px 20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+              <span style="width:44px;height:44px;flex:none;border-radius:999px;background:var(--surf3);display:grid;place-items:center;color:var(--gold)"><span class="mi" style="font-size:22px">badge</span></span>
+              <span style="display:flex;flex-direction:column;flex:1;min-width:130px"><span style="font-size:14px;font-weight:700">{{ orderCarrier }}</span><span style="font-size:12.5px;color:var(--mut);margin-top:2px">Guía {{ orderGuide }} · {{ orderEta }}</span></span>
+              <a href="{{ waResend }}" target="_blank" aria-label="Escribir" style="width:44px;height:44px;flex:none;border-radius:999px;background:#25D366;display:grid;place-items:center;color:#fff" style-hover="filter:brightness(1.06)"><span class="mi" style="font-size:21px">chat</span></a>
+            </div>
+          </div>
+
+          <div style="padding:22px;border-radius:28px;background:var(--surf);border:1px solid var(--line)">
+            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+              <span style="font-size:11px;letter-spacing:.16em;color:var(--gold);font-weight:700">SIMULAR ESTADO</span>
+              <button onClick="{{ togglePush }}" style="{{ pushStyle }}"><span class="mi" style="font-size:17px">notifications_active</span>Alertas push</button>
+            </div>
+            <div class="hs" style="display:flex;gap:7px;overflow-x:auto;margin-top:14px;padding-bottom:4px">
+              <sc-for list="{{ trackSteps }}" as="t" hint-placeholder-count="5">
+                <button onClick="{{ t.pick }}" style="{{ t.chipStyle }}">{{ t.label }}</button>
+              </sc-for>
+            </div>
+            <div style="height:5px;border-radius:999px;background:var(--surf3);margin-top:18px;overflow:hidden"><div style="height:100%;width:{{ trackPct }};background:var(--goldGrad);border-radius:999px;transition:width .8s cubic-bezier(.4,0,.2,1)"></div></div>
+            <div style="display:grid;gap:2px;margin-top:16px">
+              <sc-for list="{{ trackSteps }}" as="t" hint-placeholder-count="5">
+                <div style="display:flex;gap:13px;align-items:center;padding:11px 12px;border-radius:18px;background:{{ t.bg }}">
+                  <span style="width:38px;height:38px;flex:none;border-radius:999px;border:{{ t.border }};display:grid;place-items:center;color:{{ t.color }}"><span class="mi" style="font-size:19px">{{ t.icon }}</span></span>
+                  <span style="display:flex;flex-direction:column;flex:1;min-width:0"><span style="font-size:13.5px;font-weight:700;color:{{ t.color }}">{{ t.label }}</span><span style="font-size:12px;color:var(--mut);margin-top:2px">{{ t.note }}</span></span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;gap:16px;min-width:0">
+          <div style="padding:24px;border-radius:30px;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e2)">
+            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:var(--surf3);font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--gold)"><span class="mi" style="font-size:14px">bolt</span>{{ trackNow }}</span>
+              <span style="font-size:12px;color:var(--mut)">{{ orderDate }}</span>
+            </div>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(23px,3vw,30px);font-weight:700;letter-spacing:-.035em;line-height:1.08;margin:14px 0 0">Seguimiento {{ orderId }}</h3>
+            <p style="font-size:14px;color:var(--mut);margin:8px 0 0;line-height:1.6">{{ trackNote }}</p>
+            <div style="margin-top:18px;padding:16px 17px;border-radius:22px;background:var(--surf2);border:1px solid var(--line);display:grid;gap:11px">
+              <div style="display:flex;gap:11px;align-items:flex-start"><span class="mi" style="font-size:19px;color:var(--gold);flex:none">person</span><span style="display:flex;flex-direction:column"><span style="font-size:13.5px;font-weight:700">{{ orderName }}</span><span style="font-size:12.5px;color:var(--mut);margin-top:1px">{{ orderPhone }}</span></span></div>
+              <div style="display:flex;gap:11px;align-items:flex-start"><span class="mi" style="font-size:19px;color:var(--gold);flex:none">location_on</span><span style="display:flex;flex-direction:column"><span style="font-size:13.5px;font-weight:700">{{ orderAddr }}</span><span style="font-size:12.5px;color:var(--mut);margin-top:1px">{{ orderCity }}</span></span></div>
+              <div style="display:flex;gap:11px;align-items:flex-start"><span class="mi" style="font-size:19px;color:var(--gold);flex:none">payments</span><span style="display:flex;flex-direction:column"><span style="font-size:13.5px;font-weight:700">{{ orderPayName }}</span><span style="font-size:12.5px;color:var(--mut);margin-top:1px">Te enviamos los datos por WhatsApp</span></span></div>
+            </div>
+          </div>
+
+          <div style="padding:24px;border-radius:30px;background:var(--surf);border:1px solid var(--line)">
+            <span style="font-size:11px;letter-spacing:.16em;color:var(--gold);font-weight:700">DETALLE DEL PEDIDO</span>
+            <div style="display:grid;gap:11px;margin-top:15px">
+              <sc-for list="{{ orderLines }}" as="l" hint-placeholder-count="1">
+                <div style="display:flex;gap:12px;align-items:center">
+                  <span style="width:52px;height:52px;flex:none;border-radius:15px;background:var(--plinth);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center"><img src="{{ l.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:5px;mix-blend-mode:multiply" /></span>
+                  <span style="display:flex;flex-direction:column;flex:1;min-width:0"><span style="font-size:13.5px;font-weight:700;line-height:1.3">{{ l.name }}</span><span style="font-size:12px;color:var(--mut);margin-top:2px">{{ l.ml }} · {{ l.qty }} und.</span></span>
+                  <span style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;white-space:nowrap">{{ l.total }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:9px;font-size:13.5px">
+              <div style="display:flex;justify-content:space-between"><span style="color:var(--mut)">Subtotal</span><span style="font-weight:600">{{ orderSub }}</span></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:var(--mut)">Envío</span><span style="font-weight:600">{{ orderShip }}</span></div>
+              <sc-if value="{{ orderHasFee }}" hint-placeholder-val="{{ false }}"><div style="display:flex;justify-content:space-between"><span style="color:var(--mut)">Recargo contraentrega</span><span style="font-weight:600">{{ orderFee }}</span></div></sc-if>
+              <sc-if value="{{ orderHasDisc }}" hint-placeholder-val="{{ false }}"><div style="display:flex;justify-content:space-between"><span style="color:var(--gold)">Descuento</span><span style="font-weight:700;color:var(--gold)">{{ orderDisc }}</span></div></sc-if>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)"><span style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:700">Total a pagar</span><span style="font-size:11.5px;color:var(--mut);margin-top:2px">Cargos incluidos</span></span><span style="font-family:'Outfit',sans-serif;font-size:29px;font-weight:700;letter-spacing:-.035em;color:var(--gold)">{{ orderTotal }}</span></div>
+          </div>
+
+          <div style="padding:22px;border-radius:28px;background:linear-gradient(150deg,var(--surf3),var(--surf2));border:1px solid var(--line2);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+            <span style="display:flex;flex-direction:column;flex:1;min-width:150px"><span style="font-size:10.5px;letter-spacing:.14em;color:var(--gold);font-weight:700">CÓDIGO DE ENTREGA</span><span style="font-size:12px;color:var(--mut);margin-top:4px;line-height:1.5">Dícteselo al mensajero para recibir tu paquete</span></span>
+            <span style="display:flex;gap:7px">
+              <sc-for list="{{ orderCode }}" as="d" hint-placeholder-count="4">
+                <span style="width:42px;height:50px;border-radius:14px;background:var(--surf);border:1px solid var(--line2);display:grid;place-items:center;font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:var(--gold);box-shadow:var(--e1)">{{ d }}</span>
+              </sc-for>
+            </span>
+          </div>
+
+          <div style="display:grid;gap:9px">
+            <a href="{{ waResend }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border-radius:999px;background:#25D366;color:#fff;font-weight:700;font-size:15px;box-shadow:0 14px 32px -12px rgba(37,211,102,.7)" style-hover="filter:brightness(1.05)"><span class="mi" style="font-size:21px">chat</span>Abrir / reenviar pedido a WhatsApp</a>
+            <div style="display:flex;gap:9px">
+              <button onClick="{{ copySummary }}" style="flex:1;height:50px;border:1px solid var(--line2);background:transparent;border-radius:999px;cursor:pointer;font-weight:700;font-size:13.5px;color:var(--txt);display:flex;align-items:center;justify-content:center;gap:8px" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold)"><span class="mi" style="font-size:18px">{{ copyIcon }}</span>{{ copyLabel }}</button>
+              <button onClick="{{ closeCo }}" style="flex:1;height:50px;border:1px solid var(--line2);background:transparent;border-radius:999px;cursor:pointer;font-weight:700;font-size:13.5px;color:var(--txt);display:flex;align-items:center;justify-content:center;gap:8px" style-hover="background:var(--surf2)"><span class="mi mio" style="font-size:18px">storefront</span>Seguir comprando</button>
+            </div>
+          </div>
+          <p style="margin:0;font-size:11.5px;color:var(--dim);line-height:1.6;text-align:center">Seguimiento simulado. Próxima fase: pasarela de pagos y alertas automáticas de email + SMS + WhatsApp en cada movimiento real del envío.</p>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+<!--MOUNT-->
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320},&quot;startTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;heroVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;],&quot;default&quot;:&quot;a&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Portada&quot;},&quot;productLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;editorial&quot;,&quot;gallery&quot;],&quot;default&quot;:&quot;editorial&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Productos&quot;},&quot;liveFeed&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;freeShipFrom&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:150000,&quot;min&quot;:0,&quot;max&quot;:500000,&quot;step&quot;:10000,&quot;unit&quot;:&quot;COP&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Comportamiento&quot;}}">
+const NF = new Intl.NumberFormat('es-CO');
+const money = n => '$ ' + NF.format(n);
+const WA = '573135959808';
+const CAL = 'https://cal.com/lyos-profesional/asesoria';
+
+const PRODUCTS = [
+  { id:'liso', name:'Alisado Clásico Liso Hialurónico', cat:'Alisador', badge:'Más vendido', rating:'4.9', reviews:214,
+    img:window.__resources.lisoHialuronico, gallery:[window.__resources.lisoHialuronico,window.__resources.liso250,window.__resources.lisoFamilia],
+    variants:[{ml:'1000 ml', price:320000},{ml:'250 ml', price:250000},{ml:'120 ml', price:45000}],
+    tags:['Libre de formol','Ácido hialurónico','Murumuru'],
+    short:'Liso perfecto sin formol, con brillo deslumbrante.',
+    desc:'Para alisar cabellos crespos, naturales, tinturados y ondulados. Libre de formol, con ácido hialurónico, mantequilla de murumuru y aceites naturales que dejan un brillo deslumbrante.',
+    bullets:['Alisa cabellos crespos, naturales, tinturados y ondulados','Libre de formol','Con ácido hialurónico y mantequilla de murumuru','Aceites naturales para brillo deslumbrante','Deja el cabello liso, suave y manejable'],
+    uso:'Aplicar sobre cabello limpio y húmedo, mecha por mecha. Dejar actuar el tiempo indicado según el tipo de cabello, enjuagar y sellar con calor controlado.' },
+  { id:'shampoo', name:'Shampoo Limpieza Profunda', cat:'Shampoo', badge:'Esencial', rating:'4.8', reviews:168,
+    img:window.__resources.shampooImg, gallery:[window.__resources.shampooImg],
+    variants:[{ml:'500 ml', price:35000}],
+    tags:['Sin sal ni parabenos','Hidratante','Control caspa'],
+    short:'Purifica, hidrata y refresca con sensación mentolada.',
+    desc:'Fórmula avanzada con ingredientes naturales, agentes hidratantes potentes y una refrescante sensación mentolada.',
+    bullets:['Fórmula avanzada con ingredientes naturales y agentes hidratantes potentes','Refrescante sensación mentolada','Purifica el cuero cabelludo y controla el exceso de grasa','Combate la caspa y aporta hidratación intensa','Aroma espectacular: cabello limpio, fresco y nutrido'],
+    uso:'Aplica la cantidad suficiente de shampoo y masajea fuertemente para producir abundante espuma, deja actuar por unos minutos y enjuaga. Repite la aplicación si lo consideras necesario.' },
+  { id:'tratamiento', name:'Tratamiento Reparador Avanzado', cat:'Tratamiento', badge:'Control frizz', rating:'4.9', reviews:143,
+    img:window.__resources.tratamientoImg, gallery:[window.__resources.tratamientoImg],
+    variants:[{ml:'500 ml', price:30000}],
+    tags:['Extractos naturales','Proteínas y lípidos'],
+    short:'Reparación profunda para rotura, puntas y frizz.',
+    desc:'Reparación profunda para cabello con rotura, puntas abiertas y frizz. Enriquecido con proteínas y lípidos.',
+    bullets:['Reduce la rotura y las puntas abiertas','Controla el frizz y mejora la manejabilidad','Deja el cabello suave, fuerte y sedoso','Enriquecido con proteínas y lípidos para una nutrición profunda'],
+    uso:'Después del shampoo, aplica de medios a puntas sobre cabello húmedo, deja actuar de 3 a 5 minutos y enjuaga.' },
+  { id:'protector', name:'Protector Térmico Instantáneo', cat:'Termoprotector', badge:'Uso diario', rating:'4.9', reviews:96,
+    img:window.__resources.protectorImg, gallery:[window.__resources.protectorImg],
+    variants:[{ml:'250 ml', price:35000}],
+    tags:['Protección UV','Sellador de puntas','Brillo intenso'],
+    short:'No repara el daño térmico: lo previene.',
+    desc:'Protege el cabello del daño térmico y ambiental, incluidos los rayos UV. Crea una barrera protectora que previene el deterioro.',
+    bullets:['Reduce la pérdida de agua durante el calor','Disminuye el quiebre por estrés térmico','Mejora el deslizamiento y control del frizz','Aporta brillo sin saturar la fibra','Protege del daño ambiental y los rayos UV'],
+    uso:'Agite antes de usar. Aplique sobre el cabello húmedo o seco, hasta 3 veces al día, de raíz a puntas. No requiere enjuague. Recomendamos el uso diario para obtener resultados óptimos.' },
+  { id:'korea', name:'Korea Liss · Alisado Coreano', cat:'Alisador', badge:'Nuevo', rating:'5.0', reviews:12,
+    img:window.__resources.korea1l, gallery:[window.__resources.korea1l,window.__resources.koreaDuo],
+    variants:[{ml:'1 L', price:null}], quote:true,
+    tags:['Uso profesional','Brillo de espejo'],
+    short:'Suavidad oriental con acabado espejo.',
+    desc:'Suavidad oriental con brillo de espejo. Con ginseng fermentado, agua de arroz, semillas de camelia y pantenol. Uso profesional.',
+    bullets:['Alisado coreano con acabado espejo','Ginseng fermentado y agua de arroz','Semillas de camelia y pantenol','Uso profesional en salón'],
+    uso:'Producto de uso profesional. Solicita la ficha técnica y el protocolo de aplicación por WhatsApp.' },
+  { id:'bio', name:'Bio Intense · Alisado Brasileño', cat:'Alisador', badge:'Premium', rating:'5.0', reviews:31,
+    img:window.__resources.bioDuo, gallery:[window.__resources.bioDuo,window.__resources.bioBrasil,window.__resources.bioModel],
+    variants:[{ml:'1 L', price:null},{ml:'150 ml', price:null}], quote:true,
+    tags:['Sin formol','Tecnología brasileña'],
+    short:'Biotina, colágeno y proteínas de arroz y seda.',
+    desc:'Sin formol. Enriquecido con biotina, colágeno, ácido láctico y proteínas de arroz y seda. Alisa, hidrata, protege y da brillo.',
+    bullets:['Alisado brasileño de alta tecnología, sin formol','Biotina, colágeno y ácido láctico','Proteínas de arroz y seda','Fortalece y revitaliza cada hebra desde la raíz'],
+    uso:'Producto de uso profesional. Solicita la ficha técnica y el protocolo de aplicación por WhatsApp.' }
+];
+
+const CATS = ['Todos','Alisador','Shampoo','Tratamiento','Termoprotector'];
+
+const PAYS = [
+  { id:'transfer', name:'Transferencia', note:'Bancolombia · te enviamos los datos', icon:'account_balance' },
+  { id:'nequi', name:'Nequi', note:'Pago directo desde la app', icon:'smartphone' },
+  { id:'cod', name:'Contraentrega', note:'Pagas al recibir · +$3.000', icon:'payments', fee:3000 }
+];
+
+const TRACK = [
+  { label:'Pedido enviado', icon:'send', note:'Recibimos tu pedido por WhatsApp' },
+  { label:'Confirmado por LYOS', icon:'verified', note:'Validamos stock y datos de envío' },
+  { label:'Preparando en bodega', icon:'inventory_2', note:'Empacado y sellado en Cali' },
+  { label:'En ruta', icon:'local_shipping', note:'La transportadora tiene tu paquete' },
+  { label:'Entregado', icon:'home', note:'Firmado en destino' }
+];
+
+const CARRIERS = [
+  { id:'inter', name:'Interrapidísimo', eta:'1 – 3 días hábiles', price:11900, note:'Más rápido en el Valle' },
+  { id:'coord', name:'Coordinadora', eta:'2 – 4 días hábiles', price:12900, note:'Cobertura nacional' },
+  { id:'servi', name:'Servientrega', eta:'2 – 5 días hábiles', price:13900, note:'Cobertura nacional' },
+  { id:'moto', name:'Mensajería Cali', eta:'Hoy · 2 – 5 horas', price:8000, note:'Solo Cali y Jamundí' },
+  { id:'pick', name:'Recoger en tienda', eta:'Listo en 1 hora', price:0, note:'Cl. 14 #65-64, Cali' }
+];
+
+const HEROES = [
+  { id:'a', label:'A' }, { id:'b', label:'B' }, { id:'c', label:'C' }, { id:'d', label:'D' }
+];
+
+const FEED = [
+  { icon:'shopping_bag', t:'Camila, Cali', b:'compró Liso Hialurónico 1000 ml · hace 2 min' },
+  { icon:'local_fire_department', t:'Quedan 4 unidades', b:'Shampoo Limpieza Profunda 500 ml' },
+  { icon:'shopping_bag', t:'Valeria, Medellín', b:'compró Tratamiento + Protector · hace 6 min' },
+  { icon:'bolt', t:'Envío gratis activo', b:'En pedidos desde $150.000' },
+  { icon:'shopping_bag', t:'Daniela, Bogotá', b:'compró Protector Térmico · hace 9 min' }
+];
+
+const INTENTS = [
+  { id:'comprar', label:'Comprar productos', icon:'shopping_bag' },
+  { id:'embajadora', label:'Ser embajadora', icon:'diamond' },
+  { id:'mayorista', label:'Distribución mayorista', icon:'inventory_2' },
+  { id:'asesoria', label:'Asesoría o curso', icon:'school' }
+];
+
+const BOOK = {
+  embajadora:{ title:'Ser embajadora LYOS', text:'Agendamos 20 minutos para conocerte, revisar tu comunidad y armar tu plan de comisiones, kit y contenido.', wa:'Hola LYOS, quiero ser embajadora de la marca. ¿Agendamos una llamada?' },
+  mayorista:{ title:'Distribución mayorista', text:'Precios por volumen, zonas protegidas y soporte de marca. Agenda con el equipo comercial y revisamos tu ciudad.', wa:'Hola LYOS, me interesa la distribución mayorista. ¿Agendamos una llamada?' },
+  asesoria:{ title:'Asesoría o curso', text:'Te ayudamos a elegir el módulo correcto según tu nivel, y te explicamos fechas, cupos, inversión y certificación.', wa:'Hola LYOS, quiero asesoría para elegir un curso. ¿Agendamos una llamada?' }
+};
+
+const EN = { es:'ES', en:'EN' };
+
+class Component extends DCLogic {
+  state = {
+    theme:'light', lang:'es', searchOpen:false, q:'', cat:'Todos',
+    cart:[], fav:[], cartOpen:false, qv:null, qvVar:0, qvImg:0, qvQty:1,
+    hero:'a', grid:'editorial', buy:null, buyVar:0, buyQty:1,
+    co:0, carrier:'inter', order:null, err:'', toasts:[], intent:'comprar', installReady:false,
+    pay:'transfer', coupon:'', couponOk:false, track:0, push:false, copied:false
+  };
+  f = { name:'', phone:'', city:'', addr:'', notes:'' };
+  root = React.createRef();
+
+  freeFrom() { return this.props.freeShipFrom ?? 150000; }
+
+  componentDidMount() {
+    const P = this.props;
+    const init = { theme:P.startTheme ?? 'light', hero:P.heroVariant ?? 'a', grid:P.productLayout ?? 'editorial' };
+    try {
+      const raw = localStorage.getItem('lyos.state');
+      if (raw) {
+        const d = JSON.parse(raw);
+        init.cart = d.cart || []; init.fav = d.fav || []; init.lang = d.lang || 'es';
+        // Un valor explícito en Tweaks manda sobre lo guardado.
+        if (P.startTheme == null && d.theme) init.theme = d.theme;
+        if (P.heroVariant == null && d.hero) init.hero = d.hero;
+        if (P.productLayout == null && d.grid) init.grid = d.grid;
+      }
+    } catch (e) {}
+    this.setState(init);
+    this.bip = e => { e.preventDefault(); this.prompt = e; this.setState({ installReady:true }); };
+    window.addEventListener('beforeinstallprompt', this.bip);
+    if ('serviceWorker' in navigator) {
+      try {
+        /* standalone: sin service worker */
+        navigator.serviceWorker.addEventListener('controllerchange', () => {});
+      } catch (e) {}
+    }
+    if (this.props.liveFeed !== false) {
+      this.feedT = setInterval(() => this.pushFeed(), 17000);
+      this.boot = setTimeout(() => this.pushFeed(), 6000);
+    }
+  }
+
+  componentDidUpdate(prev) {
+    const P = this.props;
+    if (prev.startTheme !== P.startTheme && P.startTheme) this.setState({ theme:P.startTheme });
+    if (prev.heroVariant !== P.heroVariant && P.heroVariant) this.setState({ hero:P.heroVariant });
+    if (prev.productLayout !== P.productLayout && P.productLayout) this.setState({ grid:P.productLayout });
+    this.persist();
+  }
+  persist() {
+    try { localStorage.setItem('lyos.state', JSON.stringify({ cart:this.state.cart, fav:this.state.fav, theme:this.state.theme, lang:this.state.lang, hero:this.state.hero, grid:this.state.grid })); } catch (e) {}
+    this.applyLang();
+  }
+  componentWillUnmount() {
+    clearInterval(this.feedT); clearTimeout(this.boot);
+    window.removeEventListener('beforeinstallprompt', this.bip);
+  }
+
+  applyLang() {
+    const r = this.root.current; if (!r) return;
+    const en = this.state.lang === 'en';
+    r.querySelectorAll('[data-en]').forEach(el => {
+      if (!el.dataset.esCache) el.dataset.esCache = el.textContent;
+      const want = en ? el.dataset.en : el.dataset.esCache;
+      if (el.textContent !== want) el.textContent = want;
+    });
+  }
+
+  toast(icon, t, b) {
+    const id = Math.random().toString(36).slice(2);
+    this.setState(s => ({ toasts:[...s.toasts.slice(-2), { id, icon, t, b }] }));
+    setTimeout(() => this.setState(s => ({ toasts:s.toasts.filter(x => x.id !== id) })), 6500);
+  }
+  pushFeed() {
+    const S = this.state;
+    // Nunca tapar una compra en curso.
+    if (S.buy || S.qv || S.co > 0 || S.cartOpen || S.searchOpen) return;
+    const n = FEED[Math.floor(Math.random() * FEED.length)];
+    this.toast(n.icon, n.t, n.b);
+  }
+
+  prod(id) { return PRODUCTS.find(p => p.id === id); }
+  oid() { return 'LYOS-' + Math.floor(100000 + Math.random() * 899999); }
+
+  wa(text) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text); }
+
+  waSingle(p, v, qty) {
+    const L = ['*PEDIDO LYOS PROFESIONAL* 🖤', '', 'Hola LYOS Profesional, acabo de adquirir por la web:', '',
+      '▸ *' + p.name + '*', '▸ Presentación: ' + v.ml, '▸ Cantidad: ' + qty];
+    if (v.price != null) L.push('▸ Total: *' + money(v.price * qty) + '*');
+    else L.push('▸ Precio: por cotizar');
+    L.push('', 'Quisiera saber cómo te transfiero. ¡Gracias!', '', '_Pedido ' + this.oid() + '_');
+    return this.wa(L.join('\n'));
+  }
+  waQuote(p, v) {
+    return this.wa(['*COTIZACIÓN LYOS PROFESIONAL*', '', 'Hola LYOS Profesional, me interesa:', '',
+      '▸ *' + p.name + '*', '▸ Presentación: ' + v.ml, '', '¿Me compartes precio y ficha técnica? Gracias.'].join('\n'));
+  }
+  waOrder(o) {
+    const L = ['*PEDIDO LYOS PROFESIONAL* 🖤', '', 'Hola LYOS Profesional, acabo de adquirir por la web:', ''];
+    o.lines.forEach(l => L.push('▸ ' + l.p.name + ' (' + l.v.ml + ') × ' + l.qty + ' — ' + money(l.total)));
+    L.push('', 'Subtotal: ' + money(o.sub), 'Envío ' + o.carrier.name + ': ' + (o.ship === 0 ? 'Gratis' : money(o.ship)),
+      '*TOTAL: ' + money(o.total) + '*', '',
+      '👤 ' + o.name + ' · ' + o.phone,
+      '📍 ' + (o.addr || 'Recoge en tienda') + ', ' + o.city);
+    if (o.notes) L.push('📝 ' + o.notes);
+    L.push('', 'Quisiera saber cómo te transfiero. ¡Gracias!', '', '_Pedido ' + o.id + ' · ' + o.date + '_');
+    return this.wa(L.join('\n'));
+  }
+
+  add(id, vi, qty) {
+    const p = this.prod(id);
+    if (p.quote) { window.open(this.waQuote(p, p.variants[vi || 0]), '_blank'); return; }
+    const key = id + '|' + (vi || 0);
+    this.setState(s => {
+      const found = s.cart.find(i => i.key === key);
+      return { cart:found ? s.cart.map(i => i.key === key ? { ...i, qty:i.qty + (qty || 1) } : i) : [...s.cart, { key, id, vi:vi || 0, qty:qty || 1 }] };
+    });
+    this.toast('check_circle', 'Añadido al carrito', p.name + ' · ' + p.variants[vi || 0].ml);
+  }
+  setQty(key, d) { this.setState(s => ({ cart:s.cart.map(i => i.key === key ? { ...i, qty:Math.max(1, i.qty + d) } : i) })); }
+  remove(key) { this.setState(s => ({ cart:s.cart.filter(i => i.key !== key) })); }
+  toggleFav(id) { this.setState(s => ({ fav:s.fav.includes(id) ? s.fav.filter(x => x !== id) : [...s.fav, id] })); }
+
+  lines() {
+    return this.state.cart.map(i => {
+      const p = this.prod(i.id), v = p.variants[i.vi];
+      return { ...i, p, v, unit:v.price, total:v.price * i.qty };
+    });
+  }
+  sub() { return this.lines().reduce((a, l) => a + l.total, 0); }
+  ship() {
+    const c = CARRIERS.find(x => x.id === this.state.carrier) || CARRIERS[0];
+    return this.sub() >= this.freeFrom() && c.id !== 'moto' && c.id !== 'pick' ? 0 : c.price;
+  }
+  fee() { const p = PAYS.find(x => x.id === this.state.pay); return p && p.fee ? p.fee : 0; }
+  disc() { return this.state.couponOk ? Math.round(this.sub() * 0.1) : 0; }
+  grand() { return this.sub() + this.ship() + this.fee() - this.disc(); }
+  applyCoupon() {
+    const ok = this.state.coupon.trim().toUpperCase() === 'LYOS10';
+    this.setState({ couponOk:ok });
+    this.toast(ok ? 'redeem' : 'error', ok ? 'Cupón aplicado' : 'Cupón inválido', ok ? '10% de descuento en tu pedido' : 'Revisa el código e intenta de nuevo');
+  }
+
+  sendOrder() {
+    if (!this.f.name.trim() || !this.f.phone.trim()) {
+      this.setState({ err:'Completa tu nombre y tu WhatsApp para enviar el pedido.' });
+      return;
+    }
+    if (this.state.carrier !== 'pick' && !this.f.addr.trim()) {
+      this.setState({ err:'Necesitamos la dirección de entrega, o elige recoger en tienda.' });
+      return;
+    }
+    const c = CARRIERS.find(x => x.id === this.state.carrier);
+    const o = {
+      id:this.oid(), lines:this.lines(), sub:this.sub(), ship:this.ship(), fee:this.fee(), disc:this.disc(),
+      total:this.grand(), carrier:c, pay:PAYS.find(x => x.id === this.state.pay),
+      guide:c.id.toUpperCase() + '-' + Math.floor(10000000 + Math.random() * 89999999),
+      code:String(Math.floor(1000 + Math.random() * 8999)).split(''),
+      name:this.f.name, phone:this.f.phone, city:this.f.city || 'Cali', addr:this.f.addr, notes:this.f.notes,
+      date:new Date().toLocaleString('es-CO', { dateStyle:'medium', timeStyle:'short' })
+    };
+    window.open(this.waOrder(o), '_blank');
+    this.setState({ order:o, co:2, cart:[], err:'', track:0, couponOk:false, coupon:'' });
+    this.toast('celebration', 'Pedido enviado', o.id + ' · seguimiento activo');
+  }
+  copySummary() {
+    const o = this.state.order; if (!o) return;
+    const t = ['PEDIDO ' + o.id + ' · LYOS PROFESIONAL']
+      .concat(o.lines.map(l => l.qty + ' x ' + l.p.name + ' (' + l.v.ml + ') — ' + money(l.total)))
+      .concat(['Total: ' + money(o.total), 'Guía: ' + o.guide, 'Estado: ' + TRACK[this.state.track].label]).join('\n');
+    try { navigator.clipboard.writeText(t); } catch (e) {}
+    this.setState({ copied:true });
+    setTimeout(() => this.setState({ copied:false }), 2200);
+    this.toast('content_copy', 'Resumen copiado', 'Listo para pegar donde quieras');
+  }
+
+  renderVals() {
+    const S = this.state;
+    const chip = 'height:40px;padding:0 18px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;scroll-snap-align:start;flex:none;transition:all .25s;';
+    const seg = 'display:flex;align-items:center;gap:7px;height:44px;padding:0 18px;border-radius:999px;border:0;cursor:pointer;font-weight:700;font-size:13.5px;white-space:nowrap;transition:all .25s;';
+    const q = S.q.trim().toLowerCase();
+
+    const dec = p => {
+      const prices = p.variants.map(v => v.price).filter(x => x != null);
+      const min = prices.length ? Math.min(...prices) : null;
+      const max = prices.length ? Math.max(...prices) : null;
+      return {
+        ...p,
+        priceLabel:p.quote ? 'Cotizar' : (min === max ? money(min) : 'Desde ' + money(min)),
+        sizeLabel:p.variants.map(v => v.ml).join(' · '),
+        favColor:S.fav.includes(p.id) ? '#C4392E' : '#8A8378',
+        ctaBg:p.quote ? 'var(--surf3)' : 'var(--goldGrad)',
+        ctaFg:p.quote ? 'var(--txt)' : 'var(--onGold)',
+        ctaShadow:p.quote ? 'none' : '0 12px 30px -12px rgba(168,124,47,.7)',
+        ctaIcon:p.quote ? 'chat' : 'bolt',
+        ctaLabel:p.quote ? 'Cotizar' : 'Comprar ahora',
+        open:() => this.setState({ qv:p.id, qvVar:0, qvImg:0, qvQty:1 }),
+        buy:() => p.quote ? window.open(this.waQuote(p, p.variants[0]), '_blank') : this.setState({ buy:p.id, buyVar:0, buyQty:1 }),
+        add:() => this.add(p.id, 0, 1),
+        fav:() => this.toggleFav(p.id)
+      };
+    };
+
+    const all = PRODUCTS.map(dec);
+    const products = all.filter(p => S.cat === 'Todos' || p.cat === S.cat).map((p, i) => ({ ...p, imgOrder:i % 2 === 1 ? 2 : 1 }));
+    const results = q ? all.filter(p => (p.name + ' ' + p.cat + ' ' + p.desc).toLowerCase().includes(q)) : all.slice(0, 4);
+
+    const qp = S.qv ? dec(this.prod(S.qv)) : null;
+    const qvV = qp ? qp.variants[S.qvVar] : null;
+    const bp = S.buy ? dec(this.prod(S.buy)) : null;
+    const bv = bp ? bp.variants[S.buyVar] : null;
+
+    const lines = this.lines(), sub = this.sub(), ship = this.ship();
+
+    return {
+      theme:S.theme, themeIcon:S.theme === 'dark' ? 'dark_mode' : 'light_mode', langLabel:EN[S.lang],
+      toggleTheme:() => this.setState(s => ({ theme:s.theme === 'dark' ? 'light' : 'dark' })),
+      toggleLang:() => this.setState(s => ({ lang:s.lang === 'es' ? 'en' : 'es' })),
+      stop:e => e.stopPropagation(),
+      waLink:this.wa('Hola LYOS Profesional, quiero información sobre la línea 👋'),
+      calLink:CAL,
+
+      heroA:S.hero === 'a', heroB:S.hero === 'b', heroC:S.hero === 'c', heroD:S.hero === 'd',
+      heroOpts:HEROES.map(h => ({
+        label:h.label, pick:() => this.setState({ hero:h.id }),
+        style:'width:40px;height:34px;border-radius:999px;border:0;cursor:pointer;font-weight:700;font-size:13px;transition:all .25s;' + (S.hero === h.id ? 'background:var(--goldGrad);color:var(--onGold);' : 'background:transparent;color:var(--mut);')
+      })),
+
+      isEditorial:S.grid === 'editorial', isGallery:S.grid === 'gallery',
+      setEditorial:() => this.setState({ grid:'editorial' }), setGallery:() => this.setState({ grid:'gallery' }),
+      edStyle:seg + (S.grid === 'editorial' ? 'background:var(--goldGrad);color:var(--onGold);' : 'background:transparent;color:var(--mut);'),
+      glStyle:seg + (S.grid === 'gallery' ? 'background:var(--goldGrad);color:var(--onGold);' : 'background:transparent;color:var(--mut);'),
+
+      cats:CATS.map(c => ({
+        label:c, pick:() => this.setState({ cat:c }),
+        style:chip + (S.cat === c ? 'background:var(--goldGrad);color:var(--onGold);border:1px solid transparent;' : 'background:transparent;color:var(--txt);border:1px solid var(--line2);')
+      })),
+      products,
+
+      searchOpen:S.searchOpen, openSearch:() => this.setState({ searchOpen:true }),
+      closeSearch:() => this.setState({ searchOpen:false, q:'' }),
+      onSearch:e => this.setState({ q:e.target.value }),
+      searchResults:results.map(r => ({ ...r, open:() => this.setState({ searchOpen:false, q:'', qv:r.id, qvVar:0, qvImg:0, qvQty:1 }) })),
+      noResults:q.length > 1 && results.length === 0,
+
+      hasCart:S.cart.length > 0, cartCount:S.cart.reduce((a, i) => a + i.qty, 0),
+      cartOpen:S.cartOpen, openCart:() => this.setState({ cartOpen:true }), closeCart:() => this.setState({ cartOpen:false }),
+      cartEmpty:lines.length === 0,
+      cartLines:lines.map(l => ({
+        key:l.key, name:l.p.name, ml:l.v.ml, img:l.p.img, qty:l.qty,
+        totalLabel:money(l.total), unitLabel:money(l.unit),
+        inc:() => this.setQty(l.key, 1), dec:() => this.setQty(l.key, -1), del:() => this.remove(l.key)
+      })),
+      subLabel:money(sub), shipLabel:ship === 0 ? 'Gratis' : money(ship), grandLabel:money(this.grand()),
+      hasFreeShipBar:sub > 0 && sub < this.freeFrom(),
+      freeShipLeft:money(Math.max(0, this.freeFrom() - sub)),
+      freeShipPct:Math.min(100, Math.round(sub / this.freeFrom() * 100)) + '%',
+
+      qvP:qp, qvV, qvImgSrc:qp ? qp.gallery[S.qvImg] || qp.img : '',
+      qvGallery:qp ? qp.gallery.map((g, i) => ({ src:g, pick:() => this.setState({ qvImg:i }), style:'width:58px;height:58px;flex:none;border-radius:16px;overflow:hidden;background:var(--plinth);cursor:pointer;padding:0;border:2px solid ' + (i === S.qvImg ? 'var(--gold)' : 'transparent') })) : [],
+      qvVariants:qp ? qp.variants.map((v, i) => ({
+        label:v.ml, price:v.price == null ? 'Cotizar' : money(v.price), pick:() => this.setState({ qvVar:i }),
+        style:'flex:1;min-width:100px;padding:12px 14px;border-radius:18px;cursor:pointer;text-align:left;transition:all .2s;' + (i === S.qvVar ? 'border:1.5px solid var(--gold);background:var(--surf2);' : 'border:1.5px solid var(--line);background:transparent;')
+      })) : [],
+      qvBullets:qp ? qp.bullets : [],
+      qvTotal:qvV ? (qvV.price == null ? 'Cotizar' : money(qvV.price * S.qvQty)) : '',
+      qvQty:S.qvQty,
+      qvInc:() => this.setState(s => ({ qvQty:s.qvQty + 1 })),
+      qvDec:() => this.setState(s => ({ qvQty:Math.max(1, s.qvQty - 1) })),
+      qvBuy:() => { const p = this.prod(S.qv); if (p.quote) { window.open(this.waQuote(p, p.variants[S.qvVar]), '_blank'); return; } this.setState({ buy:S.qv, buyVar:S.qvVar, buyQty:S.qvQty, qv:null }); },
+      qvAdd:() => { this.add(S.qv, S.qvVar, S.qvQty); this.setState({ qv:null }); },
+      qvCta:qp && qp.quote ? 'Cotizar por WhatsApp' : 'Comprar ahora',
+      closeQv:() => this.setState({ qv:null }),
+
+      buyP:bp, buyV:bv, buyQty:S.buyQty, buyImg:bp ? bp.img : '',
+      buyVariants:bp ? bp.variants.map((v, i) => ({
+        label:v.ml, price:v.price == null ? 'Cotizar' : money(v.price), pick:() => this.setState({ buyVar:i }),
+        style:'flex:1;min-width:92px;padding:11px 13px;border-radius:16px;cursor:pointer;text-align:left;transition:all .2s;' + (i === S.buyVar ? 'border:1.5px solid var(--gold);background:var(--surf2);' : 'border:1.5px solid var(--line);background:transparent;')
+      })) : [],
+      buyTotal:bv && bv.price != null ? money(bv.price * S.buyQty) : 'Cotizar',
+      buyInc:() => this.setState(s => ({ buyQty:s.buyQty + 1 })),
+      buyDec:() => this.setState(s => ({ buyQty:Math.max(1, s.buyQty - 1) })),
+      buyWa:bp && bv ? this.waSingle(bp, bv, S.buyQty) : '#',
+      buyConfirm:() => { this.toast('celebration', 'Pedido enviado', bp.name + ' · te respondemos por WhatsApp'); this.setState({ buy:null }); },
+      buyAddCart:() => { this.add(S.buy, S.buyVar, S.buyQty); this.setState({ buy:null }); },
+      closeBuy:() => this.setState({ buy:null }),
+
+      co:S.co, coOpen:S.co > 0, err:S.err, hasErr:!!S.err,
+      openCo:() => this.setState({ cartOpen:false, co:S.cart.length ? 1 : 0, err:'' }),
+      closeCo:() => this.setState({ co:0 }),
+      onField:e => { this.f[e.target.name] = e.target.value; if (S.err) this.setState({ err:'' }); },
+      isCo1:S.co === 1, isCo2:S.co === 2,
+      coTitle:S.co === 2 ? 'Seguimiento del pedido' : 'Confirmar pedido',
+      coStep:S.co === 2 ? TRACK[S.track].label + ' · ' + (S.order ? S.order.carrier.name : '') : 'Datos de entrega, envío y pago',
+      sendOrder:() => this.sendOrder(),
+      carriers:CARRIERS.map(c => ({
+        ...c, priceLabel:c.price === 0 ? 'Gratis' : (sub >= this.freeFrom() && c.id !== 'moto' ? 'Gratis' : money(c.price)),
+        pick:() => this.setState({ carrier:c.id }),
+        style:'display:flex;gap:13px;align-items:center;width:100%;text-align:left;padding:15px;border-radius:22px;cursor:pointer;transition:all .2s;' + (S.carrier === c.id ? 'border:1.5px solid var(--gold);background:var(--surf2);' : 'border:1.5px solid var(--line);background:transparent;'),
+        dot:S.carrier === c.id ? 'radio_button_checked' : 'radio_button_unchecked',
+        dotColor:S.carrier === c.id ? 'var(--gold)' : 'var(--dim)'
+      })),
+      order:S.order, orderId:S.order ? S.order.id : '', orderDate:S.order ? S.order.date : '',
+      orderTotal:S.order ? money(S.order.total) : '', orderCarrier:S.order ? S.order.carrier.name : '',
+      orderEta:S.order ? S.order.carrier.eta : '', orderGuide:S.order ? S.order.guide : '',
+      orderAddr:S.order ? (S.order.addr || 'Recoge en tienda · Cl. 14 #65-64') : '',
+      orderCity:S.order ? S.order.city : '', orderPhone:S.order ? S.order.phone : '',
+      orderName:S.order ? S.order.name : '', orderPayName:S.order ? S.order.pay.name : '',
+      orderSub:S.order ? money(S.order.sub) : '', orderShip:S.order ? (S.order.ship === 0 ? 'Gratis' : money(S.order.ship)) : '',
+      orderHasFee:S.order ? S.order.fee > 0 : false, orderFee:S.order ? money(S.order.fee) : '',
+      orderHasDisc:S.order ? S.order.disc > 0 : false, orderDisc:S.order ? '− ' + money(S.order.disc) : '',
+      orderCode:S.order ? S.order.code : [],
+      orderLines:S.order ? S.order.lines.map(l => ({ name:l.p.name, ml:l.v.ml, qty:l.qty, total:money(l.total), img:l.p.img })) : [],
+      waResend:S.order ? this.waOrder(S.order) : '#',
+
+      pays:PAYS.map(p => ({
+        ...p, pick:() => this.setState({ pay:p.id }),
+        style:'display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:14px;border-radius:20px;cursor:pointer;transition:all .2s;' + (S.pay === p.id ? 'border:1.5px solid var(--gold);background:var(--surf2);' : 'border:1.5px solid var(--line);background:transparent;'),
+        dot:S.pay === p.id ? 'radio_button_checked' : 'radio_button_unchecked',
+        dotColor:S.pay === p.id ? 'var(--gold)' : 'var(--dim)'
+      })),
+      onCoupon:e => this.setState({ coupon:e.target.value }),
+      applyCoupon:() => this.applyCoupon(),
+      couponOk:S.couponOk, discLabel:'− ' + money(this.disc()), hasDisc:this.disc() > 0,
+      hasFee:this.fee() > 0, feeLabel:money(this.fee()),
+
+      trackNow:TRACK[S.track].label, trackNote:TRACK[S.track].note,
+      trackPct:(S.track / (TRACK.length - 1) * 100) + '%',
+      trackIsLast:S.track >= TRACK.length - 1,
+      trackSteps:TRACK.map((t, i) => ({
+        label:t.label, note:t.note, icon:t.icon, done:i <= S.track,
+        color:i <= S.track ? 'var(--gold)' : 'var(--dim)',
+        bg:i === S.track ? 'var(--surf2)' : 'transparent',
+        border:i <= S.track ? '1.5px solid var(--gold)' : '1.5px solid var(--line)',
+        pick:() => this.setState({ track:i }),
+        chipStyle:'height:34px;padding:0 14px;border-radius:999px;border:0;cursor:pointer;font-size:12px;font-weight:700;white-space:nowrap;flex:none;transition:all .25s;' + (i === S.track ? 'background:var(--goldGrad);color:var(--onGold);' : 'background:var(--surf2);color:var(--mut);')
+      })),
+      trackAdvance:() => this.setState(s => ({ track:Math.min(TRACK.length - 1, s.track + 1) })),
+      pushOn:S.push,
+      togglePush:() => { this.setState(s => ({ push:!s.push })); this.toast('notifications_active', this.state.push ? 'Alertas desactivadas' : 'Alertas activadas', 'Te avisamos en cada movimiento del envío'); },
+      pushStyle:'display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 15px;border-radius:999px;cursor:pointer;font-size:12.5px;font-weight:700;transition:all .25s;' + (S.push ? 'background:var(--goldGrad);color:var(--onGold);border:1px solid transparent;' : 'background:transparent;color:var(--txt);border:1px solid var(--line2);'),
+      copySummary:() => this.copySummary(),
+      copyLabel:S.copied ? 'Copiado' : 'Copiar resumen',
+      copyIcon:S.copied ? 'check' : 'content_copy',
+
+      intents:INTENTS.map(i => ({
+        ...i, pick:() => this.setState({ intent:i.id }),
+        style:'display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;transition:all .25s;' + (S.intent === i.id ? 'background:var(--goldGrad);color:var(--onGold);border:1px solid transparent;' : 'background:transparent;color:var(--txt);border:1px solid var(--line2);')
+      })),
+      isBuyIntent:S.intent === 'comprar', isBookIntent:S.intent !== 'comprar',
+      bookTitle:BOOK[S.intent] ? BOOK[S.intent].title : '',
+      bookText:BOOK[S.intent] ? BOOK[S.intent].text : '',
+      calIntent:CAL + '?intent=' + S.intent,
+      waIntent:this.wa(BOOK[S.intent] ? BOOK[S.intent].wa : 'Hola LYOS, quiero información.'),
+      waAcademia:this.wa('Hola LYOS Academia, quiero información de los cursos: fechas, inversión y qué incluye.'),
+      waBlog:this.wa('Hola LYOS, tengo un tema que me gustaría ver en el blog: '),
+      subscribe:() => this.toast('mark_email_read', 'Listo', 'Te avisamos de lanzamientos y novedades'),
+
+      toasts:S.toasts.map(t => ({ ...t, close:() => this.setState(s => ({ toasts:s.toasts.filter(x => x.id !== t.id) })) })),
+      installReady:S.installReady,
+      install:() => { if (this.prompt) { this.prompt.prompt(); this.prompt = null; this.setState({ installReady:false }); } },
+      rootRef:this.root
+    };
+  }
+}
+</script>
+</body>
+</html>

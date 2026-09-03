@@ -1,0 +1,22 @@
+{
+  "name": "LYOS Profesional — Línea capilar premium",
+  "short_name": "LYOS",
+  "description": "Línea capilar premium de uso profesional. Compra en 2 clics y cierra por WhatsApp. Cali, Colombia.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF8F2",
+  "theme_color": "#FBF8F2",
+  "lang": "es-CO",
+  "categories": ["shopping", "beauty"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Productos", "url": "./#productos" },
+    { "name": "Reseñas", "url": "./#resenas" },
+    { "name": "Contacto", "url": "./#contacto" }
+  ]
+}

@@ -1,0 +1,10 @@
+# Ignore heavy zip backups
+*.zip
+*.tar
+*.gz
+
+# Dependencies & system files
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
