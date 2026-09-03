@@ -140,8 +140,10 @@ function handleRequest(req, res) {
   fs.createReadStream(filePath).pipe(res);
 }
 
-// Iniciar servidor en puertos 8080 y 3000
-[8080, 3000].forEach(port => {
+// Iniciar servidor soportando process.env.PORT para despliegue en la nube
+const envPort = process.env.PORT ? [parseInt(process.env.PORT, 10)] : [];
+const ports = [...new Set([...envPort, 8080, 3000])];
+ports.forEach(port => {
   const s = http.createServer(handleRequest);
   s.listen(port, '0.0.0.0', () => {
     console.log(`[LYOS SERVER] Ultra-optimizado activo en http://localhost:${port}`);
