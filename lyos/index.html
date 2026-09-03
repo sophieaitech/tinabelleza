@@ -487,6 +487,175 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
     padding: 6px 12px !important;
     font-size: 10.5px !important;
   }
+
+  /* ========================================================================= */
+  /* TEST / DIAGNÓSTICO CAPILAR VIRTUAL (QUIZ) - RESPONSIVE MOBILE PERFECTION */
+  /* ========================================================================= */
+  .quiz-section {
+    padding: 0 10px !important;
+    margin-top: 36px !important;
+  }
+  .quiz-container {
+    padding: 22px 14px 26px !important;
+    border-radius: 24px !important;
+  }
+  .quiz-top-badge {
+    padding: 6px 12px !important;
+    font-size: 9.5px !important;
+    letter-spacing: 0.1em !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    line-height: 1.35 !important;
+  }
+  .quiz-main-title {
+    font-size: clamp(21px, 6vw, 26px) !important;
+    line-height: 1.15 !important;
+  }
+  .quiz-main-desc {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin-top: 8px !important;
+  }
+  .quiz-progress-wrap {
+    margin-top: 20px !important;
+  }
+  .quiz-progress-header {
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+  .quiz-step-title {
+    font-size: 19px !important;
+    line-height: 1.2 !important;
+  }
+  .quiz-step-desc {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .quiz-options-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .quiz-opt-btn {
+    padding: 12px 14px !important;
+    border-radius: 18px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .quiz-opt-content {
+    gap: 10px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  .quiz-opt-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    border-radius: 12px !important;
+    flex: 0 0 38px !important;
+  }
+  .quiz-opt-icon .mi {
+    font-size: 19px !important;
+  }
+  .quiz-opt-text {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  .quiz-opt-title {
+    font-size: 14.5px !important;
+    line-height: 1.25 !important;
+  }
+  .quiz-opt-desc {
+    font-size: 11.5px !important;
+    line-height: 1.35 !important;
+  }
+  .quiz-opt-check {
+    font-size: 20px !important;
+    flex: 0 0 20px !important;
+    margin-left: 4px !important;
+  }
+  .quiz-prescription-card {
+    padding: 16px 12px !important;
+    border-radius: 20px !important;
+    margin-bottom: 18px !important;
+  }
+  .quiz-presc-top-row {
+    gap: 8px !important;
+  }
+  .quiz-presc-badge {
+    font-size: 9.5px !important;
+    letter-spacing: 0.08em !important;
+    padding: 5px 10px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+    line-height: 1.3 !important;
+  }
+  .quiz-result-heading {
+    font-size: 20px !important;
+    line-height: 1.18 !important;
+  }
+  .quiz-result-subheading {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+  }
+  .quiz-pills-row {
+    gap: 6px !important;
+  }
+  .quiz-result-pill {
+    padding: 5px 10px !important;
+    font-size: 11px !important;
+  }
+  .quiz-bundles-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .quiz-bundle-card {
+    padding: 18px 14px !important;
+    border-radius: 20px !important;
+  }
+  .quiz-bundle-badge-row {
+    gap: 6px !important;
+  }
+  .quiz-bundle-badge {
+    font-size: 9.5px !important;
+    padding: 4px 10px !important;
+    letter-spacing: 0.05em !important;
+  }
+  .quiz-bundle-img-wrap {
+    width: 62px !important;
+    height: 62px !important;
+    min-width: 62px !important;
+    border-radius: 14px !important;
+  }
+  .quiz-bundle-name {
+    font-size: 16px !important;
+  }
+  .quiz-bundle-short {
+    font-size: 11px !important;
+  }
+  .quiz-bundle-items-box {
+    padding: 10px !important;
+    gap: 5px !important;
+    font-size: 11px !important;
+  }
+  .quiz-bundle-price {
+    font-size: 21px !important;
+  }
+  .quiz-guarantee-strip {
+    border-radius: 20px !important;
+    padding: 14px 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .quiz-guar-div {
+    display: none !important;
+  }
 }
 
 @media (min-width: 769px) {
@@ -1229,9 +1398,9 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 <!-- ========================================================================= -->
 <!-- TEST / DIAGNÓSTICO CAPILAR VIRTUAL EN 3 PASOS (HAIR QUIZ VIP)             -->
 <!-- ========================================================================= -->
-<section id="diagnostico" style="position:relative;max-width:1320px;margin:clamp(48px,6.5vw,84px) auto 0;padding:0 18px">
+<section id="diagnostico" class="quiz-section" style="position:relative;max-width:1320px;margin:clamp(48px,6.5vw,84px) auto 0;padding:0 18px">
   
-  <div style="border-radius:clamp(28px,4vw,44px);background:linear-gradient(165deg,var(--surf) 0%,var(--surf2) 50%,var(--surf3) 100%);border:1.5px solid var(--line2);box-shadow:0 24px 60px -15px rgba(168,124,47,.16),var(--e3);padding:clamp(22px,4vw,48px);position:relative;overflow:hidden">
+  <div class="quiz-container" style="border-radius:clamp(28px,4vw,44px);background:linear-gradient(165deg,var(--surf) 0%,var(--surf2) 50%,var(--surf3) 100%);border:1.5px solid var(--line2);box-shadow:0 24px 60px -15px rgba(168,124,47,.16),var(--e3);padding:clamp(22px,4vw,48px);position:relative;overflow:hidden">
     
     <!-- Ambient gold glow effect -->
     <div style="position:absolute;top:-60px;right:-60px;width:340px;height:340px;background:radial-gradient(circle,rgba(201,164,92,.22) 0%,transparent 70%);filter:blur(50px);pointer-events:none"></div>
@@ -1239,35 +1408,35 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
     <!-- Section Header with High Impact Styling -->
     <div style="text-align:center;max-width:760px;margin:0 auto;position:relative;z-index:2">
-      <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:999px;background:var(--surf);border:1.5px solid var(--line2);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:14px;box-shadow:var(--e1)">
+      <div class="quiz-top-badge" style="display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:999px;background:var(--surf);border:1.5px solid var(--line2);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:14px;box-shadow:var(--e1)">
         <span class="mi" style="font-size:16px;color:var(--gold)">auto_fix_high</span>
         <span>Asesor Virtual Inteligente · Tricología de Precisión</span>
       </div>
-      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4.4vw,46px);font-weight:800;letter-spacing:-.04em;line-height:1.06;margin:0;color:var(--txt)">
+      <h2 class="quiz-main-title" style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4.4vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin:0;color:var(--txt)">
         Descubre tu Rutina Capilar Ideal
       </h2>
-      <p style="font-size:14.5px;color:var(--mut);margin:10px auto 0;line-height:1.6;max-width:54ch">
+      <p class="quiz-main-desc" style="font-size:14px;color:var(--mut);margin:10px auto 0;line-height:1.6;max-width:54ch">
         Diagnóstico profesional en 3 pasos para recomendarte la fórmula exacta sin formol que transformará tu fibra capilar.
       </p>
     </div>
 
     <!-- Mobile-First Interactive Progress Control Bar -->
-    <div style="max-width:680px;margin:28px auto 0;position:relative;z-index:2">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <div class="quiz-progress-wrap" style="max-width:680px;margin:26px auto 0;position:relative;z-index:2">
+      <div class="quiz-progress-header" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap">
         <sc-if value="{{ canQuizPrev }}" hint-placeholder-val="{{ false }}">
-          <button onClick="{{ quizPrev }}" aria-label="Volver al paso anterior" style="border:1px solid var(--line2);background:var(--surf);border-radius:999px;padding:6px 14px;color:var(--txt);font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .2s;box-shadow:var(--e1)" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold);transform:translateX(-2px)">
+          <button onClick="{{ quizPrev }}" aria-label="Volver al paso anterior" class="quiz-prev-btn" style="border:1px solid var(--line2);background:var(--surf);border-radius:999px;padding:6px 14px;color:var(--txt);font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .2s;box-shadow:var(--e1)" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold);transform:translateX(-2px)">
             <span class="mi mio" style="font-size:16px">arrow_back</span>
             <span>Paso anterior</span>
           </button>
         </sc-if>
         <sc-if value="{{ isQuizStep1 }}" hint-placeholder-val="{{ true }}">
-          <span style="font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px">
+          <span class="quiz-step-indicator" style="font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px">
             <span style="width:7px;height:7px;border-radius:999px;background:var(--gold);display:inline-block"></span>
             <span>Inicio del Diagnóstico</span>
           </span>
         </sc-if>
 
-        <span style="font-size:11.5px;font-weight:800;letter-spacing:.08em;padding:4px 12px;border-radius:999px;background:var(--surf3);color:var(--gold);border:1px solid rgba(212,175,55,.25);margin-left:auto">
+        <span class="quiz-step-badge" style="font-size:11.5px;font-weight:800;letter-spacing:.08em;padding:4px 12px;border-radius:999px;background:var(--surf3);color:var(--gold);border:1px solid rgba(212,175,55,.25);margin-left:auto">
           {{ isQuizResult ? 'COMPLETADO ✨' : 'PASO ' + quizStep + ' DE 3 · ' + quizStepPct }}
         </span>
       </div>
@@ -1280,26 +1449,26 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
     <!-- QUIZ STEP 1: Tipo de Cabello -->
     <sc-if value="{{ isQuizStep1 }}" hint-placeholder-val="{{ true }}">
-      <div style="max-width:720px;margin:32px auto 0;position:relative;z-index:2;animation:fadeup .32s ease-out">
+      <div class="quiz-step-content" style="max-width:720px;margin:32px auto 0;position:relative;z-index:2;animation:fadeup .32s ease-out">
         <div style="text-align:center;margin-bottom:22px">
           <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;display:block">PASO 1</span>
-          <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,3vw,25px);font-weight:800;color:var(--txt);margin:4px 0 0">¿Cuál es el tipo o estado actual de tu cabello?</h3>
-          <p style="font-size:13px;color:var(--mut);margin:4px 0 0">Selecciona la textura que mejor describe tu hebra para calibrar los activos botánicos</p>
+          <h3 class="quiz-step-title" style="font-family:'Outfit',sans-serif;font-size:clamp(20px,3vw,25px);font-weight:800;color:var(--txt);margin:4px 0 0">¿Cuál es el tipo o estado actual de tu cabello?</h3>
+          <p class="quiz-step-desc" style="font-size:13px;color:var(--mut);margin:4px 0 0">Selecciona la textura que mejor describe tu hebra para calibrar los activos botánicos</p>
         </div>
         
-        <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))">
+        <div class="quiz-options-grid" style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))">
           <sc-for list="{{ quizHairOptions }}" as="ho" hint-placeholder-count="4">
-            <button onClick="{{ ho.pick }}" style="{{ ho.style }}" style-hover="border-color:var(--gold);background:var(--surf2);transform:translateY(-3px);box-shadow:0 10px 24px -6px rgba(168,124,47,.3)">
-              <div style="display:flex;align-items:center;gap:14px;min-width:0">
-                <div style="{{ ho.iconStyle }}">
+            <button onClick="{{ ho.pick }}" class="quiz-opt-btn" style="{{ ho.style }}" style-hover="border-color:var(--gold);background:var(--surf2);transform:translateY(-3px);box-shadow:0 10px 24px -6px rgba(168,124,47,.3)">
+              <div class="quiz-opt-content" style="display:flex;align-items:center;gap:14px;min-width:0;flex:1">
+                <div class="quiz-opt-icon" style="{{ ho.iconStyle }}">
                   <span class="mi" style="font-size:22px">{{ ho.icon }}</span>
                 </div>
-                <div style="display:flex;flex-direction:column">
-                  <span style="font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:800;color:var(--txt)">{{ ho.title }}</span>
-                  <span style="font-size:12.5px;color:var(--mut);margin-top:2px;line-height:1.35">{{ ho.desc }}</span>
+                <div class="quiz-opt-text" style="display:flex;flex-direction:column;min-width:0;flex:1;text-align:left">
+                  <span class="quiz-opt-title" style="font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:800;color:var(--txt)">{{ ho.title }}</span>
+                  <span class="quiz-opt-desc" style="font-size:12.5px;color:var(--mut);margin-top:2px;line-height:1.35">{{ ho.desc }}</span>
                 </div>
               </div>
-              <span class="mi" style="font-size:22px;color:{{ ho.checkColor }};flex:none">
+              <span class="mi quiz-opt-check" style="font-size:22px;color:{{ ho.checkColor }};flex:none">
                 {{ ho.checkIcon }}
               </span>
             </button>
@@ -1310,26 +1479,26 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
     <!-- QUIZ STEP 2: Objetivo -->
     <sc-if value="{{ isQuizStep2 }}" hint-placeholder-val="{{ false }}">
-      <div style="max-width:720px;margin:32px auto 0;position:relative;z-index:2;animation:fadeup .32s ease-out">
+      <div class="quiz-step-content" style="max-width:720px;margin:32px auto 0;position:relative;z-index:2;animation:fadeup .32s ease-out">
         <div style="text-align:center;margin-bottom:22px">
           <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;display:block">PASO 2</span>
-          <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,3vw,25px);font-weight:800;color:var(--txt);margin:4px 0 0">¿Qué resultado buscas lograr principalmente?</h3>
-          <p style="font-size:13px;color:var(--mut);margin:4px 0 0">Definiremos el protocolo de sellado, nutrición o termoprotección ideal</p>
+          <h3 class="quiz-step-title" style="font-family:'Outfit',sans-serif;font-size:clamp(20px,3vw,25px);font-weight:800;color:var(--txt);margin:4px 0 0">¿Qué resultado buscas lograr principalmente?</h3>
+          <p class="quiz-step-desc" style="font-size:13px;color:var(--mut);margin:4px 0 0">Definiremos el protocolo de sellado, nutrición o termoprotección ideal</p>
         </div>
         
-        <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))">
+        <div class="quiz-options-grid" style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))">
           <sc-for list="{{ quizGoalOptions }}" as="go" hint-placeholder-count="3">
-            <button onClick="{{ go.pick }}" style="{{ go.style }}" style-hover="border-color:var(--gold);background:var(--surf2);transform:translateY(-3px);box-shadow:0 10px 24px -6px rgba(168,124,47,.3)">
-              <div style="display:flex;align-items:center;gap:14px;min-width:0">
-                <div style="{{ go.iconStyle }}">
+            <button onClick="{{ go.pick }}" class="quiz-opt-btn" style="{{ go.style }}" style-hover="border-color:var(--gold);background:var(--surf2);transform:translateY(-3px);box-shadow:0 10px 24px -6px rgba(168,124,47,.3)">
+              <div class="quiz-opt-content" style="display:flex;align-items:center;gap:14px;min-width:0;flex:1">
+                <div class="quiz-opt-icon" style="{{ go.iconStyle }}">
                   <span class="mi" style="font-size:22px">{{ go.icon }}</span>
                 </div>
-                <div style="display:flex;flex-direction:column">
-                  <span style="font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:800;color:var(--txt)">{{ go.title }}</span>
-                  <span style="font-size:12.5px;color:var(--mut);margin-top:2px;line-height:1.35">{{ go.desc }}</span>
+                <div class="quiz-opt-text" style="display:flex;flex-direction:column;min-width:0;flex:1;text-align:left">
+                  <span class="quiz-opt-title" style="font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:800;color:var(--txt)">{{ go.title }}</span>
+                  <span class="quiz-opt-desc" style="font-size:12.5px;color:var(--mut);margin-top:2px;line-height:1.35">{{ go.desc }}</span>
                 </div>
               </div>
-              <span class="mi" style="font-size:22px;color:{{ go.checkColor }};flex:none">
+              <span class="mi quiz-opt-check" style="font-size:22px;color:{{ go.checkColor }};flex:none">
                 {{ go.checkIcon }}
               </span>
             </button>
@@ -1340,26 +1509,26 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
     <!-- QUIZ STEP 3: Perfil / Aplicación -->
     <sc-if value="{{ isQuizStep3 }}" hint-placeholder-val="{{ false }}">
-      <div style="max-width:720px;margin:32px auto 0;position:relative;z-index:2;animation:fadeup .32s ease-out">
+      <div class="quiz-step-content" style="max-width:720px;margin:32px auto 0;position:relative;z-index:2;animation:fadeup .32s ease-out">
         <div style="text-align:center;margin-bottom:22px">
           <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;display:block">PASO 3</span>
-          <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,3vw,25px);font-weight:800;color:var(--txt);margin:4px 0 0">¿Para qué uso requieres los productos?</h3>
-          <p style="font-size:13px;color:var(--mut);margin:4px 0 0">Adaptamos el tamaño, rendimiento y formato de aplicación a tu medida</p>
+          <h3 class="quiz-step-title" style="font-family:'Outfit',sans-serif;font-size:clamp(20px,3vw,25px);font-weight:800;color:var(--txt);margin:4px 0 0">¿Para qué uso requieres los productos?</h3>
+          <p class="quiz-step-desc" style="font-size:13px;color:var(--mut);margin:4px 0 0">Adaptamos el tamaño, rendimiento y formato de aplicación a tu medida</p>
         </div>
         
-        <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))">
+        <div class="quiz-options-grid" style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))">
           <sc-for list="{{ quizProfileOptions }}" as="po" hint-placeholder-count="2">
-            <button onClick="{{ po.pick }}" style="{{ po.style }}" style-hover="border-color:var(--gold);background:var(--surf2);transform:translateY(-3px);box-shadow:0 10px 24px -6px rgba(168,124,47,.3)">
-              <div style="display:flex;align-items:center;gap:14px;min-width:0">
-                <div style="{{ po.iconStyle }}">
+            <button onClick="{{ po.pick }}" class="quiz-opt-btn" style="{{ po.style }}" style-hover="border-color:var(--gold);background:var(--surf2);transform:translateY(-3px);box-shadow:0 10px 24px -6px rgba(168,124,47,.3)">
+              <div class="quiz-opt-content" style="display:flex;align-items:center;gap:14px;min-width:0;flex:1">
+                <div class="quiz-opt-icon" style="{{ po.iconStyle }}">
                   <span class="mi" style="font-size:22px">{{ po.icon }}</span>
                 </div>
-                <div style="display:flex;flex-direction:column">
-                  <span style="font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:800;color:var(--txt)">{{ po.title }}</span>
-                  <span style="font-size:12.5px;color:var(--mut);margin-top:2px;line-height:1.35">{{ po.desc }}</span>
+                <div class="quiz-opt-text" style="display:flex;flex-direction:column;min-width:0;flex:1;text-align:left">
+                  <span class="quiz-opt-title" style="font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:800;color:var(--txt)">{{ po.title }}</span>
+                  <span class="quiz-opt-desc" style="font-size:12.5px;color:var(--mut);margin-top:2px;line-height:1.35">{{ po.desc }}</span>
                 </div>
               </div>
-              <span class="mi" style="font-size:22px;color:{{ po.checkColor }};flex:none">
+              <span class="mi quiz-opt-check" style="font-size:22px;color:{{ po.checkColor }};flex:none">
                 {{ po.checkIcon }}
               </span>
             </button>
@@ -1370,82 +1539,82 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
     <!-- QUIZ STEP 4: RESULTADO DEL TEST CON COMBOS RECOMENDADOS -->
     <sc-if value="{{ isQuizResult }}" hint-placeholder-val="{{ false }}">
-      <div style="margin-top:28px;position:relative;z-index:2;animation:fadeup .35s ease-out">
+      <div class="quiz-result-wrap" style="margin-top:28px;position:relative;z-index:2;animation:fadeup .35s ease-out">
         
         <!-- Header de Prescripción y Resumen del Test -->
-        <div style="border-radius:28px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:clamp(20px,3.5vw,32px);margin-bottom:24px">
-          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)">
-            <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:var(--surf3);font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--gold)">
+        <div class="quiz-prescription-card" style="border-radius:28px;background:var(--surf);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:clamp(20px,3.5vw,32px);margin-bottom:24px">
+          <div class="quiz-presc-top-row" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)">
+            <div class="quiz-presc-badge" style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:var(--surf3);font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--gold)">
               <span class="mi" style="font-size:16px">verified</span>PRESCRIPCIÓN TRICOLÓGICA LYOS · TEST COMPLETADO
             </div>
-            <button onClick="{{ quizReset }}" style="border:0;background:transparent;color:var(--mut);font-size:12.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .2s" style-hover="color:var(--gold)">
+            <button onClick="{{ quizReset }}" class="quiz-reset-btn" style="border:0;background:transparent;color:var(--mut);font-size:12.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .2s" style-hover="color:var(--gold)">
               <span class="mi" style="font-size:16px">refresh</span>Repetir Test
             </button>
           </div>
 
-          <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:16px">
+          <div class="quiz-presc-title-row" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:16px">
             <div>
-              <div style="display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:8px">
+              <div class="quiz-presc-discount-tag" style="display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:8px">
                 <span class="mi" style="font-size:15px">redeem</span>Kits Maestros · Descuento Especial
               </div>
-              <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(24px,3.6vw,36px);font-weight:800;letter-spacing:-.035em;margin:0;color:var(--txt)">
+              <h3 class="quiz-result-heading" style="font-family:'Outfit',sans-serif;font-size:clamp(24px,3.6vw,36px);font-weight:800;letter-spacing:-.035em;margin:0;color:var(--txt)">
                 Combos Profesionales Recomendados
               </h3>
-              <p style="font-size:14px;color:var(--mut);margin:6px 0 0;max-width:56ch">
+              <p class="quiz-result-subheading" style="font-size:14px;color:var(--mut);margin:6px 0 0;max-width:56ch">
                 Ahorra comprando las rutinas completas para salón o mantenimiento en casa.
               </p>
             </div>
             
-            <span style="font-size:12px;font-weight:700;color:#25D366;display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.25)">
+            <span class="quiz-shipping-tag" style="font-size:12px;font-weight:700;color:#25D366;display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.25)">
               <span class="mi" style="font-size:16px">local_shipping</span>Envío Gratis Incluido
             </span>
           </div>
 
           <!-- Diagnostic Answers Pills -->
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
-            <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--surf2);border:1px solid var(--line2);font-size:12px;font-weight:700;color:var(--txt)">
+          <div class="quiz-pills-row" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+            <span class="quiz-result-pill" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--surf2);border:1px solid var(--line2);font-size:12px;font-weight:700;color:var(--txt)">
               <span class="mi" style="font-size:15px;color:var(--gold)">waves</span>Fibra: <strong style="color:var(--gold)">{{ quizResult.hairLabel }}</strong>
             </span>
-            <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--surf2);border:1px solid var(--line2);font-size:12px;font-weight:700;color:var(--txt)">
+            <span class="quiz-result-pill" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--surf2);border:1px solid var(--line2);font-size:12px;font-weight:700;color:var(--txt)">
               <span class="mi" style="font-size:15px;color:var(--gold)">auto_awesome</span>Objetivo: <strong style="color:var(--gold)">{{ quizResult.goalLabel }}</strong>
             </span>
-            <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--surf2);border:1px solid var(--line2);font-size:12px;font-weight:700;color:var(--txt)">
+            <span class="quiz-result-pill" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--surf2);border:1px solid var(--line2);font-size:12px;font-weight:700;color:var(--txt)">
               <span class="mi" style="font-size:15px;color:var(--gold)">storefront</span>Perfil: <strong style="color:var(--gold)">{{ quizResult.profileLabel }}</strong>
             </span>
           </div>
         </div>
 
         <!-- 3 Bundle Cards Grid -->
-        <div style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
+        <div class="quiz-bundles-grid" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
           <sc-for list="{{ bundles }}" as="b" hint-placeholder-count="3">
-            <div style="position:relative;border-radius:28px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:{{ b.cardBorder }};box-shadow:{{ b.cardGlow }};padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:all .3s" style-hover="border-color:var(--gold);transform:translateY(-4px);box-shadow:0 18px 45px -10px rgba(168,124,47,.35)">
+            <div class="quiz-bundle-card" style="position:relative;border-radius:28px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:{{ b.cardBorder }};box-shadow:{{ b.cardGlow }};padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:all .3s" style-hover="border-color:var(--gold);transform:translateY(-4px);box-shadow:0 18px 45px -10px rgba(168,124,47,.35)">
               
               <!-- Top Badge Row -->
               <div>
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-                  <span style="padding:5px 12px;border-radius:999px;background:{{ b.cardBadgeBg }};color:{{ b.cardBadgeFg }};font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">
+                <div class="quiz-bundle-badge-row" style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+                  <span class="quiz-bundle-badge" style="padding:5px 12px;border-radius:999px;background:{{ b.cardBadgeBg }};color:{{ b.cardBadgeFg }};font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">
                     {{ b.cardBadge }}
                   </span>
-                  <span style="padding:5px 12px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:11px;font-weight:800;border:1px solid rgba(37,211,102,.3)">
+                  <span class="quiz-bundle-save" style="padding:5px 12px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:11px;font-weight:800;border:1px solid rgba(37,211,102,.3)">
                     {{ b.saveLabel }}
                   </span>
                 </div>
 
                 <!-- Image thumbnail & title -->
-                <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
-                  <span style="width:74px;height:74px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line)">
+                <div class="quiz-bundle-item-info" style="display:flex;gap:14px;align-items:center;margin-top:16px">
+                  <span class="quiz-bundle-img-wrap" style="width:74px;height:74px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line)">
                     <img src="{{ b.img }}" alt="" style="width:100%;height:100%;object-fit:contain;padding:4px;mix-blend-mode:multiply" loading="lazy" decoding="async" />
                   </span>
-                  <div style="display:flex;flex-direction:column;min-width:0">
-                    <h4 style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">
+                  <div style="display:flex;flex-direction:column;min-width:0;flex:1">
+                    <h4 class="quiz-bundle-name" style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">
                       {{ b.name }}
                     </h4>
-                    <span style="font-size:12px;color:var(--mut);margin-top:4px;line-height:1.4">{{ b.short }}</span>
+                    <span class="quiz-bundle-short" style="font-size:12px;color:var(--mut);margin-top:4px;line-height:1.4">{{ b.short }}</span>
                   </div>
                 </div>
 
                 <!-- Items List -->
-                <div style="display:grid;gap:6px;margin-top:16px;padding:12px;border-radius:16px;background:var(--surf2);border:1px solid var(--line)">
+                <div class="quiz-bundle-items-box" style="display:grid;gap:6px;margin-top:16px;padding:12px;border-radius:16px;background:var(--surf2);border:1px solid var(--line)">
                   <sc-for list="{{ b.items }}" as="it" hint-placeholder-count="3">
                     <div style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--txt)">
                       <span class="mi" style="font-size:15px;color:var(--gold)">check_circle</span>
@@ -1456,11 +1625,11 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
               </div>
 
               <!-- Pricing & Action Row -->
-              <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px">
+              <div class="quiz-bundle-action-row" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px">
                 <div style="display:flex;align-items:baseline;justify-content:space-between">
                   <div style="display:flex;align-items:baseline;gap:8px">
-                    <span style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--txt)">{{ b.priceLabel }}</span>
-                    <span style="font-size:14px;color:var(--dim);text-decoration:line-through;font-weight:600">{{ b.oldPriceLabel }}</span>
+                    <span class="quiz-bundle-price" style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--txt)">{{ b.priceLabel }}</span>
+                    <span class="quiz-bundle-old-price" style="font-size:14px;color:var(--dim);text-decoration:line-through;font-weight:600">{{ b.oldPriceLabel }}</span>
                   </div>
                   <span style="font-size:11px;font-weight:700;color:var(--gold)">Pack Ahorro</span>
                 </div>
@@ -1481,22 +1650,22 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
         </div>
 
         <!-- Bottom Fast-Service Guarantee Minimalist Strip -->
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(16px,3vw,32px);margin-top:clamp(24px,3.2vw,36px);padding:18px 24px;border-radius:999px;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e1)">
+        <div class="quiz-guarantee-strip" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(16px,3vw,32px);margin-top:clamp(24px,3.2vw,36px);padding:18px 24px;border-radius:999px;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e1)">
           <div style="display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;color:var(--txt)">
             <span class="mi" style="font-size:18px;color:var(--gold)">bolt</span>
             <span>Compra en 2 clics por WhatsApp</span>
           </div>
-          <span style="color:var(--line2);display:none;@media(min-width:768px){display:inline}">|</span>
+          <span class="quiz-guar-div" style="color:var(--line2)">|</span>
           <div style="display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;color:var(--txt)">
             <span class="mi" style="font-size:18px;color:var(--gold)">local_shipping</span>
             <span>Envíos gratis desde $150.000</span>
           </div>
-          <span style="color:var(--line2);display:none;@media(min-width:768px){display:inline}">|</span>
+          <span class="quiz-guar-div" style="color:var(--line2)">|</span>
           <div style="display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;color:var(--txt)">
             <span class="mi" style="font-size:18px;color:var(--gold)">verified_user</span>
             <span>100% Original &amp; INVIMA</span>
           </div>
-          <span style="color:var(--line2);display:none;@media(min-width:768px){display:inline}">|</span>
+          <span class="quiz-guar-div" style="color:var(--line2)">|</span>
           <div style="display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;color:var(--txt)">
             <span class="mi" style="font-size:18px;color:var(--gold)">support_agent</span>
             <span>Asesoría personalizada</span>
