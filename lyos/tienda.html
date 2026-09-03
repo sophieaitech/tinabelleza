@@ -172,16 +172,27 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 .story-live-ring{animation:livePulse 2s infinite}
 
 /* ========================================================================= */
-/* INVERTED THEME SECTION (#productos): Dark in Light, Light in Dark         */
+/* ========================================================================= */
+/* INVERTED THEME SECTION (#productos): Elegant Contained Luxury Card        */
 /* ========================================================================= */
 .section-theme-invert {
   position: relative;
-  width: 100%;
-  padding: clamp(56px, 7vw, 96px) 0 clamp(64px, 8vw, 100px);
-  background-color: #14120E;
-  color: #F7F3EB;
+  max-width: 1320px;
+  margin: clamp(40px, 5.5vw, 76px) auto;
+  padding: 0 18px;
+  background: transparent !important;
+}
+
+.section-theme-invert .prod-card-wrapper {
+  position: relative;
+  border-radius: clamp(28px, 3.5vw, 40px);
+  background: linear-gradient(160deg, #181511 0%, #100E0B 100%);
+  border: 1.5px solid rgba(217, 182, 121, 0.45);
+  box-shadow: 0 24px 70px -15px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.4);
+  padding: clamp(28px, 4.5vw, 56px) clamp(20px, 3.5vw, 44px);
   overflow: hidden;
-  transition: background-color .45s cubic-bezier(.2,.8,.2,1), color .45s cubic-bezier(.2,.8,.2,1);
+  color: #F7F3EB;
+  transition: background .4s cubic-bezier(.2,.8,.2,1), color .4s cubic-bezier(.2,.8,.2,1), border-color .3s;
 
   /* Scoped Inversion: Dark Theme Variables when Site is in Light Mode */
   --bg: #14120E;
@@ -189,8 +200,8 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   --surf: #201D17;
   --surf2: #28241D;
   --surf3: #332D24;
-  --line: rgba(232,214,180,.08);
-  --line2: rgba(232,214,180,.14);
+  --line: rgba(232,214,180,.1);
+  --line2: rgba(232,214,180,.2);
   --txt: #F7F3EB;
   --mut: #A8A092;
   --dim: #756E63;
@@ -206,42 +217,11 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   --e3: 0 20px 50px -18px rgba(0,0,0,.55);
 }
 
-.section-theme-invert .prod-inner-container {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 18px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Smooth Gradient Transition at Top & Bottom */
-.section-theme-invert .prod-fade-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: clamp(60px, 8vw, 110px);
-  background: linear-gradient(180deg, #FBF8F2 0%, rgba(20,18,14,0) 100%);
-  pointer-events: none;
-  z-index: 3;
-  transition: background .45s ease;
-}
-
-.section-theme-invert .prod-fade-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: clamp(60px, 8vw, 110px);
-  background: linear-gradient(180deg, rgba(20,18,14,0) 0%, #FBF8F2 100%);
-  pointer-events: none;
-  z-index: 3;
-  transition: background .45s ease;
-}
-
-/* When site is switched to Dark Mode: Invert #productos to Light Mode */
-[data-theme="dark"] .section-theme-invert {
-  background-color: #FBF8F2;
+/* When site is switched to Dark Mode: Invert #productos to Light Card */
+[data-theme="dark"] .section-theme-invert .prod-card-wrapper {
+  background: linear-gradient(160deg, #FFFFFF 0%, #FAF5EC 100%);
+  border: 1.5px solid rgba(168, 124, 47, 0.4);
+  box-shadow: 0 20px 60px -15px rgba(60, 45, 20, 0.18), 0 4px 16px rgba(60, 45, 20, 0.08);
   color: #16120D;
 
   --bg: #FBF8F2;
@@ -249,8 +229,8 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   --surf: #FFFFFF;
   --surf2: #FAF5EC;
   --surf3: #F1E7D6;
-  --line: rgba(28,22,12,.07);
-  --line2: rgba(28,22,12,.13);
+  --line: rgba(28,22,12,.08);
+  --line2: rgba(28,22,12,.16);
   --txt: #16120D;
   --mut: #6A6154;
   --dim: #9A9184;
@@ -264,14 +244,6 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   --e1: 0 1px 3px rgba(60,45,20,.05);
   --e2: 0 8px 24px -8px rgba(60,45,20,.12);
   --e3: 0 20px 50px -18px rgba(60,45,20,.16);
-}
-
-[data-theme="dark"] .section-theme-invert .prod-fade-top {
-  background: linear-gradient(180deg, #14120E 0%, rgba(251,248,242,0) 100%);
-}
-
-[data-theme="dark"] .section-theme-invert .prod-fade-bottom {
-  background: linear-gradient(180deg, rgba(251,248,242,0) 0%, #14120E 100%);
 }
 
 .section-theme-invert img[style*="mix-blend-mode"] {
@@ -518,10 +490,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 </section>
 
 <section id="productos" class="section-theme-invert">
-  <!-- Smooth Top Transition Fade -->
-  <div class="prod-fade-top" aria-hidden="true"></div>
-
-  <div class="prod-inner-container">
+  <div class="prod-card-wrapper">
     <!-- Subtle ambient decorative glow -->
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(900px,95vw);height:240px;background:radial-gradient(ellipse,rgba(217,182,121,.14) 0%,rgba(168,124,47,.02) 50%,transparent 70%);filter:blur(50px);pointer-events:none"></div>
 
@@ -762,9 +731,6 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   </div>
 
   </div>
-
-  <!-- Smooth Bottom Transition Fade -->
-  <div class="prod-fade-bottom" aria-hidden="true"></div>
 </section>
 
 <!-- ========================================================================= -->
