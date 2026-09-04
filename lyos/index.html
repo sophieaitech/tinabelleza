@@ -471,13 +471,15 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   gap: 8px !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  flex-wrap: wrap !important;
 }
 .pilar-badge-group {
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
   flex-wrap: nowrap !important;
-  min-width: 0 !important;
+  white-space: nowrap !important;
+  flex: none !important;
 }
 .pilar-badge-pill {
   padding: 4px 10px !important;
@@ -486,6 +488,7 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   white-space: nowrap !important;
+  word-break: keep-all !important;
   flex: none !important;
   line-height: 1.2 !important;
   display: inline-flex !important;
@@ -495,6 +498,7 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   font-size: 11px !important;
   font-weight: 700 !important;
   white-space: nowrap !important;
+  word-break: keep-all !important;
   line-height: 1.2 !important;
   flex: none !important;
 }
@@ -504,6 +508,7 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   font-size: 10.5px !important;
   font-weight: 800 !important;
   white-space: nowrap !important;
+  word-break: keep-all !important;
   flex: none !important;
   line-height: 1.2 !important;
   display: inline-flex !important;
@@ -1013,23 +1018,41 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
     gap: 16px !important;
   }
   .pilar-top-row {
-    gap: 8px !important;
+    gap: 6px 8px !important;
     justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
   }
   .pilar-badge-group {
-    gap: 6px !important;
+    gap: 5px !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    flex: none !important;
   }
   .pilar-badge-pill {
-    padding: 3.5px 9px !important;
-    font-size: 9.5px !important;
+    padding: 3px 8px !important;
+    font-size: 9px !important;
     letter-spacing: 0.05em !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    flex: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
   }
   .pilar-badge-sub {
-    font-size: 11px !important;
+    font-size: 10.5px !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    flex: none !important;
   }
   .pilar-save-tag {
-    padding: 3.5px 9px !important;
-    font-size: 10px !important;
+    padding: 3px 8px !important;
+    font-size: 9.5px !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    flex: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
   }
   .pilar-actions-row {
     gap: 8px !important;
@@ -1964,10 +1987,10 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
             <!-- Top Badges -->
             <div class="pilar-top-row">
               <div class="pilar-badge-group">
-                <span class="pilar-badge-pill" style="background:var(--surf2);border:1px solid var(--gold);color:var(--gold)">PILAR 01</span>
-                <span class="pilar-badge-sub" style="color:var(--mut)">Rutina en Casa</span>
+                <span class="pilar-badge-pill" style="background:var(--surf2);border:1px solid var(--gold);color:var(--gold)">PILAR&nbsp;01</span>
+                <span class="pilar-badge-sub" style="color:var(--mut)">Rutina&nbsp;en&nbsp;Casa</span>
               </div>
-              <span class="pilar-save-tag" style="background:rgba(37,211,102,.12);color:#25D366;border:1px solid rgba(37,211,102,.25)">Ahorras $10.000 COP</span>
+              <span class="pilar-save-tag" style="background:rgba(37,211,102,.12);color:#25D366;border:1px solid rgba(37,211,102,.25)">Ahorras&nbsp;$10.000&nbsp;COP</span>
             </div>
 
             <!-- Product Thumbnail & Title -->
@@ -2028,10 +2051,10 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
             <!-- Top Badges -->
             <div class="pilar-top-row">
               <div class="pilar-badge-group">
-                <span class="pilar-badge-pill" style="background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366">PILAR 02 🇧🇷</span>
-                <span class="pilar-badge-sub" style="color:var(--mut)">Origen Brasileño</span>
+                <span class="pilar-badge-pill" style="background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366">PILAR&nbsp;02&nbsp;🇧🇷</span>
+                <span class="pilar-badge-sub" style="color:var(--mut)">Origen&nbsp;Brasileño</span>
               </div>
-              <span class="pilar-save-tag" style="background:var(--surf3);color:var(--gold);border:1px solid rgba(212,175,55,.25)">0% Formol</span>
+              <span class="pilar-save-tag" style="background:var(--surf3);color:var(--gold);border:1px solid rgba(212,175,55,.25)">0%&nbsp;Formol</span>
             </div>
 
             <!-- Product Thumbnail & Title -->
@@ -2091,10 +2114,10 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
             <!-- Top Badges -->
             <div class="pilar-top-row">
               <div class="pilar-badge-group">
-                <span class="pilar-badge-pill" style="background:var(--goldGrad);color:var(--onGold)">PILAR 03 ★</span>
-                <span class="pilar-badge-sub" style="color:var(--gold)">Doble Tecnología</span>
+                <span class="pilar-badge-pill" style="background:var(--goldGrad);color:var(--onGold)">PILAR&nbsp;03&nbsp;★</span>
+                <span class="pilar-badge-sub" style="color:var(--gold)">Doble&nbsp;Tecnología</span>
               </div>
-              <span class="pilar-save-tag" style="background:rgba(37,211,102,.12);color:#25D366;border:1px solid rgba(37,211,102,.25)">Ahorras $41.000 COP</span>
+              <span class="pilar-save-tag" style="background:rgba(37,211,102,.12);color:#25D366;border:1px solid rgba(37,211,102,.25)">Ahorras&nbsp;$41.000&nbsp;COP</span>
             </div>
 
             <!-- Product Thumbnail & Title -->
