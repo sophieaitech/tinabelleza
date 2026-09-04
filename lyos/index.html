@@ -916,6 +916,11 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   }
 }
 
+@media (max-width: 430px) {
+  .co-title-full { display: none !important; }
+  .co-title-short { display: inline !important; }
+}
+
 </style>
 </helmet>
 <div id="app" ref="{{ rootRef }}" data-theme="{{ theme }}" style="min-height:100dvh;background:var(--bg);color:var(--txt);padding-bottom:calc(76px + env(safe-area-inset-bottom));position:relative;overflow:hidden">
@@ -4490,8 +4495,8 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
       </button>
       
       <div style="display:flex;flex-direction:column;flex:1">
-        <span style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.025em;color:var(--txt);display:inline-flex;align-items:center;gap:6px">
-          <span style="color:var(--gold)">LYOS</span> · Checkout Express
+        <span style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.025em;color:var(--txt);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+          <span style="color:var(--gold)">LYOS</span> · <span class="co-title-full">Checkout Express</span><span class="co-title-short" style="display:none">Checkout</span>
         </span>
         <span style="font-size:12px;color:var(--mut);font-weight:600;margin-top:1px">
           {{ coStep }}
@@ -7089,7 +7094,7 @@ class Component extends DCLogic {
           : 'Transacción aprobada. Generando guía de despacho...',
       simProgress:S.simStep === 1 ? '35%' : (S.simStep === 2 ? '75%' : '100%'),
       coTitle:S.co === 2 ? 'Seguimiento del pedido' : 'Confirmar pedido',
-      coStep:S.co === 2 ? TRACK[S.track].label + ' · ' + (S.order ? S.order.carrier.name : '') : 'Datos de entrega, envío y pago',
+      coStep:S.co === 2 ? TRACK[S.track].label + ' · ' + (S.order ? S.order.carrier.name : '') : 'Entrega y pago',
       sendOrder:() => this.sendOrder(),
       carriers:CARRIERS.map(c => {
         const isFree = sub >= 150000 && c.id !== 'moto' && c.id !== 'pick';
