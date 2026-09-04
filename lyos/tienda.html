@@ -1513,45 +1513,25 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   (function() {
     function setupKitRealVideo() {
       var v = document.getElementById('kitRealDemoVideo');
-      if (!v || v._inited) return;
-      v._inited = true;
+      if (!v || v._kitInited) return;
+      v._kitInited = true;
       v.muted = true;
+      v.defaultMuted = true;
+      v.loop = true;
       v.playsInline = true;
+      v.setAttribute('loop', '');
+      v.setAttribute('muted', '');
       v.setAttribute('playsinline', '');
       v.setAttribute('webkit-playsinline', '');
-      
-      var playP = v.play();
-      if (playP !== undefined) {
-        playP.catch(function() {
-          function onTouch() {
-            v.play().catch(function(){});
-            window.removeEventListener('touchstart', onTouch);
-            window.removeEventListener('scroll', onTouch);
-          }
-          window.addEventListener('touchstart', onTouch, { passive: true, once: true });
-          window.addEventListener('scroll', onTouch, { passive: true, once: true });
-        });
-      }
-
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              v.play().catch(function(){});
-            } else {
-              v.pause();
-            }
-          });
-        }, { threshold: 0.15 });
-        obs.observe(v);
-      }
+      v.setAttribute('x5-playsinline', '');
     }
 
     window.toggleKitRealAudio = function(btn) {
       var v = document.getElementById('kitRealDemoVideo');
       if (!v) return;
       v.muted = !v.muted;
-      var icon = btn.querySelector('.mi');
+      v._userUnmuted = !v.muted;
+      var icon = btn ? btn.querySelector('.mi') : null;
       if (icon) {
         icon.textContent = v.muted ? 'volume_off' : 'volume_up';
         icon.style.color = v.muted ? 'var(--gold)' : '#25D366';
@@ -1564,6 +1544,7 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
           if (!v.muted && v.duration && !isNaN(v.duration)) {
             if (v.currentTime >= v.duration - 0.6 || (lastT > 3 && v.currentTime < 1)) {
               v.muted = true;
+              v._userUnmuted = false;
               if (icon) {
                 icon.textContent = 'volume_off';
                 icon.style.color = 'var(--gold)';
@@ -1882,45 +1863,25 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   (function() {
     function setupKoreaRealVideo() {
       var v = document.getElementById('koreaRealDemoVideo');
-      if (!v || v._inited) return;
-      v._inited = true;
+      if (!v || v._koreaInited) return;
+      v._koreaInited = true;
       v.muted = true;
+      v.defaultMuted = true;
+      v.loop = true;
       v.playsInline = true;
+      v.setAttribute('loop', '');
+      v.setAttribute('muted', '');
       v.setAttribute('playsinline', '');
       v.setAttribute('webkit-playsinline', '');
-      
-      var playP = v.play();
-      if (playP !== undefined) {
-        playP.catch(function() {
-          function onTouch() {
-            v.play().catch(function(){});
-            window.removeEventListener('touchstart', onTouch);
-            window.removeEventListener('scroll', onTouch);
-          }
-          window.addEventListener('touchstart', onTouch, { passive: true, once: true });
-          window.addEventListener('scroll', onTouch, { passive: true, once: true });
-        });
-      }
-
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              v.play().catch(function(){});
-            } else {
-              v.pause();
-            }
-          });
-        }, { threshold: 0.15 });
-        obs.observe(v);
-      }
+      v.setAttribute('x5-playsinline', '');
     }
 
     window.toggleKoreaRealAudio = function(btn) {
       var v = document.getElementById('koreaRealDemoVideo');
       if (!v) return;
       v.muted = !v.muted;
-      var icon = btn.querySelector('.mi');
+      v._userUnmuted = !v.muted;
+      var icon = btn ? btn.querySelector('.mi') : null;
       if (icon) {
         icon.textContent = v.muted ? 'volume_off' : 'volume_up';
         icon.style.color = v.muted ? '#0E0A06' : '#137836';
@@ -1933,6 +1894,7 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
           if (!v.muted && v.duration && !isNaN(v.duration)) {
             if (v.currentTime >= v.duration - 0.6 || (lastT > 3 && v.currentTime < 1)) {
               v.muted = true;
+              v._userUnmuted = false;
               if (icon) {
                 icon.textContent = 'volume_off';
                 icon.style.color = '#0E0A06';
@@ -1946,23 +1908,18 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
       }
     };
 
-    // Global guarantee: all videos in store strictly loop continuously in silence
-    document.querySelectorAll('video').forEach(function(v) {
-      v.loop = true;
-      v.setAttribute('loop', '');
-      v.setAttribute('playsinline', '');
-      v.setAttribute('webkit-playsinline', '');
-      v.muted = true;
-      v.defaultMuted = true;
-      v.play().catch(function() {});
-    });
-
     window.switchKoreaVideo = function(src, btn) {
       var v = document.getElementById('koreaRealDemoVideo');
       if (!v) return;
       v.pause();
       v.src = src;
+      v._streamLoaded = true;
+      v.preload = 'auto';
       v.load();
+      if (v._userUnmuted !== true) {
+        v.muted = true;
+        v.defaultMuted = true;
+      }
       v.play().catch(function(){});
 
       var tabs = document.querySelectorAll('.korea-vid-tab');
