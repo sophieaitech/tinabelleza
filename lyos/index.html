@@ -1070,8 +1070,8 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
             <span class="mi" style="font-size:17px">volume_off</span>
           </button>
 
-          <!-- Embedded Brand Feature Short Video (Carga diferida inteligente) -->
-          <video id="showcaseVideo" loop muted playsinline webkit-playsinline x5-playsinline preload="none" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+          <!-- Embedded Brand Feature Short Video (Continuous Silent Loop) -->
+          <video id="showcaseVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
             <source src="assets/video-restauracion-ciencia.mp4" type="video/mp4">
           </video>
 
@@ -1085,6 +1085,67 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
             <span class="mi mio" style="font-size:14px">open_in_new</span>
           </a>
         </div>
+
+        <script>
+        (function() {
+          function initShowcaseLoop() {
+            var v = document.getElementById('showcaseVideo');
+            if (!v || v._showcaseInited) return;
+            v._showcaseInited = true;
+            v.muted = true;
+            v.defaultMuted = true;
+            v.loop = true;
+            v.autoplay = true;
+            v.playsInline = true;
+            v.setAttribute('autoplay', '');
+            v.setAttribute('loop', '');
+            v.setAttribute('muted', '');
+            v.setAttribute('playsinline', '');
+            v.setAttribute('webkit-playsinline', '');
+
+            // Fallback: strictly restart when ended for 100% infinite continuous loop
+            v.addEventListener('ended', function() {
+              v.currentTime = 0;
+              v.play().catch(function() {});
+            });
+
+            var p = v.play();
+            if (p !== undefined) {
+              p.catch(function() {
+                function onInteract() {
+                  v.muted = true;
+                  v.play().catch(function() {});
+                  window.removeEventListener('touchstart', onInteract);
+                  window.removeEventListener('scroll', onInteract);
+                  window.removeEventListener('click', onInteract);
+                }
+                window.addEventListener('touchstart', onInteract, { passive: true, once: true });
+                window.addEventListener('scroll', onInteract, { passive: true, once: true });
+                window.addEventListener('click', onInteract, { passive: true, once: true });
+              });
+            }
+
+            if ('IntersectionObserver' in window) {
+              var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                  if (entry.isIntersecting) {
+                    v.play().catch(function() {});
+                  } else {
+                    v.pause();
+                  }
+                });
+              }, { threshold: 0.15 });
+              obs.observe(v);
+            }
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initShowcaseLoop);
+          } else {
+            initShowcaseLoop();
+          }
+        })();
+        </script>
       </div>
 
       <!-- Text & Highlights Showcase Column (Ultra-PRO Editorial Layout) -->

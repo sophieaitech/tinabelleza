@@ -19,8 +19,8 @@
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         var v = entry.target;
-        // Never pause or throttle hero videos
-        if (v.id === 'heroBgVideo' || v.id === 'acadHeroVideo' || v.hasAttribute('data-hero')) return;
+        // Never pause or throttle hero videos or showcase brand videos
+        if (v.id === 'heroBgVideo' || v.id === 'acadHeroVideo' || v.id === 'showcaseVideo' || v.hasAttribute('data-hero')) return;
 
         if (entry.isIntersecting) {
           if (v.preload === 'none') {
@@ -42,9 +42,8 @@
     });
 
     document.querySelectorAll('video').forEach(function (v) {
-      if (v.id !== 'heroBgVideo' && v.id !== 'acadHeroVideo' && !v.hasAttribute('data-hero')) {
+      if (v.id !== 'heroBgVideo' && v.id !== 'acadHeroVideo' && v.id !== 'showcaseVideo' && !v.hasAttribute('data-hero')) {
         v.preload = 'none';
-        v.removeAttribute('autoplay');
         v.setAttribute('playsinline', '');
         v.setAttribute('webkit-playsinline', '');
         v.setAttribute('x5-playsinline', '');
