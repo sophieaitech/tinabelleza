@@ -3364,12 +3364,25 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 <!-- ========================================================================= -->
 <!-- SECCIÓN UNIFICADA: AVAL DE AUTORIDAD, ACADEMIA LYOS & CRISTINA GUTIÉRREZ  -->
 <!-- ========================================================================= -->
-<section id="academia" class="section-academia-full">
+<section id="academia" class="section-academia-full" style="position:relative;overflow:hidden">
   <div id="mas" style="position:absolute;top:0"></div>
   
-  <!-- Ambient decorative luxury glow spheres across full-bleed dark canvas -->
-  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1100px,96vw);height:340px;background:radial-gradient(ellipse,rgba(217,182,121,.18) 0%,rgba(168,124,47,.03) 50%,transparent 70%);filter:blur(60px);pointer-events:none"></div>
-  <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(1000px,96vw);height:300px;background:radial-gradient(ellipse,rgba(217,182,121,.12) 0%,rgba(168,124,47,.02) 50%,transparent 70%);filter:blur(60px);pointer-events:none"></div>
+  <!-- Video Background: LYOS Comercial (Como el landing inicial) -->
+  <video id="academiaBgVideo" autoplay muted playsinline loop webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;transition:opacity 0.6s ease" preload="metadata">
+    <source src="assets/lyos-profesional-comercial.mp4" type="video/mp4">
+  </video>
+
+  <!-- Multi-layered black & gold atmospheric overlay (como el hero landing inicial) -->
+  <div style="position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(11,10,8,.38) 0%,rgba(11,10,8,.75) 60%,rgba(11,10,8,.97) 100%),linear-gradient(180deg,rgba(11,10,8,.85) 0%,rgba(11,10,8,.25) 35%,rgba(11,10,8,.75) 70%,rgba(11,10,8,.98) 100%);pointer-events:none"></div>
+  
+  <!-- Subtle gold ambient glow sphere in center -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(1100px,96vw);height:360px;background:radial-gradient(ellipse,rgba(217,182,121,.16) 0%,transparent 65%);filter:blur(50px);pointer-events:none;z-index:1"></div>
+
+  <!-- Floating Audio Toggle Pill for Academia Video -->
+  <button id="academiaAudioBtn" onclick="window.toggleAcademiaAudio && window.toggleAcademiaAudio()" aria-label="Activar o desactivar sonido del comercial" title="Control de audio del comercial" style="position:absolute;bottom:18px;left:20px;z-index:25;display:inline-flex;align-items:center;gap:7px;padding:7px 15px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(241,222,184,.38);color:#F1DEB8;font-size:11px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.6);transition:all .25s" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='var(--gold)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(241,222,184,.38)'">
+    <span class="mi" id="academiaAudioIcon" style="font-size:16px;color:var(--gold)">volume_off</span>
+    <span id="academiaAudioLabel">Audio silenciado</span>
+  </button>
 
   <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,3.5vw,44px);position:relative;z-index:2">
     
@@ -6946,7 +6959,70 @@ class Component extends DCLogic {
     }
   }
 
-  // 3. ULTRA-SMOOTH SINGLE LINE REVIEWS CAROUSEL & DYNAMIC TRACKING
+  // 3. ACADEMIA BACKGROUND VIDEO (#academiaBgVideo)
+  // - Plays silently in background. User can toggle audio via floating button.
+  // - IntersectionObserver triggers playback only when visible.
+  function initAcademiaVideo() {
+    var vid = document.getElementById('academiaBgVideo');
+    if (!vid || vid._academiaInit) return;
+    vid._academiaInit = true;
+
+    vid.muted = true;
+    vid.defaultMuted = true;
+    vid.setAttribute('playsinline', '');
+    vid.setAttribute('webkit-playsinline', '');
+
+    function updateAcademiaAudioUI() {
+      var icon = document.getElementById('academiaAudioIcon');
+      var label = document.getElementById('academiaAudioLabel');
+      if (icon) icon.textContent = vid.muted ? 'volume_off' : 'volume_up';
+      if (label) label.textContent = vid.muted ? 'Audio silenciado' : 'Audio activo';
+    }
+
+    // Floating button: toggle academia video sound
+    window.toggleAcademiaAudio = function() {
+      vid.muted = !vid.muted;
+      if (!vid.muted) {
+        muteAllExcept(vid);
+        vid.volume = 1;
+        vid.play().catch(function() {});
+      }
+      updateAcademiaAudioUI();
+    };
+
+    // Graceful fallback if video unavailable
+    function handleFallback() {
+      vid.style.opacity = '0';
+      var btn = document.getElementById('academiaAudioBtn');
+      if (btn) btn.style.display = 'none';
+    }
+    vid.addEventListener('error', handleFallback, true);
+    var srcEl = vid.querySelector('source');
+    if (srcEl) srcEl.addEventListener('error', handleFallback);
+
+    vid.addEventListener('canplay', function() {
+      vid.style.opacity = '1';
+    });
+
+    // IntersectionObserver: play/pause based on visibility
+    if ('IntersectionObserver' in window) {
+      var aObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            vid.play().catch(function() {});
+          } else {
+            vid.pause();
+          }
+        });
+      }, { rootMargin: '200px 0px', threshold: 0.05 });
+      aObs.observe(vid);
+    }
+
+    vid.play().catch(function() {});
+    updateAcademiaAudioUI();
+  }
+
+  // 4. ULTRA-SMOOTH SINGLE LINE REVIEWS CAROUSEL & DYNAMIC TRACKING
   function initReviewsCarousel() {
     var track = document.getElementById('reviewsTrack');
     if (!track) return;
@@ -7029,6 +7105,7 @@ class Component extends DCLogic {
   function initAll() {
     initHeroVideo();
     initOtherVideos();
+    initAcademiaVideo();
     initReviewsCarousel();
   }
 
