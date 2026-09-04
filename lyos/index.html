@@ -440,6 +440,98 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 }
 .pilar-card {
   height: 100% !important;
+  box-sizing: border-box !important;
+}
+.pilar-top-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.pilar-badge-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: nowrap !important;
+  min-width: 0 !important;
+}
+.pilar-badge-pill {
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  white-space: nowrap !important;
+  flex: none !important;
+  line-height: 1.2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.pilar-badge-sub {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  flex: none !important;
+}
+.pilar-save-tag {
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+  flex: none !important;
+  line-height: 1.2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.pilar-actions-row {
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.pilar-buy-btn {
+  flex: 1 !important;
+  min-width: 0 !important;
+  height: 44px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--goldGrad) !important;
+  color: var(--onGold) !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  box-shadow: 0 8px 20px -6px rgba(168,124,47,.6) !important;
+  transition: all .25s !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+.pilar-buy-btn:hover {
+  filter: brightness(1.08) !important;
+}
+.pilar-wa-btn {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid var(--line2) !important;
+  background: var(--surf) !important;
+  display: grid !important;
+  place-items: center !important;
+  color: #25D366 !important;
+  transition: all .25s !important;
+  flex: none !important;
+  text-decoration: none !important;
+}
+.pilar-wa-btn:hover {
+  border-color: #25D366 !important;
+  transform: scale(1.05) !important;
 }
 
 /* ========================================================================= */
@@ -870,6 +962,62 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   }
   .pilar-block {
     width: 100% !important;
+  }
+  #pilares {
+    padding: 0 10px !important;
+  }
+  #pilares > div {
+    padding: 18px 12px !important;
+    border-radius: 22px !important;
+  }
+  .pilar-card {
+    padding: 16px 12px !important;
+    border-radius: 20px !important;
+    gap: 14px !important;
+  }
+  .pilar-top-row {
+    gap: 6px !important;
+    justify-content: space-between !important;
+  }
+  .pilar-badge-group {
+    gap: 5px !important;
+  }
+  .pilar-badge-pill {
+    padding: 3px 8px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.05em !important;
+  }
+  .pilar-badge-sub {
+    font-size: 10px !important;
+  }
+  .pilar-save-tag {
+    padding: 3px 8px !important;
+    font-size: 9px !important;
+  }
+  .pilar-actions-row {
+    gap: 8px !important;
+  }
+  .pilar-buy-btn {
+    height: 42px !important;
+    font-size: 12.5px !important;
+    gap: 6px !important;
+  }
+  .pilar-wa-btn {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .quiz-bundle-badge-row {
+    gap: 6px !important;
+  }
+  .quiz-bundle-badge {
+    padding: 3.5px 8px !important;
+    font-size: 9px !important;
+    white-space: nowrap !important;
+  }
+  .quiz-bundle-save {
+    padding: 3.5px 8px !important;
+    font-size: 9.5px !important;
+    white-space: nowrap !important;
   }
 
   /* Mobile Testimonials Video Reels */
@@ -1777,12 +1925,12 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
         <div class="pilar-card" style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
           <div>
             <!-- Top Badges -->
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-              <div style="display:inline-flex;align-items:center;gap:6px">
-                <span style="padding:4px 10px;border-radius:999px;background:var(--surf2);border:1px solid var(--gold);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 01</span>
-                <span style="font-size:11px;color:var(--mut);font-weight:700">Rutina en Casa</span>
+            <div class="pilar-top-row">
+              <div class="pilar-badge-group">
+                <span class="pilar-badge-pill" style="background:var(--surf2);border:1px solid var(--gold);color:var(--gold)">PILAR 01</span>
+                <span class="pilar-badge-sub" style="color:var(--mut)">Rutina en Casa</span>
               </div>
-              <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:10.5px;font-weight:800;border:1px solid rgba(37,211,102,.25)">Ahorras $10.000 COP</span>
+              <span class="pilar-save-tag" style="background:rgba(37,211,102,.12);color:#25D366;border:1px solid rgba(37,211,102,.25)">Ahorras $10.000 COP</span>
             </div>
 
             <!-- Product Thumbnail & Title -->
@@ -1820,12 +1968,12 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
               <span style="font-size:10.5px;font-weight:700;color:var(--gold)">Pack Ahorro</span>
             </div>
 
-            <div style="display:flex;gap:8px">
-              <button onClick="{{ addPilar1 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+            <div class="pilar-actions-row">
+              <button onClick="{{ addPilar1 }}" class="pilar-buy-btn" aria-label="Comprar Dúo Cuidado Diario & Anti-Frizz">
                 <span class="mi" style="font-size:18px">shopping_bag</span>
                 <span>Comprar</span>
               </button>
-              <a href="{{ waPilar1 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+              <a href="{{ waPilar1 }}" target="_blank" class="pilar-wa-btn" aria-label="Consultar por WhatsApp">
                 <span class="mi" style="font-size:20px">chat</span>
               </a>
             </div>
@@ -1841,12 +1989,12 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
         <div class="pilar-card" style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:1.5px solid var(--line2);box-shadow:var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.borderColor='var(--gold)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
           <div>
             <!-- Top Badges -->
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-              <div style="display:inline-flex;align-items:center;gap:6px">
-                <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366;font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 02 🇧🇷</span>
-                <span style="font-size:11px;color:var(--mut);font-weight:700">Origen Brasileño</span>
+            <div class="pilar-top-row">
+              <div class="pilar-badge-group">
+                <span class="pilar-badge-pill" style="background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);color:#25D366">PILAR 02 🇧🇷</span>
+                <span class="pilar-badge-sub" style="color:var(--mut)">Origen Brasileño</span>
               </div>
-              <span style="padding:4px 10px;border-radius:999px;background:var(--surf3);color:var(--gold);font-size:10.5px;font-weight:800;border:1px solid rgba(212,175,55,.25)">0% Formol</span>
+              <span class="pilar-save-tag" style="background:var(--surf3);color:var(--gold);border:1px solid rgba(212,175,55,.25)">0% Formol</span>
             </div>
 
             <!-- Product Thumbnail & Title -->
@@ -1883,12 +2031,12 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
               <span style="font-size:10.5px;font-weight:700;color:var(--gold)">1 Litro Salón</span>
             </div>
 
-            <div style="display:flex;gap:8px">
-              <button onClick="{{ addPilar2 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+            <div class="pilar-actions-row">
+              <button onClick="{{ addPilar2 }}" class="pilar-buy-btn" aria-label="Comprar Alisado Bio Intense + Lavado">
                 <span class="mi" style="font-size:18px">shopping_bag</span>
                 <span>Comprar</span>
               </button>
-              <a href="{{ waPilar2 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+              <a href="{{ waPilar2 }}" target="_blank" class="pilar-wa-btn" aria-label="Consultar por WhatsApp">
                 <span class="mi" style="font-size:20px">chat</span>
               </a>
             </div>
@@ -1904,12 +2052,12 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
         <div class="pilar-card" style="position:relative;border-radius:26px;background:linear-gradient(150deg,var(--surf) 0%,var(--surf2) 100%);border:2px solid var(--gold);box-shadow:0 14px 36px -8px rgba(168,124,47,.3),var(--e2);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
           <div>
             <!-- Top Badges -->
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-              <div style="display:inline-flex;align-items:center;gap:6px">
-                <span style="padding:4px 10px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-size:10px;font-weight:800;letter-spacing:.08em">PILAR 03 ★</span>
-                <span style="font-size:11px;color:var(--gold);font-weight:700">Doble Tecnología</span>
+            <div class="pilar-top-row">
+              <div class="pilar-badge-group">
+                <span class="pilar-badge-pill" style="background:var(--goldGrad);color:var(--onGold)">PILAR 03 ★</span>
+                <span class="pilar-badge-sub" style="color:var(--gold)">Doble Tecnología</span>
               </div>
-              <span style="padding:4px 10px;border-radius:999px;background:rgba(37,211,102,.12);color:#25D366;font-size:10.5px;font-weight:800;border:1px solid rgba(37,211,102,.25)">Ahorras $41.000 COP</span>
+              <span class="pilar-save-tag" style="background:rgba(37,211,102,.12);color:#25D366;border:1px solid rgba(37,211,102,.25)">Ahorras $41.000 COP</span>
             </div>
 
             <!-- Product Thumbnail & Title -->
@@ -1952,12 +2100,12 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
               <span style="font-size:10.5px;font-weight:700;color:var(--gold)">Pack #1 Salón</span>
             </div>
 
-            <div style="display:flex;gap:8px">
-              <button onClick="{{ addPilar3 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.7);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+            <div class="pilar-actions-row">
+              <button onClick="{{ addPilar3 }}" class="pilar-buy-btn" aria-label="Comprar Kit Maestro Liso Espejo Total">
                 <span class="mi" style="font-size:18px">shopping_bag</span>
                 <span>Comprar</span>
               </button>
-              <a href="{{ waPilar3 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
+              <a href="{{ waPilar3 }}" target="_blank" class="pilar-wa-btn" aria-label="Consultar por WhatsApp">
                 <span class="mi" style="font-size:20px">chat</span>
               </a>
             </div>
