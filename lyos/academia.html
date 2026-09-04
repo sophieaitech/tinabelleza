@@ -186,7 +186,7 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 <!-- ====================================================================== -->
 <!-- HEADER DE NAVEGACIÓN PRINCIPAL (PERFECTAMENTE ALINEADO Y CENTRADO)     -->
 <!-- ====================================================================== -->
-<header style="position:sticky;top:0;z-index:80;backdrop-filter:blur(28px) saturate(1.8);-webkit-backdrop-filter:blur(28px) saturate(1.8);background:var(--glass);border-bottom:1px solid var(--line);transition:background-color .3s, border-color .3s">
+<header id="acadHeader" style="position:fixed;top:0;left:0;right:0;z-index:80;backdrop-filter:blur(28px) saturate(1.8);-webkit-backdrop-filter:blur(28px) saturate(1.8);background:rgba(11,10,8,.72);border-bottom:1px solid rgba(232,214,180,.12);transition:background-color .3s,border-color .3s">
   <div style="max-width:1320px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px">
     
     <!-- Left: Brand Logo -->
@@ -231,9 +231,9 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 <!-- ====================================================================== -->
 <!-- HERO BANNER — VIDEO FULL-BLEED, MINIMAL TEXT, OVERLAY SOLO EN TEXTO   -->
 <!-- ====================================================================== -->
-<section id="hero-academia" style="position:relative;min-height:calc(100svh - 57px);display:flex;align-items:flex-end;overflow:hidden;background:#0B0A08;margin-top:0">
+<section id="hero-academia" style="position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0B0A08">
 
-  <!-- LYOS Comercial Video Background — positioned center so subjects fill frame -->
+  <!-- LYOS Comercial Video Background — fills 100% viewport like landing -->
   <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
     <source src="assets/lyos-profesional-comercial.mp4" type="video/mp4">
   </video>
@@ -241,64 +241,57 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
   <!-- Fallback image -->
   <div id="acadHeroBgFallback" style="position:absolute;inset:0;background:url('assets/equipo-profesionales-navy.jpg') center top/cover no-repeat;z-index:0"></div>
 
-  <!-- Overlay SOLO en zona inferior donde va el texto (no sobre el video) -->
-  <div style="position:absolute;bottom:0;left:0;right:0;height:65%;z-index:1;background:linear-gradient(0deg,rgba(11,10,8,1) 0%,rgba(11,10,8,.92) 30%,rgba(11,10,8,.6) 60%,transparent 100%);pointer-events:none"></div>
+  <!-- Multi-layer cinematic overlay — identical to landing hero -->
+  <div style="position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(11,10,8,.28) 0%,rgba(11,10,8,.65) 60%,rgba(11,10,8,.94) 100%),linear-gradient(180deg,rgba(11,10,8,.72) 0%,rgba(11,10,8,.15) 35%,rgba(11,10,8,.65) 70%,rgba(11,10,8,.96) 100%);pointer-events:none"></div>
 
-  <!-- Subtle top veil so nav brand reads on video -->
-  <div style="position:absolute;top:0;left:0;right:0;height:80px;z-index:1;background:linear-gradient(180deg,rgba(11,10,8,.5) 0%,transparent 100%);pointer-events:none"></div>
+  <!-- Gold ambient glow sphere (landing style) -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(1100px,96vw);height:360px;background:radial-gradient(ellipse,rgba(217,182,121,.14) 0%,transparent 65%);filter:blur(50px);pointer-events:none;z-index:1"></div>
 
-  <!-- Floating Audio Toggle -->
-  <button id="acadHeroAudioBtn" onclick="window.toggleAcadHeroAudio && window.toggleAcadHeroAudio()" aria-label="Control de audio" style="position:absolute;bottom:20px;right:20px;z-index:25;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(241,222,184,.38);color:#F1DEB8;font-size:10.5px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.5);transition:all .25s" onmouseover="this.style.borderColor='#D9B679'" onmouseout="this.style.borderColor='rgba(241,222,184,.38)'">
-    <span class="mi" id="acadHeroAudioIcon" style="font-size:15px;color:#D9B679">volume_off</span>
-    <span id="acadHeroAudioLabel">Sonido</span>
+  <!-- Floating Audio Toggle — bottom left like landing -->
+  <button id="acadHeroAudioBtn" onclick="window.toggleAcadHeroAudio && window.toggleAcadHeroAudio()" aria-label="Control de audio" style="position:absolute;bottom:20px;left:20px;z-index:25;display:inline-flex;align-items:center;gap:7px;padding:7px 15px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(241,222,184,.38);color:#F1DEB8;font-size:11px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.6);transition:all .25s" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='#D9B679'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(241,222,184,.38)'">
+    <span class="mi" id="acadHeroAudioIcon" style="font-size:16px;color:#D9B679">volume_off</span>
+    <span id="acadHeroAudioLabel">Audio silenciado</span>
   </button>
 
-  <!-- Text Content — minimal, sits at bottom over the gradient -->
-  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,44px) clamp(52px,7vw,80px);position:relative;z-index:2;width:100%">
+  <!-- Text Content — centered like landing, padded for fixed header -->
+  <div style="max-width:900px;margin:0 auto;padding:clamp(80px,12vw,120px) clamp(20px,4vw,44px) clamp(60px,8vw,100px);position:relative;z-index:2;width:100%;text-align:center">
 
     <!-- Badge -->
-    <div style="display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:999px;border:1px solid rgba(241,222,184,.28);background:rgba(11,10,8,.4);backdrop-filter:blur(12px);margin-bottom:14px">
-      <span class="mi" style="font-size:14px;color:#D9B679">school</span>
-      <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:#F1DEB8">Academia Capilar · Cali &amp; Virtual</span>
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:999px;border:1px solid rgba(241,222,184,.32);background:rgba(11,10,8,.5);backdrop-filter:blur(14px);margin-bottom:20px">
+      <span class="mi" style="font-size:15px;color:#D9B679">school</span>
+      <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:#F1DEB8">Academia Capilar de Alta Gama · Cali &amp; Virtual</span>
     </div>
 
-    <!-- Headline — big, minimal -->
-    <h1 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(40px,7.5vw,90px);line-height:.9;letter-spacing:-.045em;margin:0 0 10px;color:#FFFDF8">
-      DOMINA EL<br>
-      <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.85em;letter-spacing:0;background:linear-gradient(135deg,#F5E2BE 0%,#D9B679 48%,#966F28 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Liso Espejo</span>
+    <!-- Headline — same size/weight as landing "SOMOS LYOS" -->
+    <h1 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(48px,9vw,110px);line-height:.88;letter-spacing:-.045em;margin:0 0 16px;color:#FFFDF8;text-shadow:0 14px 40px rgba(0,0,0,.5)">
+      DOMINA EL LISO<br>
+      <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.78em;letter-spacing:0;background:linear-gradient(135deg,#F5E2BE 0%,#D9B679 48%,#966F28 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Espejo</span>
     </h1>
 
-    <!-- Minimal subline — one line only -->
-    <p style="margin:0 0 24px;font-size:clamp(13px,1.4vw,16px);color:rgba(255,253,248,.65);font-weight:400;letter-spacing:.01em">
-      Con Cristina Gutiérrez · 0% Formol · +$3.2M COP/L
+    <!-- Subline — clean, one line -->
+    <p style="max-width:52ch;margin:0 auto 28px;font-size:clamp(14px,1.5vw,18px);line-height:1.6;color:rgba(255,253,248,.8);font-weight:400">
+      Especialistas en cuidado capilar y academia de formación profesional.<br>
+      <span style="color:rgba(255,253,248,.55);font-size:.9em">Con Cristina Gutiérrez · 0% Formol · +$3.2M COP/L</span>
     </p>
 
-    <!-- CTAs -->
-    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-      <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20las%20pr%C3%B3ximas%20fechas%20y%20precios%20de%20la%20Academia%20LYOS." target="_blank" class="btn-gold" style="height:46px;padding:0 24px;font-size:13.5px">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>
+    <!-- CTAs — centered like landing -->
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-bottom:36px">
+      <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20conocer%20las%20pr%C3%B3ximas%20fechas%20y%20precios%20de%20la%20Academia%20LYOS." target="_blank" class="btn-gold" style="height:50px;padding:0 28px;font-size:14px">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>
         <span>Apartar Cupo</span>
       </a>
-      <a href="#modulos" class="btn-glass" style="height:46px;padding:0 20px;font-size:13.5px">
-        <span class="mi" style="font-size:17px;color:#D9B679">menu_book</span>
+      <a href="#modulos" class="btn-glass" style="height:50px;padding:0 26px;font-size:14px">
+        <span class="mi" style="font-size:19px;color:#D9B679">menu_book</span>
         <span>Ver Módulos</span>
       </a>
     </div>
 
-    <!-- Stats — compact inline strip at bottom -->
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px">
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.65);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.18);font-size:12px;color:#F1DEB8;font-weight:700">
-        <span style="font-size:10px;color:#D9B679;font-weight:900">01</span> Tricología 200x
-      </span>
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.65);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.18);font-size:12px;color:#F1DEB8;font-weight:700">
-        <span style="font-size:10px;color:#D9B679;font-weight:900">02</span> 0% Formol
-      </span>
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.65);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.18);font-size:12px;color:#F1DEB8;font-weight:700">
-        <span style="font-size:10px;color:#D9B679;font-weight:900">03</span> Fototerapia LED
-      </span>
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.65);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.18);font-size:12px;color:#F1DEB8;font-weight:700">
-        <span style="font-size:10px;color:#D9B679;font-weight:900">04</span> +$3.2M COP/L
-      </span>
+    <!-- Stats chips — centered row -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.6);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.16);font-size:12px;color:#F1DEB8;font-weight:700"><span style="color:#D9B679;font-weight:900">01</span> Tricología 200x</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.6);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.16);font-size:12px;color:#F1DEB8;font-weight:700"><span style="color:#D9B679;font-weight:900">02</span> 0% Formol</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.6);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.16);font-size:12px;color:#F1DEB8;font-weight:700"><span style="color:#D9B679;font-weight:900">03</span> Fototerapia LED</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:12px;background:rgba(23,20,16,.6);backdrop-filter:blur(12px);border:1px solid rgba(232,214,180,.16);font-size:12px;color:#F1DEB8;font-weight:700"><span style="color:#D9B679;font-weight:900">04</span> +$3.2M COP/L</span>
     </div>
 
   </div>
