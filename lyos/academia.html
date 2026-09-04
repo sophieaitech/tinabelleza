@@ -231,10 +231,10 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 <!-- ====================================================================== -->
 <!-- HERO BANNER — VIDEO FULL-BLEED, MINIMAL TEXT, OVERLAY SOLO EN TEXTO   -->
 <!-- ====================================================================== -->
-<section style="position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#0B0A08">
+<section id="hero-academia" style="position:relative;min-height:calc(100svh - 57px);display:flex;align-items:flex-end;overflow:hidden;background:#0B0A08;margin-top:0">
 
-  <!-- LYOS Comercial Video Background — positioned top so subject is visible -->
-  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline loop poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
+  <!-- LYOS Comercial Video Background — positioned center so subjects fill frame -->
+  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline loop poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
     <source src="assets/lyos-profesional-comercial.mp4" type="video/mp4">
   </video>
 
@@ -244,8 +244,8 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
   <!-- Overlay SOLO en zona inferior donde va el texto (no sobre el video) -->
   <div style="position:absolute;bottom:0;left:0;right:0;height:65%;z-index:1;background:linear-gradient(0deg,rgba(11,10,8,1) 0%,rgba(11,10,8,.92) 30%,rgba(11,10,8,.6) 60%,transparent 100%);pointer-events:none"></div>
 
-  <!-- Tiny top nav veil so header reads on video -->
-  <div style="position:absolute;top:0;left:0;right:0;height:120px;z-index:1;background:linear-gradient(180deg,rgba(11,10,8,.7) 0%,transparent 100%);pointer-events:none"></div>
+  <!-- Subtle top veil so nav brand reads on video -->
+  <div style="position:absolute;top:0;left:0;right:0;height:80px;z-index:1;background:linear-gradient(180deg,rgba(11,10,8,.5) 0%,transparent 100%);pointer-events:none"></div>
 
   <!-- Floating Audio Toggle -->
   <button id="acadHeroAudioBtn" onclick="window.toggleAcadHeroAudio && window.toggleAcadHeroAudio()" aria-label="Control de audio" style="position:absolute;bottom:20px;right:20px;z-index:25;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(241,222,184,.38);color:#F1DEB8;font-size:10.5px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.5);transition:all .25s" onmouseover="this.style.borderColor='#D9B679'" onmouseout="this.style.borderColor='rgba(241,222,184,.38)'">
