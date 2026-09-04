@@ -555,6 +555,55 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 }
 
 /* ========================================================================= */
+/* SPOTLIGHT KIT RESTAURACIÓN (MOBILE-FIRST PRO EDITORIAL)                  */
+/* ========================================================================= */
+.spotlight-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 800;
+  margin-bottom: 12px;
+  white-space: nowrap;
+}
+.spotlight-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(26px, 3.8vw, 44px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  margin: 0;
+  color: #FFFDF8;
+}
+.spotlight-title-gold {
+  background: var(--goldGrad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.spotlight-sub {
+  font-size: clamp(13.5px, 1.1vw, 15px);
+  color: rgba(241, 222, 184, 0.78);
+  margin: 10px auto 0;
+  line-height: 1.5;
+  max-width: 50ch;
+}
+
+/* ========================================================================= */
 /* ULTRA-MINIMALIST MOBILE FIRST RESPONSIVE STYLES (LYOS LUXURY PRO)         */
 /* ========================================================================= */
 @media (max-width: 768px) {
@@ -859,6 +908,32 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   }
   .quiz-guar-div {
     display: none !important;
+  }
+
+  /* Spotlight Kit Restauración Mobile Pro */
+  #kit-restauracion {
+    padding: clamp(28px, 4vw, 40px) 0 !important;
+    margin-top: clamp(24px, 4vw, 36px) !important;
+  }
+  .spotlight-header {
+    padding: 0 8px !important;
+  }
+  .spotlight-badge {
+    padding: 3.5px 12px !important;
+    font-size: 8.5px !important;
+    letter-spacing: 0.14em !important;
+    margin-bottom: 8px !important;
+    white-space: nowrap !important;
+  }
+  .spotlight-title {
+    font-size: clamp(21px, 5.5vw, 27px) !important;
+    line-height: 1.15 !important;
+  }
+  .spotlight-sub {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin-top: 8px !important;
+    max-width: 38ch !important;
   }
 }
 
@@ -1425,19 +1500,19 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   <div style="max-width:1300px;margin:0 auto;padding:0 clamp(18px,3vw,36px);position:relative;z-index:2">
     
     <!-- Minimalist Section Header -->
-    <div style="text-align:center;max-width:760px;margin:0 auto">
-      <div style="display:inline-flex;align-items:center;gap:7px;padding:5px 16px;border-radius:999px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:14px">
-        <span class="mi" style="font-size:14px">biotech</span>
-        <span>Biotecnología Capilar Avanzada</span>
+    <div class="spotlight-header">
+      <div class="spotlight-badge">
+        <span class="mi" style="font-size:13px">auto_awesome</span>
+        <span>PROTOCOLO SOS · BIOTECNOLOGÍA</span>
       </div>
 
-      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4.2vw,46px);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin:0;color:#FFFDF8">
-        Kit de Restauración Profesional<br>
-        <span style="background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Trilogía de Rescate Capilar</span>
+      <h2 class="spotlight-title">
+        Trilogía de Rescate Capilar<br>
+        <span class="spotlight-title-gold">Restauración Biomimética</span>
       </h2>
 
-      <p style="font-size:clamp(14px,1.2vw,15.5px);color:rgba(241,222,184,.75);margin:12px auto 0;line-height:1.6;max-width:54ch">
-        Tres fórmulas biomiméticas sin formol diseñadas para densificar la masa, sellar la cutícula y blindar la fibra en salón.
+      <p class="spotlight-sub">
+        Densifica, sella y blinda la fibra capilar en 3 pasos profesionales sin formol.
       </p>
     </div>
 
