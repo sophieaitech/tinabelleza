@@ -202,26 +202,131 @@
   // src/expr.ts
   var IDENT_RE = /^[A-Za-z_$][A-Za-z0-9_$]*/;
   var NUMBER_RE = /^-?\d+(\.\d+)?$/;
+  function findTopLevelTernary(expr) {
+    let depth = 0;
+    let inQuote = false;
+    let quoteChar = '';
+    let qIndex = -1;
+    for (let i = 0; i < expr.length; i++) {
+      const c = expr[i];
+      if (inQuote) {
+        if (c === quoteChar && expr[i - 1] !== '\\') inQuote = false;
+        continue;
+      }
+      if (c === '"' || c === "'") {
+        inQuote = true;
+        quoteChar = c;
+        continue;
+      }
+      if (c === '(' || c === '[' || c === '{') depth++;
+      else if (c === ')' || c === ']' || c === '}') depth--;
+      else if (depth === 0) {
+        if (c === '?' && qIndex === -1 && expr[i + 1] !== '.' && expr[i + 1] !== '?') {
+          qIndex = i;
+        } else if (c === ':' && qIndex !== -1) {
+          return {
+            test: expr.slice(0, qIndex).trim(),
+            consequent: expr.slice(qIndex + 1, i).trim(),
+            alternate: expr.slice(i + 1).trim()
+          };
+        }
+      }
+    }
+    return null;
+  }
+  function findTopLevelComparison(expr) {
+    let depth = 0;
+    let inQuote = false;
+    let quoteChar = '';
+    for (let i = 0; i < expr.length; i++) {
+      const c = expr[i];
+      if (inQuote) {
+        if (c === quoteChar && expr[i - 1] !== '\\') inQuote = false;
+        continue;
+      }
+      if (c === '"' || c === "'") {
+        inQuote = true;
+        quoteChar = c;
+        continue;
+      }
+      if (c === '(' || c === '[' || c === '{') depth++;
+      else if (c === ')' || c === ']' || c === '}') depth--;
+      else if (depth === 0) {
+        if ((c === '=' || c === '!') && expr[i + 1] === '=' && expr[i + 2] === '=') {
+          return { index: i, op: expr.slice(i, i + 3) };
+        }
+        if ((c === '=' || c === '!' || c === '>' || c === '<') && expr[i + 1] === '=') {
+          return { index: i, op: expr.slice(i, i + 2) };
+        }
+        if ((c === '>' || c === '<') && expr[i + 1] !== '=') {
+          return { index: i, op: c };
+        }
+      }
+    }
+    return null;
+  }
+  function findTopLevelAddition(expr) {
+    let depth = 0;
+    let inQuote = false;
+    let quoteChar = '';
+    for (let i = 0; i < expr.length; i++) {
+      const c = expr[i];
+      if (inQuote) {
+        if (c === quoteChar && expr[i - 1] !== '\\') inQuote = false;
+        continue;
+      }
+      if (c === '"' || c === "'") {
+        inQuote = true;
+        quoteChar = c;
+        continue;
+      }
+      if (c === '(' || c === '[' || c === '{') depth++;
+      else if (c === ')' || c === ']' || c === '}') depth--;
+      else if (depth === 0 && c === '+') {
+        return { index: i };
+      }
+    }
+    return null;
+  }
   function resolve(vals, src) {
     const expr = String(src).trim();
     if (!expr) return void 0;
     if (expr[0] === "(" && expr[expr.length - 1] === ")" && parensWrapWhole(expr)) {
       return resolve(vals, expr.slice(1, -1));
     }
-    const eq = findTopLevelEquality(expr);
-    if (eq) {
-      const lv = resolve(vals, expr.slice(0, eq.index));
-      const rv = resolve(vals, expr.slice(eq.index + eq.op.length));
-      switch (eq.op) {
+    const ternary = findTopLevelTernary(expr);
+    if (ternary) {
+      const cond = resolve(vals, ternary.test);
+      return cond ? resolve(vals, ternary.consequent) : resolve(vals, ternary.alternate);
+    }
+    const comp = findTopLevelComparison(expr);
+    if (comp) {
+      const lv = resolve(vals, expr.slice(0, comp.index));
+      const rv = resolve(vals, expr.slice(comp.index + comp.op.length));
+      switch (comp.op) {
         case "===":
           return lv === rv;
         case "!==":
           return lv !== rv;
         case "==":
           return lv == rv;
-        default:
+        case "!=":
           return lv != rv;
+        case ">=":
+          return lv >= rv;
+        case "<=":
+          return lv <= rv;
+        case ">":
+          return lv > rv;
+        case "<":
+          return lv < rv;
       }
+    }
+    const add = findTopLevelAddition(expr);
+    if (add) {
+      const lv = resolve(vals, expr.slice(0, add.index));
+      const rv = resolve(vals, expr.slice(add.index + 1));
+      return (lv ?? "") + (rv ?? "");
     }
     if (expr[0] === "!") return !resolve(vals, expr.slice(1));
     if (expr === "true") return true;
@@ -244,21 +349,6 @@
       }
     }
     return true;
-  }
-  function findTopLevelEquality(expr) {
-    let depth = 0;
-    for (let i = 0; i < expr.length; i++) {
-      const c = expr[i];
-      if (c === "[" || c === "(") depth++;
-      else if (c === "]" || c === ")") depth--;
-      else if (depth === 0 && (c === "=" || c === "!") && expr[i + 1] === "=") {
-        if (i > 0 && (expr[i - 1] === "=" || expr[i - 1] === "!")) continue;
-        if (!expr.slice(0, i).trim()) continue;
-        const op = expr[i + 2] === "=" ? c + "==" : c + "=";
-        return { index: i, op };
-      }
-    }
-    return null;
   }
   function resolvePath(vals, expr) {
     const head = expr.match(IDENT_RE);
