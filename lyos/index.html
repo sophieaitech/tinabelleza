@@ -594,6 +594,151 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 }
 
 /* ========================================================================= */
+/* LUXURY MINIMALIST EXTENDED CATALOG STRIP (LYOS PRO)                       */
+/* ========================================================================= */
+.catalog-slim-bar {
+  margin-top: clamp(16px, 2.2vw, 24px);
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(22, 17, 12, 0.95) 0%, rgba(32, 25, 18, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.catalog-slim-bar:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 6px 24px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(212, 175, 55, 0.12);
+}
+
+.catalog-slim-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.catalog-slim-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  flex: none;
+  font-size: 14px;
+}
+
+.catalog-slim-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.catalog-slim-tag {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 2.5px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.catalog-slim-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--txt);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.catalog-slim-desc {
+  font-size: 12px;
+  color: var(--mut);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catalog-slim-cta {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--goldGrad);
+  color: var(--onGold);
+  font-weight: 800;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px -3px rgba(168, 124, 47, 0.5);
+  transition: all 0.22s ease;
+  white-space: nowrap;
+  flex: none;
+}
+
+.catalog-slim-cta:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -3px rgba(168, 124, 47, 0.7);
+}
+
+@media (max-width: 900px) {
+  .catalog-slim-desc {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .catalog-slim-bar {
+    border-radius: 14px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .catalog-slim-tag {
+    display: none;
+  }
+  .catalog-slim-title {
+    font-size: 12px;
+    white-space: normal;
+    line-height: 1.25;
+  }
+  .catalog-slim-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+  .catalog-slim-cta {
+    height: 29px;
+    padding: 0 10px;
+    font-size: 11px;
+    gap: 4px;
+  }
+}
+
+
+/* ========================================================================= */
 /* ULTRA-MINIMALIST MOBILE FIRST RESPONSIVE STYLES (LYOS LUXURY PRO)         */
 /* ========================================================================= */
 @media (max-width: 768px) {
@@ -1571,27 +1716,21 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
     </div>
   </sc-if>
 
-  <!-- High-Conversion Tienda LYOS Complete Catalog Invitation Banner -->
-  <div style="margin-top:clamp(40px,5vw,60px);padding:clamp(24px,3vw,36px);border-radius:26px;background:var(--surf);border:1px solid var(--line2);box-shadow:var(--e1);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
-    <div style="display:flex;align-items:center;gap:18px">
-      <div style="width:52px;height:52px;border-radius:20px;background:var(--surf3);display:grid;place-items:center;color:var(--gold);flex:none;box-shadow:var(--e1)">
-        <span class="mi" style="font-size:26px">auto_awesome</span>
+  <!-- High-Conversion Tienda LYOS Complete Catalog Invitation Strip (Ultra-Minimalist Pro) -->
+  <div class="catalog-slim-bar">
+    <div class="catalog-slim-content">
+      <div class="catalog-slim-icon">
+        <span class="mi">auto_awesome</span>
       </div>
-      <div>
-        <div style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">
-          Catálogo Extendido
-        </div>
-        <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(17px,2.2vw,22px);font-weight:800;color:var(--txt);margin:3px 0 0">
-          ¿Deseas ver todas las líneas y presentaciones?
-        </h3>
-        <p style="font-size:13px;color:var(--mut);margin:4px 0 0;max-width:50ch">
-          Explora litros de salón, Alisado Coreano, Alisado Brasileño Bio Intense, combos exclusivos y accesorios en nuestra Tienda Oficial.
-        </p>
+      <div class="catalog-slim-text">
+        <span class="catalog-slim-tag">Catálogo Extendido</span>
+        <span class="catalog-slim-title">¿Deseas ver todas las líneas y presentaciones?</span>
+        <span class="catalog-slim-desc">· Litros de salón, kits y combos en Tienda Oficial</span>
       </div>
     </div>
-    <a href="tienda.html" style="height:44px;padding:0 22px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13.5px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;box-shadow:0 8px 20px -6px rgba(168,124,47,.7);transition:all .25s;white-space:nowrap" onmouseover="this.style.filter='brightness(1.08)';this.style.transform='translateY(-2px)'" onmouseout="this.style.filter='none';this.style.transform='none'">
+    <a href="tienda.html" class="catalog-slim-cta" aria-label="Ver Tienda Oficial LYOS">
       <span>Ver Tienda</span>
-      <span class="mi" style="font-size:18px">arrow_forward</span>
+      <span class="mi" style="font-size:14px">arrow_forward</span>
     </a>
   </div>
 
