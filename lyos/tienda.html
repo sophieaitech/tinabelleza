@@ -603,6 +603,115 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   max-width: 50ch;
 }
 
+/* Spotlight Product Cards (Clean Minimalist Pro) */
+.spotlight-cards-grid {
+  margin-top: clamp(28px, 4vw, 44px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(16px, 2.2vw, 22px);
+}
+.spotlight-card {
+  border-radius: 22px;
+  background: linear-gradient(160deg, #0F1B36 0%, #080E1E 100%);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  box-sizing: border-box;
+}
+.spotlight-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+.spotlight-card-img-stage {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, #122244 0%, #050912 100%);
+  height: clamp(280px, 28vw, 360px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  box-sizing: border-box;
+}
+.spotlight-card-img-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.spotlight-card:hover .spotlight-card-img-stage img {
+  transform: scale(1.05);
+}
+.spotlight-card-size-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(8, 14, 29, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.spotlight-card-body {
+  margin-top: 12px;
+  flex: 1;
+}
+.spotlight-card-step {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+}
+.spotlight-card-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFDF8;
+  margin: 2px 0 0;
+  line-height: 1.2;
+}
+.spotlight-card-desc {
+  font-size: 12px;
+  color: rgba(241, 222, 184, 0.72);
+  line-height: 1.45;
+  margin: 6px 0 0;
+  max-width: 40ch;
+}
+.spotlight-card-btn {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #F1DEB8;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.spotlight-card-btn:hover {
+  background: var(--goldGrad);
+  color: #140F06;
+}
+
 /* ========================================================================= */
 /* ULTRA-MINIMALIST MOBILE FIRST RESPONSIVE STYLES (LYOS LUXURY PRO)         */
 /* ========================================================================= */
@@ -934,6 +1043,40 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
     line-height: 1.45 !important;
     margin-top: 8px !important;
     max-width: 38ch !important;
+  }
+  .spotlight-cards-grid {
+    gap: 12px !important;
+    margin-top: 20px !important;
+  }
+  .spotlight-card {
+    padding: 13px !important;
+    border-radius: 18px !important;
+  }
+  .spotlight-card-img-stage {
+    height: 220px !important;
+    padding: 10px !important;
+    border-radius: 14px !important;
+  }
+  .spotlight-card-body {
+    margin-top: 8px !important;
+  }
+  .spotlight-card-step {
+    font-size: 8.5px !important;
+    letter-spacing: 0.1em !important;
+  }
+  .spotlight-card-name {
+    font-size: 16px !important;
+  }
+  .spotlight-card-desc {
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    margin-top: 4px !important;
+    max-width: 36ch !important;
+  }
+  .spotlight-card-btn {
+    height: 36px !important;
+    margin-top: 10px !important;
+    font-size: 11px !important;
   }
 }
 
@@ -1608,76 +1751,73 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 
     </div>
 
-    <!-- Product Showcase Gallery (3 Taller Cards with clean gold aesthetic) -->
-    <div style="margin-top:clamp(36px,5vw,50px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+    <!-- Product Showcase Gallery (Minimalist Pro Editorial) -->
+    <div class="spotlight-cards-grid">
       
       <!-- Card 1 -->
-      <div style="border-radius:24px;background:linear-gradient(160deg,#0F1B36 0%,#080E1E 100%);border:1px solid rgba(212,175,55,.3);padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 16px 40px rgba(0,0,0,.7);transition:all .3s" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='var(--gold)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(212,175,55,.3)'">
+      <div class="spotlight-card">
         <div>
-          <div style="position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 35%,#122244 0%,#050912 100%);height:clamp(360px,34vw,420px);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;padding:16px">
-            <img src="assets/kit-reposicion-proteica.jpg" alt="Reposición Proteica 1000ml" style="width:100%;height:100%;object-fit:contain;transition:transform .5s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='none'" loading="lazy" decoding="async">
-            <span style="position:absolute;top:12px;left:12px;padding:3px 10px;border-radius:999px;background:rgba(8,14,29,.9);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">1000 ML</span>
+          <div class="spotlight-card-img-stage">
+            <img src="assets/kit-reposicion-proteica.jpg" alt="Reposición Proteica 1000ml" loading="lazy" decoding="async">
+            <span class="spotlight-card-size-badge">1000 ML</span>
           </div>
           
-          <div style="margin-top:14px">
-            <span style="font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.12em;text-transform:uppercase">Paso 01 · Masa Capilar</span>
-            <h4 style="font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;color:#FFFDF8;margin:3px 0">Reposición Proteica</h4>
-            <span style="font-size:12px;color:rgba(241,222,184,.75);font-weight:600">Densificador &amp; Relleno Intracortical</span>
-            <p style="font-size:12.5px;color:rgba(241,222,184,.65);line-height:1.5;margin:8px 0 0">
-              Reconstrucción profunda para cabellos dañados químicamente. Frena el efecto chicloso y aporta cuerpo sólido.
+          <div class="spotlight-card-body">
+            <span class="spotlight-card-step">Paso 01 · Masa Capilar</span>
+            <h4 class="spotlight-card-name">Reposición Proteica</h4>
+            <p class="spotlight-card-desc">
+              Relleno intracortical que frena el daño severo y devuelve masa sólida.
             </p>
           </div>
         </div>
 
-        <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20la%20*Reposici%C3%B3n%20Proteica%20(1000ml)*." target="_blank" style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:#F1DEB8;font-size:12px;font-weight:800;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#140F06'" onmouseout="this.style.background='rgba(212,175,55,.12)';this.style.color='#F1DEB8'">
+        <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20la%20*Reposici%C3%B3n%20Proteica%20(1000ml)*." target="_blank" class="spotlight-card-btn">
           <span>Comprar</span>
           <span class="mi" style="font-size:15px">arrow_forward</span>
         </a>
       </div>
 
       <!-- Card 2 -->
-      <div style="border-radius:24px;background:linear-gradient(160deg,#0F1B36 0%,#080E1E 100%);border:1px solid rgba(212,175,55,.3);padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 16px 40px rgba(0,0,0,.7);transition:all .3s" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='var(--gold)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(212,175,55,.3)'">
+      <div class="spotlight-card">
         <div>
-          <div style="position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 35%,#122244 0%,#050912 100%);height:clamp(360px,34vw,420px);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;padding:16px">
-            <img src="assets/kit-reposicion-lipidica.jpg" alt="Reposición Lipídica 300ml" style="width:100%;height:100%;object-fit:contain;transition:transform .5s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='none'" loading="lazy" decoding="async">
-            <span style="position:absolute;top:12px;left:12px;padding:3px 10px;border-radius:999px;background:rgba(8,14,29,.9);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">300 ML</span>
+          <div class="spotlight-card-img-stage">
+            <img src="assets/kit-reposicion-lipidica.jpg" alt="Reposición Lipídica 300ml" loading="lazy" decoding="async">
+            <span class="spotlight-card-size-badge">300 ML</span>
           </div>
           
-          <div style="margin-top:14px">
-            <span style="font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.12em;text-transform:uppercase">Paso 02 · Blindaje Cuticular</span>
-            <h4 style="font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;color:#FFFDF8;margin:3px 0">Reposición Lipídica</h4>
-            <span style="font-size:12px;color:rgba(241,222,184,.75);font-weight:600">Nutrición Bio-Lipídica &amp; Antifrizz</span>
-            <p style="font-size:12.5px;color:rgba(241,222,184,.65);line-height:1.5;margin:8px 0 0">
-              Ceramidas y escualano que estabilizan el pH, sellan la cutícula porosa y sellan la hidratación con brillo 3D.
+          <div class="spotlight-card-body">
+            <span class="spotlight-card-step">Paso 02 · Cutícula &amp; Frizz</span>
+            <h4 class="spotlight-card-name">Reposición Lipídica</h4>
+            <p class="spotlight-card-desc">
+              Sella la cutícula porosa, neutraliza el frizz y aporta brillo espejo 3D.
             </p>
           </div>
         </div>
 
-        <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20la%20*Reposici%C3%B3n%20Lip%C3%ADdica%20(300ml)*." target="_blank" style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:#F1DEB8;font-size:12px;font-weight:800;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#140F06'" onmouseout="this.style.background='rgba(212,175,55,.12)';this.style.color='#F1DEB8'">
+        <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20la%20*Reposici%C3%B3n%20Lip%C3%ADdica%20(300ml)*." target="_blank" class="spotlight-card-btn">
           <span>Comprar</span>
           <span class="mi" style="font-size:15px">arrow_forward</span>
         </a>
       </div>
 
       <!-- Card 3 -->
-      <div style="border-radius:24px;background:linear-gradient(160deg,#0F1B36 0%,#080E1E 100%);border:1px solid rgba(212,175,55,.3);padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 16px 40px rgba(0,0,0,.7);transition:all .3s" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='var(--gold)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(212,175,55,.3)'">
+      <div class="spotlight-card">
         <div>
-          <div style="position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 35%,#122244 0%,#050912 100%);height:clamp(360px,34vw,420px);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;padding:16px">
-            <img src="assets/kit-aminopro-gotero.jpg" alt="AminoPro Booster 30ml" style="width:100%;height:100%;object-fit:contain;transition:transform .5s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='none'" loading="lazy" decoding="async">
-            <span style="position:absolute;top:12px;left:12px;padding:3px 10px;border-radius:999px;background:rgba(8,14,29,.9);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">30 ML GOTERO</span>
+          <div class="spotlight-card-img-stage">
+            <img src="assets/kit-aminopro-gotero.jpg" alt="AminoPro Booster 30ml" loading="lazy" decoding="async">
+            <span class="spotlight-card-size-badge">30 ML GOTERO</span>
           </div>
           
-          <div style="margin-top:14px">
-            <span style="font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.12em;text-transform:uppercase">Potencializador · Ultra-Concentrado</span>
-            <h4 style="font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;color:#FFFDF8;margin:3px 0">AminoPro Booster</h4>
-            <span style="font-size:12px;color:rgba(241,222,184,.75);font-weight:600">Elixir de +22 Aminoácidos Puros</span>
-            <p style="font-size:12.5px;color:rgba(241,222,184,.65);line-height:1.5;margin:8px 0 0">
-              Gotero de alta pureza biológica que multiplica la resistencia de los enlaces de queratina mecha a mecha.
+          <div class="spotlight-card-body">
+            <span class="spotlight-card-step">Paso 03 · Blindaje Molecular</span>
+            <h4 class="spotlight-card-name">AminoPro Booster</h4>
+            <p class="spotlight-card-desc">
+              22 aminoácidos puros que multiplican la fuerza de los enlaces capilares.
             </p>
           </div>
         </div>
 
-        <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20el%20*AminoPro%20Booster%20(30ml)*." target="_blank" style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:#F1DEB8;font-size:12px;font-weight:800;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#140F06'" onmouseout="this.style.background='rgba(212,175,55,.12)';this.style.color='#F1DEB8'">
+        <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20el%20*AminoPro%20Booster%20(30ml)*." target="_blank" class="spotlight-card-btn">
           <span>Comprar</span>
           <span class="mi" style="font-size:15px">arrow_forward</span>
         </a>
