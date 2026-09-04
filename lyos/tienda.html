@@ -878,6 +878,52 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 <div id="app" ref="{{ rootRef }}" data-theme="{{ theme }}" style="min-height:100dvh;background:var(--bg);color:var(--txt);padding-bottom:calc(76px + env(safe-area-inset-bottom));position:relative;overflow:hidden">
 
 <header style="position:sticky;top:0;z-index:60;backdrop-filter:blur(28px) saturate(1.6);-webkit-backdrop-filter:blur(28px) saturate(1.6);background:var(--glass);border-bottom:1px solid var(--line);transition:background-color .3s, border-color .3s">
+
+  <!-- ===================================================================== -->
+  <!-- TOP PROMO HOT SALE BAR (ENVÍO GRATIS $150.000 COP · LUXURY PRO)       -->
+  <!-- ===================================================================== -->
+  <aside id="topHotSaleBar" aria-label="Aviso de promoción y envío gratis" style="position:relative;background:linear-gradient(90deg,#0A0805 0%,#18120A 20%,#261B0E 50%,#18120A 80%,#0A0805 100%);border-bottom:1px solid rgba(212,175,55,.32);color:#FFFDF8;padding:7px 14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.4)">
+    
+    <!-- Ambient Gold Flare -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,85vw);height:28px;background:radial-gradient(ellipse,rgba(212,175,55,.24) 0%,transparent 70%);filter:blur(10px);pointer-events:none"></div>
+
+    <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.6vw,16px);position:relative;z-index:2;flex-wrap:wrap;line-height:1.2;text-align:center">
+      
+      <!-- Hot Sale Live Pulse Badge -->
+      <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,#E60023 0%,#FF334B 100%);color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 0 12px rgba(230,0,35,.55);flex:none">
+        <span style="width:5px;height:5px;border-radius:999px;background:#fff;box-shadow:0 0 6px #fff;display:inline-block"></span>
+        HOT SALE
+      </span>
+
+      <!-- Core Free Shipping Offer Message -->
+      <span style="font-size:clamp(11.5px,1.1vw,13px);font-weight:700;color:rgba(255,253,248,.94);display:inline-flex;align-items:center;gap:6px">
+        <span class="mi" style="font-size:16px;color:var(--gold)">local_shipping</span>
+        <span>Envío Nacional Gratis desde <strong style="font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:-.01em;color:#FFF;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$150.000 COP</strong></span>
+      </span>
+
+      <!-- Desktop Perks & Coverage -->
+      <span class="desk" style="display:inline-flex;align-items:center;gap:10px;font-size:11.5px;color:rgba(255,253,248,.65)">
+        <span>·</span>
+        <span style="display:inline-flex;align-items:center;gap:4px">
+          <span class="mi" style="font-size:13.5px;color:var(--gold)">bolt</span>
+          <span>Despacho 24/48h</span>
+        </span>
+        <span>·</span>
+        <span style="display:inline-flex;align-items:center;gap:4px">
+          <span class="mi" style="font-size:13.5px;color:#25D366">verified</span>
+          <span>Contraentrega</span>
+        </span>
+      </span>
+
+      <!-- Quick Action Pill Link -->
+      <a href="#productos" style="display:inline-flex;align-items:center;gap:4px;padding:3px 12px;border-radius:999px;background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.45);color:#F1DEB8;font-size:11px;font-weight:800;letter-spacing:.02em;text-decoration:none;transition:all .2s;flex:none" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#100C05';this.style.transform='scale(1.04)'" onmouseout="this.style.background='rgba(212,175,55,.18)';this.style.color='#F1DEB8';this.style.transform='none'">
+        <span>Ver Catálogo</span>
+        <span class="mi" style="font-size:12px">arrow_forward</span>
+      </a>
+
+    </div>
+  </aside>
+
   <div style="max-width:1320px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px">
     
     <!-- BRAND LOGO -->
