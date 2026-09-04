@@ -27,7 +27,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://app.cal.com">
+    <!-- Anti-FOUT Icon Shield: Prevents ligature text from flashing before font loads -->
+    <script>
+      (function(){
+        if ('fonts' in document) {
+          document.fonts.load('24px "Material Symbols Rounded"').then(function(){
+            document.documentElement.classList.add('icons-ready');
+          }).catch(function(){
+            document.documentElement.classList.add('icons-ready');
+          });
+          setTimeout(function(){
+            document.documentElement.classList.add('icons-ready');
+          }, 450);
+        } else {
+          document.documentElement.classList.add('icons-ready');
+        }
+      })();
+    </script>
 </head>
+
 <body>
 <x-dc>
 <helmet data-dc-atomics>
@@ -78,7 +96,8 @@
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" rel="stylesheet">
 <style>
 /* Native Cross-Document View Transitions (Chromium / Edge / Safari 18+) */
 @view-transition { navigation: auto; }
@@ -113,8 +132,11 @@ body{margin:0;background:var(--bg);color:var(--txt);font-family:'DM Sans',system
 a{color:var(--gold);text-decoration:none}
 a:hover{color:var(--gold2)}
 input,button,select,textarea{font:inherit;color:inherit;background:transparent}
-.mi{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none}
+/* Anti-FOUT: Hide raw ligature words until icon font is active */
+html:not(.icons-ready) .mi{visibility:hidden!important}
+.mi{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none;width:1em;height:1em;overflow:hidden;text-align:center;vertical-align:-0.15em}
 .mio{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+
 .hs{scrollbar-width:none;-ms-overflow-style:none}
 .hs::-webkit-scrollbar{display:none}
 .desk{display:none!important}

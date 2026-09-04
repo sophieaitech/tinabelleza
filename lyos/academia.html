@@ -12,7 +12,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://app.cal.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" rel="stylesheet">
+
+<!-- Anti-FOUT Icon Shield: Prevents ligature text from flashing before font loads -->
+<script>
+  (function(){
+    if ('fonts' in document) {
+      document.fonts.load('24px "Material Symbols Rounded"').then(function(){
+        document.documentElement.classList.add('icons-ready');
+      }).catch(function(){
+        document.documentElement.classList.add('icons-ready');
+      });
+      setTimeout(function(){
+        document.documentElement.classList.add('icons-ready');
+      }, 450);
+    } else {
+      document.documentElement.classList.add('icons-ready');
+    }
+  })();
+</script>
 
 
 <!-- Cal.com Embed Engine -->
@@ -57,8 +76,9 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--txt);font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden;zoom:0.86;transition:background-color .3s ease,color .3s ease;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer;border:0;background:transparent}
-.mi{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none}
+/* Anti-FOUT: Hide raw ligature words until icon font is active */
+html:not(.icons-ready) .mi{visibility:hidden!important}
+.mi{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none;width:1em;height:1em;overflow:hidden;text-align:center;vertical-align:-0.15em}
 
 .desk{display:none!important}
 .mob{display:flex!important}
