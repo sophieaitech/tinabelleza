@@ -1021,47 +1021,47 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
       </a>
     </div>
 
-    <!-- Hot Sale Live Promo Bar inside Tienda Hero Background Section -->
-    <div style="margin-top:clamp(20px,2.8vw,28px);display:flex;justify-content:center">
-      <div style="display:inline-flex;align-items:center;gap:clamp(8px,1.5vw,14px);padding:7px 18px;border-radius:999px;background:rgba(12,9,6,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1.5px solid rgba(212,175,55,.45);box-shadow:0 12px 32px -6px rgba(0,0,0,.7),0 0 22px rgba(212,175,55,.16);flex-wrap:wrap;justify-content:center;line-height:1.2">
-        
-        <!-- Hot Sale Live Pulse Badge -->
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,#E60023 0%,#FF334B 100%);color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 0 12px rgba(230,0,35,.55);flex:none">
-          <span style="width:5px;height:5px;border-radius:999px;background:#fff;box-shadow:0 0 6px #fff;display:inline-block"></span>
-          HOT SALE
-        </span>
-
-        <!-- Core Free Shipping Offer Message -->
-        <span style="font-size:clamp(11.5px,1.15vw,13.5px);font-weight:700;color:rgba(255,253,248,.95);display:inline-flex;align-items:center;gap:6px">
-          <span class="mi" style="font-size:16px;color:var(--gold)">local_shipping</span>
-          <span>Envío Nacional Gratis desde <strong style="font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:-.01em;color:#FFF;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$150.000 COP</strong></span>
-        </span>
-
-        <!-- Desktop Perks & Coverage -->
-        <span class="desk" style="display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:rgba(255,253,248,.7)">
-          <span>·</span>
-          <span style="display:inline-flex;align-items:center;gap:3px">
-            <span class="mi" style="font-size:13px;color:var(--gold)">bolt</span>
-            <span>Despacho 24/48h</span>
-          </span>
-          <span>·</span>
-          <span style="display:inline-flex;align-items:center;gap:3px">
-            <span class="mi" style="font-size:13px;color:#25D366">verified</span>
-            <span>Contraentrega</span>
-          </span>
-        </span>
-
-        <!-- Action Pill Link -->
-        <a href="#productos" style="display:inline-flex;align-items:center;gap:4px;padding:3px 12px;border-radius:999px;background:rgba(212,175,55,.2);border:1px solid rgba(212,175,55,.5);color:#F1DEB8;font-size:11px;font-weight:800;letter-spacing:.02em;text-decoration:none;transition:all .2s;flex:none" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#100C05';this.style.transform='scale(1.04)'" onmouseout="this.style.background='rgba(212,175,55,.2)';this.style.color='#F1DEB8';this.style.transform='none'">
-          <span>Ver Productos</span>
-          <span class="mi" style="font-size:12px">arrow_downward</span>
-        </a>
-
-      </div>
-    </div>
-
   </div>
 </section>
+
+<!-- Floating Hot Sale Promo Capsule in Space between Hero and Catalog -->
+<div id="floatingHotSalePill" style="position:relative;z-index:20;display:flex;justify-content:center;padding:clamp(20px,3.2vw,36px) 16px 0;max-width:1320px;margin:0 auto">
+  <div style="display:inline-flex;align-items:center;gap:clamp(8px,1.5vw,14px);padding:8px 20px;border-radius:999px;background:rgba(14,11,7,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(212,175,55,.48);box-shadow:0 14px 36px -8px rgba(0,0,0,.35),0 0 22px rgba(212,175,55,.18);flex-wrap:wrap;justify-content:center;line-height:1.2;transition:all .25s ease" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 18px 42px -8px rgba(0,0,0,.42),0 0 28px rgba(212,175,55,.26)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 14px 36px -8px rgba(0,0,0,.35),0 0 22px rgba(212,175,55,.18)'">
+    
+    <!-- Hot Sale Live Pulse Badge -->
+    <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,#E60023 0%,#FF334B 100%);color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 0 12px rgba(230,0,35,.55);flex:none">
+      <span style="width:5px;height:5px;border-radius:999px;background:#fff;box-shadow:0 0 6px #fff;display:inline-block"></span>
+      HOT SALE
+    </span>
+
+    <!-- Core Free Shipping Offer Message -->
+    <span style="font-size:clamp(11.5px,1.15vw,13.5px);font-weight:700;color:rgba(255,253,248,.95);display:inline-flex;align-items:center;gap:6px">
+      <span class="mi" style="font-size:16px;color:var(--gold)">local_shipping</span>
+      <span>Envío Nacional Gratis desde <strong style="font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:-.01em;color:#FFF;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$150.000 COP</strong></span>
+    </span>
+
+    <!-- Desktop Perks & Coverage -->
+    <span class="desk" style="display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:rgba(255,253,248,.7)">
+      <span>·</span>
+      <span style="display:inline-flex;align-items:center;gap:3px">
+        <span class="mi" style="font-size:13px;color:var(--gold)">bolt</span>
+        <span>Despacho 24/48h</span>
+      </span>
+      <span>·</span>
+      <span style="display:inline-flex;align-items:center;gap:3px">
+        <span class="mi" style="font-size:13px;color:#25D366">verified</span>
+        <span>Contraentrega</span>
+      </span>
+    </span>
+
+    <!-- Action Pill Link -->
+    <a href="#productos" style="display:inline-flex;align-items:center;gap:4px;padding:3px 12px;border-radius:999px;background:rgba(212,175,55,.2);border:1px solid rgba(212,175,55,.5);color:#F1DEB8;font-size:11px;font-weight:800;letter-spacing:.02em;text-decoration:none;transition:all .2s;flex:none" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#100C05';this.style.transform='scale(1.04)'" onmouseout="this.style.background='rgba(212,175,55,.2)';this.style.color='#F1DEB8';this.style.transform='none'">
+      <span>Ver Productos</span>
+      <span class="mi" style="font-size:12px">arrow_downward</span>
+    </a>
+
+  </div>
+</div>
 
 <section id="productos" class="section-theme-invert">
   <div class="prod-card-wrapper">
