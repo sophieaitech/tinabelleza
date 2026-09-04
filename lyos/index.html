@@ -14,6 +14,7 @@
 </script>
 <script src="./support.js"></script>
 <script src="assets/seamless-nav.js" defer></script>
+<script src="assets/lazy-video-engine.js" defer></script>
 <!-- Cal.com Embed Engine -->
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -1047,10 +1048,11 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
             <span class="mi" style="font-size:17px">volume_off</span>
           </button>
 
-          <!-- Embedded Brand Feature Short Video (Autoplay en loop continuo y en silencio) -->
-          <video id="showcaseVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+          <!-- Embedded Brand Feature Short Video (Carga diferida inteligente) -->
+          <video id="showcaseVideo" loop muted playsinline webkit-playsinline x5-playsinline preload="none" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
             <source src="assets/video-restauracion-ciencia.mp4" type="video/mp4">
           </video>
+
         </div>
 
         <!-- Direct YouTube Link Badge -->
@@ -1836,10 +1838,11 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
               <span class="mi" style="font-size:17px">volume_off</span>
             </button>
 
-            <!-- Video Player (Autoplay en silencio continuo, responsive) -->
-            <video id="kitRealDemoVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+            <!-- Video Player (Carga diferida inteligente, responsive) -->
+            <video id="kitRealDemoVideo" loop muted playsinline webkit-playsinline x5-playsinline preload="none" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
               <source src="assets/video-restauracion-ciencia.mp4" type="video/mp4">
             </video>
+
           </div>
 
           <!-- YouTube Short Link -->
@@ -2183,10 +2186,11 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
               <span class="mi" style="font-size:18px">volume_off</span>
             </button>
 
-            <!-- Video Player (Autoplay en silencio continuo, responsive) -->
-            <video id="koreaRealDemoVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/korea-anuncio-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+            <!-- Video Player (Carga diferida inteligente, responsive) -->
+            <video id="koreaRealDemoVideo" loop muted playsinline webkit-playsinline x5-playsinline preload="none" poster="assets/korea-anuncio-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
               <source src="assets/korea-modelo-seul.mp4" type="video/mp4">
             </video>
+
           </div>
 
           <!-- Video Selector Switcher Pills -->
@@ -3796,8 +3800,8 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 <section id="academia" class="section-academia-full" style="position:relative;overflow:hidden">
   <div id="mas" style="position:absolute;top:0"></div>
   
-  <!-- Video Background: LYOS Comercial (Como el landing inicial) -->
-  <video id="academiaBgVideo" autoplay muted playsinline loop webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;transition:opacity 0.6s ease" preload="metadata">
+  <!-- Video Background: LYOS Comercial (Carga diferida inteligente) -->
+  <video id="academiaBgVideo" muted playsinline loop webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;transition:opacity 0.6s ease" preload="none">
     <source src="assets/lyos-profesional-comercial.mp4" type="video/mp4">
   </video>
 
@@ -3820,7 +3824,8 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
       
       <!-- Video de Capacitación Head Spa Sensorial -->
       <div style="position:relative;border-radius:22px;overflow:hidden;background:#000;border:1px solid rgba(212,175,55,.3);box-shadow:0 12px 36px -8px rgba(0,0,0,.7);max-height:280px;display:flex;align-items:center;justify-content:center">
-        <video src="assets/capacitacion-head-spa.mp4" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="metadata" style="width:100%;height:100%;max-height:280px;object-fit:cover;display:block"></video>
+        <video src="assets/capacitacion-head-spa.mp4" loop muted playsinline webkit-playsinline x5-playsinline preload="none" style="width:100%;height:100%;max-height:280px;object-fit:cover;display:block"></video>
+
         <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:rgba(14,11,7,.8);border:1px solid rgba(212,175,55,.4);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#F1DEB8;backdrop-filter:blur(8px)">
           <span style="width:6px;height:6px;border-radius:999px;background:#25D366;box-shadow:0 0 6px #25D366"></span>
           Capacitación Head Spa Top
@@ -7447,9 +7452,12 @@ class Component extends DCLogic {
         prevT = v.currentTime;
       });
 
-      v.play().catch(function() {});
+      if (v === heroVid) {
+        v.play().catch(function() {});
+      }
     });
   }
+
 
   // 6. ACADEMIA BACKGROUND VIDEO (#academiaBgVideo)
   function initAcademiaVideo() {

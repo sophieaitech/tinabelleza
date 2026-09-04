@@ -10,7 +10,10 @@
 <!-- Fonts & Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://app.cal.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
+
 
 <!-- Cal.com Embed Engine -->
 <script type="text/javascript">
@@ -20,6 +23,7 @@
   Cal.config.forwardQueryParams = true;
 </script>
 <script src="assets/seamless-nav.js" defer></script>
+<script src="assets/lazy-video-engine.js" defer></script>
 
 <style>
 /* Native Cross-Document View Transitions (Chromium / Edge / Safari 18+) */
@@ -51,15 +55,18 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--txt);font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden;zoom:0.86;transition:background-color .3s ease,color .3s ease}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden;zoom:0.86;transition:background-color .3s ease,color .3s ease;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 a{text-decoration:none;color:inherit}
 button{font:inherit;cursor:pointer;border:0;background:transparent}
 .mi{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;line-height:1;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none}
 
 .desk{display:none!important}
+.mob{display:flex!important}
 .mob-btn{display:grid!important}
 @media(min-width:980px){
+  body{padding-bottom:0}
   .desk{display:flex!important}
+  .mob{display:none!important}
   .mob-btn{display:none!important}
 }
 
@@ -97,8 +104,11 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 .faq-card.active .faq-arrow{transform:rotate(180deg)}
 .faq-desc{display:none;padding-top:12px;margin-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--mut);line-height:1.65}
 
-.floating-wa{position:fixed;right:22px;bottom:22px;z-index:90;width:58px;height:58px;border-radius:999px;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -6px rgba(37,211,102,.6);transition:all .25s}
+.floating-wa{position:fixed;right:18px;bottom:calc(68px + env(safe-area-inset-bottom));z-index:90;width:52px;height:52px;border-radius:999px;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px -6px rgba(37,211,102,.6);transition:all .25s}
 .floating-wa:hover{transform:scale(1.08);filter:brightness(1.08)}
+@media(min-width:980px){
+  .floating-wa{bottom:28px;right:28px;width:58px;height:58px}
+}
 
 /* ========================================================================= */
 /* ULTRA-MINIMALIST MOBILE FIRST RESPONSIVE STYLES (ACADEMIA LYOS)           */
@@ -158,9 +168,14 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 
     <div style="display:grid;gap:12px;font-size:14px;font-weight:700">
       <a href="index.html" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;background:var(--surf2);color:var(--txt);display:flex;align-items:center;gap:8px">
-        <span class="mi" style="font-size:18px;color:var(--gold)">storefront</span>
+        <span class="mi" style="font-size:18px;color:var(--gold)">home</span>
         <span>← Volver a LYOS Profesional</span>
       </a>
+      <a href="tienda.html" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;color:var(--txt);display:flex;align-items:center;gap:8px">
+        <span class="mi" style="font-size:18px;color:var(--gold)">shopping_bag</span>
+        <span>Tienda LYOS Oficial</span>
+      </a>
+
       <a href="#modulos" onclick="toggleDrawer()" style="padding:10px 14px;border-radius:12px;color:var(--txt);display:flex;align-items:center;gap:8px">
         <span class="mi" style="font-size:18px;color:var(--gold)">menu_book</span>
         <span>4 Módulos Técnicos</span>
@@ -206,12 +221,13 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
     <!-- Center: Desktop Navigation Pills -->
     <nav class="desk" style="display:flex;align-items:center;gap:3px;padding:4px 6px;border-radius:999px;background:var(--surf2);border:1px solid var(--line);flex:none">
       <a href="index.html" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">← LYOS Profesional</a>
+      <a href="tienda.html" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">Tienda LYOS</a>
       <a href="#modulos" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">4 Módulos</a>
       <a href="#modalidades" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">Modalidades</a>
-      <a href="#roi" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">Calculadora ROI</a>
       <a href="#agendar" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">Agendar</a>
       <a href="#faq" style="padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--txt);transition:all .2s;white-space:nowrap" onmouseover="this.style.color='var(--gold)';this.style.background='var(--surf)'" onmouseout="this.style.color='var(--txt)';this.style.background='transparent'">FAQ</a>
     </nav>
+
 
     <!-- Right: Utility Controls & Primary CTA -->
     <div style="display:flex;align-items:center;gap:8px;flex:none">
@@ -835,7 +851,8 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
       
       <!-- Video Player Column -->
       <div style="position:relative;background:#0A0806;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-        <video id="videoHeadSpa" src="assets/capacitacion-head-spa.mp4" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="metadata" style="width:100%;height:100%;max-height:560px;object-fit:cover;display:block"></video>
+        <video id="videoHeadSpa" src="assets/capacitacion-head-spa.mp4" loop muted playsinline webkit-playsinline x5-playsinline preload="none" poster="assets/sede-equipo.jpg" style="width:100%;height:100%;max-height:560px;object-fit:cover;display:block"></video>
+
         
         <!-- Luxury Floating Live Badge -->
         <div style="position:absolute;top:16px;left:16px;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(241,222,184,.4);font-size:10.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#F1DEB8">
@@ -1461,8 +1478,29 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
   </div>
 </footer>
 
+<!-- Floating Bottom Navigation Dock (Academia Context) -->
+<nav class="mob" style="position:fixed;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),390px);bottom:calc(12px + env(safe-area-inset-bottom));z-index:95;background:var(--glass);backdrop-filter:blur(26px) saturate(1.8);-webkit-backdrop-filter:blur(26px) saturate(1.8);border:1px solid rgba(212,175,55,.28);border-radius:999px;padding:4px 6px;display:flex;align-items:center;justify-content:space-between;gap:2px;box-shadow:0 14px 34px -8px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06)">
+  <a href="index.html" style="flex:1;min-width:0;height:38px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:2px 4px;border-radius:999px;color:var(--txt);font-size:10px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--txt)'">
+    <span class="mi" style="font-size:18px">home</span>
+    <span>Inicio</span>
+  </a>
+  <a href="tienda.html" style="flex:1;min-width:0;height:38px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:2px 4px;border-radius:999px;color:var(--txt);font-size:10px;font-weight:700;text-decoration:none;transition:all .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--txt)'">
+    <span class="mi" style="font-size:18px">storefront</span>
+    <span>Tienda</span>
+  </a>
+  <a href="#acadHero" style="flex:1;min-width:0;height:38px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:2px 4px;border-radius:999px;color:var(--gold);font-size:10px;font-weight:700;text-decoration:none;transition:all .2s">
+    <span class="mi" style="font-size:18px">school</span>
+    <span>Academia</span>
+  </a>
+  <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20quiero%20inscribirme%20en%20la%20Academia%20Capilar%20LYOS." target="_blank" aria-label="Inscribirme en Academia" title="Inscribirme en Academia" style="flex:none;height:36px;padding:0 14px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);border:0;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 4px 14px -2px rgba(168,124,47,.55);transition:all .2s;white-space:nowrap;text-decoration:none" onmouseover="this.style.filter='brightness(1.08)';this.style.transform='scale(1.02)'" onmouseout="this.style.filter='none';this.style.transform='none'">
+    <span class="mi" style="font-size:16px">how_to_reg</span>
+    <span>Inscribirme</span>
+  </a>
+</nav>
+
 <!-- Floating WhatsApp Action -->
 <a href="https://wa.me/573135959808?text=Hola%20Cristina,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Academia%20Capilar%20LYOS." target="_blank" class="floating-wa" title="Escríbenos por WhatsApp">
+
   <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.92 1.16-.15.2-.3.22-.6.07-.3-.15-1.12-.41-2.14-1.32-.79-.71-1.32-1.58-1.47-1.88-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.3 5.05 4.5.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.75-.71 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.43 9.41zm8.02-17.44A11.32 11.32 0 0 0 12.04 1C5.8 1 .73 6.07.73 12.3c0 1.99.52 3.94 1.51 5.66L.5 23.5l5.68-1.49a11.3 11.3 0 0 0 5.86 1.6h.01c6.23 0 11.3-5.07 11.3-11.3 0-3.02-1.18-5.86-3.29-7.98z"/></svg>
 </a>
 

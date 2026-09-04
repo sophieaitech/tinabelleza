@@ -14,6 +14,7 @@
 </script>
 <script src="./support.js"></script>
 <script src="assets/seamless-nav.js" defer></script>
+<script src="assets/lazy-video-engine.js" defer></script>
 <!-- Cal.com Embed Engine -->
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -1421,10 +1422,11 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
               <span class="mi" style="font-size:17px">volume_off</span>
             </button>
 
-            <!-- Video Player (Autoplay en silencio continuo, responsive) -->
-            <video id="kitRealDemoVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+            <!-- Video Player (Carga diferida inteligente, responsive) -->
+            <video id="kitRealDemoVideo" loop muted playsinline webkit-playsinline x5-playsinline preload="none" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
               <source src="assets/video-restauracion-ciencia.mp4" type="video/mp4">
             </video>
+
           </div>
 
           <!-- YouTube Short Link -->
@@ -1784,10 +1786,11 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
               <span class="mi" style="font-size:18px">volume_off</span>
             </button>
 
-            <!-- Video Player (Autoplay en silencio continuo, responsive) -->
-            <video id="koreaRealDemoVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/korea-anuncio-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+            <!-- Video Player (Carga diferida inteligente, responsive) -->
+            <video id="koreaRealDemoVideo" loop muted playsinline webkit-playsinline x5-playsinline preload="none" poster="assets/korea-anuncio-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
               <source src="assets/korea-modelo-seul.mp4" type="video/mp4">
             </video>
+
           </div>
 
           <!-- Video Selector Switcher Pills -->

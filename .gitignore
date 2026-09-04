@@ -8,4 +8,12 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+*.bak
+*.tmp
 scratch/
+test-*.js
+test_*.js
+verify_*.js
+build_*.js
+check*.js
+lyos/uploads/
