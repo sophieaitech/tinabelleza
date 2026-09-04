@@ -921,26 +921,30 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
   .co-title-short { display: inline !important; }
 }
 
-/* Brand Video Showcase Grid - Balanced Spacing & Cohesive Pairing */
+/* Brand Video Showcase Grid - Balanced Two-Column Symmetry */
 .brand-showcase-grid {
   position: relative;
   display: grid;
-  gap: clamp(24px, 3.5vw, 42px);
+  gap: clamp(24px, 3.5vw, 38px);
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
 }
 @media (min-width: 860px) {
   .brand-showcase-grid {
-    grid-template-columns: 340px minmax(320px, 580px) !important;
-    gap: clamp(32px, 3.8vw, 48px) !important;
-    justify-content: center !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(28px, 3.5vw, 44px) !important;
+    align-items: center !important;
   }
   .brand-showcase-grid .showcase-video-col {
-    justify-self: end !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: 340px !important;
   }
   .brand-showcase-grid .showcase-text-col {
-    justify-self: start !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: 500px !important;
   }
 }
 
@@ -1079,7 +1083,7 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 </section>
 
 <section style="max-width:1320px;margin:0 auto;padding:clamp(44px,6vw,80px) 18px 0">
-  <div style="position:relative;max-width:1040px;margin:0 auto;padding:clamp(16px,2.5vw,32px) 0">
+  <div style="position:relative;max-width:980px;margin:0 auto;padding:clamp(14px,2.2vw,28px) 0">
     
     <!-- Ambient glowing gold decorative orbs -->
     <div style="position:absolute;top:-80px;left:-60px;width:280px;height:280px;border-radius:999px;background:radial-gradient(circle,rgba(201,164,92,.18) 0%,transparent 70%);filter:blur(30px);pointer-events:none"></div>
@@ -1131,7 +1135,7 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
       </div>
 
       <!-- Text & Highlights Showcase Column (Ultra-PRO Minimalist Editorial Layout) -->
-      <div class="showcase-text-col" style="position:relative;max-width:580px">
+      <div class="showcase-text-col" style="position:relative;max-width:500px">
         <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:var(--surf2);border:1px solid var(--line2);box-shadow:var(--e1)">
           <span class="mi" style="font-size:15px;color:var(--gold)">auto_awesome</span>
           <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800">Resultados en Vivo · Video de Marca</span>
