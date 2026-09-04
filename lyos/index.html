@@ -443,6 +443,157 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 }
 
 /* ========================================================================= */
+/* LUXURY HOT SALE FLOATING PROMO BAR (MOBILE-FIRST RESPONSIVE)              */
+/* ========================================================================= */
+.hot-sale-bar-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 clamp(20px, 3.2vw, 36px);
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.hot-sale-bar {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(18, 14, 10, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.15);
+  border-radius: 18px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hot-sale-bar:hover {
+  border-color: var(--gold);
+  box-shadow: 0 14px 34px -6px rgba(0, 0, 0, 0.8), 0 0 26px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.hot-sale-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+}
+
+.hot-sale-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3.5px 9.5px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E60023 0%, #FF334B 100%);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 0 12px rgba(230, 0, 35, 0.55);
+  flex: none;
+}
+
+.hot-sale-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 6px #fff;
+  display: inline-block;
+  animation: pulse 1.8s infinite;
+}
+
+.hot-sale-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.16);
+  border: 1.5px solid rgba(212, 175, 55, 0.55);
+  color: #F1DEB8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  flex: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hot-sale-cta:hover {
+  background: var(--goldGrad);
+  color: #100C05;
+  border-color: transparent;
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+}
+
+.hot-sale-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: clamp(11.5px, 3.2vw, 13px);
+  font-weight: 700;
+  color: rgba(255, 253, 248, 0.95);
+  line-height: 1.25;
+  text-align: center;
+  width: 100%;
+}
+
+.hot-sale-perks {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .hot-sale-bar {
+    max-width: fit-content;
+    width: auto;
+    border-radius: 999px;
+    padding: 8px 22px;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(10px, 1.4vw, 16px);
+  }
+  .hot-sale-row-top {
+    width: auto;
+    display: contents;
+  }
+  .hot-sale-badge {
+    order: 1;
+    font-size: 10px;
+    padding: 4px 11px;
+  }
+  .hot-sale-msg {
+    order: 2;
+    width: auto;
+    font-size: 13.5px;
+  }
+  .hot-sale-perks {
+    order: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12px;
+    color: rgba(255, 253, 248, 0.72);
+  }
+  .hot-sale-cta {
+    order: 4;
+    font-size: 11.5px;
+    padding: 5px 14px;
+  }
+}
+
+/* ========================================================================= */
 /* ULTRA-MINIMALIST MOBILE FIRST RESPONSIVE STYLES (LYOS LUXURY PRO)         */
 /* ========================================================================= */
 @media (max-width: 768px) {
@@ -1215,24 +1366,26 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 
   <div class="prod-card-wrapper" style="position:relative;z-index:2">
 
-    <!-- Embedded Luxury Hot Sale Promo Bar (Placed PRO right before main text starts) -->
-    <div id="productsHotSalePromo" style="display:flex;justify-content:center;margin:0 0 clamp(24px,3.2vw,36px)">
-      <div style="display:inline-flex;align-items:center;gap:clamp(10px,1.6vw,16px);padding:9px 24px;border-radius:999px;background:rgba(18,14,10,.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1.5px solid rgba(212,175,55,.5);box-shadow:0 14px 34px -6px rgba(0,0,0,.7),0 0 24px rgba(212,175,55,.16);flex-wrap:wrap;justify-content:center;line-height:1.2;transition:all .3s cubic-bezier(.2,.8,.2,1)" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='var(--gold)';this.style.boxShadow='0 18px 42px -6px rgba(0,0,0,.8),0 0 32px rgba(212,175,55,.28)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(212,175,55,.5)';this.style.boxShadow='0 14px 34px -6px rgba(0,0,0,.7),0 0 24px rgba(212,175,55,.16)'">
-        
-        <!-- Hot Sale Live Pulse Badge -->
-        <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;background:linear-gradient(135deg,#E60023 0%,#FF334B 100%);color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 0 14px rgba(230,0,35,.55);flex:none">
-          <span style="width:5px;height:5px;border-radius:999px;background:#fff;box-shadow:0 0 6px #fff;display:inline-block"></span>
-          HOT SALE
-        </span>
+    <!-- Embedded Luxury Hot Sale Promo Bar (Mobile-First Responsive Adaptation) -->
+    <div id="productsHotSalePromo" class="hot-sale-bar-wrap">
+      <div class="hot-sale-bar">
+        <div class="hot-sale-row-top">
+          <span class="hot-sale-badge">
+            <span class="hot-sale-badge-dot"></span>
+            HOT SALE
+          </span>
+          <a href="tienda.html" class="hot-sale-cta">
+            <span>Comprar Ahora</span>
+            <span class="mi" style="font-size:13px">arrow_forward</span>
+          </a>
+        </div>
 
-        <!-- Core Free Shipping Offer Message -->
-        <span style="font-size:clamp(12px,1.2vw,14px);font-weight:700;color:rgba(255,253,248,.95);display:inline-flex;align-items:center;gap:7px">
-          <span class="mi" style="font-size:17px;color:var(--gold)">local_shipping</span>
+        <div class="hot-sale-msg">
+          <span class="mi" style="font-size:17px;color:var(--gold);flex:none">local_shipping</span>
           <span>Envío Nacional Gratis desde <strong style="font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:-.01em;color:#FFF;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$150.000 COP</strong></span>
-        </span>
+        </div>
 
-        <!-- Desktop Perks & Coverage -->
-        <span class="desk" style="display:inline-flex;align-items:center;gap:9px;font-size:12px;color:rgba(255,253,248,.72)">
+        <span class="hot-sale-perks desk">
           <span>·</span>
           <span style="display:inline-flex;align-items:center;gap:4px">
             <span class="mi" style="font-size:14px;color:var(--gold)">bolt</span>
@@ -1244,13 +1397,6 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
             <span>Contraentrega</span>
           </span>
         </span>
-
-        <!-- Action Pill Link -->
-        <a href="tienda.html" style="display:inline-flex;align-items:center;gap:5px;padding:4px 14px;border-radius:999px;background:rgba(212,175,55,.15);border:1.5px solid rgba(212,175,55,.55);color:#F1DEB8;font-size:11.5px;font-weight:800;letter-spacing:.02em;text-decoration:none;transition:all .25s;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.3)" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#100C05';this.style.transform='scale(1.04)';this.style.boxShadow='0 4px 16px rgba(212,175,55,.35)'" onmouseout="this.style.background='rgba(212,175,55,.15)';this.style.color='#F1DEB8';this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.3)'">
-          <span>Comprar Ahora</span>
-          <span class="mi" style="font-size:13px">arrow_forward</span>
-        </a>
-
       </div>
     </div>
 
