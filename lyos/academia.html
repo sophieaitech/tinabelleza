@@ -231,16 +231,27 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 <!-- ====================================================================== -->
 <!-- HERO BANNER FULL-BLEED (IGUAL DE IMPACTANTE QUE LA PÁGINA DE INICIO)   -->
 <!-- ====================================================================== -->
-<section style="position:relative;min-height:clamp(620px,94vh,880px);display:flex;align-items:flex-end;padding:clamp(120px,16vw,160px) 0 clamp(48px,6vw,72px);overflow:hidden;background:var(--bg)">
-  
-  <!-- Cinematic Background with Ken Burns Zoom -->
-  <div class="hero-bg-fallback" style="position:absolute;inset:0;background:url('assets/equipo-profesionales-navy.jpg') center 32% / cover no-repeat;background-color:#0B0A08"></div>
-  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;transition:opacity 0.6s ease" preload="metadata">
-    <source src="assets/brand-feature.mp4" type="video/mp4">
+<section style="position:relative;min-height:clamp(620px,94vh,880px);display:flex;align-items:flex-end;padding:clamp(120px,16vw,160px) 0 clamp(48px,6vw,72px);overflow:hidden;background:#0B0A08">
+
+  <!-- LYOS Comercial Video Background -->
+  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline loop poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
+    <source src="assets/lyos-profesional-comercial.mp4" type="video/mp4">
   </video>
-  
-  <!-- Luxury Dark Overlay Gradients -->
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,8,.65) 0%,rgba(11,10,8,.35) 40%,rgba(11,10,8,.82) 78%,var(--bg) 100%)"></div>
+
+  <!-- Fallback image if video can't play -->
+  <div id="acadHeroBgFallback" style="position:absolute;inset:0;background:url('assets/equipo-profesionales-navy.jpg') center/cover no-repeat;z-index:0"></div>
+
+  <!-- Multi-layer cinematic overlay (same as index.html hero) -->
+  <div style="position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(11,10,8,.38) 0%,rgba(11,10,8,.75) 60%,rgba(11,10,8,.97) 100%),linear-gradient(180deg,rgba(11,10,8,.85) 0%,rgba(11,10,8,.25) 35%,rgba(11,10,8,.75) 70%,rgba(11,10,8,.98) 100%);pointer-events:none"></div>
+
+  <!-- Gold ambient glow sphere -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(1100px,96vw);height:360px;background:radial-gradient(ellipse,rgba(217,182,121,.16) 0%,transparent 65%);filter:blur(50px);pointer-events:none;z-index:1"></div>
+
+  <!-- Floating Audio Toggle (same style as index.html hero) -->
+  <button id="acadHeroAudioBtn" onclick="window.toggleAcadHeroAudio && window.toggleAcadHeroAudio()" aria-label="Activar o desactivar sonido" title="Control de audio" style="position:absolute;bottom:18px;left:20px;z-index:25;display:inline-flex;align-items:center;gap:7px;padding:7px 15px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(241,222,184,.38);color:#F1DEB8;font-size:11px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.6);transition:all .25s" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='#D9B679'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(241,222,184,.38)'">
+    <span class="mi" id="acadHeroAudioIcon" style="font-size:16px;color:#D9B679">volume_off</span>
+    <span id="acadHeroAudioLabel">Audio silenciado</span>
+  </button>
 
   <div style="max-width:1320px;margin:0 auto;padding:0 20px;position:relative;z-index:2;width:100%">
     
@@ -1647,6 +1658,63 @@ function handleSpeakerPlay(btn) {
     }
   }
 }
+</script>
+
+<script>
+(function() {
+  var vid = document.getElementById('acadHeroVideo');
+  var fallback = document.getElementById('acadHeroBgFallback');
+  if (!vid) return;
+
+  // Mute on start (autoplay policy compliance)
+  vid.muted = true;
+  vid.defaultMuted = true;
+
+  // Show video once it can play, hide fallback
+  vid.addEventListener('canplay', function() {
+    vid.style.opacity = '1';
+    if (fallback) fallback.style.opacity = '0';
+  });
+
+  // Hide audio button if video fails
+  function handleFallback() {
+    vid.style.display = 'none';
+    var btn = document.getElementById('acadHeroAudioBtn');
+    if (btn) btn.style.display = 'none';
+    if (fallback) fallback.style.opacity = '1';
+  }
+  vid.addEventListener('error', handleFallback, true);
+  var srcEl = vid.querySelector('source');
+  if (srcEl) srcEl.addEventListener('error', handleFallback);
+
+  function updateUI() {
+    var icon = document.getElementById('acadHeroAudioIcon');
+    var label = document.getElementById('acadHeroAudioLabel');
+    if (icon) icon.textContent = vid.muted ? 'volume_off' : 'volume_up';
+    if (label) label.textContent = vid.muted ? 'Audio silenciado' : 'Audio activo';
+  }
+
+  // Singleton: mute all other videos when this one has audio
+  function muteOthers() {
+    document.querySelectorAll('video').forEach(function(v) {
+      if (v !== vid) v.muted = true;
+    });
+  }
+
+  window.toggleAcadHeroAudio = function() {
+    vid.muted = !vid.muted;
+    if (!vid.muted) {
+      muteOthers();
+      vid.volume = 1;
+      vid.play().catch(function() {});
+    }
+    updateUI();
+  };
+
+  // Start playback
+  vid.play().catch(function() {});
+  updateUI();
+})();
 </script>
 
 </body>
