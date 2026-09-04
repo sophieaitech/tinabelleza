@@ -234,7 +234,7 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 <section id="hero-academia" style="position:relative;min-height:calc(100svh - 57px);display:flex;align-items:flex-end;overflow:hidden;background:#0B0A08;margin-top:0">
 
   <!-- LYOS Comercial Video Background — positioned center so subjects fill frame -->
-  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline loop poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
+  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
     <source src="assets/lyos-profesional-comercial.mp4" type="video/mp4">
   </video>
 
@@ -1643,17 +1643,20 @@ function handleSpeakerPlay(btn) {
   var fallback = document.getElementById('acadHeroBgFallback');
   if (!vid) return;
 
-  // Mute on start (autoplay policy compliance)
-  vid.muted = true;
-  vid.defaultMuted = true;
+  var hasPlayedFirstSoundCycle = false;
+  var isFading = false;
 
-  // Show video once it can play, hide fallback
+  // Remove loop — we handle it manually so we can mute after first cycle
+  vid.removeAttribute('loop');
+  vid.muted = true; // Start muted for autoplay compliance
+
+  // Show video / hide fallback once ready
   vid.addEventListener('canplay', function() {
     vid.style.opacity = '1';
     if (fallback) fallback.style.opacity = '0';
   });
 
-  // Hide audio button if video fails
+  // Graceful fallback if video fails
   function handleFallback() {
     vid.style.display = 'none';
     var btn = document.getElementById('acadHeroAudioBtn');
@@ -1668,7 +1671,7 @@ function handleSpeakerPlay(btn) {
     var icon = document.getElementById('acadHeroAudioIcon');
     var label = document.getElementById('acadHeroAudioLabel');
     if (icon) icon.textContent = vid.muted ? 'volume_off' : 'volume_up';
-    if (label) label.textContent = vid.muted ? 'Audio silenciado' : 'Audio activo';
+    if (label) label.textContent = vid.muted ? 'Sonido' : 'Sonido activo';
   }
 
   // Singleton: mute all other videos when this one has audio
@@ -1678,6 +1681,59 @@ function handleSpeakerPlay(btn) {
     });
   }
 
+  // ON FIRST USER INTERACTION: unmute and play with sound for the first cycle
+  function playWithSoundFirstTime() {
+    if (!hasPlayedFirstSoundCycle && vid.muted) {
+      muteOthers();
+      vid.muted = false;
+      vid.volume = 1;
+      vid.play().then(function() {
+        updateUI();
+      }).catch(function() {
+        vid.muted = true;
+        updateUI();
+      });
+    }
+  }
+  document.addEventListener('click', playWithSoundFirstTime, { once: true });
+  document.addEventListener('touchstart', playWithSoundFirstTime, { once: true });
+
+  // Loop monitor: 2.5s before end → fade out, rewind to 0, MUTE for all future loops
+  vid.addEventListener('timeupdate', function() {
+    if (!vid.duration || isNaN(vid.duration)) return;
+
+    var loopPoint = Math.max(0, vid.duration - 2.5);
+    var fadeStart = Math.max(0, loopPoint - 0.7);
+
+    if (vid.currentTime >= fadeStart && !isFading) {
+      isFading = true;
+      vid.style.transition = 'opacity 0.6s ease';
+      vid.style.opacity = '0';
+
+      setTimeout(function() {
+        vid.currentTime = 0;
+        // MUTE FOR ALL SUBSEQUENT LOOPS
+        vid.muted = true;
+        hasPlayedFirstSoundCycle = true;
+        updateUI();
+        vid.play().catch(function() {});
+        setTimeout(function() {
+          vid.style.opacity = '1';
+          isFading = false;
+        }, 120);
+      }, 620);
+    }
+  });
+
+  vid.addEventListener('ended', function() {
+    vid.currentTime = 0;
+    vid.muted = true;
+    hasPlayedFirstSoundCycle = true;
+    updateUI();
+    vid.play().catch(function() {});
+  });
+
+  // Manual toggle button
   window.toggleAcadHeroAudio = function() {
     vid.muted = !vid.muted;
     if (!vid.muted) {
@@ -1688,7 +1744,6 @@ function handleSpeakerPlay(btn) {
     updateUI();
   };
 
-  // Start playback
   vid.play().catch(function() {});
   updateUI();
 })();
