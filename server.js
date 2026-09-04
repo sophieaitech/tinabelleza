@@ -81,7 +81,7 @@ function handleRequest(req, res) {
 
   // ETag y Cache-Control optimizados
   const etag = `"${stat.size.toString(16)}-${Math.floor(stat.mtimeMs).toString(16)}"`;
-  const isCode = ext === '.html' || ext === '.js' || ext === '.json' || ext === '.css';
+  const isCode = ext === '.html' || (ext === '.json' && !filePath.includes('assets'));
   const cacheHeader = isCode ? 'no-cache, must-revalidate' : 'public, max-age=604800, stale-while-revalidate=86400';
 
   res.setHeader('ETag', etag);

@@ -3,7 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Localized Zero-Latency React & ReactDOM (Eliminates unpkg network bottleneck) -->
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script>
+  window.__resources = {
+    "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/react.production.min.js",
+    "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/react-dom.production.min.js"
+  };
+</script>
 <script src="./support.js"></script>
+<script src="assets/seamless-nav.js" defer></script>
 <!-- Cal.com Embed Engine -->
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -69,6 +79,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
 <style>
+/* Native Cross-Document View Transitions (Chromium / Edge / Safari 18+) */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: 90ms cubic-bezier(0.4, 0, 0.2, 1) both lyosFadeOut; }
+::view-transition-new(root) { animation: 130ms cubic-bezier(0.2, 0.8, 0.2, 1) both lyosFadeIn; }
+@keyframes lyosFadeOut { from { opacity: 1; } to { opacity: 0.94; } }
+@keyframes lyosFadeIn { from { opacity: 0.94; } to { opacity: 1; } }
+
 :root{
 --bg:#FBF8F2;--bg2:#F5EEE2;--surf:#FFFFFF;--surf2:#FAF5EC;--surf3:#F1E7D6;
 --line:rgba(28,22,12,.07);--line2:rgba(28,22,12,.13);
@@ -853,6 +870,29 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   }
 }
 
+
+/* Korea Liss Atelier Showcase - Responsive & Uncropped Mobile-First Perfection */
+.korea-showcase-stage {
+  min-height: clamp(440px, 48vw, 650px) !important;
+}
+@media (min-width: 940px) {
+  .korea-showcase-stage {
+    min-height: 600px !important;
+  }
+}
+@media (max-width: 767px) {
+  .korea-showcase-stage {
+    min-height: 380px !important;
+    height: clamp(360px, 86vw, 460px) !important;
+  }
+  .korea-subtle-photo {
+    padding: clamp(10px, 1.8vw, 16px) !important;
+    -webkit-mask-image: radial-gradient(ellipse 84% 82% at 50% 48%, black 48%, rgba(0,0,0,0.85) 64%, rgba(0,0,0,0.2) 82%, transparent 97%);
+    mask-image: radial-gradient(ellipse 84% 82% at 50% 48%, black 48%, rgba(0,0,0,0.85) 64%, rgba(0,0,0,0.2) 82%, transparent 97%);
+    border-radius: clamp(16px, 2vw, 22px);
+  }
+}
+
 </style>
 </helmet>
 <div id="app" ref="{{ rootRef }}" data-theme="{{ theme }}" style="min-height:100dvh;background:var(--bg);color:var(--txt);padding-bottom:calc(76px + env(safe-area-inset-bottom));position:relative;overflow:hidden">
@@ -1002,8 +1042,13 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
             <span>100% Sin Formol</span>
           </div>
 
-          <!-- Embedded Brand Feature Short Video -->
-          <video id="showcaseVideo" muted controls playsinline preload="metadata" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+          <!-- Sound Toggle (Silencio por defecto, clic para activar sonido) -->
+          <button type="button" onclick="window.toggleShowcaseAudio && window.toggleShowcaseAudio(this)" aria-label="Activar sonido" style="position:absolute;top:14px;right:14px;z-index:15;width:34px;height:34px;border-radius:50%;background:rgba(8,14,29,.85);border:1px solid rgba(212,175,55,.45);color:var(--gold);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(0,0,0,.5);transition:all .2s">
+            <span class="mi" style="font-size:17px">volume_off</span>
+          </button>
+
+          <!-- Embedded Brand Feature Short Video (Autoplay en loop continuo y en silencio) -->
+          <video id="showcaseVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/preventa-restauracion.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
             <source src="assets/video-restauracion-ciencia.mp4" type="video/mp4">
           </video>
         </div>
@@ -1384,8 +1429,9 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
             <!-- Product Thumbnail & Title -->
             <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
-              <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line);box-shadow:var(--e1)">
-                <img src="assets/kit-post-cuidado.jpg" alt="Kit Post Cuidado" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+              <span style="position:relative;width:78px;height:78px;border-radius:18px;background:radial-gradient(circle at 50% 35%,#FFFDF9 0%,#F5EDDE 100%);overflow:hidden;display:flex;align-items:center;justify-content:center;flex:none;border:1.5px solid var(--line2);box-shadow:var(--e1)">
+                <img src="assets/shampoo-500.png" alt="Shampoo Limpieza Profunda" style="width:48%;height:88%;object-fit:contain;position:absolute;left:7px;bottom:3px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.22))" loading="lazy" decoding="async" />
+                <img src="assets/tratamiento-500.png" alt="Tratamiento Reparador Murumuru" style="width:46%;height:84%;object-fit:contain;position:absolute;right:7px;bottom:3px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.22))" loading="lazy" decoding="async" />
               </span>
               <div style="display:flex;flex-direction:column;min-width:0">
                 <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Dúo Cuidado Diario &amp; Anti-Frizz</h3>
@@ -1419,7 +1465,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
             <div style="display:flex;gap:8px">
               <button onClick="{{ addPilar1 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
                 <span class="mi" style="font-size:18px">shopping_bag</span>
-                <span>Comprar Kit</span>
+                <span>Comprar</span>
               </button>
               <a href="{{ waPilar1 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
                 <span class="mi" style="font-size:20px">chat</span>
@@ -1447,8 +1493,8 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
             <!-- Product Thumbnail & Title -->
             <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
-              <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1px solid var(--line);box-shadow:var(--e1)">
-                <img src="assets/story-2.jpg" alt="Bio Intense Brasileño" style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+              <span style="position:relative;width:78px;height:78px;border-radius:18px;background:radial-gradient(circle at 50% 35%,#FFFDF9 0%,#F5EDDE 100%);overflow:hidden;display:grid;place-items:center;flex:none;border:1.5px solid var(--line2);box-shadow:var(--e1)">
+                <img src="assets/bio-duo.png" alt="Bio Intense Alisado Brasileño" style="width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,0,.2))" loading="lazy" decoding="async" />
               </span>
               <div style="display:flex;flex-direction:column;min-width:0">
                 <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Alisado Bio Intense + Lavado</h3>
@@ -1482,7 +1528,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
             <div style="display:flex;gap:8px">
               <button onClick="{{ addPilar2 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
                 <span class="mi" style="font-size:18px">shopping_bag</span>
-                <span>Comprar Litro</span>
+                <span>Comprar</span>
               </button>
               <a href="{{ waPilar2 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
                 <span class="mi" style="font-size:20px">chat</span>
@@ -1510,8 +1556,10 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
             <!-- Product Thumbnail & Title -->
             <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
-              <span style="width:78px;height:78px;border-radius:18px;background:var(--plinth);overflow:hidden;display:grid;place-items:center;flex:none;border:1.5px solid var(--gold);box-shadow:var(--e1)">
-                <img src="assets/liso-familia.jpg" alt="Kit Maestro Liso Espejo" style="width:100%;height:100%;object-fit:contain;padding:3px;mix-blend-mode:multiply" loading="lazy" decoding="async" />
+              <span style="position:relative;width:78px;height:78px;border-radius:18px;background:radial-gradient(circle at 50% 35%,#FFFDF9 0%,#F5EDDE 100%);overflow:hidden;display:flex;align-items:center;justify-content:center;flex:none;border:1.5px solid var(--gold);box-shadow:var(--e1)">
+                <img src="assets/shampoo-500.png" alt="Shampoo 500ml" style="width:38%;height:75%;object-fit:contain;position:absolute;left:4px;bottom:3px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.2))" loading="lazy" decoding="async" />
+                <img src="assets/liso-1000.png" alt="Liso Hialurónico 1000ml" style="width:48%;height:92%;object-fit:contain;position:absolute;left:50%;transform:translateX(-50%);bottom:3px;z-index:2;filter:drop-shadow(0 4px 8px rgba(0,0,0,.3))" loading="lazy" decoding="async" />
+                <img src="assets/protector-250.png" alt="Protector Térmico 250ml" style="width:34%;height:70%;object-fit:contain;position:absolute;right:4px;bottom:3px;z-index:1;filter:drop-shadow(0 3px 5px rgba(0,0,0,.2))" loading="lazy" decoding="async" />
               </span>
               <div style="display:flex;flex-direction:column;min-width:0">
                 <h3 style="font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;color:var(--txt);margin:0;line-height:1.2">Kit Maestro Liso Espejo Total</h3>
@@ -1549,7 +1597,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
             <div style="display:flex;gap:8px">
               <button onClick="{{ addPilar3 }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.7);transition:all .25s" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
                 <span class="mi" style="font-size:18px">shopping_bag</span>
-                <span>Comprar Combo</span>
+                <span>Comprar</span>
               </button>
               <a href="{{ waPilar3 }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" onmouseover="this.style.borderColor='#25D366';this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--line2)';this.style.transform='none'">
                 <span class="mi" style="font-size:20px">chat</span>
@@ -1569,7 +1617,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 <!-- ========================================================================= -->
 <!-- SPOTLIGHT DE LANZAMIENTO: KIT RESTAURACIÓN CAPILAR PREMIUM LYOS          -->
 <!-- ========================================================================= -->
-<section id="kit-restauracion" style="position:relative;margin-top:clamp(50px,7vw,90px);padding:clamp(54px,7vw,94px) 0;background:radial-gradient(circle at 50% 0%,#0C162C 0%,#080E1D 48%,#050811 100%);border-top:1px solid rgba(212,175,55,.3);border-bottom:1px solid rgba(212,175,55,.3);color:#FBF8F2;overflow:hidden;box-shadow:0 30px 90px -20px rgba(0,0,0,.85)">
+<section id="kit-restauracion" style="position:relative;margin-top:clamp(36px,5vw,60px);padding:clamp(38px,5vw,62px) 0;background:radial-gradient(circle at 50% 0%,#0C162C 0%,#080E1D 48%,#050811 100%);border-top:1px solid rgba(212,175,55,.3);border-bottom:1px solid rgba(212,175,55,.3);color:#FBF8F2;overflow:hidden;box-shadow:0 30px 90px -20px rgba(0,0,0,.85)">
   
   <!-- Subtle ambient luxury glow -->
   <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(900px,94vw);height:280px;background:radial-gradient(ellipse,rgba(30,64,130,.28) 0%,rgba(212,175,55,.06) 45%,transparent 70%);filter:blur(60px);pointer-events:none"></div>
@@ -1594,7 +1642,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
     </div>
 
     <!-- Dual Action Grid: Subtle Automatic Crossfade Stage & Step Architecture -->
-    <div style="margin-top:clamp(36px,5vw,50px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(24px,3vw,36px);align-items:center">
+    <div style="margin-top:clamp(36px,5vw,50px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(24px,3vw,36px);align-items:stretch">
       
       <!-- Showcase: Subtle Hands-Free Photo Crossfade (No manual moving) -->
       <div style="position:relative;border-radius:clamp(22px,3vw,28px);overflow:hidden;background:#050912;border:1.5px solid rgba(212,175,55,.38);box-shadow:0 24px 60px -15px rgba(0,0,0,.9);display:flex;flex-direction:column">
@@ -1707,7 +1755,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
         </div>
 
         <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20la%20*Reposici%C3%B3n%20Proteica%20(1000ml)*." target="_blank" style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:#F1DEB8;font-size:12px;font-weight:800;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#140F06'" onmouseout="this.style.background='rgba(212,175,55,.12)';this.style.color='#F1DEB8'">
-          <span>Pedir Tratamiento SOS</span>
+          <span>Comprar</span>
           <span class="mi" style="font-size:15px">arrow_forward</span>
         </a>
       </div>
@@ -1731,7 +1779,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
         </div>
 
         <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20la%20*Reposici%C3%B3n%20Lip%C3%ADdica%20(300ml)*." target="_blank" style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:#F1DEB8;font-size:12px;font-weight:800;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#140F06'" onmouseout="this.style.background='rgba(212,175,55,.12)';this.style.color='#F1DEB8'">
-          <span>Pedir Tratamiento SOS</span>
+          <span>Comprar</span>
           <span class="mi" style="font-size:15px">arrow_forward</span>
         </a>
       </div>
@@ -1755,7 +1803,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
         </div>
 
         <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20pedir%20el%20*AminoPro%20Booster%20(30ml)*." target="_blank" style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:#F1DEB8;font-size:12px;font-weight:800;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--goldGrad)';this.style.color='#140F06'" onmouseout="this.style.background='rgba(212,175,55,.12)';this.style.color='#F1DEB8'">
-          <span>Pedir Tratamiento SOS</span>
+          <span>Comprar</span>
           <span class="mi" style="font-size:15px">arrow_forward</span>
         </a>
       </div>
@@ -1823,7 +1871,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
           <div style="display:flex;align-items:center;gap:10px;margin-top:20px;flex-wrap:wrap">
             <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20tengo%20una%20EMERGENCIA%20CAPILAR%20y%20necesito%20el%20*Kit%20de%20Restauraci%C3%B3n%20SOS*." target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;background:var(--goldGrad);color:#120E06;font-size:13px;font-weight:800;letter-spacing:.02em;text-decoration:none;box-shadow:0 8px 24px -4px rgba(212,175,55,.4);transition:all .25s;flex:1 1 240px;min-width:min(100%,220px);text-align:center" onmouseover="this.style.filter='brightness(1.1)';this.style.transform='scale(1.02)'" onmouseout="this.style.filter='none';this.style.transform='none'">
               <span class="mi" style="font-size:18px">bolt</span>
-              <span>Pedir Kit SOS por WhatsApp</span>
+              <span>Pedir por WhatsApp</span>
             </a>
 
             <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:7px;height:48px;padding:0 20px;border-radius:999px;border:1px solid rgba(212,175,55,.35);background:rgba(18,26,50,.6);color:#F1DEB8;font-size:13px;font-weight:700;text-decoration:none;transition:all .25s;flex:1 1 180px;min-width:min(100%,180px);text-align:center" onmouseover="this.style.borderColor='var(--gold)';this.style.color='#FFF'" onmouseout="this.style.borderColor='rgba(212,175,55,.35)';this.style.color='#F1DEB8'">
@@ -1945,6 +1993,386 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   })();
   </script>
 </section>
+
+<!-- ========================================================================= -->
+<!-- KOREA LISS · K-BEAUTY GOLDEN ATELIER (LIGHT · PREMIUM · HIGH CONTRAST)   -->
+<!-- ========================================================================= -->
+<!-- ========================================================================= -->
+<!-- KOREA LISS · K-BEAUTY GOLDEN ATELIER (LIGHT · PREMIUM · HIGH CONTRAST)   -->
+<!-- ========================================================================= -->
+<section id="korea-liss" style="position:relative;margin-top:clamp(36px,5vw,60px);padding:clamp(44px,6vw,76px) 0;background:radial-gradient(circle at 50% 0%,#FFFDF9 0%,#FAF5EB 45%,#F2EADE 100%);border-top:1.5px solid rgba(212,175,55,.45);border-bottom:1.5px solid rgba(212,175,55,.45);color:#0E0A06;overflow:hidden;box-shadow:0 30px 90px -20px rgba(168,124,47,.14)">
+  
+  <!-- Ambient Champagne & Golden Luminous Glows -->
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1100px,96vw);height:320px;background:radial-gradient(ellipse,rgba(212,175,55,.18) 0%,rgba(245,226,190,.12) 45%,transparent 70%);filter:blur(50px);pointer-events:none"></div>
+  <div style="position:absolute;top:25%;left:-5%;width:40%;height:50%;background:radial-gradient(ellipse at 20% 50%,rgba(212,175,55,.12) 0%,transparent 65%);pointer-events:none"></div>
+  <div style="position:absolute;top:35%;right:-5%;width:40%;height:50%;background:radial-gradient(ellipse at 80% 50%,rgba(200,16,46,.05) 0%,transparent 65%);pointer-events:none"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(960px,92vw);height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.3),transparent);pointer-events:none"></div>
+
+  <div style="max-width:1300px;margin:0 auto;padding:0 clamp(18px,3vw,36px);position:relative;z-index:2">
+    
+    <!-- Minimalist Section Header (High-Contrast & Ultra-Legible in Light Mode) -->
+    <div style="text-align:center;max-width:820px;margin:0 auto">
+      <div style="display:inline-flex;align-items:stretch;gap:8px;padding:7px 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;box-shadow:0 4px 16px rgba(120,85,20,.12);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#0E0A06;font-weight:900;margin-bottom:16px">
+        <span style="font-size:16px">🇰🇷</span>
+        <span>K-Beauty Biotech Atelier · 0% Formol</span>
+      </div>
+
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(36px,5.5vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.02;margin:0;color:#0E0A06">
+        KOREA <span style="color:#9A6914">LISS</span><br>
+        <span style="display:block;font-size:clamp(17px,2.2vw,24px);font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#855A12;margin-top:8px">
+          El Liso Espejo de Seúl · Biotecnología Capilar
+        </span>
+      </h2>
+
+      <p style="font-size:clamp(15px,1.35vw,17.5px);color:#1A140E;font-weight:600;margin:16px auto 0;line-height:1.65;max-width:56ch">
+        Biotecnología capilar bio-fermentada en Seúl. Brillo cristalino 3D, suavidad de seda y hasta 5 meses de liso perfecto sin formol.
+      </p>
+    </div>
+
+    <!-- Dual Action Grid: Porcelain Photo Crossfade Stage & Minimalist Atelier Glass Card -->
+    <div style="margin-top:clamp(36px,5vw,50px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(24px,3vw,36px);align-items:center">
+      
+      <!-- Showcase: Subtle Hands-Free Photo Crossfade in Porcelain Golden Frame with PRO Studio Images -->
+      <div style="position:relative;border-radius:clamp(22px,3vw,28px);overflow:hidden;background:#FFFFFF;border:1.5px solid rgba(212,175,55,.45);box-shadow:0 24px 60px -15px rgba(120,85,20,.16);display:flex;flex-direction:column;height:100%">
+        
+        <!-- Top Status Pill -->
+        <div style="position:absolute;top:14px;left:14px;z-index:10;display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#0E0A06;pointer-events:none;box-shadow:0 4px 14px rgba(120,85,20,.18)">
+          <span style="width:7px;height:7px;border-radius:999px;background:#C8102E;box-shadow:0 0 8px #C8102E;display:inline-block"></span>
+          <span id="koreaSlideLabel">Botella Oficial 1000 ML · Packshot PRO</span>
+        </div>
+
+        <!-- Subtle Automatic Crossfade Stage (PRO Studio Photographs & Seúl) with Luminous Blending & Elegant Frame -->
+        <div id="koreaSlideshowStage" class="korea-showcase-stage" style="position:relative;width:100%;min-height:clamp(520px,52vw,700px);flex:1 1 auto;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#FFFFFF 0%,#FBF8F2 35%,#F4ECE0 68%,#EBE0D0 100%);display:flex;align-items:center;justify-content:center;user-select:none;pointer-events:none">
+          <!-- Soft ambient radiant backlight centered on bottle -->
+          <div style="position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:78%;height:70%;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.95) 0%,rgba(217,182,121,.24) 40%,transparent 72%);filter:blur(32px);pointer-events:none;z-index:1"></div>
+
+          <!-- Slide 1: PRO Studio Packshot Frontal en Podio -->
+          <img class="korea-subtle-photo" src="assets/korea-anuncio-3.jpg" alt="Korea Liss 1000ml Botella Oficial PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:1;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
+          <!-- Slide 2: PRO Studio Dual Render Frontal y Reverso Técnico -->
+          <img class="korea-subtle-photo" src="assets/korea-anuncio-1.jpg" alt="Korea Liss Dúo Salón Frente y Reverso Técnico PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
+          <!-- Slide 3: PRO Studio Detalle Ángulo Cenital Activos y Dragón -->
+          <img class="korea-subtle-photo" src="assets/korea-anuncio-2.jpg" alt="Korea Liss Detalle Cenital Taegeuk y Dragón PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
+          <!-- Slide 4: Korea Liss en Seúl bajo flores de cerezo -->
+          <img class="korea-subtle-photo" src="assets/korea-resultado-2.jpg" alt="Korea Liss en Seúl bajo cerezos" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
+
+          <!-- Soft peripheral vignette blending corners smoothly into card -->
+          <div style="position:absolute;inset:0;pointer-events:none;z-index:3;background:radial-gradient(ellipse at 50% 48%,transparent 54%,rgba(251,248,242,.3) 72%,rgba(244,236,224,.88) 98%)"></div>
+
+          <!-- Elegant Studio Sanctuary Frame (Bordeado de lujo con micro-borde dorado y esquinas curvas) -->
+          <div style="position:absolute;inset:clamp(8px,1.6vw,14px);border-radius:clamp(16px,2vw,22px);border:1.5px solid rgba(200,168,107,.35);box-shadow:inset 0 0 32px rgba(200,168,107,.08),0 8px 24px -8px rgba(120,85,20,.12);pointer-events:none;z-index:4"></div>
+        </div>
+
+        <!-- Showcase Footer -->
+        <div style="padding:13px 20px;background:#FFFFFF;border-top:1.5px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12.5px">
+          <div style="display:flex;align-items:center;gap:7px;color:#0E0A06;font-weight:800">
+            <span class="mi" style="font-size:18px;color:#9A6914">view_in_ar</span>
+            <span>Presentación Oficial Korea Liss 1000 ML</span>
+          </div>
+          <!-- Subtle indicator lines -->
+          <div style="display:inline-flex;align-items:center;gap:5px" aria-hidden="true">
+            <span class="korea-slide-indicator" style="width:16px;height:3px;border-radius:2px;background:#9A6914;transition:all .5s"></span>
+            <span class="korea-slide-indicator" style="width:5px;height:3px;border-radius:2px;background:rgba(212,175,55,.3);transition:all .5s"></span>
+            <span class="korea-slide-indicator" style="width:5px;height:3px;border-radius:2px;background:rgba(212,175,55,.3);transition:all .5s"></span>
+            <span class="korea-slide-indicator" style="width:5px;height:3px;border-radius:2px;background:rgba(212,175,55,.3);transition:all .5s"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Minimalist Luxury Atelier Card (Ultra-Sharp & High Contrast) -->
+      <div style="border-radius:28px;background:#FFFFFF;border:1.5px solid rgba(212,175,55,.45);box-shadow:0 20px 50px -15px rgba(120,85,20,.12);padding:clamp(22px,3.2vw,36px);display:flex;flex-direction:column;gap:20px">
+        
+        <!-- Product Header Snapshot -->
+        <div style="display:flex;align-items:center;gap:16px;padding-bottom:16px;border-bottom:1.5px solid rgba(212,175,55,.25)">
+          <div style="width:84px;height:84px;border-radius:18px;background:radial-gradient(circle at 50% 40%,#FFFDF9 0%,#F5EDDE 100%);border:1.5px solid rgba(212,175,55,.4);padding:6px;display:grid;place-items:center;flex:none;box-shadow:0 6px 16px rgba(120,85,20,.12)">
+            <img src="assets/korea-duo.png" alt="Dúo Korea Liss Salón" style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <span style="font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#855A12;display:block">DÚO MÁSTER SALÓN · 1000 ML</span>
+            <h3 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:900;color:#0E0A06;margin:3px 0 0;line-height:1.1">Korea Liss Profesional</h3>
+            <span style="font-size:13px;color:#241D15;font-weight:700;margin-top:4px;display:block">Rendimiento garantizado de 12 a 15 aplicaciones</span>
+          </div>
+        </div>
+
+        <!-- 3 Minimalist Benefit Rows (Ultra-Sharp & High Contrast) -->
+        <div style="display:grid;gap:12px">
+          
+          <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:16px;background:#FAF7F2;border:1.5px solid rgba(212,175,55,.3);box-shadow:0 2px 8px rgba(120,85,20,.04)">
+            <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,rgba(212,175,55,.25),rgba(212,175,55,.1));border:1.5px solid rgba(212,175,55,.4);display:grid;place-items:center;flex:none;color:#7A4F0A">
+              <span class="mi" style="font-size:21px">auto_fix_high</span>
+            </div>
+            <div style="flex:1">
+              <div style="font-size:15px;font-weight:900;color:#0E0A06">Liso Espejo &amp; Brillo Cristalino 3D</div>
+              <div style="font-size:13px;color:#1F1912;font-weight:600;margin-top:2px;line-height:1.45">Ginseng Rojo y Agua de Arroz bio-fermentada con nanonutrición profunda.</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:16px;background:#FAF7F2;border:1.5px solid rgba(212,175,55,.3);box-shadow:0 2px 8px rgba(120,85,20,.04)">
+            <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,rgba(200,16,46,.18),rgba(200,16,46,.06));border:1.5px solid rgba(200,16,46,.3);display:grid;place-items:center;flex:none;color:#B00D27">
+              <span class="mi" style="font-size:21px">shield</span>
+            </div>
+            <div style="flex:1">
+              <div style="font-size:15px;font-weight:900;color:#0E0A06">Blindaje Cuticular Anti-Frizz CICA</div>
+              <div style="font-size:13px;color:#1F1912;font-weight:600;margin-top:2px;line-height:1.45">Centella Asiática y Aceite de Camelia que sellan y blindan contra la humedad.</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:16px;background:#FAF7F2;border:1.5px solid rgba(212,175,55,.3);box-shadow:0 2px 8px rgba(120,85,20,.04)">
+            <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,rgba(37,211,102,.18),rgba(37,211,102,.06));border:1.5px solid rgba(37,211,102,.35);display:grid;place-items:center;flex:none;color:#137836">
+              <span class="mi" style="font-size:21px">eco</span>
+            </div>
+            <div style="flex:1">
+              <div style="font-size:15px;font-weight:900;color:#0E0A06">0% Formol · Confort Total en Salón</div>
+              <div style="font-size:13px;color:#1F1912;font-weight:600;margin-top:2px;line-height:1.45">Cero humo, cero ardor de ojos ni garganta. Apto para cabellos rubios y teñidos.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Golden Action CTAs (High Contrast) -->
+        <div style="display:flex;align-items:center;gap:12px;margin-top:4px;flex-wrap:wrap">
+          <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20ordenar%20*Korea%20Liss%20Alisado%20Coreano*%20para%20mi%20sal%C3%B3n." target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 26px;border-radius:999px;background:linear-gradient(135deg,#ECCF96 0%,#C39D51 50%,#9B7026 100%);color:#080604;font-size:14px;font-weight:900;letter-spacing:.02em;text-decoration:none;box-shadow:0 8px 24px -4px rgba(150,111,40,.45);transition:all .25s;flex:1 1 230px;min-width:min(100%,210px);text-align:center" onmouseover="this.style.filter='brightness(1.08)';this.style.transform='translateY(-1px)'" onmouseout="this.style.filter='none';this.style.transform='none'">
+            <span class="mi" style="font-size:19px">bolt</span>
+            <span>Comprar por WhatsApp</span>
+          </a>
+
+          <a href="https://wa.me/573135959808?text=Hola%20LYOS%20Profesional,%20deseo%20recibir%20el%20*Protocolo%20T%C3%A9cnico%20de%20Aplicaci%C3%B3n%20Korea%20Liss*." target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:7px;height:48px;padding:0 20px;border-radius:999px;border:2px solid #0E0A06;background:#FFFFFF;color:#0E0A06;font-size:13.5px;font-weight:900;text-decoration:none;transition:all .25s;flex:1 1 170px;min-width:min(100%,170px);text-align:center" onmouseover="this.style.background='#F6F0E6';this.style.borderColor='#855A12';this.style.color='#855A12'" onmouseout="this.style.background='#FFFFFF';this.style.borderColor='#0E0A06';this.style.color='#0E0A06'">
+            <span class="mi" style="font-size:18px;color:#137836">chat</span>
+            <span>Protocolo Técnico</span>
+          </a>
+        </div>
+
+        <!-- Micro Trust Row -->
+        <div style="display:flex;align-items:center;gap:16px;padding-top:14px;border-top:1.5px solid rgba(212,175,55,.25);font-size:12.5px;color:#1A140E;font-weight:700;flex-wrap:wrap">
+          <span style="display:inline-flex;align-items:center;gap:5px">
+            <span class="mi" style="font-size:16px;color:#B00D27">verified</span> 0% Formol
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:5px">
+            <span class="mi" style="font-size:16px;color:#7A4F0A">local_shipping</span> Envíos Colombia
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:5px">
+            <span class="mi" style="font-size:16px;color:#7A4F0A">schedule</span> Duración 5 Meses
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Section: VIP Video Showcase & Minimalist Golden KPI Strip -->
+    <div style="margin-top:clamp(36px,5vw,50px);border-radius:28px;background:#FFFFFF;border:1.5px solid rgba(212,175,55,.45);box-shadow:0 24px 60px -15px rgba(120,85,20,.12);padding:clamp(22px,3.5vw,36px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,3.5vw,44px);align-items:center">
+        
+        <!-- Video Card: Real Seúl demonstration with Multi-Track Switcher -->
+        <div style="justify-self:center;width:100%;max-width:320px">
+          <div style="position:relative;border-radius:24px;overflow:hidden;background:#FAF5EB;border:1.5px solid rgba(212,175,55,.45);box-shadow:0 18px 45px -10px rgba(120,85,20,.18);aspect-ratio:9/16;width:100%">
+            
+            <!-- Top Badge -->
+            <div style="position:absolute;top:12px;left:12px;z-index:10;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;pointer-events:none;box-shadow:0 4px 12px rgba(120,85,20,.12)">
+              <span style="width:7px;height:7px;border-radius:999px;background:#C8102E;box-shadow:0 0 8px #C8102E;display:inline-block"></span>
+              <span style="color:#0E0A06;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase">Desde Seúl 🇰🇷 @_p.aark</span>
+            </div>
+
+            <!-- Bottom Badge -->
+            <div style="position:absolute;bottom:12px;right:12px;z-index:10;display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;font-size:10.5px;font-weight:900;pointer-events:none;box-shadow:0 4px 12px rgba(120,85,20,.12)">
+              <span class="mi" style="font-size:14px;color:#9A6914">auto_awesome</span>
+              <span>100% Sin Formol</span>
+            </div>
+
+            <!-- Sound Toggle Button -->
+            <button type="button" onclick="toggleKoreaRealAudio(this)" aria-label="Activar sonido" style="position:absolute;top:12px;right:12px;z-index:15;width:36px;height:36px;border-radius:50%;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(120,85,20,.18);transition:all .2s">
+              <span class="mi" style="font-size:18px">volume_off</span>
+            </button>
+
+            <!-- Video Player (Autoplay en silencio continuo, responsive) -->
+            <video id="koreaRealDemoVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/korea-anuncio-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+              <source src="assets/korea-modelo-seul.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- Video Selector Switcher Pills -->
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px">
+            <button type="button" class="korea-vid-tab active" onclick="switchKoreaVideo('assets/korea-modelo-seul.mp4', this)" style="display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;background:linear-gradient(135deg,#ECCF96 0%,#C39D51 100%);border:1.5px solid #855A12;color:#080604;font-size:11.5px;font-weight:900;cursor:pointer;transition:all .2s;box-shadow:0 3px 10px rgba(150,111,40,.25)">
+              <span>🇰🇷 Seúl @_p.aark</span>
+            </button>
+            <button type="button" class="korea-vid-tab" onclick="switchKoreaVideo('assets/korea-liss-promo.mp4', this)" style="display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;font-size:11.5px;font-weight:800;cursor:pointer;transition:all .2s">
+              <span>✨ Promo Oficial</span>
+            </button>
+            <button type="button" class="korea-vid-tab" onclick="switchKoreaVideo('assets/korea-liss-lanzamiento.mp4', this)" style="display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;font-size:11.5px;font-weight:800;cursor:pointer;transition:all .2s">
+              <span>🌸 Lanzamiento</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Minimalist Golden Metrics & Salon Authority (High-Contrast & Ultra-Sharp) -->
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:999px;background:#FAF7F2;border:1.5px solid #C8A86B;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#0E0A06;font-weight:900">
+            <span class="mi" style="font-size:15px;color:#9A6914">workspace_premium</span>
+            <span>Máxima Rentabilidad en Salón</span>
+          </div>
+
+          <h3 style="font-family:'Outfit',sans-serif;font-size:clamp(25px,3.2vw,38px);font-weight:900;color:#0E0A06;margin:12px 0 0;line-height:1.15;letter-spacing:-.02em">
+            El Servicio de Alisado Más Rentable<br>
+            <span style="color:#855A12;display:inline-block;margin-top:2px">Para Salones Exclusivos</span>
+          </h3>
+
+          <p style="font-size:15px;color:#1A140E;font-weight:600;line-height:1.6;margin:12px 0 0;max-width:46ch">
+            Eleva el ticket promedio de tu salón con un tratamiento de alta fidelización que no satura el aire y deja un liso con caída libre natural.
+          </p>
+
+          <!-- 4 Minimalist Golden KPI Tiles (High Contrast) -->
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px">
+            <div style="padding:16px 18px;border-radius:18px;background:#FAF7F2;border:1.5px solid rgba(212,175,55,.35);box-shadow:0 4px 14px rgba(120,85,20,.06)">
+              <div style="font-family:'Outfit',sans-serif;font-size:30px;font-weight:900;color:#855A12;line-height:1">0%</div>
+              <div style="font-size:13px;font-weight:900;color:#0E0A06;margin-top:5px">Formol &amp; Vapores</div>
+              <div style="font-size:12px;font-weight:600;color:#2E251B;margin-top:2px">Seguridad total en cabina</div>
+            </div>
+            <div style="padding:16px 18px;border-radius:18px;background:#FAF7F2;border:1.5px solid rgba(212,175,55,.35);box-shadow:0 4px 14px rgba(120,85,20,.06)">
+              <div style="font-family:'Outfit',sans-serif;font-size:30px;font-weight:900;color:#855A12;line-height:1">5 Meses</div>
+              <div style="font-size:13px;font-weight:900;color:#0E0A06;margin-top:5px">Durabilidad Liso</div>
+              <div style="font-size:12px;font-weight:600;color:#2E251B;margin-top:2px">Sellado termo-activo</div>
+            </div>
+            <div style="padding:16px 18px;border-radius:18px;background:#FAF7F2;border:1.5px solid rgba(212,175,55,.35);box-shadow:0 4px 14px rgba(120,85,20,.06)">
+              <div style="font-family:'Outfit',sans-serif;font-size:30px;font-weight:900;color:#855A12;line-height:1">&gt;300%</div>
+              <div style="font-size:13px;font-weight:900;color:#0E0A06;margin-top:5px">Margen Salón</div>
+              <div style="font-size:12px;font-weight:600;color:#2E251B;margin-top:2px">12 a 15 servicios por litro</div>
+            </div>
+            <div style="padding:16px 18px;border-radius:18px;background:#FAF7F2;border:1.5px solid rgba(212,175,55,.35);box-shadow:0 4px 14px rgba(120,85,20,.06)">
+              <div style="font-family:'Outfit',sans-serif;font-size:30px;font-weight:900;color:#855A12;line-height:1">100%</div>
+              <div style="font-size:13px;font-weight:900;color:#0E0A06;margin-top:5px">Origen Seúl</div>
+              <div style="font-size:12px;font-weight:600;color:#2E251B;margin-top:2px">Certificación K-Beauty</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Automatic Subtle Crossfade & Video Controller JS for Korea Liss -->
+  <script>
+  (function() {
+    function setupKoreaRealVideo() {
+      var v = document.getElementById('koreaRealDemoVideo');
+      if (!v || v._inited) return;
+      v._inited = true;
+      v.muted = true;
+      v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      v.setAttribute('webkit-playsinline', '');
+      
+      var playP = v.play();
+      if (playP !== undefined) {
+        playP.catch(function() {
+          function onTouch() {
+            v.play().catch(function(){});
+            window.removeEventListener('touchstart', onTouch);
+            window.removeEventListener('scroll', onTouch);
+          }
+          window.addEventListener('touchstart', onTouch, { passive: true, once: true });
+          window.addEventListener('scroll', onTouch, { passive: true, once: true });
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              v.play().catch(function(){});
+            } else {
+              v.pause();
+            }
+          });
+        }, { threshold: 0.15 });
+        obs.observe(v);
+      }
+    }
+
+    window.toggleKoreaRealAudio = function(btn) {
+      var v = document.getElementById('koreaRealDemoVideo');
+      if (!v) return;
+      v.muted = !v.muted;
+      var icon = btn.querySelector('.mi');
+      if (icon) {
+        icon.textContent = v.muted ? 'volume_off' : 'volume_up';
+        icon.style.color = v.muted ? '#0E0A06' : '#137836';
+      }
+    };
+
+    window.switchKoreaVideo = function(src, btn) {
+      var v = document.getElementById('koreaRealDemoVideo');
+      if (!v) return;
+      v.pause();
+      v.src = src;
+      v.load();
+      v.play().catch(function(){});
+
+      var tabs = document.querySelectorAll('.korea-vid-tab');
+      tabs.forEach(function(t) {
+        t.style.background = '#FFFFFF';
+        t.style.borderColor = '#C8A86B';
+        t.style.color = '#0E0A06';
+        t.style.boxShadow = 'none';
+        t.style.fontWeight = '800';
+      });
+      if (btn) {
+        btn.style.background = 'linear-gradient(135deg,#ECCF96 0%,#C39D51 100%)';
+        btn.style.borderColor = '#855A12';
+        btn.style.color = '#080604';
+        btn.style.boxShadow = '0 3px 10px rgba(150,111,40,.25)';
+        btn.style.fontWeight = '900';
+      }
+    };
+    
+    function setupKoreaSubtleSlide() {
+      var stage = document.getElementById('koreaSlideshowStage');
+      if (!stage || stage._inited) return;
+      stage._inited = true;
+
+      var photos = stage.querySelectorAll('.korea-subtle-photo');
+      var indicators = document.querySelectorAll('.korea-slide-indicator');
+      var label = document.getElementById('koreaSlideLabel');
+      if (!photos || photos.length < 2) return;
+
+      var current = 0;
+      var labels = [
+        'Botella Oficial 1000 ML · Packshot PRO',
+        'Dúo Salón · Frente y Reverso Técnico',
+        'Detalle Activos · Ginseng, CICA y Arroz',
+        'Origen K-Beauty · Avalado para Colombia'
+      ];
+
+      setInterval(function() {
+        photos[current].style.opacity = '0';
+        if (indicators[current]) {
+          indicators[current].style.width = '5px';
+          indicators[current].style.background = 'rgba(212,175,55,.3)';
+        }
+
+        current = (current + 1) % photos.length;
+
+        photos[current].style.opacity = '1';
+        if (indicators[current]) {
+          indicators[current].style.width = '16px';
+          indicators[current].style.background = '#9A6914';
+        }
+        if (label && labels[current]) {
+          label.textContent = labels[current];
+        }
+      }, 2500);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { setupKoreaSubtleSlide(); setupKoreaRealVideo(); });
+    } else {
+      setupKoreaSubtleSlide(); setupKoreaRealVideo();
+    }
+  })();
+  </script>
+</section>
+
+
 
 
 
@@ -2193,7 +2621,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
                 <div style="display:flex;gap:8px">
                   <button onClick="{{ b.add }}" style="flex:1;height:44px;border:0;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 8px 20px -6px rgba(168,124,47,.6);transition:all .25s" style-hover="filter:brightness(1.08);transform:translateY(-1px)">
                     <span class="mi" style="font-size:18px">shopping_bag</span>
-                    <span>Comprar Kit</span>
+                    <span>Comprar</span>
                   </button>
                   <a href="{{ b.waLink }}" target="_blank" style="width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);display:grid;place-items:center;color:#25D366;transition:all .25s" style-hover="border-color:#25D366;transform:scale(1.05)">
                     <span class="mi" style="font-size:20px">chat</span>
@@ -2283,7 +2711,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
   <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:22px">
     <a href="#productos" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;text-decoration:none;box-shadow:0 8px 24px -6px rgba(168,124,47,.65);transition:all .25s" style-hover="filter:brightness(1.08);transform:translateY(-1px);color:var(--onGold)">
       <span class="mi" style="font-size:18px;color:var(--onGold)">shopping_bag</span>
-      <span style="color:var(--onGold)">Comprar Liso</span>
+      <span style="color:var(--onGold)">Comprar</span>
     </a>
     <a href="#contacto" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line2);background:var(--surf);color:var(--txt);font-weight:700;font-size:13px;text-decoration:none;transition:all .25s;box-shadow:var(--e1)" style-hover="background:var(--surf2);border-color:var(--gold);color:var(--gold);transform:translateY(-1px)">
       <span class="mi" style="font-size:18px;color:var(--gold)">support_agent</span>
@@ -2684,10 +3112,10 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
         <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(212,175,55,.2)">
           <a href="{{ roiWaLink }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;height:46px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13.5px;box-shadow:0 8px 20px -6px rgba(168,124,47,.7);transition:all .25s" style-hover="filter:brightness(1.08);transform:translateY(-1px)">
             <span class="mi" style="font-size:18px">storefront</span>
-            <span>Pedir Litro</span>
+            <span>Comprar</span>
           </a>
-          <a href="{{ waAcademia }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#FFFDF8;font-weight:700;font-size:13px" style-hover="background:rgba(255,255,255,.1)">
-            <span class="mi" style="font-size:18px;color:#25D366">school</span>
+          <a href="{{ waAcademia }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:999px;border:1.5px solid #754E0E;background:#FFFFFF;color:#523508;font-weight:800;font-size:13px" onmouseover="this.style.background='#FBF6EE';this.style.borderColor='#523508'" onmouseout="this.style.background='#FFFFFF';this.style.borderColor='#754E0E'">
+            <span class="mi" style="font-size:18px;color:#168B40">school</span>
             <span>Asesoría Salón</span>
           </a>
         </div>
@@ -2698,6 +3126,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 
   </div>
 </section>
+
 
 
 
@@ -3391,7 +3820,7 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
       
       <!-- Video de Capacitación Head Spa Sensorial -->
       <div style="position:relative;border-radius:22px;overflow:hidden;background:#000;border:1px solid rgba(212,175,55,.3);box-shadow:0 12px 36px -8px rgba(0,0,0,.7);max-height:280px;display:flex;align-items:center;justify-content:center">
-        <video src="assets/capacitacion-head-spa.mp4" controls playsinline webkit-playsinline preload="metadata" style="width:100%;height:100%;max-height:280px;object-fit:cover;display:block"></video>
+        <video src="assets/capacitacion-head-spa.mp4" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="metadata" style="width:100%;height:100%;max-height:280px;object-fit:cover;display:block"></video>
         <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:rgba(14,11,7,.8);border:1px solid rgba(212,175,55,.4);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#F1DEB8;backdrop-filter:blur(8px)">
           <span style="width:6px;height:6px;border-radius:999px;background:#25D366;box-shadow:0 0 6px #25D366"></span>
           Capacitación Head Spa Top
@@ -5150,28 +5579,53 @@ const PRODUCTS = [
     ],
     uso:'Paso 1: Lavar con Shampoo Limpieza Profunda. Paso 2: Aplicar Tratamiento de medios a puntas por 5 min y enjuagar. Paso 3: Rociar Protector Térmico antes de secar o planchar.'
   },
-  { id:'korea',
-    name:'Korea Liss · Alisado Coreano',
-    name_en:'Korea Liss · Korean Glass-Hair Smoothing',
-    name_pt:'Korea Liss · Alisamento Coreano Espelhado',
-    name_kr:'코리아 리스 · 오리엔탈 미러 샤인 매직 스트레이트',
-    cat:'Alisador', badge:'Nuevo', rating:'5.0', reviews:48,
-    img:'assets/korea-1l.png',
-    gallery:['assets/korea-1l.png','assets/korea-duo.png'],
-    variants:[{ml:'1 L · Uso Profesional', price:null}], quote:true,
-    tags:['Uso profesional','Brillo de espejo','Ginseng & Arroz fermentado'],
-    short:'Suavidad oriental y alineación con acabado espejo impecable.',
-    short_en:'Oriental silkiness with ultra-reflective mirror finish.',
-    short_pt:'Suavidade oriental com acabamento espelhado ultra reflexivo.',
-    short_kr:'발효 인삼과 쌀 추출물로 연출하는 실크 같은 광채와 매끄러움.',
-    desc:'Tratamiento de alineación capilar coreano de última generación. Diseñado para controlar el volumen rebelde y otorgar un acabado espejo supremo con extractos botánicos de ginseng fermentado, agua de arroz, semillas de camelia y pantenol.',
+    { id:'korea',
+    name:'Korea Liss · Alisado Coreano 1000 ML',
+    name_en:'Korea Liss · Korean Glass-Hair Smoothing 1000 ML',
+    name_pt:'Korea Liss · Alisamento Coreano Espelhado 1000 ML',
+    name_kr:'코리아 리스 · 오리엔탈 미러 샤인 매직 스트레이트 1000 ML',
+    cat:'Alisador', badge:'PRO · Nuevo', rating:'5.0', reviews:52,
+    img:'assets/korea-anuncio-3.jpg',
+    gallery:['assets/korea-anuncio-3.jpg','assets/korea-anuncio-1.jpg','assets/korea-anuncio-2.jpg','assets/korea-duo.png'],
+    variants:[{ml:'1 L · Botella Oficial Salón', price:null}], quote:true,
+    tags:['Packshot PRO Oficial','0% Formol','Ginseng & Arroz Bio-fermentado','Brillo Espejo 3D'],
+    short:'Biotecnología coreana bio-fermentada en Seúl. Alisado espejo 3D y confort total en salón.',
+    short_en:'Korean biotechnology bio-fermented in Seoul. 3D mirror smoothing and salon comfort.',
+    short_pt:'Biotecnologia coreana biofermentada em Seul. Alisamento espelhado 3D e conforto.',
+    short_kr:'서울에서 바이오 발효된 K-뷰티 테크놀로지. 3D 미러 샤인과 극상의 살롱 편안함.',
+    desc:'Tratamiento de alineación y alisado capilar coreano de última generación. Desarrollado en Seúl con extractos botánicos bio-fermentados: ginseng rojo, agua de arroz, Centella Asiática (CICA), semillas de camelia y pantenol. Diseñado para controlar el volumen rebelde y otorgar un acabado espejo supremo con confort absoluto en cabina: 0% formol, sin humo, sin ardor de ojos ni garganta.',
     bullets:[
-      'Alisado coreano con acabado espejo reflectivo',
-      'Ginseng fermentado y agua de arroz para nutrición profunda',
-      'Semillas de camelia que aportan sedosidad sin peso',
-      'Exclusivo para uso profesional en salones'
+      'Botella Oficial 1000 ML · Packshot PRO en podio con dispensador dosificador',
+      'Alisado coreano con acabado espejo reflectivo 3D y tacto de seda',
+      'Ginseng fermentado, agua de arroz y Centella Asiática para nutrición celular',
+      'Rendimiento superior: 12 a 15 servicios profesionales completos por litro',
+      '0% Formol garantizado: máxima seguridad y bienestar para estilista y clienta'
     ],
-    uso:'Producto exclusivo para salones y profesionales capacitados. Solicita la ficha técnica completa y el protocolo de aplicación por WhatsApp.'
+    uso:'Producto exclusivo para salones y profesionales capacitados. Solicita la ficha técnica oficial y el protocolo de aplicación paso a paso por WhatsApp.'
+  },
+  { id:'korea-duo',
+    name:'Dúo Salón Master · Korea Liss 1L + Preparador',
+    name_en:'Master Salon Duo · Korea Liss 1L + Clarifying Shampoo',
+    name_pt:'Duo Salão Master · Korea Liss 1L + Shampoo Preparador',
+    name_kr:'살롱 마스터 듀오 · 코리아 리스 1L + 클라리파잉 샴푸',
+    cat:'Alisador', badge:'Kit Salón PRO', rating:'5.0', reviews:38,
+    img:'assets/korea-anuncio-1.jpg',
+    gallery:['assets/korea-anuncio-1.jpg','assets/korea-anuncio-3.jpg','assets/korea-anuncio-2.jpg','assets/korea-duo.png'],
+    variants:[{ml:'2 × 1000 ML (Dúo Salón)', price:null}], quote:true,
+    tags:['Protocolo Completo','1 Litro + 1 Litro','0% Formol','Margen >300%'],
+    short:'Combo profesional maestro: Alisado Korea Liss 1000 ML + Shampoo Limpieza Profunda 1000 ML.',
+    short_en:'Master salon combo: Korea Liss Smoothing 1000 ML + Clarifying Shampoo 1000 ML.',
+    short_pt:'Combo profissional mestre: Alisamento Korea Liss 1000 ML + Shampoo Anti-Resíduos 1000 ML.',
+    short_kr:'전문 살롱 마스터 콤보: 코리아 리스 1000 ML + 딥 클렌징 샴푸 1000 ML.',
+    desc:'El kit maestro para salones de alto volumen. Incluye 1 Litro de Alisado Coreano Korea Liss con dispensador dosificador + 1 Litro de Shampoo de Limpieza Profunda Preparador Anti-Residuos. Diseñado para garantizar la máxima penetración de los activos botánicos de Seúl y asegurar un alisado espejo duradero de hasta 5 meses con la más alta rentabilidad por servicio.',
+    bullets:[
+      '1 Litro Korea Liss Alisado Coreano + 1 Litro Shampoo Anti-Residuos Oficial',
+      'Fotografía PRO de estudio con vista frontal y reverso técnico de aplicación',
+      'Protocolo técnico completo certificado para cabina profesional',
+      'Dispensadores de precisión de alto rendimiento para cero desperdicio',
+      'Margen de ganancia superior al 300% en salones exclusivos'
+    ],
+    uso:'Lavar de 2 a 3 veces con el Shampoo Anti-Residuos según diagnóstico capilar. Secar al 100%. Aplicar Korea Liss en mechones finos a 1 cm de la raíz. Dejar actuar 60 a 90 minutos. Enjuagar solo con agua, aplicar protector térmico y sellar con plancha profesional a temperatura adecuada.'
   },
   { id:'bio',
     name:'Bio Intense · Alisado Brasileño',
@@ -5800,7 +6254,7 @@ class Component extends DCLogic {
   componentDidMount() {
     const P = this.props;
     const isMob = typeof window !== 'undefined' && window.innerWidth < 768;
-    const init = { theme:P.startTheme ?? 'light', hero:P.heroVariant ?? 'a', grid:P.productLayout ?? 'editorial', isMobile:isMob };
+    const init = { theme:P.startTheme ?? 'light', hero:P.heroVariant ?? 'a', grid:'editorial', isMobile:isMob };
     try {
       const raw = localStorage.getItem('lyos.state');
       if (raw) {
@@ -5808,7 +6262,6 @@ class Component extends DCLogic {
         init.cart = d.cart || []; init.fav = d.fav || []; init.lang = d.lang || 'es';
         if (P.startTheme == null && d.theme) init.theme = d.theme;
         if (P.heroVariant == null && d.hero) init.hero = d.hero;
-        if (P.productLayout == null && d.grid) init.grid = d.grid;
       }
     } catch (e) {}
     this.setState(init);
@@ -6771,36 +7224,24 @@ class Component extends DCLogic {
     });
   }
 
-  // 1. HERO BACKGROUND VIDEO (#heroBgVideo)
-  // - Plays with sound ONCE on first cycle upon user interaction.
-  // - ALL subsequent loops are 100% SILENT.
+  // 1. FIRST VIDEO OF THE LANDING (#heroBgVideo)
+  // - Plays with sound on its FIRST cycle.
+  // - Once that 1st cycle completes, mutes permanently for all subsequent loops.
+  // - Video always stays in continuous, seamless loop.
   function initHeroVideo() {
     var heroVid = document.getElementById('heroBgVideo');
     if (!heroVid || heroVid._heroInit) return;
     heroVid._heroInit = true;
 
-    var hasPlayedFirstSoundCycle = false;
-    var isFading = false;
-    heroVid.removeAttribute('loop');
-    heroVid.muted = true; // Starts muted for autoplay policy compliance
+    // Strict requirements: continuous loop, playsinline
+    heroVid.loop = true;
+    heroVid.setAttribute('loop', '');
+    heroVid.setAttribute('playsinline', '');
+    heroVid.setAttribute('webkit-playsinline', '');
+    heroVid.setAttribute('x5-playsinline', '');
 
-    // Graceful fallback if video fails to load or can't play on device:
-    function handleHeroVideoFallback() {
-      heroVid.style.opacity = '0';
-      heroVid.style.display = 'none';
-      var btn = document.getElementById('heroAudioBtn');
-      if (btn) btn.style.display = 'none';
-    }
-
-    heroVid.addEventListener('error', handleHeroVideoFallback, true);
-    var sourceEl = heroVid.querySelector('source');
-    if (sourceEl) {
-      sourceEl.addEventListener('error', handleHeroVideoFallback);
-    }
-
-    heroVid.addEventListener('canplay', function() {
-      heroVid.style.opacity = '1';
-    });
+    var hasCompletedHeroSound = false;
+    var heroSoundActive = false;
 
     function updateHeroAudioUI() {
       var icon = document.getElementById('heroAudioIcon');
@@ -6809,7 +7250,91 @@ class Component extends DCLogic {
       if (label) label.textContent = heroVid.muted ? 'Audio silenciado' : 'Audio activo';
     }
 
-    // Floating Button: allows user to toggle hero sound
+    // Attempt unmuted playback immediately (if browser policy allows):
+    heroVid.muted = false;
+    heroVid.volume = 1;
+    var p = heroVid.play();
+    if (p !== undefined) {
+      p.then(function() {
+        heroSoundActive = true;
+        updateHeroAudioUI();
+      }).catch(function() {
+        // Browser blocked unmuted autoplay: start muted until first user interaction
+        heroVid.muted = true;
+        heroVid.play().catch(function() {});
+        updateHeroAudioUI();
+      });
+    }
+
+    // ON FIRST USER GESTURE (click, touch, pointer, key, scroll):
+    // Unmute heroBgVideo so it plays its FIRST cycle with sound!
+    function activateHeroSoundFirstTime() {
+      if (hasCompletedHeroSound) return;
+      // Only activate if user is still in the hero section
+      if (window.scrollY < 650 && heroVid.muted) {
+        muteAllExcept(heroVid);
+        heroVid.muted = false;
+        heroVid.volume = 1;
+        heroSoundActive = true;
+        heroVid.play().then(function() {
+          updateHeroAudioUI();
+        }).catch(function() {});
+      }
+      removeHeroGestureListeners();
+    }
+
+    function removeHeroGestureListeners() {
+      var evts = ['click', 'touchstart', 'pointerdown', 'keydown', 'scroll'];
+      evts.forEach(function(e) {
+        document.removeEventListener(e, activateHeroSoundFirstTime, true);
+        window.removeEventListener(e, activateHeroSoundFirstTime, true);
+      });
+    }
+
+    var evts = ['click', 'touchstart', 'pointerdown', 'keydown', 'scroll'];
+    evts.forEach(function(e) {
+      document.addEventListener(e, activateHeroSoundFirstTime, { once: true, passive: true });
+      window.addEventListener(e, activateHeroSoundFirstTime, { once: true, passive: true });
+    });
+
+    // Monitor playback: as soon as the unmuted cycle finishes, MUTE PERMANENTLY for all future loops!
+    var lastTime = 0;
+    heroVid.addEventListener('timeupdate', function() {
+      if (hasCompletedHeroSound) return;
+
+      // When the video is playing with sound:
+      if (!heroVid.muted && heroVid.duration && !isNaN(heroVid.duration)) {
+        // Near end of video (within 0.6s):
+        if (heroVid.currentTime >= heroVid.duration - 0.6) {
+          heroVid.muted = true;
+          hasCompletedHeroSound = true;
+          heroSoundActive = false;
+          updateHeroAudioUI();
+          return;
+        }
+
+        // Detect loop wrap-around (currentTime jumped from end back to beginning):
+        if (lastTime > 4 && heroVid.currentTime < 1) {
+          heroVid.muted = true;
+          hasCompletedHeroSound = true;
+          heroSoundActive = false;
+          updateHeroAudioUI();
+          return;
+        }
+      }
+      lastTime = heroVid.currentTime;
+    });
+
+    heroVid.addEventListener('ended', function() {
+      heroVid.currentTime = 0;
+      heroVid.muted = true;
+      hasCompletedHeroSound = true;
+      heroSoundActive = false;
+      updateHeroAudioUI();
+      heroVid.play().catch(function() {});
+    });
+
+    // Manual audio toggle button
     window.toggleHeroAudio = function() {
       heroVid.muted = !heroVid.muted;
       if (!heroVid.muted) {
@@ -6820,153 +7345,120 @@ class Component extends DCLogic {
       updateHeroAudioUI();
     };
 
-    // ON FIRST USER INTERACTION (click or touch): ONLY heroBgVideo unmutes for its 1st cycle!
-    function playHeroSoundFirstTime() {
-      if (!hasPlayedFirstSoundCycle && heroVid.muted) {
-        muteAllExcept(heroVid);
-        heroVid.muted = false;
-        heroVid.volume = 1;
-        heroVid.play().then(function() {
-          updateHeroAudioUI();
-        }).catch(function() {
-          heroVid.muted = true;
-          updateHeroAudioUI();
+    // Mute hero video if user scrolls past hero
+    if ('IntersectionObserver' in window) {
+      var heroObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting && !heroVid.muted) {
+            heroVid.muted = true;
+            hasCompletedHeroSound = true;
+            updateHeroAudioUI();
+          }
         });
-      }
+      }, { threshold: 0.08 });
+      heroObs.observe(heroVid);
     }
-    document.addEventListener('click', playHeroSoundFirstTime, { once: true });
-    document.addEventListener('touchstart', playHeroSoundFirstTime, { once: true });
 
-    // Loop monitoring: 2.5s before end, fade out, rewind to 0, and MUTE for all future loops!
-    heroVid.addEventListener('timeupdate', function() {
-      if (!heroVid.duration || isNaN(heroVid.duration)) return;
-
-      var loopTime = Math.max(0, heroVid.duration - 2.5);
-      var fadeStart = Math.max(0, loopTime - 0.7);
-
-      if (heroVid.currentTime >= fadeStart && !isFading) {
-        isFading = true;
-        heroVid.style.transition = 'opacity 0.6s ease';
-        heroVid.style.opacity = '0';
-
-        setTimeout(function() {
-          heroVid.currentTime = 0;
-          
-          // STRICT: MUTE FOR ALL SUBSEQUENT LOOPS!
-          heroVid.muted = true;
-          hasPlayedFirstSoundCycle = true;
-          updateHeroAudioUI();
-
-          heroVid.play().catch(function() {});
-
-          setTimeout(function() {
-            heroVid.style.opacity = '1';
-            isFading = false;
-          }, 120);
-        }, 620);
-      }
-    });
-
-    heroVid.addEventListener('ended', function() {
-      heroVid.currentTime = 0;
-      heroVid.muted = true;
-      hasPlayedFirstSoundCycle = true;
-      updateHeroAudioUI();
-      heroVid.play().catch(function() {});
-    });
-
-    // Start playback immediately
-    heroVid.play().catch(function() {});
+    // Error fallback
+    function handleHeroFallback() {
+      heroVid.style.opacity = '0';
+      var btn = document.getElementById('heroAudioBtn');
+      if (btn) btn.style.display = 'none';
+    }
+    heroVid.addEventListener('error', handleHeroFallback, true);
+    var src = heroVid.querySelector('source');
+    if (src) src.addEventListener('error', handleHeroFallback);
   }
 
-  // 2. ALL OTHER VIDEOS: 100% MUTED FOREVER (Unless user manually unmutes via controls)
-  function initOtherVideos() {
-    var otherIds = ['showcaseVideo', 'restauracionVideo'];
-    
-    otherIds.forEach(function(id) {
-      var v = document.getElementById(id);
-      if (!v) return;
+  // 2. SHOWCASE VIDEO (#showcaseVideo)
+  window.toggleShowcaseAudio = function(btn) {
+    var v = document.getElementById('showcaseVideo');
+    if (!v) return;
+    v.muted = !v.muted;
+    if (!v.muted) {
+      muteAllExcept(v);
+      v.volume = 1;
+      v.play().catch(function() {});
+    }
+    var icon = btn ? btn.querySelector('.mi') : null;
+    if (icon) icon.textContent = v.muted ? 'volume_off' : 'volume_up';
+  };
 
-      v.muted = true;
-      v.defaultMuted = true;
+  // 3. KIT REAL DEMO VIDEO
+  window.toggleKitRealAudio = function(btn) {
+    var v = document.getElementById('kitRealDemoVideo');
+    if (!v) return;
+    v.muted = !v.muted;
+    if (!v.muted) {
+      muteAllExcept(v);
+      v.volume = 1;
+      v.play().catch(function() {});
+    }
+    var icon = btn ? btn.querySelector('.mi') : null;
+    if (icon) icon.textContent = v.muted ? 'volume_off' : 'volume_up';
+  };
+
+  // 4. KOREA REAL DEMO VIDEO
+  window.toggleKoreaRealAudio = function(btn) {
+    var v = document.getElementById('koreaRealDemoVideo');
+    if (!v) return;
+    v.muted = !v.muted;
+    if (!v.muted) {
+      muteAllExcept(v);
+      v.volume = 1;
+      v.play().catch(function() {});
+    }
+    var icon = btn ? btn.querySelector('.mi') : null;
+    if (icon) icon.textContent = v.muted ? 'volume_off' : 'volume_up';
+  };
+
+  // 5. ALL OTHER VIDEOS: 100% IN CONTINUOUS LOOP & MUTED
+  function initOtherVideos() {
+    var heroVid = document.getElementById('heroBgVideo');
+
+    document.querySelectorAll('video').forEach(function(v) {
+      // Ensure continuous loop and playsinline
+      v.loop = true;
+      v.setAttribute('loop', '');
       v.setAttribute('playsinline', '');
       v.setAttribute('webkit-playsinline', '');
+      v.setAttribute('x5-playsinline', '');
 
-      // If user manually turns on volume via controls, mute every other video
-      v.addEventListener('volumechange', function() {
-        if (!v.muted) {
-          muteAllExcept(v);
-        }
-      });
-    });
+      if (v !== heroVid) {
+        v.muted = true;
+        v.defaultMuted = true;
+      }
 
-    // Showcase video: seamless loop, fades 2.5s before publicity, ALWAYS in complete silence
-    var showcase = document.getElementById('showcaseVideo');
-    if (showcase && !showcase._loopInit) {
-      showcase._loopInit = true;
-      showcase.removeAttribute('loop');
-      showcase.muted = true;
-
-      showcase.addEventListener('timeupdate', function() {
-        if (!showcase.duration || isNaN(showcase.duration)) return;
-        var loopTime = Math.max(0, showcase.duration - 2.5);
-        if (showcase.currentTime >= loopTime - 0.7 && !showcase._isFading) {
-          showcase._isFading = true;
-          showcase.style.transition = 'opacity 0.6s ease';
-          showcase.style.opacity = '0';
-          setTimeout(function() {
-            showcase.currentTime = 0;
-            showcase.muted = true; // Always silent
-            showcase.play().catch(function() {});
-            setTimeout(function() {
-              showcase.style.opacity = '1';
-              showcase._isFading = false;
-            }, 120);
-          }, 620);
-        }
-      });
-      showcase.play().catch(function() {});
-    }
-
-    // Restauracion Video: plays instantly on scroll in 100% SILENCE
-    var rv = document.getElementById('restauracionVideo');
-    if (rv && !rv._scrollInit) {
-      rv._scrollInit = true;
-      rv.muted = true;
-      rv.defaultMuted = true;
-
-      if ('IntersectionObserver' in window) {
-        var rObs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              rv.muted = true; // STRICTLY MUTED
-              rv.play().catch(function() {});
+      // If user unmuted via manual button, auto-mute at the end of that cycle:
+      var prevT = 0;
+      v.addEventListener('timeupdate', function() {
+        if (!v.muted && v !== heroVid && v.duration && !isNaN(v.duration)) {
+          if (v.currentTime >= v.duration - 0.6 || (prevT > 3 && v.currentTime < 1)) {
+            v.muted = true;
+            // Update button icon
+            var container = v.closest('div');
+            var btn = container ? container.querySelector('button[onclick*="toggle"]') : null;
+            if (btn) {
+              var mi = btn.querySelector('.mi');
+              if (mi) mi.textContent = 'volume_off';
             }
-          });
-        }, { rootMargin: '160px 0px', threshold: 0.05 });
-        rObs.observe(rv);
-      }
-
-      function triggerRv() {
-        if (rv.paused) {
-          rv.muted = true; // STRICTLY MUTED
-          rv.play().catch(function() {});
+          }
         }
-      }
-      window.addEventListener('scroll', triggerRv, { passive: true });
-      window.addEventListener('touchmove', triggerRv, { passive: true });
-      rv.play().catch(function() {});
-    }
+        prevT = v.currentTime;
+      });
+
+      v.play().catch(function() {});
+    });
   }
 
-  // 3. ACADEMIA BACKGROUND VIDEO (#academiaBgVideo)
-  // - Plays silently in background. User can toggle audio via floating button.
-  // - IntersectionObserver triggers playback only when visible.
+  // 6. ACADEMIA BACKGROUND VIDEO (#academiaBgVideo)
   function initAcademiaVideo() {
     var vid = document.getElementById('academiaBgVideo');
     if (!vid || vid._academiaInit) return;
     vid._academiaInit = true;
 
+    vid.loop = true;
+    vid.setAttribute('loop', '');
     vid.muted = true;
     vid.defaultMuted = true;
     vid.setAttribute('playsinline', '');
@@ -6979,7 +7471,6 @@ class Component extends DCLogic {
       if (label) label.textContent = vid.muted ? 'Audio silenciado' : 'Audio activo';
     }
 
-    // Floating button: toggle academia video sound
     window.toggleAcademiaAudio = function() {
       vid.muted = !vid.muted;
       if (!vid.muted) {
@@ -6990,21 +7481,6 @@ class Component extends DCLogic {
       updateAcademiaAudioUI();
     };
 
-    // Graceful fallback if video unavailable
-    function handleFallback() {
-      vid.style.opacity = '0';
-      var btn = document.getElementById('academiaAudioBtn');
-      if (btn) btn.style.display = 'none';
-    }
-    vid.addEventListener('error', handleFallback, true);
-    var srcEl = vid.querySelector('source');
-    if (srcEl) srcEl.addEventListener('error', handleFallback);
-
-    vid.addEventListener('canplay', function() {
-      vid.style.opacity = '1';
-    });
-
-    // IntersectionObserver: play/pause based on visibility
     if ('IntersectionObserver' in window) {
       var aObs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -7012,6 +7488,10 @@ class Component extends DCLogic {
             vid.play().catch(function() {});
           } else {
             vid.pause();
+            if (!vid.muted) {
+              vid.muted = true;
+              updateAcademiaAudioUI();
+            }
           }
         });
       }, { rootMargin: '200px 0px', threshold: 0.05 });

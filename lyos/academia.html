@@ -19,8 +19,16 @@
   Cal.config = Cal.config || {};
   Cal.config.forwardQueryParams = true;
 </script>
+<script src="assets/seamless-nav.js" defer></script>
 
 <style>
+/* Native Cross-Document View Transitions (Chromium / Edge / Safari 18+) */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: 90ms cubic-bezier(0.4, 0, 0.2, 1) both lyosFadeOut; }
+::view-transition-new(root) { animation: 130ms cubic-bezier(0.2, 0.8, 0.2, 1) both lyosFadeIn; }
+@keyframes lyosFadeOut { from { opacity: 1; } to { opacity: 0.94; } }
+@keyframes lyosFadeIn { from { opacity: 0.94; } to { opacity: 1; } }
+
 :root{
   --bg:#0B0A08;--bg2:#12100C;--surf:#171410;--surf2:#201B14;--surf3:#2C251C;
   --line:rgba(232,214,180,.12);--line2:rgba(232,214,180,.24);
@@ -234,7 +242,7 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
 <section id="hero-academia" style="position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0B0A08">
 
   <!-- LYOS Comercial Video Background — fills 100% viewport like landing -->
-  <video id="acadHeroVideo" autoplay muted playsinline webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
+  <video id="acadHeroVideo" autoplay loop muted playsinline webkit-playsinline x5-playsinline poster="assets/equipo-profesionales-navy.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;transition:opacity 0.6s ease;opacity:0" preload="metadata">
     <source src="assets/lyos-profesional-comercial.mp4" type="video/mp4">
   </video>
 
@@ -827,7 +835,7 @@ button{font:inherit;cursor:pointer;border:0;background:transparent}
       
       <!-- Video Player Column -->
       <div style="position:relative;background:#0A0806;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-        <video id="videoHeadSpa" src="assets/capacitacion-head-spa.mp4" playsinline webkit-playsinline controls preload="metadata" style="width:100%;height:100%;max-height:560px;object-fit:cover;display:block"></video>
+        <video id="videoHeadSpa" src="assets/capacitacion-head-spa.mp4" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="metadata" style="width:100%;height:100%;max-height:560px;object-fit:cover;display:block"></video>
         
         <!-- Luxury Floating Live Badge -->
         <div style="position:absolute;top:16px;left:16px;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:999px;background:rgba(14,11,7,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(241,222,184,.4);font-size:10.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#F1DEB8">
@@ -1616,7 +1624,7 @@ function handleSpeakerPlay(btn) {
     
     container.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + encodeURIComponent(cleanId) + '?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>';
   } else if (fallbackVideo) {
-    container.innerHTML = '<video src="' + fallbackVideo + '" controls autoplay playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>';
+    container.innerHTML = '<video src="' + fallbackVideo + '" loop muted autoplay playsinline webkit-playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>';
   } else {
     var userUrl = prompt('Pega el enlace o ID del video de YouTube que deseas incrustar:');
     if (userUrl && userUrl.trim()) {
@@ -1635,12 +1643,13 @@ function handleSpeakerPlay(btn) {
   var fallback = document.getElementById('acadHeroBgFallback');
   if (!vid) return;
 
-  var hasPlayedFirstSoundCycle = false;
-  var isFading = false;
-
-  // Remove loop — we handle it manually so we can mute after first cycle
-  vid.removeAttribute('loop');
-  vid.muted = true; // Start muted for autoplay compliance
+  // Ensure continuous silent loop
+  vid.loop = true;
+  vid.setAttribute('loop', '');
+  vid.muted = true;
+  vid.defaultMuted = true;
+  vid.setAttribute('playsinline', '');
+  vid.setAttribute('webkit-playsinline', '');
 
   // Show video / hide fallback once ready
   vid.addEventListener('canplay', function() {
@@ -1673,56 +1682,34 @@ function handleSpeakerPlay(btn) {
     });
   }
 
-  // ON FIRST USER INTERACTION: unmute and play with sound for the first cycle
-  function playWithSoundFirstTime() {
-    if (!hasPlayedFirstSoundCycle && vid.muted) {
-      muteOthers();
-      vid.muted = false;
-      vid.volume = 1;
-      vid.play().then(function() {
-        updateUI();
-      }).catch(function() {
-        vid.muted = true;
-        updateUI();
-      });
-    }
-  }
-  document.addEventListener('click', playWithSoundFirstTime, { once: true });
-  document.addEventListener('touchstart', playWithSoundFirstTime, { once: true });
-
-  // Loop monitor: 2.5s before end → fade out, rewind to 0, MUTE for all future loops
+  // If user unmuted manually via button, auto-mute when cycle completes:
+  var prevT = 0;
   vid.addEventListener('timeupdate', function() {
-    if (!vid.duration || isNaN(vid.duration)) return;
-
-    var loopPoint = Math.max(0, vid.duration - 2.5);
-    var fadeStart = Math.max(0, loopPoint - 0.7);
-
-    if (vid.currentTime >= fadeStart && !isFading) {
-      isFading = true;
-      vid.style.transition = 'opacity 0.6s ease';
-      vid.style.opacity = '0';
-
-      setTimeout(function() {
-        vid.currentTime = 0;
-        // MUTE FOR ALL SUBSEQUENT LOOPS
+    if (!vid.muted && vid.duration && !isNaN(vid.duration)) {
+      if (vid.currentTime >= vid.duration - 0.6 || (prevT > 3 && vid.currentTime < 1)) {
         vid.muted = true;
-        hasPlayedFirstSoundCycle = true;
         updateUI();
-        vid.play().catch(function() {});
-        setTimeout(function() {
-          vid.style.opacity = '1';
-          isFading = false;
-        }, 120);
-      }, 620);
+      }
     }
+    prevT = vid.currentTime;
   });
 
   vid.addEventListener('ended', function() {
     vid.currentTime = 0;
     vid.muted = true;
-    hasPlayedFirstSoundCycle = true;
     updateUI();
     vid.play().catch(function() {});
+  });
+
+  // Global guarantee for all videos in academia: continuous loop, muted
+  document.querySelectorAll('video').forEach(function(v) {
+    v.loop = true;
+    v.setAttribute('loop', '');
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
+    v.muted = true;
+    v.defaultMuted = true;
+    v.play().catch(function() {});
   });
 
   // Manual toggle button
