@@ -2295,37 +2295,65 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
 <!-- ========================================================================= -->
 <!-- BANNER EDITORIAL DE MARCA: EQUIPO & VISIÓN LYOS (BG SECUNDARIO)          -->
 <!-- ========================================================================= -->
-<!-- SESIÓN UNIFICADA VIP: CONSULTORÍA DIRECTA & EQUIPO LYOS                   -->
+<!-- SESIÓN UNIFICADA VIP: EQUIPO LYOS & ASESORÍA DIRECTA                     -->
 <!-- ========================================================================= -->
 <section id="agendar" style="position:relative;width:100%;margin-top:clamp(48px,6.5vw,84px);background:radial-gradient(circle at 50% 0%,#22180D 0%,#110E0A 35%,#070604 100%);border-top:1.5px solid rgba(212,175,55,.35);border-bottom:1.5px solid rgba(212,175,55,.35);overflow:hidden;box-shadow:0 30px 90px -20px rgba(0,0,0,.9)">
   
-  <!-- TOP PART: AGENDAMIENTO & CONSULTORÍA 1 A 1 DIRECTA -->
-  <div style="position:relative;padding:clamp(44px,6vw,72px) 0 clamp(32px,4vw,48px);color:#FBF8F2">
+  <!-- TOP PART: HERO TEAM PANORAMIC BANNER (UNIFIED BRAND & BOOKING HEADER) -->
+  <div id="banner-equipo" style="position:relative;width:100%;min-height:clamp(420px,50vh,560px);background:url('assets/bg-secundario.jpg') center 36% / cover no-repeat;display:flex;align-items:center;justify-content:center;overflow:hidden">
+    
+    <!-- Multi-layered black & gold atmospheric overlay that transitions seamlessly into the agenda lounge below -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,10,8,.32) 0%,rgba(11,10,8,.68) 55%,rgba(11,10,8,.98) 100%),linear-gradient(180deg,rgba(11,10,8,.75) 0%,rgba(11,10,8,.18) 35%,rgba(11,10,8,.7) 70%,#110E0A 100%)"></div>
+    
+    <!-- Ambient gold central glow -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(900px,94vw);height:320px;background:radial-gradient(ellipse,rgba(212,175,55,.14) 0%,transparent 65%);filter:blur(50px);pointer-events:none"></div>
+
+    <!-- Editorial Content on Banner (Unified & Blended: Team + VIP Booking, Zero Duplication) -->
+    <div style="position:relative;z-index:3;max-width:920px;margin:0 auto;padding:clamp(44px,5.5vw,68px) 20px clamp(36px,4.5vw,52px);text-align:center">
+      
+      <!-- Top Badge -->
+      <div style="display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:999px;border:1px solid rgba(241,222,184,.35);background:rgba(14,11,7,.65);backdrop-filter:blur(12px);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#F1DEB8;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,.5)">
+        <span style="width:7px;height:7px;border-radius:999px;background:#25D366;box-shadow:0 0 8px #25D366;display:inline-block"></span>
+        <span>TALENTO &amp; EXCELENCIA LYOS · ASESORÍA VIP 1 A 1</span>
+      </div>
+
+      <!-- Main Title (Blended: El Equipo + Reserva tu Asesoría) -->
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(30px,4.8vw,54px);font-weight:900;letter-spacing:-.035em;line-height:1.08;margin:0;color:#FFFDF8;text-shadow:0 8px 24px rgba(0,0,0,.85)">
+        El Equipo Detrás de tu Transformación<br>
+        <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.92em;letter-spacing:0;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none">reserva tu asesoría VIP con nuestras formadoras</span>
+      </h2>
+
+      <!-- Subtitle (Blended, concise, no excess text) -->
+      <p style="max-width:62ch;margin:14px auto 0;font-size:clamp(14px,1.35vw,16.5px);line-height:1.6;color:rgba(255,253,248,.88);text-shadow:0 2px 8px rgba(0,0,0,.7)">
+        Especialistas capilares y formadoras certificadas comprometidas con el éxito de tu salón. Selecciona tu área de interés y confirma tu fecha y hora en tiempo real:
+      </p>
+
+      <!-- Action CTAs -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px">
+        <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 24px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13.5px;box-shadow:0 12px 26px -6px rgba(168,124,47,.65);text-decoration:none;transition:all .25s" onmouseover="this.style.filter='brightness(1.08)';this.style.transform='translateY(-2px)'" onmouseout="this.style.filter='none';this.style.transform='none'">
+          <span class="mi" style="font-size:18px">chat</span>
+          <span>Hablar por WhatsApp (+57 313 595 9808)</span>
+        </a>
+
+        <a href="#agendar-calendario" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,253,248,.35);background:rgba(255,253,248,.12);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#FFFDF8;font-weight:700;font-size:13.5px;text-decoration:none;transition:all .25s" onmouseover="this.style.background='rgba(255,253,248,.22)';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(255,253,248,.12)';this.style.borderColor='rgba(255,253,248,.35)'">
+          <span class="mi" style="font-size:18px;color:var(--gold)">calendar_month</span>
+          <span>Elegir Horario de Asesoría ↓</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM PART: SEAMLESS BOOKING LOUNGE & COCKPIT (Zero Duplication, Direct Flow) -->
+  <div style="position:relative;padding:clamp(16px,2.5vw,32px) 0 clamp(64px,8vw,96px);color:#FBF8F2">
     
     <!-- Subtle ambient gold glow inside agenda lounge -->
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(900px,94vw);height:260px;background:radial-gradient(ellipse,rgba(212,175,55,.18) 0%,transparent 70%);filter:blur(50px);pointer-events:none"></div>
 
-    <div style="max-width:1320px;margin:0 auto;padding:0 18px;position:relative;z-index:2">
+    <div id="agendar-calendario" style="max-width:1320px;margin:0 auto;padding:0 18px;position:relative;z-index:2">
       
-      <!-- Minimalist Agenda Header (Direct, elegant, no repetitive text) -->
-      <div style="text-align:center;max-width:760px;margin:0 auto">
-        <div style="display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:999px;background:rgba(18,14,10,.85);border:1px solid rgba(212,175,55,.35);margin-bottom:12px;backdrop-filter:blur(10px)">
-          <span style="width:7px;height:7px;border-radius:999px;background:#25D366;box-shadow:0 0 8px #25D366;display:inline-block"></span>
-          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#F1DEB8;font-weight:800">AGENDA 1 A 1 DIRECTA</span>
-        </div>
-        
-        <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4.5vw,46px);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin:0;color:#FFFDF8">
-          Reserva tu Asesoría VIP<br>
-          <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.92em;letter-spacing:0;background:linear-gradient(120deg,#FFF6DD,#E2C88E 38%,#D4AF37 70%,#F5EDDF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">con nuestras formadoras capilares</span>
-        </h2>
-        
-        <p style="font-size:clamp(13.5px,1.2vw,15px);color:#C8BFA8;margin:10px auto 0;line-height:1.5;max-width:48ch">
-          Selecciona tu área de interés y confirma tu fecha y hora en tiempo real:
-        </p>
-      </div>
-
       <!-- 3 Minimalist Luxury Chips (Clean, Compact, Zero Fluff) -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;max-width:940px;margin:20px auto 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;max-width:940px;margin:0 auto">
         
         <!-- Chip 1: Técnica & Salón -->
         <div style="padding:12px 16px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.22);backdrop-filter:blur(14px);display:flex;align-items:center;gap:12px">
@@ -2411,51 +2439,6 @@ input,button,select,textarea{font:inherit;color:inherit;background:transparent}
           </a>
         </div>
 
-      </div>
-
-    </div>
-  </div>
-
-  <!-- BOTTOM PART: HERO TEAM PANORAMIC BANNER (Seamlessly integrated below, zero white gap) -->
-  <div id="banner-equipo" style="position:relative;width:100%;min-height:clamp(400px,48vh,540px);background:url('assets/bg-secundario.jpg') center 36% / cover no-repeat;display:flex;align-items:center;justify-content:center;overflow:hidden;border-top:1.5px solid rgba(212,175,55,.25)">
-    
-    <!-- Multi-layered black & gold atmospheric overlay that transitions seamlessly from the calendar above -->
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,10,8,.3) 0%,rgba(11,10,8,.68) 55%,rgba(11,10,8,.98) 100%),linear-gradient(180deg,#110E0A 0%,rgba(11,10,8,.25) 30%,rgba(11,10,8,.75) 75%,rgba(11,10,8,.98) 100%)"></div>
-    
-    <!-- Ambient gold central glow -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(900px,94vw);height:320px;background:radial-gradient(ellipse,rgba(212,175,55,.14) 0%,transparent 65%);filter:blur(50px);pointer-events:none"></div>
-
-    <!-- Editorial Content on Banner (Minimalist, punchy, no excess text) -->
-    <div style="position:relative;z-index:3;max-width:880px;margin:0 auto;padding:clamp(44px,5.5vw,68px) 20px clamp(36px,4.5vw,52px);text-align:center">
-      
-      <!-- Top Badge -->
-      <div style="display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:999px;border:1px solid rgba(241,222,184,.35);background:rgba(14,11,7,.65);backdrop-filter:blur(12px);font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#F1DEB8;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,.5)">
-        <span style="width:6px;height:6px;border-radius:999px;background:#25D366;box-shadow:0 0 8px #25D366;display:inline-block"></span>
-        <span>Talento &amp; Excelencia LYOS</span>
-      </div>
-
-      <!-- Main Title (Compact & Premium) -->
-      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:900;letter-spacing:-.035em;line-height:1.1;margin:0;color:#FFFDF8;text-shadow:0 8px 24px rgba(0,0,0,.8)">
-        El Equipo Detrás de tu Transformación<br>
-        <span style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:.88em;letter-spacing:0;background:var(--goldGrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none">maestría real en cada protocolo</span>
-      </h2>
-
-      <!-- Subtitle (1 concise line) -->
-      <p style="max-width:52ch;margin:12px auto 0;font-size:clamp(13.5px,1.3vw,16px);line-height:1.55;color:rgba(255,253,248,.82);text-shadow:0 2px 8px rgba(0,0,0,.6)">
-        Especialistas capilares y formadoras certificadas comprometidas con el éxito y rentabilidad de tu salón.
-      </p>
-
-      <!-- Action CTAs -->
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px">
-        <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--goldGrad);color:var(--onGold);font-weight:800;font-size:13px;box-shadow:0 10px 24px -6px rgba(168,124,47,.6);text-decoration:none;transition:all .25s" onmouseover="this.style.filter='brightness(1.08)';this.style.transform='translateY(-2px)'" onmouseout="this.style.filter='none';this.style.transform='none'">
-          <span class="mi" style="font-size:17px">chat</span>
-          <span>Hablar por WhatsApp (+57 313 595 9808)</span>
-        </a>
-
-        <a href="#agendar" style="display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,253,248,.3);background:rgba(255,253,248,.1);backdrop-filter:blur(12px);color:#FFFDF8;font-weight:700;font-size:13px;text-decoration:none;transition:all .25s" onmouseover="this.style.background='rgba(255,253,248,.2)';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(255,253,248,.1)';this.style.borderColor='rgba(255,253,248,.3)'">
-          <span class="mi" style="font-size:17px;color:var(--gold)">calendar_month</span>
-          <span>Ver Horarios de Agenda ↑</span>
-        </a>
       </div>
 
     </div>
