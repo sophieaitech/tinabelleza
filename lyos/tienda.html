@@ -857,13 +857,13 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
 @media (max-width: 767px) {
   .korea-showcase-stage {
     min-height: 380px !important;
-    height: clamp(360px, 86vw, 460px) !important;
+    height: clamp(380px, 100vw, 480px) !important;
   }
   .korea-subtle-photo {
-    padding: clamp(10px, 1.8vw, 16px) !important;
-    -webkit-mask-image: radial-gradient(ellipse 84% 82% at 50% 48%, black 48%, rgba(0,0,0,0.85) 64%, rgba(0,0,0,0.2) 82%, transparent 97%);
-    mask-image: radial-gradient(ellipse 84% 82% at 50% 48%, black 48%, rgba(0,0,0,0.85) 64%, rgba(0,0,0,0.2) 82%, transparent 97%);
-    border-radius: clamp(16px, 2vw, 22px);
+    padding: 0 !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    border-radius: 0 !important;
   }
 }
 
@@ -1657,49 +1657,50 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
     <!-- Dual Action Grid: Porcelain Photo Crossfade Stage & Minimalist Atelier Glass Card -->
     <div style="margin-top:clamp(36px,5vw,50px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(24px,3vw,36px);align-items:center">
       
-      <!-- Showcase: Subtle Hands-Free Photo Crossfade in Porcelain Golden Frame with PRO Studio Images -->
-      <div style="position:relative;border-radius:clamp(22px,3vw,28px);overflow:hidden;background:#FFFFFF;border:1.5px solid rgba(212,175,55,.45);box-shadow:0 24px 60px -15px rgba(120,85,20,.16);display:flex;flex-direction:column;height:100%">
-        
-        <!-- Top Status Pill -->
-        <div style="position:absolute;top:14px;left:14px;z-index:10;display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#0E0A06;pointer-events:none;box-shadow:0 4px 14px rgba(120,85,20,.18)">
-          <span style="width:7px;height:7px;border-radius:999px;background:#C8102E;box-shadow:0 0 8px #C8102E;display:inline-block"></span>
-          <span id="koreaSlideLabel">Botella Oficial 1000 ML · Packshot PRO</span>
+      <!-- Showcase: Clean Porcelain Golden Card with PRO Studio Photography (matching Seúl Demo aesthetic) -->
+      <div style="display:flex;flex-direction:column;height:100%">
+        <div style="position:relative;border-radius:24px;overflow:hidden;background:#FAF5EB;border:1.5px solid rgba(212,175,55,.45);box-shadow:0 18px 45px -10px rgba(120,85,20,.18);flex:1 1 auto;display:flex;flex-direction:column;width:100%">
+          
+          <!-- Top Status Pill (Floating over photo, identical to Image 2) -->
+          <div style="position:absolute;top:12px;left:12px;z-index:10;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;pointer-events:none;box-shadow:0 4px 12px rgba(120,85,20,.12)">
+            <span style="width:7px;height:7px;border-radius:999px;background:#C8102E;box-shadow:0 0 8px #C8102E;display:inline-block"></span>
+            <span id="koreaSlideLabel" style="color:#0E0A06;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase">Botella Oficial 1000 ML · Packshot PRO</span>
+          </div>
+
+          <!-- Bottom Status Pill (Floating over photo, identical to Image 2) -->
+          <div style="position:absolute;bottom:12px;right:12px;z-index:10;display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;font-size:10.5px;font-weight:900;pointer-events:none;box-shadow:0 4px 12px rgba(120,85,20,.12)">
+            <span class="mi" style="font-size:14px;color:#9A6914">auto_awesome</span>
+            <span>100% Sin Formol</span>
+          </div>
+
+          <!-- Automatic Crossfade Stage: Full-bleed Edge-to-Edge Crystal Clear Presentation -->
+          <div id="koreaSlideshowStage" class="korea-showcase-stage" style="position:relative;width:100%;min-height:clamp(460px,46vw,560px);flex:1 1 auto;overflow:hidden;background:#FAF5EB;user-select:none">
+            <!-- Slide 1: PRO Studio Packshot Frontal en Podio -->
+            <img class="korea-subtle-photo" src="assets/korea-anuncio-3.jpg" alt="Korea Liss 1000ml Botella Oficial PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:1;z-index:2">
+            <!-- Slide 2: PRO Studio Dual Render Frontal y Reverso Técnico -->
+            <img class="korea-subtle-photo" src="assets/korea-anuncio-1.jpg" alt="Korea Liss Dúo Salón Frente y Reverso Técnico PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2">
+            <!-- Slide 3: PRO Studio Detalle Ángulo Cenital Activos y Dragón -->
+            <img class="korea-subtle-photo" src="assets/korea-anuncio-2.jpg" alt="Korea Liss Detalle Cenital Taegeuk y Dragón PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2">
+            <!-- Slide 4: Korea Liss en Seúl bajo flores de cerezo -->
+            <img class="korea-subtle-photo" src="assets/korea-resultado-2.jpg" alt="Korea Liss en Seúl bajo cerezos" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2">
+          </div>
+
         </div>
 
-        <!-- Subtle Automatic Crossfade Stage (PRO Studio Photographs & Seúl) with Luminous Blending & Elegant Frame -->
-        <div id="koreaSlideshowStage" class="korea-showcase-stage" style="position:relative;width:100%;min-height:clamp(520px,52vw,700px);flex:1 1 auto;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#FFFFFF 0%,#FBF8F2 35%,#F4ECE0 68%,#EBE0D0 100%);display:flex;align-items:center;justify-content:center;user-select:none;pointer-events:none">
-          <!-- Soft ambient radiant backlight centered on bottle -->
-          <div style="position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:78%;height:70%;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.95) 0%,rgba(217,182,121,.24) 40%,transparent 72%);filter:blur(32px);pointer-events:none;z-index:1"></div>
-
-          <!-- Slide 1: PRO Studio Packshot Frontal en Podio -->
-          <img class="korea-subtle-photo" src="assets/korea-anuncio-3.jpg" alt="Korea Liss 1000ml Botella Oficial PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:1;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
-          <!-- Slide 2: PRO Studio Dual Render Frontal y Reverso Técnico -->
-          <img class="korea-subtle-photo" src="assets/korea-anuncio-1.jpg" alt="Korea Liss Dúo Salón Frente y Reverso Técnico PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
-          <!-- Slide 3: PRO Studio Detalle Ángulo Cenital Activos y Dragón -->
-          <img class="korea-subtle-photo" src="assets/korea-anuncio-2.jpg" alt="Korea Liss Detalle Cenital Taegeuk y Dragón PRO" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
-          <!-- Slide 4: Korea Liss en Seúl bajo flores de cerezo -->
-          <img class="korea-subtle-photo" src="assets/korea-resultado-2.jpg" alt="Korea Liss en Seúl bajo cerezos" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;padding:clamp(12px,2vw,20px);transition:opacity .6s cubic-bezier(.4,0,.2,1);opacity:0;z-index:2;-webkit-mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%);mask-image:radial-gradient(ellipse 84% 82% at 50% 48%,black 48%,rgba(0,0,0,0.85) 64%,rgba(0,0,0,0.2) 82%,transparent 97%)">
-
-          <!-- Soft peripheral vignette blending corners smoothly into card -->
-          <div style="position:absolute;inset:0;pointer-events:none;z-index:3;background:radial-gradient(ellipse at 50% 48%,transparent 54%,rgba(251,248,242,.3) 72%,rgba(244,236,224,.88) 98%)"></div>
-
-          <!-- Elegant Studio Sanctuary Frame (Bordeado de lujo con micro-borde dorado y esquinas curvas) -->
-          <div style="position:absolute;inset:clamp(8px,1.6vw,14px);border-radius:clamp(16px,2vw,22px);border:1.5px solid rgba(200,168,107,.35);box-shadow:inset 0 0 32px rgba(200,168,107,.08),0 8px 24px -8px rgba(120,85,20,.12);pointer-events:none;z-index:4"></div>
-        </div>
-
-        <!-- Showcase Footer -->
-        <div style="padding:13px 20px;background:#FFFFFF;border-top:1.5px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12.5px">
-          <div style="display:flex;align-items:center;gap:7px;color:#0E0A06;font-weight:800">
-            <span class="mi" style="font-size:18px;color:#9A6914">view_in_ar</span>
-            <span>Presentación Oficial Korea Liss 1000 ML</span>
-          </div>
-          <!-- Subtle indicator lines -->
-          <div style="display:inline-flex;align-items:center;gap:5px" aria-hidden="true">
-            <span class="korea-slide-indicator" style="width:16px;height:3px;border-radius:2px;background:#9A6914;transition:all .5s"></span>
-            <span class="korea-slide-indicator" style="width:5px;height:3px;border-radius:2px;background:rgba(212,175,55,.3);transition:all .5s"></span>
-            <span class="korea-slide-indicator" style="width:5px;height:3px;border-radius:2px;background:rgba(212,175,55,.3);transition:all .5s"></span>
-            <span class="korea-slide-indicator" style="width:5px;height:3px;border-radius:2px;background:rgba(212,175,55,.3);transition:all .5s"></span>
-          </div>
+        <!-- Interactive Slide Switcher Pills below card (matching Image 2) -->
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px">
+          <button type="button" class="korea-slide-tab active" onclick="switchKoreaSlide(0, this)" style="display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;background:linear-gradient(135deg,#ECCF96 0%,#C39D51 100%);border:1.5px solid #855A12;color:#080604;font-size:11.5px;font-weight:900;cursor:pointer;transition:all .2s;box-shadow:0 3px 10px rgba(150,111,40,.25)">
+            <span>🧴 Botella 1000 ML</span>
+          </button>
+          <button type="button" class="korea-slide-tab" onclick="switchKoreaSlide(1, this)" style="display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;font-size:11.5px;font-weight:800;cursor:pointer;transition:all .2s">
+            <span>✨ Dúo Salón</span>
+          </button>
+          <button type="button" class="korea-slide-tab" onclick="switchKoreaSlide(2, this)" style="display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;font-size:11.5px;font-weight:800;cursor:pointer;transition:all .2s">
+            <span>🔬 Detalle Activos</span>
+          </button>
+          <button type="button" class="korea-slide-tab" onclick="switchKoreaSlide(3, this)" style="display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;background:#FFFFFF;border:1.5px solid #C8A86B;color:#0E0A06;font-size:11.5px;font-weight:800;cursor:pointer;transition:all .2s">
+            <span>🌸 Seúl Cerezos</span>
+          </button>
         </div>
       </div>
 
@@ -1981,42 +1982,62 @@ html:not(.icons-ready) .mi{visibility:hidden!important}
       }
     };
     
-    function setupKoreaSubtleSlide() {
+    window.switchKoreaSlide = function(idx, btn) {
       var stage = document.getElementById('koreaSlideshowStage');
-      if (!stage || stage._inited) return;
-      stage._inited = true;
-
+      if (!stage) return;
       var photos = stage.querySelectorAll('.korea-subtle-photo');
-      var indicators = document.querySelectorAll('.korea-slide-indicator');
       var label = document.getElementById('koreaSlideLabel');
-      if (!photos || photos.length < 2) return;
+      var tabs = document.querySelectorAll('.korea-slide-tab');
+      if (!photos || !photos[idx]) return;
 
-      var current = 0;
+      photos.forEach(function(p, i) {
+        p.style.opacity = (i === idx) ? '1' : '0';
+      });
+
       var labels = [
         'Botella Oficial 1000 ML · Packshot PRO',
         'Dúo Salón · Frente y Reverso Técnico',
         'Detalle Activos · Ginseng, CICA y Arroz',
         'Origen K-Beauty · Avalado para Colombia'
       ];
+      if (label && labels[idx]) {
+        label.textContent = labels[idx];
+      }
+
+      tabs.forEach(function(t, i) {
+        if (i === idx) {
+          t.style.background = 'linear-gradient(135deg,#ECCF96 0%,#C39D51 100%)';
+          t.style.borderColor = '#855A12';
+          t.style.color = '#080604';
+          t.style.boxShadow = '0 3px 10px rgba(150,111,40,.25)';
+          t.style.fontWeight = '900';
+        } else {
+          t.style.background = '#FFFFFF';
+          t.style.borderColor = '#C8A86B';
+          t.style.color = '#0E0A06';
+          t.style.boxShadow = 'none';
+          t.style.fontWeight = '800';
+        }
+      });
+
+      window._koreaCurrentSlide = idx;
+    };
+
+    function setupKoreaSubtleSlide() {
+      var stage = document.getElementById('koreaSlideshowStage');
+      if (!stage || stage._inited) return;
+      stage._inited = true;
+
+      var photos = stage.querySelectorAll('.korea-subtle-photo');
+      if (!photos || photos.length < 2) return;
+
+      window._koreaCurrentSlide = 0;
 
       setInterval(function() {
-        photos[current].style.opacity = '0';
-        if (indicators[current]) {
-          indicators[current].style.width = '5px';
-          indicators[current].style.background = 'rgba(212,175,55,.3)';
-        }
-
-        current = (current + 1) % photos.length;
-
-        photos[current].style.opacity = '1';
-        if (indicators[current]) {
-          indicators[current].style.width = '16px';
-          indicators[current].style.background = '#9A6914';
-        }
-        if (label && labels[current]) {
-          label.textContent = labels[current];
-        }
-      }, 2500);
+        var next = (window._koreaCurrentSlide + 1) % photos.length;
+        var tabs = document.querySelectorAll('.korea-slide-tab');
+        window.switchKoreaSlide(next, tabs[next]);
+      }, 3500);
     }
 
     if (document.readyState === 'loading') {
