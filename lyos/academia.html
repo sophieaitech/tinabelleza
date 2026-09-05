@@ -15,6 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=DM+Sans:opsz,wght@9..40,300..700&family=Kaushan+Script&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" rel="stylesheet">
 
+<!-- Immediate Service Worker Activation for Instant Page Navigation -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(function(r) {
+      r.update();
+    }).catch(function() {});
+  }
+</script>
+
 <!-- Anti-FOUT Icon Shield: Prevents ligature text from flashing before font loads -->
 <script>
   (function(){

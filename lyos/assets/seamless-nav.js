@@ -1,9 +1,9 @@
 /**
- * LYOS Seamless Navigation & Transition Engine
- * - Zero-delay background prefetching for landing, tienda, and academia.
- * - Invisible, subtle cross-fade transitions eliminating loading screens and white flashes.
+ * LYOS Seamless Ultra-Fast Navigation & Transition Engine
+ * - Zero-delay background prefetching & caching for landing, tienda, and academia.
+ * - Invisible, seamless cross-fade transitions eliminating loading screens, pauses, and white flashes.
  * - Smooth in-page and cross-page anchor scrolling with fixed header compensation.
- * - Native View Transitions API integration with graceful fallback.
+ * - Native View Transitions API integration with ultra-fluid fallback.
  */
 (function() {
   'use strict';
@@ -12,12 +12,12 @@
   var prefetched = new Set();
   var isNavigating = false;
 
-  // 1. Prefetch helper
+  // 1. Instant Prefetch Helper
   function prefetchUrl(url) {
     if (!url || prefetched.has(url)) return;
     prefetched.add(url);
 
-    // Use <link rel="prefetch">
+    // Modern browser prefetch
     try {
       var link = document.createElement('link');
       link.rel = 'prefetch';
@@ -26,15 +26,23 @@
       document.head.appendChild(link);
     } catch (e) {}
 
-    // Fallback: idle fetch
+    // Prerender hint where supported
+    try {
+      var prerender = document.createElement('link');
+      prerender.rel = 'prerender';
+      prerender.href = url;
+      document.head.appendChild(prerender);
+    } catch (e) {}
+
+    // Service Worker / Browser memory cache warm-up
     if (window.fetch) {
       try {
-        fetch(url, { priority: 'low', cache: 'force-cache' }).catch(function() {});
+        fetch(url, { priority: 'high', cache: 'default' }).catch(function() {});
       } catch (e) {}
     }
   }
 
-  // 2. Background prefetch on idle
+  // 2. Background Prefetch All Main Pages on Idle
   function initBackgroundPrefetch() {
     var currentPath = window.location.pathname.split('/').pop() || 'index.html';
     PREFETCH_PAGES.forEach(function(p) {
@@ -45,12 +53,12 @@
   }
 
   if (window.requestIdleCallback) {
-    requestIdleCallback(initBackgroundPrefetch, { timeout: 1200 });
+    requestIdleCallback(initBackgroundPrefetch, { timeout: 800 });
   } else {
-    setTimeout(initBackgroundPrefetch, 600);
+    setTimeout(initBackgroundPrefetch, 300);
   }
 
-  // 3. Hover / Touch instant prefetch
+  // 3. Hover / Touch Instant Warmup
   document.addEventListener('mouseover', handleHoverPrefetch, { passive: true });
   document.addEventListener('touchstart', handleHoverPrefetch, { passive: true });
 
@@ -63,7 +71,7 @@
     if (cleanUrl) prefetchUrl(cleanUrl);
   }
 
-  // 4. Smooth Anchor Scrolling with Header Compensation (68px)
+  // 4. Smooth Anchor Scrolling with Header Compensation (70px)
   function smoothScrollTo(targetEl) {
     if (!targetEl) return;
     var headerOffset = 70;
@@ -76,7 +84,7 @@
     });
   }
 
-  // 5. Intercept Click Events for Seamless Navigation
+  // 5. Intercept Click Events for Seamless, Flash-Free Navigation
   document.addEventListener('click', function(e) {
     var a = e.target.closest('a');
     if (!a || !a.href || a.target === '_blank' || a.hasAttribute('download')) return;
@@ -118,29 +126,27 @@
       }
     }
 
-    // Is it an internal HTML navigation?
+    // Internal HTML navigation?
     var isInternalHtml = targetPage.endsWith('.html') || targetPage === '/' || targetPage === '' ||
                          PREFETCH_PAGES.some(function(p) { return targetPage.includes(p.replace('.html', '')); });
 
     if (isInternalHtml && !isNavigating) {
       isNavigating = true;
 
-      // Modern View Transitions API if available
+      // Native Cross-Document View Transitions (Chromium 126+, Safari 18+)
       if (document.startViewTransition && !targetHash) {
-        // Let the browser do its native cross-document view transition
-        return;
+        return; // Allow the browser's native hardware-accelerated cross-document view transition
       }
 
+      // Fast, Imperceptible Cross-Page Handshake
       e.preventDefault();
-
-      // Subtle Soft Fade Out (Pure subtlety, 90ms, no white flash)
       var root = document.getElementById('dc-root') || document.body;
-      root.style.transition = 'opacity 90ms cubic-bezier(0.4, 0, 0.2, 1)';
-      root.style.opacity = '0.92';
+      root.style.transition = 'opacity 75ms cubic-bezier(0.4, 0, 0.2, 1)';
+      root.style.opacity = '0.95';
 
       setTimeout(function() {
         window.location.href = href;
-      }, 90);
+      }, 75);
     }
   });
 
@@ -153,9 +159,8 @@
     if (targetEl) {
       setTimeout(function() {
         smoothScrollTo(targetEl);
-      }, 250);
+      }, 180);
     } else {
-      // Retry once dc-root / React finishes mounting
       var retries = 0;
       var interval = setInterval(function() {
         retries++;
@@ -166,15 +171,15 @@
         } else if (retries > 10) {
           clearInterval(interval);
         }
-      }, 150);
+      }, 100);
     }
   }
 
-  // 7. Smooth Page Enter (120ms subtle fade in)
+  // 7. Ultra-Smooth Page Enter (Immediate display without white flashes)
   function initPageEnter() {
     var root = document.getElementById('dc-root') || document.body;
     if (root) {
-      root.style.transition = 'opacity 140ms cubic-bezier(0.2, 0.8, 0.2, 1)';
+      root.style.transition = 'opacity 90ms cubic-bezier(0.2, 0.8, 0.2, 1)';
       root.style.opacity = '1';
     }
     checkInitialHash();
@@ -186,7 +191,6 @@
     initPageEnter();
   }
 
-  // Also listen to pageshow (for bfcache back/forward navigation)
   window.addEventListener('pageshow', function(e) {
     isNavigating = false;
     var root = document.getElementById('dc-root') || document.body;

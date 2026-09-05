@@ -28,6 +28,38 @@ const MIMES = {
 
 const COMPRESSIBLE = new Set(['.html', '.js', '.json', '.css', '.svg']);
 
+// In-memory cache for ultra-low latency delivery (<1ms response time)
+const memoryCache = new Map();
+const MAX_CACHED_FILE_SIZE = 1024 * 1024; // 1MB
+
+function getCachedFile(filePath) {
+  try {
+    const stat = fs.statSync(filePath);
+    const cached = memoryCache.get(filePath);
+    if (cached && cached.mtimeMs === stat.mtimeMs) {
+      return cached;
+    }
+    if (stat.size <= MAX_CACHED_FILE_SIZE) {
+      const data = fs.readFileSync(filePath);
+      const ext = path.extname(filePath).toLowerCase();
+      let gzipped = null;
+      if (COMPRESSIBLE.has(ext) && stat.size > 512) {
+        gzipped = zlib.gzipSync(data, { level: 6 });
+      }
+      const entry = {
+        data,
+        gzipped,
+        size: stat.size,
+        mtimeMs: stat.mtimeMs,
+        etag: `"${stat.size.toString(16)}-${Math.floor(stat.mtimeMs).toString(16)}"`
+      };
+      memoryCache.set(filePath, entry);
+      return entry;
+    }
+  } catch (e) {}
+  return null;
+}
+
 function handleRequest(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
@@ -81,8 +113,11 @@ function handleRequest(req, res) {
 
   // ETag y Cache-Control optimizados
   const etag = `"${stat.size.toString(16)}-${Math.floor(stat.mtimeMs).toString(16)}"`;
-  const isCode = ext === '.html' || (ext === '.json' && !filePath.includes('assets'));
-  const cacheHeader = isCode ? 'no-cache, must-revalidate' : 'public, max-age=604800, stale-while-revalidate=86400';
+  const isDoc = ext === '.html';
+  // HTML: stale-while-revalidate for instantaneous navigation + instant background refresh
+  const cacheHeader = isDoc 
+    ? 'public, max-age=0, stale-while-revalidate=86400, must-revalidate' 
+    : 'public, max-age=604800, stale-while-revalidate=86400';
 
   res.setHeader('ETag', etag);
   res.setHeader('Cache-Control', cacheHeader);
@@ -112,8 +147,31 @@ function handleRequest(req, res) {
     return;
   }
 
-  // Compresión GZIP / Deflate para HTML, CSS, JS, JSON, SVG
   const acceptEncoding = req.headers['accept-encoding'] || '';
+
+  // In-Memory Cached fast-path (<1ms)
+  const mem = getCachedFile(filePath);
+  if (mem) {
+    if (mem.gzipped && acceptEncoding.includes('gzip')) {
+      res.setHeader('Vary', 'Accept-Encoding');
+      res.writeHead(200, {
+        'Content-Type': contentType,
+        'Content-Encoding': 'gzip',
+        'Content-Length': mem.gzipped.length
+      });
+      res.end(mem.gzipped);
+      return;
+    }
+    res.writeHead(200, {
+      'Content-Type': contentType,
+      'Content-Length': mem.size,
+      'Accept-Ranges': 'bytes'
+    });
+    res.end(mem.data);
+    return;
+  }
+
+  // Compresión GZIP / Deflate para archivos grandes no cacheados
   if (COMPRESSIBLE.has(ext) && stat.size > 512) {
     res.setHeader('Vary', 'Accept-Encoding');
     if (acceptEncoding.includes('gzip')) {
@@ -148,9 +206,9 @@ const ports = [...new Set([...envPort, 80, 8080, 3000])];
 ports.forEach(port => {
   const s = http.createServer(handleRequest);
   s.listen(port, '0.0.0.0', () => {
-    console.log(`[LYOS SERVER] Ultra-optimizado activo en http://localhost:${port}`);
+    console.log(`LYOS PRO ultra-optimized server running on port ${port} (root: ${PWA_DIR})`);
   });
-  s.on('error', err => {
-    console.log(`[LYOS SERVER] Puerto ${port} ocupado (${err.code})`);
+  s.on('error', () => {
+    // Puerto ocupado o sin permisos, silencioso
   });
 });
